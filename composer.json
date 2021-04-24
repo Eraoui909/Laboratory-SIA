@@ -1,0 +1,17 @@
+{
+    "name": "vendor/phpmvc-framework",
+    "authors": [
+        {
+            "name": "Hamza Eraoui",
+            "email": "hamzaprofessionnel1234@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\" : "./"
+        }
+    },
+    "require": {
+      "ext-pdo": "*"
+    }
+}
