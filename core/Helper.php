@@ -71,6 +71,7 @@ trait Helper
         return $errors;
     }
 
+    /*
     public function UploadFile($dir, $id)
     {
         $returned['errors'] = array();
@@ -108,6 +109,6 @@ trait Helper
 
         return $returned;
     }
-
+    */
 
 }
