@@ -3,6 +3,7 @@
 
     <?php
 
+        /*
         if(isset($_SESSION['admin_registered']) && !empty($_SESSION['admin_registered'])){
 
             if(isset($_SESSION['admin_registered']['success_msg']))
@@ -20,6 +21,30 @@
 
             }
             unset($_SESSION['admin_registered']);
+        }
+        */
+
+        $session = new \app\core\Session();
+        if($session->hasSession('flash_messages'))
+        {
+            if(isset($_SESSION['flash_messages']['success_msg']))
+            {
+                    echo '<div class="alert alert-success">'.$_SESSION['flash_messages']['success_msg']['value'].'</div>';
+            }
+
+            if(isset($_SESSION['flash_messages']['error_msg']))
+            {
+                if(is_array($_SESSION['flash_messages']['error_msg']['value']))
+                {
+                    foreach ($_SESSION['flash_messages']['error_msg']['value'] as $error)
+                    {
+                        echo '<div class="alert alert-danger">'.$error.'</div>';
+                    }
+                }else if(is_string($_SESSION['flash_messages']['error_msg']['value'])){
+                    echo '<div class="alert alert-danger">'.$_SESSION['flash_messages']['error_msg']['value'].'</div>';
+                }
+
+            }
         }
 
     ?>

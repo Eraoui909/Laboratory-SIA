@@ -11,7 +11,7 @@ class Session
 
     public function __construct()
     {
-        session_start();
+        //session_start();
         $flashMessages = $_SESSION[self::FLASH_KEY] ?? [];
         foreach ($flashMessages as $key => &$flashMessage) {
             $flashMessage['remove'] = true;
@@ -61,6 +61,11 @@ class Session
             }
         }
         $_SESSION[self::FLASH_KEY] = $flashMessages;
+    }
+
+    public function hasSession($key)
+    {
+        return isset($_SESSION[$key]);
     }
 
 }

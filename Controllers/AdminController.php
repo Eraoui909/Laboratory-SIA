@@ -5,6 +5,7 @@ namespace app\Controllers;
 
 
 use app\core\Controller;
+use app\core\Session;
 use app\core\Validator;
 use app\models\AdminsModel;
 
@@ -21,7 +22,8 @@ class AdminController extends Controller
     public function registerAdmin()
     {
         global $lang;
-        $_SESSION['admin_registered'] = array();
+        //$_SESSION['admin_registered'] = array();
+        $session = new Session();
         if (isset($_POST['email']) ) {
             $validator = new Validator();
             $errors = $validator->require($_POST);
@@ -32,12 +34,15 @@ class AdminController extends Controller
                 $admin->setEmail($_POST['email']);
                 $admin->setPassword($_POST['password']);
                 if($admin->register()) {
-                    $_SESSION['admin_registered']['success_msg'] = $lang["admin_registred_success"];
+                    //$_SESSION['admin_registered']['success_msg'] = $lang["admin_registred_success"];
+                    $session->setFlash("success_msg",$lang["admin_registred_success"]);
                 }else{
-                    $_SESSION['admin_registered']['error_msg'] = $lang["admin_registred_error"];
+                    //$_SESSION['admin_registered']['error_msg'] = $lang["admin_registred_error"];
+                    $session->setFlash("error_msg",$lang["admin_registred_error"]);
                 }
             }else{
-                $_SESSION['admin_registered']['error_msg'] = $errors;
+                //$_SESSION['admin_registered']['error_msg'] = $errors;
+                $session->setFlash("error_msg",$errors);
             }
 
             header('Location:' . $_SERVER['HTTP_REFERER']);
