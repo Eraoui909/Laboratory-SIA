@@ -15,12 +15,12 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Language
+                    <?php echo $lang['lang'] ?>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="http://localhost:8080/public/lang/en"><?php echo $lang['en'] ?></a>
+                    <a class="dropdown-item" href="<?php dirname(__DIR__) ?>/public/lang/en"><?php echo $lang['en'] ?></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="http://localhost:8080/public/lang/fr"><?php echo $lang['fr'] ?></a>
+                    <a class="dropdown-item" href="<?php dirname(__DIR__) ?>/public/lang/fr"><?php echo $lang['fr'] ?></a>
                 </div>
             </li>
 

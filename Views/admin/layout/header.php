@@ -26,7 +26,7 @@
     <!-- summernote -->
     <link rel="stylesheet" href="../../../public/adminLTE/plugins/summernote/summernote-bs4.min.css">
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="sidebar-mini layout-fixed layout-navbar-fixed">
 <div class="wrapper">
 
     <!-- Preloader -->

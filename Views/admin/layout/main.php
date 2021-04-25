@@ -1,4 +1,10 @@
-<?php include_once "header.php"; ?>
+<?php
+
+global $lang;
+
+include_once "header.php";
+
+?>
 
 <!-- Navbar -->
   <?php include_once "navbar.php"; ?>

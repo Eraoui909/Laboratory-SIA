@@ -14,6 +14,8 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+
+
         <!-- Navbar Search -->
         <li class="nav-item">
             <a class="nav-link" data-widget="navbar-search" href="#" role="button">
@@ -35,6 +37,25 @@
                 </form>
             </div>
         </li>
+
+
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="fa fa-globe"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <span class="dropdown-item dropdown-header"><?php echo $lang['lang'] ?></span>
+                <div class="dropdown-divider"></div>
+                <a href="<?php dirname(__DIR__) ?>/public/lang/en" class="dropdown-item">
+                    <i class="fas fa-language mr-2"></i> <?php echo $lang['en'] ?>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="<?php dirname(__DIR__) ?>/public/lang/fr" class="dropdown-item">
+                    <i class="fas fa-language mr-2"></i> <?php echo $lang['fr'] ?>
+                </a>
+            </div>
+        </li>
+
 
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
