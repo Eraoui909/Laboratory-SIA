@@ -17,7 +17,7 @@
 
     <style>
         body{
-            background-color: #E9ECEF;
+            background-color: #e9ecef;
         }
         .register-box{
             margin: 10px auto;

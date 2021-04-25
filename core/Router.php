@@ -49,6 +49,25 @@ class Router
 
     }
 
+    /**
+     * @param $view
+     * @param array $params
+     * @return string|string[]
+     *
+     * this function will be return a view without master layout
+     */
+    public function viewRenderEmpty($view, $params = [])
+    {
+        return $this->viewContent($view,$params);
+    }
+
+    /**
+     * @param $view
+     * @param array $params
+     * @return string|string[]
+     *
+     * this function will be return a view with master layout
+     */
     public function viewRender($view,$params = [])
     {
         $mainView   = $this->mainLayoutContent();
@@ -56,7 +75,14 @@ class Router
         return str_replace("{{ content }}",$currentView,$mainView);
     }
 
-    public function viewRenderAdmin($view,$params = [])
+    /**
+     * @param $view
+     * @param array $params
+     * @return string|string[]
+     *
+     * this function it's used to return the viaw inside admin folder
+     */
+    public function viewRenderAdmin($view, $params = [])
     {
         $mainView   = $this->mainLayoutAdmin();
         $currentView    = $this->viewAdmin($view,$params);

@@ -21,8 +21,7 @@ class AdminController extends Controller
 
     public function registerPage()
     {
-        //$_SESSION['admin_registered'] = array();
-        return $this->render('admin/register', []);
+        return $this->renderEmpty('admin/register', []);
     }
 
     public function registerAdmin()
