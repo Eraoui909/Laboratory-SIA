@@ -133,12 +133,20 @@ class Router
         return ob_get_clean();
     }
 
-    protected function viewAdmin($view,$params)
+    /**
+     * @param $view
+     * @param $params       //the params must be one dimensional array
+     * @return false|string
+     */
+    protected function viewAdmin($view, $params)
     {
         foreach ($params as $key => $value)
         {
             $$key = $value;
-        }
+            //echo $key ." ".$value."<br>";
+
+        };
+        //exit();
         ob_start();
         if(file_exists($this->ROOT_PATH . "/Views/admin/".$view.".php")){
             include_once $this->ROOT_PATH . "/Views/admin/".$view.".php";
