@@ -44,6 +44,9 @@ $app->router->get('/public/me','me');
 $app->router->get('/public/admin/register',[AdminController::class,'registerPage']);
 $app->router->post('/public/admin/register',[AdminController::class,'registerAdmin']);
 
+$app->router->get('/public/admin/dashboard',[AdminController::class,'dashboard']);
+
+
 
 
 

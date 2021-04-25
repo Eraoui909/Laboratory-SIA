@@ -56,10 +56,24 @@ class Router
         return str_replace("{{ content }}",$currentView,$mainView);
     }
 
+    public function viewRenderAdmin($view,$params = [])
+    {
+        $mainView   = $this->mainLayoutAdmin();
+        $currentView    = $this->viewAdmin($view,$params);
+        return str_replace("{{ content }}",$currentView,$mainView);
+    }
+
     protected function mainLayoutContent()
     {
         ob_start();
         include_once $this->ROOT_PATH."/Views/masterLayout/main.php" ;
+        return ob_get_clean();
+    }
+
+    protected function mainLayoutAdmin()
+    {
+        ob_start();
+        include_once $this->ROOT_PATH."/Views/admin/layout/main.php" ;
         return ob_get_clean();
     }
 
@@ -72,6 +86,21 @@ class Router
         ob_start();
         if(file_exists($this->ROOT_PATH . "/Views/".$view.".php")){
             include_once $this->ROOT_PATH . "/Views/".$view.".php";
+        }else{
+            include_once $this->ROOT_PATH . "/Views/__404.php";
+        }
+        return ob_get_clean();
+    }
+
+    protected function viewAdmin($view,$params)
+    {
+        foreach ($params as $key => $value)
+        {
+            $$key = $value;
+        }
+        ob_start();
+        if(file_exists($this->ROOT_PATH . "/Views/admin/".$view.".php")){
+            include_once $this->ROOT_PATH . "/Views/admin/".$view.".php";
         }else{
             include_once $this->ROOT_PATH . "/Views/__404.php";
         }

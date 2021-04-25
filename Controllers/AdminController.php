@@ -14,6 +14,11 @@ use app\models\AdminsModel;
 class AdminController extends Controller
 {
 
+    public function dashboard()
+    {
+        return $this->renderAdmin('layout/contentWraper', []);
+    }
+
     public function registerPage()
     {
         //$_SESSION['admin_registered'] = array();
