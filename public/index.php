@@ -61,9 +61,12 @@ $app->router->get('/public/admin/register',[AdminController::class,'registerPage
 $app->router->post('/public/admin/register',[AdminController::class,'registerAdmin']);
 
 
-    $app->router->get('/public/admin/dashboard',[AdminController::class,'dashboard']);
+$app->router->get('/public/admin/dashboard',[AdminController::class,'dashboard']);
 
 $app->router->get('/public/admin/login',[AdminController::class,'loginPage']);
+
+$app->router->get('/public/admin/profile',[AdminController::class,'profilePage']);
+
 
 
 
