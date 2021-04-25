@@ -13,7 +13,7 @@ class Database
     public function __construct()
     {
         global $connect;
-        $dsn = "mysql:host=localhost;dbname=test";
+        $dsn = "mysql:host=localhost;dbname=labo_sia";
         $user = "root";
         $pass = "";
         $option = array(

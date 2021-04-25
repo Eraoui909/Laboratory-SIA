@@ -11,7 +11,7 @@ class Router
     protected $response;
     protected $ROOT_PATH;
 
-    public function __construct(Request $re,Response $resp,$ROOT_PATH)
+    public function __construct(Request $re, Response $resp, $ROOT_PATH)
     {
         $this->request      = $re;
         $this->response     = $resp;
@@ -41,19 +41,23 @@ class Router
 
         $path       = $this->request->getPath();
         $method     = $this->request->getMethod();
-        $callback   = $this->routes[$method][$path]??false;
+        $callback   = $this->routes[$method][$path] ?? false;
 
         if($callback === false)
         {
             $this->response->setHTTPResponseCode(404);
             return $this->viewRender("__404");
-        }else if(is_string($callback)){
+
+        }else if(is_string($callback))
+        {
             return $this->viewRender($callback);
+
         }else if(is_array($callback)){
+
             $callback[0] = new $callback[0];
         }
 
-        return call_user_func($callback,$this->request);
+        return call_user_func($callback, $this->request);
 
     }
 
@@ -66,7 +70,7 @@ class Router
      */
     public function viewRenderEmpty($view, $params = [])
     {
-        return $this->viewContent($view,$params);
+        return $this->viewContent($view, $params);
     }
 
     /**
@@ -76,11 +80,11 @@ class Router
      *
      * this function will be return a view with master layout
      */
-    public function viewRender($view,$params = [])
+    public function viewRender($view, $params = [])
     {
         $mainView   = $this->mainLayoutContent();
-        $currentView    = $this->viewContent($view,$params);
-        return str_replace("{{ content }}",$currentView,$mainView);
+        $currentView    = $this->viewContent($view, $params);
+        return str_replace("{{ content }}", $currentView, $mainView);
     }
 
     /**
@@ -88,41 +92,44 @@ class Router
      * @param array $params
      * @return string|string[]
      *
-     * this function it's used to return the viaw inside admin folder
+     * this function it's used to return the view inside admin folder
      */
     public function viewRenderAdmin($view, $params = [])
     {
         $mainView   = $this->mainLayoutAdmin();
-        $currentView    = $this->viewAdmin($view,$params);
-        return str_replace("{{ content }}",$currentView,$mainView);
+        $currentView    = $this->viewAdmin($view, $params);
+        return str_replace("{{ content }}", $currentView, $mainView);
     }
 
     protected function mainLayoutContent()
     {
         ob_start();
-        include_once $this->ROOT_PATH."/Views/masterLayout/main.php" ;
+        include_once $this->ROOT_PATH . "/Views/masterLayout/main.php";
         return ob_get_clean();
     }
 
     protected function mainLayoutAdmin()
     {
         ob_start();
-        include_once $this->ROOT_PATH."/Views/admin/layout/main.php" ;
+        include_once $this->ROOT_PATH . "/Views/admin/layout/main.php" ;
         return ob_get_clean();
     }
 
-    protected function viewContent($view,$params)
+    protected function viewContent($view, $params)
     {
         foreach ($params as $key => $value)
         {
             $$key = $value;
         }
+
         ob_start();
-        if(file_exists($this->ROOT_PATH . "/Views/".$view.".php")){
+
+        if(file_exists($this->ROOT_PATH . "/Views/" . $view . ".php")){
             include_once $this->ROOT_PATH . "/Views/".$view.".php";
         }else{
             include_once $this->ROOT_PATH . "/Views/__404.php";
         }
+
         return ob_get_clean();
     }
 
