@@ -7,6 +7,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="<?php dirname(__DIR__) ?>/Storage/Statics/images/logoLaboFst(35X35).png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
@@ -17,10 +18,6 @@
 
 <?php
     include_once "navBar.php";
-    echo "<pre>";
-        //print_r($_SESSION);
-        //print_r($_SERVER);
-    echo "</pre>";
 ?>
 
 

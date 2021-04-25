@@ -28,6 +28,14 @@ class Router
         $this->routes["POST"][$path] = $callback;
     }
 
+    /**
+     * @return false|mixed|string|string[]
+     * this method it's the core of Router class, it's trait all request and redirect the user to the right way
+     * if ( $callback not found )   => render the __404 page
+     * if ( $callback is string )   => this means that the user will redirect to a view directly
+     * if ( $callback is array )    => this means that the request will be trait in the controller <$callback[0]>
+     *                                 specifically in the method <$callback[1]> inside this controller
+     */
     public function resolve()
     {
 

@@ -2,6 +2,13 @@
 
 namespace app\core;
 
+
+/*
+ * this class have to roles :
+ *      1 -> create an instance to all attribute
+ *      2 -> the method run which handle all [ get & post ] request
+ */
+
 class Application
 {
 

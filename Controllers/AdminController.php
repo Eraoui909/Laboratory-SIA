@@ -54,4 +54,8 @@ class AdminController extends Controller
         }
     }
 
+    public function loginPage()
+    {
+        return $this->renderEmpty('admin/login',[]);
+    }
 }
