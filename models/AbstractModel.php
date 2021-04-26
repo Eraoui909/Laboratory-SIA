@@ -91,7 +91,7 @@ class AbstractModel
         $sql = 'SELECT * FROM ' . static::$tableName;
         $stmt = $connect->prepare($sql);
         $stmt->execute();
-        $results = $stmt->fetchAll(); //\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, get_called_class(), array_keys(static::$tableSchema)
+        $results = $stmt->fetchAll(\PDO::FETCH_ASSOC); //\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, get_called_class(), array_keys(static::$tableSchema)
         if(isset($results) && !empty($results)){
             return $results;
         }else{

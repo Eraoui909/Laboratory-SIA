@@ -1,6 +1,7 @@
 <?php
 
 use app\Controllers\AdminController;
+use app\Controllers\EnseignantController;
 use app\Controllers\LangController;
 use app\Controllers\SiteController;
 
@@ -73,6 +74,11 @@ $app->router->get('/public/admin/logout',[AdminController::class,'logoutHandler'
 
 
 $app->router->get('/public/admin/profile',[AdminController::class,'profilePage']);
+
+
+$app->router->get('/public/admin/enseignant',[EnseignantController::class,'enseignantPage']);
+
+
 
 
 
