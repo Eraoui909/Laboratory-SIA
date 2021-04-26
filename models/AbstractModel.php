@@ -127,7 +127,7 @@ class AbstractModel
         global $connect;
         $sql = 'SELECT * FROM ' . static::$tableName . ' WHERE ';
 
-        foreach ($cols as $col=>$val){
+        foreach ($cols as $col => $val){
             $sql .= $col . ' = :' . $col . ' OR ';
         }
 
@@ -154,11 +154,13 @@ class AbstractModel
 
         $sql = trim($sql, "and ");
         $stmt = $connect->prepare($sql);
-        foreach ($cols as $col=>$val){
+
+        foreach ($cols as $col => $val){
             $stmt->bindValue(":$col", $val);
         }
+
         $stmt->execute();
-        $result = $stmt->fetchAll(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, get_called_class(), array_keys(static::$tableSchema));
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $stmt->rowCount() > 0 ? $result : false;
     }
 

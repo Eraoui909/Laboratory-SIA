@@ -13,4 +13,6 @@
 
         "dashboard"                   => "Tableau de bord",
         "dashboard_title"             => "Laboratoire SIA",
+
+        "login"                       => "connecter",
     );

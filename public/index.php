@@ -10,7 +10,9 @@ use app\core\Database;
 require_once __DIR__ . '\..\vendor\autoload.php';
 
 session_start();
-
+//unset($_SESSION);
+//session_destroy();
+//exit;
 /*
  * this is for multi language
  */
@@ -66,6 +68,7 @@ $app->router->post('/public/admin/register',[AdminController::class,'registerAdm
 $app->router->get('/public/admin/dashboard',[AdminController::class,'dashboard']);
 
 $app->router->get('/public/admin/login',[AdminController::class,'loginPage']);
+$app->router->post('/public/admin/login',[AdminController::class,'loginHandler']);
 
 $app->router->get('/public/admin/profile',[AdminController::class,'profilePage']);
 
