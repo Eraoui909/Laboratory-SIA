@@ -15,9 +15,10 @@
 <script src="/adminLTE/plugins/chart.js/Chart.min.js"></script>
 <!-- Sparkline -->
 <script src="/adminLTE/plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
+<!-- JQVMap
 <script src="/adminLTE/plugins/jqvmap/jquery.vmap.min.js"></script>
 <script src="/adminLTE/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+-->
 <!-- jQuery Knob Chart -->
 <script src="/adminLTE/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->

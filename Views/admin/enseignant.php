@@ -17,9 +17,13 @@ $data = $enseignant->getAll();
                         <span aria-hidden="true" id="modal-add-enseignant-close">×</span>
                     </button>
                 </div>
+                <div class="contanier" style="width: 80%;margin: 10px auto;">
+                    <div class="msg-add-enseignant">
+
+                    </div>
+                </div>
                 <div class="modal-body">
-                    <form action="">
-                        <form action="<?php dirname(__DIR__) ?>/public/admin/register" method="post">
+                        <form action="/admin/enseignant/add" class="form-add-enseignat" method="post">
                             <div class="input-group mb-3">
                                 <input type="text" name="prenom" class="form-control" placeholder="First name">
                                 <div class="input-group-append">
@@ -52,37 +56,20 @@ $data = $enseignant->getAll();
                                     </div>
                                 </div>
                             </div>
-                            <div class="input-group mb-3">
-                                <input type="password" name="password-retype" class="form-control" placeholder="Retype password">
-                                <div class="input-group-append">
-                                    <div class="input-group-text">
-                                        <span class="fas fa-lock"></span>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="row">
-                                <div class="col-8">
-                                    <div class="icheck-primary">
-                                        <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-                                        <label for="agreeTerms">
-                                            I agree to the <a href="#">terms</a>
-                                        </label>
-                                    </div>
-                                </div>
+
                                 <!-- /.col -->
-                                <div class="col-4">
-                                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                                <div class="modal-footer justify-content-between">
+                                    <button type="button" class="btn btn-default" id="modal-add-enseignant-close-btn" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary" id="modal-add-enseignant-add-btn">Ajouter</button>
                                 </div>
                                 <!-- /.col -->
                             </div>
                         </form>
 
-                    </form>
                 </div>
-                <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" id="modal-add-enseignant-close-btn" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="modal-add-enseignant-add-btn">Ajouter</button>
-                </div>
+
             </div>
             <!-- /.modal-content -->
         </div>
@@ -117,7 +104,7 @@ $data = $enseignant->getAll();
                         <td><?php echo $ens['nom'] ?></td>
                         <td><?php echo $ens['email'] ?></td>
                         <td><?php echo $ens['tel'] ?></td>
-                        <td><img width="45px" height="40px" src="<?php echo $ens['avatar'] ?>" alt="ensignant picture"> </td>
+                        <td><img width="45px" height="40px" src="\Storage\uploads\users\<?php echo $ens['avatar'] ?>" alt="ensignant picture"> </td>
                         <td>
                             <button class="btn-sm btn-success ">
                                 <i class="fa fa-edit"></i>

@@ -141,9 +141,9 @@ class AdminController extends Controller
 
             if(empty($errors['uploads'])){
 
-                $avatar = $upload['uploaded'][0] ?? '/Storage/Statics/images/avatar.png';
+                $avatar = $upload['uploaded'][0] ?? 'avatar.png';
                 $pass   = $_SESSION['token']['password'];
-                $id   = $_SESSION['token']['id'];
+                $id     = $_SESSION['token']['id'];
 
                 $adminModel->setId($id);
                 $adminModel->setNom($data['nom']);

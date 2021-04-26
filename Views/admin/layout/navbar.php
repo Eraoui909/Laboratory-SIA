@@ -48,7 +48,7 @@
                 <a href="#" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media">
-                        <img src="<?php echo $_SESSION['token']['avatar'] ?>" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                        <img src="\Storage\uploads\users\<?php echo $_SESSION['token']['avatar'] ?>" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 <?php echo  $_SESSION['token']['prenom'] ." ". $_SESSION['token']['nom'] ?>
