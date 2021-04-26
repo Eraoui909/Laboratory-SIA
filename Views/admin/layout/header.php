@@ -35,6 +35,10 @@
             margin-bottom: 0;
         }
 
+        .delete-path:hover{
+            color: #dc3545;
+        }
+
     </style>
 </head>
 <body class="sidebar-mini layout-fixed layout-navbar-fixed">

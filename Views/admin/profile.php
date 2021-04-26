@@ -359,7 +359,7 @@
                                             <div class="offset-sm-2 col-sm-10">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <a href="/admin/deletePic">Delete </a> my picture
+                                                        <a href="/admin/deletePic" class="delete-path">Delete </a> my picture
                                                     </label>
                                                 </div>
                                             </div>
