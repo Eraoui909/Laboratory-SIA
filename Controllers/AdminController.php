@@ -1,8 +1,6 @@
 <?php
 
-
 namespace app\Controllers;
-
 
 use app\core\Controller;
 use app\core\Helper;
@@ -10,7 +8,6 @@ use app\core\Request;
 use app\core\Session;
 use app\core\Validator;
 use app\models\AdminsModel;
-
 
 class AdminController extends Controller
 {
@@ -23,13 +20,10 @@ class AdminController extends Controller
         $this->session = new Session();
     }
 
-
     public function dashboard()
     {
-        //unset($_SESSION['auth']);
-        $_SESSION['auth']="hamza";
-        if(!$this->session->hasSession('auth')){
-            return $this->loginPage();
+        if(!$this->session->hasSession('token')){
+            $this->redirect('/public/admin/login');
         }
 
         return $this->renderAdmin('layout/contentWraper', []);
@@ -81,6 +75,9 @@ class AdminController extends Controller
 
     public function loginPage()
     {
+        if($this->session->hasSession('token')){
+            $this->redirect('/public/admin/dashboard');
+        }
         return $this->renderEmpty('admin/login',[]);
     }
 
