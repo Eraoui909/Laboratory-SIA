@@ -25,7 +25,7 @@ class AdminController extends Controller
         if(!$this->session->hasSession('token')) {
             $this->redirect('/public/admin/login');
         }
-        
+
         if(!$this->session->hasSession('token')){
             return $this->loginPage();
         }
