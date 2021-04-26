@@ -11,9 +11,6 @@ use app\core\Database;
 require_once __DIR__ . '\..\vendor\autoload.php';
 
 session_start();
-//unset($_SESSION);
-//session_destroy();
-//exit;
 /*
  * this is for multi language
  */
@@ -22,8 +19,7 @@ if(!isset($_SESSION['lang'])){
 }
 
 $lang = $_SESSION['lang'] . ".php";
-include_once __DIR__."\..\language\\" . $lang;
-
+include_once dirname(__DIR__) . "\language\\" . $lang;;
 
 /*
  * the app variable is an instance from Application class
@@ -37,23 +33,20 @@ $app = new Application(dirname(__DIR__));
 $db = new Database();
 
 
-$app->router->get('/public/lang/en',[LangController::class, 'changeLangToEn']);
+$app->router->get('/lang/en',[LangController::class, 'changeLangToEn']);
 
-$app->router->get('/public/lang/fr',[LangController::class, 'changeLangToFr']);
+$app->router->get('/lang/fr',[LangController::class, 'changeLangToFr']);
 
 
-$app->router->get('/public/home','home');
-
-$app->router->get('/public/','home');
+$app->router->get('/home','home');
 
 $app->router->get('/','home');
 
-$app->router->get('/public/contact', [SiteController::class, 'contactPage']);
-$app->router->get('/contact',[SiteController::class, 'contactPage']);
+$app->router->get('/contact', [SiteController::class, 'contactPage']);
 
-$app->router->post('/public/contact',[SiteController::class, 'handleContact']);
+$app->router->post('/contact',[SiteController::class, 'handleContact']);
 
-$app->router->get('/public/me','me');
+$app->router->get('/me','me');
 
 
 /* **********************************************
@@ -62,21 +55,23 @@ $app->router->get('/public/me','me');
 *                                               *
 * ********************************************* */
 
-$app->router->get('/public/admin/register',[AdminController::class,'registerPage']);
-$app->router->post('/public/admin/register',[AdminController::class,'registerAdmin']);
+$app->router->get('/admin/register',[AdminController::class,'registerPage']);
+$app->router->post('/admin/register',[AdminController::class,'registerAdmin']);
 
 
-$app->router->get('/public/admin/dashboard',[AdminController::class,'dashboard']);
+$app->router->get('/admin/dashboard',[AdminController::class,'dashboard']);
 
-$app->router->get('/public/admin/login',[AdminController::class,'loginPage']);
-$app->router->post('/public/admin/login',[AdminController::class,'loginHandler']);
-$app->router->get('/public/admin/logout',[AdminController::class,'logoutHandler']);
-
-
-$app->router->get('/public/admin/profile',[AdminController::class,'profilePage']);
+$app->router->get('/admin/login',[AdminController::class,'loginPage']);
+$app->router->post('/admin/login',[AdminController::class,'loginHandler']);
+$app->router->get('/admin/logout',[AdminController::class,'logoutHandler']);
 
 
-$app->router->get('/public/admin/enseignant',[EnseignantController::class,'enseignantPage']);
+$app->router->get('/admin/profile',[AdminController::class,'profilePage']);
+$app->router->post('/admin/profile',[AdminController::class,'updateProfile']);
+$app->router->get('/admin/deletePic',[AdminController::class,'deletePicture']);
+
+
+$app->router->get('/admin/enseignant',[EnseignantController::class,'enseignantPage']);
 
 
 

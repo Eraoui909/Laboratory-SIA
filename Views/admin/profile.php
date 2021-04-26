@@ -1,6 +1,4 @@
 
-<?php echo $nom;  ?>
-
 <!-- Content Wrapper. Contains profile content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -31,20 +29,20 @@
                         <div class="card-body box-profile">
                             <div class="text-center">
                                 <img class="profile-user-img img-fluid img-circle"
-                                     src="<?php dirname(__DIR__) ?><?php echo $avatar;  ?>"
+                                     src="<?= '/Storage/uploads/users/' . $avatar;  ?>"
                                      alt="User profile picture">
                             </div>
 
-                            <h3 class="profile-username text-center"><?php echo $prenom ." ". $nom;  ?></h3>
+                            <h3 class="profile-username text-center"><?= $prenom ." ". $nom;  ?></h3>
 
                             <p class="text-muted text-center">Software Engineer</p>
 
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
-                                    <b>Email</b> <br> <a class="float-right"><?php echo $email;  ?></a>
+                                    <b>Email</b> <br> <a class="float-right"><?= $email;  ?></a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Tel</b> <br> <a class="float-right"><?php echo $tel;  ?></a>
+                                    <b>Tel</b> <br> <a class="float-right"><?= $tel;  ?></a>
                                 </li>
 
                             </ul>
@@ -94,7 +92,7 @@
                                     <!-- Post -->
                                     <div class="post">
                                         <div class="user-block">
-                                            <img class="img-circle img-bordered-sm" src="<?php dirname(__DIR__) ?>/public/adminLTE/dist/img/user1-128x128.jpg" alt="user image">
+                                            <img class="img-circle img-bordered-sm" src="/adminLTE/dist/img/user1-128x128.jpg" alt="user image">
                                             <span class="username">
                           <a href="#">Jonathan Burke Jr.</a>
                           <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
@@ -127,7 +125,7 @@
                                     <!-- Post -->
                                     <div class="post clearfix">
                                         <div class="user-block">
-                                            <img class="img-circle img-bordered-sm" src="<?php dirname(__DIR__) ?>/public/adminLTE/dist/img/user7-128x128.jpg" alt="User Image">
+                                            <img class="img-circle img-bordered-sm" src="/adminLTE/dist/img/user7-128x128.jpg" alt="User Image">
                                             <span class="username">
                           <a href="#">Sarah Ross</a>
                           <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
@@ -157,7 +155,7 @@
                                     <!-- Post -->
                                     <div class="post">
                                         <div class="user-block">
-                                            <img class="img-circle img-bordered-sm" src="<?php dirname(__DIR__) ?>/public/adminLTE/dist/img/user6-128x128.jpg" alt="User Image">
+                                            <img class="img-circle img-bordered-sm" src="/adminLTE/dist/img/user6-128x128.jpg" alt="User Image">
                                             <span class="username">
                           <a href="#">Adam Jones</a>
                           <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
@@ -167,19 +165,19 @@
                                         <!-- /.user-block -->
                                         <div class="row mb-3">
                                             <div class="col-sm-6">
-                                                <img class="img-fluid" src="<?php dirname(__DIR__) ?>/public/adminLTE/dist/img/photo1.png" alt="Photo">
+                                                <img class="img-fluid" src="/adminLTE/dist/img/photo1.png" alt="Photo">
                                             </div>
                                             <!-- /.col -->
                                             <div class="col-sm-6">
                                                 <div class="row">
                                                     <div class="col-sm-6">
-                                                        <img class="img-fluid mb-3" src="<?php dirname(__DIR__) ?>/public/adminLTE/dist/img/photo2.png" alt="Photo">
-                                                        <img class="img-fluid" src="<?php dirname(__DIR__) ?>/public/adminLTE/dist/img/photo3.jpg" alt="Photo">
+                                                        <img class="img-fluid mb-3" src="/adminLTE/dist/img/photo2.png" alt="Photo">
+                                                        <img class="img-fluid" src="/adminLTE/dist/img/photo3.jpg" alt="Photo">
                                                     </div>
                                                     <!-- /.col -->
                                                     <div class="col-sm-6">
-                                                        <img class="img-fluid mb-3" src="<?php dirname(__DIR__) ?>/public/adminLTE/dist/img/photo4.jpg" alt="Photo">
-                                                        <img class="img-fluid" src="<?php dirname(__DIR__) ?>/public/adminLTE/dist/img/photo1.png" alt="Photo">
+                                                        <img class="img-fluid mb-3" src="/adminLTE/dist/img/photo4.jpg" alt="Photo">
+                                                        <img class="img-fluid" src="/adminLTE/dist/img/photo1.png" alt="Photo">
                                                     </div>
                                                     <!-- /.col -->
                                                 </div>
@@ -301,40 +299,52 @@
                                 <!-- /.tab-pane -->
 
                                 <div class="active tab-pane" id="settings">
-                                    <form class="form-horizontal">
+                                    <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
                                         <div class="form-group row">
-                                            <label for="inputName" class="col-sm-2 col-form-label">First name</label>
+                                            <label for="" class="col-sm-2 col-form-label">First name</label>
                                             <div class="col-sm-10">
-                                                <input type="email" value="<?php echo $prenom;  ?>" name="prenom" class="form-control" id="inputName" placeholder="First Name">
+                                                <input type="text" value="<?= $prenom;  ?>" name="prenom" class="form-control" id="" placeholder="First Name">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="inputName2" class="col-sm-2 col-form-label">Last name</label>
+                                            <label for="" class="col-sm-2 col-form-label">Last name</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="nom" value="<?php echo $nom;  ?>" class="form-control" id="inputName2" placeholder="Last Name">
+                                                <input type="text" name="nom" value="<?= $nom;  ?>" class="form-control" id="" placeholder="Last Name">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                                            <label for="" class="col-sm-2 col-form-label">Email</label>
                                             <div class="col-sm-10">
-                                                <input type="email" name="email" value="<?php echo $email;  ?>" class="form-control" id="inputEmail" placeholder="Email">
+                                                <input type="email" name="email" value="<?= $email;  ?>" class="form-control" id="" placeholder="Email">
                                             </div>
                                         </div>
 
 
                                         <div class="form-group row">
-                                            <label for="inputSkills" class="col-sm-2 col-form-label">Tel</label>
+                                            <label for="" class="col-sm-2 col-form-label">Tel</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="tel" value="<?php echo $tel;  ?>" class="form-control" id="inputSkills" placeholder="Tel">
+                                                <input type="text" name="tel" value="<?= $tel;  ?>" class="form-control" id="" placeholder="Tel">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="inputSkills" class="col-sm-2 col-form-label">Avatar</label>
+                                            <label for="profileImg" class="col-sm-2 col-form-label">Avatar</label>
+
                                             <div class="col-sm-10 ">
-                                                <input type="file" name="avatar" class="form-control" id="inputSkills" placeholder="Avatar">
+                                                <label for="profileImg" class="col-sm-2 col-form-label UploadLabel">Update Picture</label>
+                                                <input type="file" name="pictures[]" class="form-control hiddenInput" id="profileImg" placeholder="Avatar">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="offset-sm-2 col-sm-10">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <a href="/admin/deletePic">Delete </a> my picture
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
 

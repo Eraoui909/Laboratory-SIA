@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
         <img src="/Storage/Statics/images/logoLaboFst(35X35).png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light"><?php echo $lang['dashboard_title']; ?></span>
+        <span class="brand-text font-weight-light"><?= $lang['dashboard_title']; ?></span>
     </a>
 
     <!-- Sidebar -->
@@ -10,10 +10,10 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="<?php echo $_SESSION['token']['avatar'] ?>" class="img-circle elevation-2" alt="User Image">
+                <img src="\Storage\uploads\users\<?= $_SESSION['token']['avatar'] ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="/public/admin/profile" class="d-block"><?php echo  $_SESSION['token']['prenom'] ." ". $_SESSION['token']['nom'] ?></a>
+                <a href="/admin/profile" class="d-block"><?=  $_SESSION['token']['prenom'] ." ". $_SESSION['token']['nom'] ?></a>
             </div>
         </div>
 
@@ -35,10 +35,10 @@
                 <!-- Add icons to the links using the .nav-icon class
       with font-awesome or any other icon font library -->
                 <li class="nav-item menu-open">
-                    <a href="<?php dirname(__DIR__) ?>/public/admin/dashboard" class="nav-link active">
+                    <a href="/admin/dashboard" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            <?php echo $lang['dashboard']; ?>
+                            <?= $lang['dashboard']; ?>
                         </p>
                     </a>
                 </li>
@@ -53,7 +53,7 @@
                     </a>
                     <ul class="nav nav-treeview" style="display: none;">
                         <li class="nav-item">
-                            <a href="/public/admin/enseignant" class="nav-link">
+                            <a href="/admin/enseignant" class="nav-link">
                                 <i class="fa fa-user-tie nav-icon"></i>
                                 <p>Enseignants</p>
                             </a>

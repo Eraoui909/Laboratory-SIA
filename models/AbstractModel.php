@@ -51,16 +51,15 @@ class AbstractModel
 
         $sql = trim($sql, ', ') . ')';
 
-        //print_r($connect);
         $stmt = $connect->prepare($sql);
 
         return $stmt->execute(array());
     }
 
-    public function update($pk)
+    public function update()
     {
         global $connect;
-        $sql = 'UPDATE ' . static::$tableName . ' SET ' . self::PrepareValues() . ' WHERE ' . static::$pk . ' = ' . $pk;
+        $sql = 'UPDATE ' . static::$tableName . ' SET ' . self::PrepareValues() . ' WHERE ' . static::$pk . ' = ' . $this->{static::$pk};
 
         $stmt = $connect->prepare($sql);
 
@@ -183,6 +182,23 @@ class AbstractModel
 
         $stmt = $connect->prepare($sql);
 
+        return $stmt->execute();
+    }
+
+    public static function UpdateColumns($pk, array $data)
+    {
+        global $connect;
+        $sql = 'Update ' . static::$tableName . ' SET ';
+        foreach ($data as $key => $value){
+            $sql .= $key . ' = :' . $key . ', ';
+        }
+
+        $sql = trim($sql, ', ') . ' Where ' . static::$pk . ' = ' . $pk;
+        $stmt = $connect->prepare($sql);
+
+        foreach ($data as $key => $value){
+            $stmt->bindValue(':' . $key, $value);
+        }
         return $stmt->execute();
     }
 }

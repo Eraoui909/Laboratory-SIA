@@ -11,7 +11,7 @@ use PDO;
 class AdminsModel extends AbstractModel
 {
 
-    //public $id;
+    public $id;
     public $nom;
     public $prenom;
     public $email;
@@ -128,8 +128,21 @@ class AdminsModel extends AbstractModel
     public $tel;
     public $avatar;
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
-
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
 
 
 }
