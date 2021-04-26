@@ -26,9 +26,8 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        //unset($_SESSION['auth']);
-        $_SESSION['auth']="hamza";
-        if(!$this->session->hasSession('auth')){
+        unset($_SESSION['token']);
+        if(!$this->session->hasSession('token')){
             return $this->loginPage();
         }
 
