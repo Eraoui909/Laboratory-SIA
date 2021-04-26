@@ -1,6 +1,7 @@
 <?php
 
 use app\Controllers\AdminController;
+use app\Controllers\EnseignantController;
 use app\Controllers\LangController;
 use app\Controllers\SiteController;
 
@@ -18,8 +19,7 @@ if(!isset($_SESSION['lang'])){
 }
 
 $lang = $_SESSION['lang'] . ".php";
-include_once dirname(__DIR__) . "\language\\" . $lang;
-
+include_once dirname(__DIR__) . "\language\\" . $lang;;
 
 /*
  * the app variable is an instance from Application class
@@ -69,6 +69,12 @@ $app->router->get('/admin/logout',[AdminController::class,'logoutHandler']);
 $app->router->get('/admin/profile',[AdminController::class,'profilePage']);
 $app->router->post('/admin/profile',[AdminController::class,'updateProfile']);
 $app->router->get('/admin/deletePic',[AdminController::class,'deletePicture']);
+
+
+$app->router->get('/admin/enseignant',[EnseignantController::class,'enseignantPage']);
+$app->router->post('/admin/enseignant/add',[EnseignantController::class,'ajouterEnseignant']);
+
+
 
 
 

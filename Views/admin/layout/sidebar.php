@@ -43,6 +43,30 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users-cog"></i>
+                        <p>
+                            Chercheurs
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: none;">
+                        <li class="nav-item">
+                            <a href="/admin/enseignant" class="nav-link">
+                                <i class="fa fa-user-tie nav-icon"></i>
+                                <p>Enseignants</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-user-graduate nav-icon"></i>
+                                <p>Doctorants</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
 
             </ul>
         </nav>

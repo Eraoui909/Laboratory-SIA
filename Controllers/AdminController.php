@@ -138,17 +138,17 @@ class AdminController extends Controller
         $adminModel = new AdminsModel();
 
         if (isset($_FILES["pictures"]["error"][1]))
-            $errors['uploads'][0] = "* You can't upload multiple files";
+            $errors['uploads'][] = "* You can't upload multiple files";
 
         if(empty($errors)){
             $upload = $this->UploadFile('users', $data['nom']);
             $errors['uploads'] = $upload['errors'];
 
             if(empty($errors['uploads'])){
-
                 $avatar = $upload['uploaded'][0] ?? $_SESSION['token']['avatar'];
+                $avatar = $upload['uploaded'][0] ?? 'avatar.png';
                 $pass   = $_SESSION['token']['password'];
-                $id   = $_SESSION['token']['id'];
+                $id     = $_SESSION['token']['id'];
 
                 $adminModel->setId($id);
                 $adminModel->setNom($data['nom']);
@@ -172,6 +172,7 @@ class AdminController extends Controller
             }
 
         }
+        
         $session->setFlash("errors", $errors);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
 

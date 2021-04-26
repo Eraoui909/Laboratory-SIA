@@ -303,7 +303,7 @@
 
                                         <div class="row">
                                             <div class="col-sm-2"></div>
-                                            <p class="col-sm-10 error-message"><?= !isset($_SESSION['flash_messages']['errors']['uploads']) ? (($_SESSION['flash_messages']['errors']['value']['prenom'] ?? '')) : ''?></p>
+                                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['prenom'] ?? '')) ?></p>
                                         </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label">First name</label>
@@ -315,7 +315,7 @@
 
                                         <div class="row">
                                             <div class="col-sm-2"></div>
-                                            <p class="col-sm-10 error-message"><?= !isset($_SESSION['flash_messages']['errors']['uploads']) ? (($_SESSION['flash_messages']['errors']['value']['nom'] ?? '')) : ''?></p>
+                                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['nom'] ?? '')) ?></p>
                                         </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label">Last name</label>
@@ -326,7 +326,7 @@
 
                                         <div class="row">
                                             <div class="col-sm-2"></div>
-                                            <p class="col-sm-10 error-message"><?= !isset($_SESSION['flash_messages']['errors']['uploads']) ? (($_SESSION['flash_messages']['errors']['value']['email'] ?? '')) : ''?></p>
+                                            <p class="col-sm-10 error-message"><?= ($_SESSION['flash_messages']['errors']['value']['email'] ?? '') ?></p>
                                         </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label">Email</label>
@@ -345,7 +345,7 @@
 
                                         <div class="row">
                                             <div class="col-sm-2"></div>
-                                            <p class="col-sm-10 error-message"><?= isset($_SESSION['flash_messages']['errors']['uploads']) ? '*' . $_SESSION['flash_messages']['errors']['value']['uploads'][0] ?? '' : ''?></p>
+                                            <p class="col-sm-10 error-message"><?=  ($_SESSION['flash_messages']['errors']['value']['uploads'][0] ?? '') ?></p>
                                         </div>
                                         <div class="form-group row">
                                             <label for="profileImg" class="col-sm-2 col-form-label">Avatar</label>
