@@ -69,7 +69,7 @@ class AdminController extends Controller
 
             }else{
                 $errors[]   = "two passwords must be identical";
-                $session->setFlash("error",$errors);
+                $session->setFlash("error", $errors);
                 header('Location: ' . $_SERVER['HTTP_REFERER']);
             }
         }else{
@@ -127,7 +127,9 @@ class AdminController extends Controller
         return $this->renderAdmin('profile', $_SESSION['token']);
     }
 
-    public function updateProfile(){
+    public function updateProfile()
+    {
+        $session = new Session();
         $validator = new validator();
         $tel = $_POST['tel'] ?? '';
         unset($_POST['tel']);
@@ -135,13 +137,16 @@ class AdminController extends Controller
         $errors = $validator->require($data);
         $adminModel = new AdminsModel();
 
+        if (isset($_FILES["pictures"]["error"][1]))
+            $errors['uploads'][0] = "* You can't upload multiple files";
+
         if(empty($errors)){
             $upload = $this->UploadFile('users', $data['nom']);
             $errors['uploads'] = $upload['errors'];
 
             if(empty($errors['uploads'])){
 
-                $avatar = $upload['uploaded'][0] ?? '/Storage/Statics/images/avatar.png';
+                $avatar = $upload['uploaded'][0] ?? 'avatar.png';
                 $pass   = $_SESSION['token']['password'];
                 $id   = $_SESSION['token']['id'];
 
@@ -166,11 +171,10 @@ class AdminController extends Controller
 
             }
 
-        }else{
-            echo '<pre>';
-            var_dump($errors);
-            echo '</pre>';
         }
+        $session->setFlash("errors", $errors);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+
     }
 
     public function deletePicture(){

@@ -28,6 +28,13 @@
         label.UploadLabel:hover{
             box-shadow: 2px 2px 10px #b1afaf;
         }
+
+        .error-message{
+            color: red;
+            font-size: .9em;
+            margin-bottom: 0;
+        }
+
     </style>
 </head>
 <body class="sidebar-mini layout-fixed layout-navbar-fixed">
