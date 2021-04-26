@@ -24,7 +24,7 @@ class SiteController extends Controller
             "title" => "Contact page",
         ];
 
-        return $this->render('contact',$params);
+        return $this->render('contact', $params);
     }
 
     public function handleContact(Request $request)

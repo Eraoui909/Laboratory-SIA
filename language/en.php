@@ -13,4 +13,6 @@
         "dashboard"                   => "Dashboard",
         "dashboard_title"             => "SIA Laboratory",
 
+        "login"                       => "Login"
+
     );

@@ -14,7 +14,7 @@ use app\models\AdminsModel;
 
 class AdminController extends Controller
 {
-
+    use Helper;
     private $session;
 
 
@@ -52,9 +52,9 @@ class AdminController extends Controller
         $errors     = $validator->require($data);
         if(empty($errors))
         {
-            if($validator->passwordsIdentique($data['password'],$data['password-retype']))
+            if($validator->passwordsIdentique($data['password'], $data['password-retype']))
             {
-                $pass   = Helper::hash_undecrypted_data($data['password']);
+                $pass   = $this->hash_undecrypted_data($data['password']);
                 $avatar = "/Storage/Statics/images/avatar.png";
                 $adminModel->setNom($data['nom']);
                 $adminModel->setPrenom($data['prenom']);
@@ -73,7 +73,7 @@ class AdminController extends Controller
                 header('Location: ' . $_SERVER['HTTP_REFERER']);
             }
         }else{
-            $session->setFlash("error",$errors);
+            $session->setFlash("error", $errors);
             header('Location: ' . $_SERVER['HTTP_REFERER']);
 
         }
@@ -84,13 +84,47 @@ class AdminController extends Controller
         return $this->renderEmpty('admin/login',[]);
     }
 
+    public function loginHandler()
+    {
+        $validator = new Validator();
+        $session   = new Session();
+
+        $data   = $validator->sanitize($_POST);
+        $errors = $validator->require($data);
+
+        if(empty($errors)){
+            $arr = array(
+                'email' => $data['email']
+            );
+
+            if ($result = AdminsModel::getByAllColumns($arr)){
+                if($this->verify_hashed_undecrypted_data($data['password'], $result[0]['password'])){
+
+                    $_SESSION['token'] = $result[0];
+                    $this->redirect('/public/admin/dashboard');
+                }else{
+
+                    $session->setFlash("error", ['wrong password']);
+                    $this->redirect($_SERVER['HTTP_REFERER']);
+                }
+            }
+
+        }else{
+            $session->setFlash("error", $errors);
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+        }
+
+    }
+
     public function profilePage()
     {
         $adminModel = new AdminsModel();
-        $admin = $adminModel->getByPk(4);
+        $admin = $adminModel->getByPk(1);
 
 
         return $this->renderAdmin('profile',$admin[0]);
     }
+
+
 
 }

@@ -1,7 +1,15 @@
 
 
 <div class="content-wrapper">
+<<<<<<< HEAD
 
+=======
+    <?php
+        echo '<pre>';
+        var_dump($_SESSION);
+        echo '</pre>';
+    ?>
+>>>>>>> 3dfbc7be94dc085d9e87c09b57596d1177527562
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">

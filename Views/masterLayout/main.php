@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="<?php dirname(__DIR__) ?>/Storage/Statics/images/logoLaboFst(35X35).png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 
     <title>Framework</title>
 </head>
@@ -24,7 +24,7 @@
 {{ content }}
 
 <script src="../../public/js/jquery.comjquery-3.5.1.min.js"></script>
-<script src="../../public/js/bootstrap.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
 
 
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper)
