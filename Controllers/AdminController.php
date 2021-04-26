@@ -120,12 +120,17 @@ class AdminController extends Controller
     public function profilePage()
     {
         $adminModel = new AdminsModel();
-        $admin = $adminModel->getByPk(1);
+        $admin = $adminModel->getByPk($_SESSION['token']['id']);
 
 
         return $this->renderAdmin('profile',$admin[0]);
     }
 
+    public function logoutHandler()
+    {
+        unset($_SESSION['token']);
+        $this->redirect("/public/admin/login");
+    }
 
 
 }

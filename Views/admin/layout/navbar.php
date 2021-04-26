@@ -38,6 +38,34 @@
             </div>
         </li>
 
+        <!-- Profile Dropdown Menu -->
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="fa fa-person-booth"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a href="#" class="dropdown-item">
+                    <!-- Message Start -->
+                    <div class="media">
+                        <img src="<?php echo $_SESSION['token']['avatar'] ?>" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                        <div class="media-body">
+                            <h3 class="dropdown-item-title">
+                                <?php echo  $_SESSION['token']['prenom'] ." ". $_SESSION['token']['nom'] ?>
+                                <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                            </h3>
+                            <p class="text-sm">Admin of sia laboratory</p>
+                            <p class="text-sm text-muted"><i class="fa fa-clock mr-1"></i> online</p>
+                        </div>
+                    </div>
+                    <!-- Message End -->
+                </a>
+
+
+                <div class="dropdown-divider"></div>
+                <a href="/public/admin/logout" class="dropdown-item dropdown-footer">Log out</a>
+            </div>
+        </li>
+        <!-- End Profile Dropdown Menu -->
 
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
