@@ -16,7 +16,7 @@ class Validator
             //echo gettype($value);
             if(empty($value))
             {
-                $errors[] = $key . " is required";
+                $errors[$key] = '*' . $key . " is required";
             }
         }
         return $errors;

@@ -300,24 +300,38 @@
 
                                 <div class="active tab-pane" id="settings">
                                     <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= !isset($_SESSION['flash_messages']['errors']['uploads']) ? (($_SESSION['flash_messages']['errors']['value']['prenom'] ?? '')) : ''?></p>
+                                        </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label">First name</label>
                                             <div class="col-sm-10">
-                                                <input type="text" value="<?= $prenom;  ?>" name="prenom" class="form-control" id="" placeholder="First Name">
+
+                                                <input type="text" value="<?= $prenom ?>" name="prenom" class="form-control" id="" placeholder="First Name">
                                             </div>
                                         </div>
 
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= !isset($_SESSION['flash_messages']['errors']['uploads']) ? (($_SESSION['flash_messages']['errors']['value']['nom'] ?? '')) : ''?></p>
+                                        </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label">Last name</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="nom" value="<?= $nom;  ?>" class="form-control" id="" placeholder="Last Name">
+                                                <input type="text" name="nom" value="<?= $nom ?>" class="form-control" id="" placeholder="Last Name">
                                             </div>
                                         </div>
 
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= !isset($_SESSION['flash_messages']['errors']['uploads']) ? (($_SESSION['flash_messages']['errors']['value']['email'] ?? '')) : ''?></p>
+                                        </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label">Email</label>
                                             <div class="col-sm-10">
-                                                <input type="email" name="email" value="<?= $email;  ?>" class="form-control" id="" placeholder="Email">
+                                                <input type="email" name="email" value="<?= $email ?>" class="form-control" id="" placeholder="Email">
                                             </div>
                                         </div>
 
@@ -325,13 +339,16 @@
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label">Tel</label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="tel" value="<?= $tel;  ?>" class="form-control" id="" placeholder="Tel">
+                                                <input type="text" name="tel" value="<?= $tel ?>" class="form-control" id="" placeholder="Tel">
                                             </div>
                                         </div>
 
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= isset($_SESSION['flash_messages']['errors']['uploads']) ? '*' . $_SESSION['flash_messages']['errors']['value']['uploads'][0] ?? '' : ''?></p>
+                                        </div>
                                         <div class="form-group row">
                                             <label for="profileImg" class="col-sm-2 col-form-label">Avatar</label>
-
                                             <div class="col-sm-10 ">
                                                 <label for="profileImg" class="col-sm-2 col-form-label UploadLabel">Update Picture</label>
                                                 <input type="file" name="pictures[]" class="form-control hiddenInput" id="profileImg" placeholder="Avatar">
@@ -342,7 +359,7 @@
                                             <div class="offset-sm-2 col-sm-10">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <a href="/admin/deletePic">Delete </a> my picture
+                                                        <a href="/admin/deletePic" class="delete-path">Delete </a> my picture
                                                     </label>
                                                 </div>
                                             </div>
