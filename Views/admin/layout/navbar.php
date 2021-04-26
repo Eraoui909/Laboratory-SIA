@@ -62,7 +62,7 @@
 
 
                 <div class="dropdown-divider"></div>
-                <a href="/public/admin/logout" class="dropdown-item dropdown-footer">Log out</a>
+                <a href="/admin/logout" class="dropdown-item dropdown-footer">Log out</a>
             </div>
         </li>
         <!-- End Profile Dropdown Menu -->
@@ -74,11 +74,11 @@
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <span class="dropdown-item dropdown-header"><?php echo $lang['lang'] ?></span>
                 <div class="dropdown-divider"></div>
-                <a href="<?php dirname(__DIR__) ?>/public/lang/en" class="dropdown-item">
+                <a href="/lang/en" class="dropdown-item">
                     <i class="fas fa-language mr-2"></i> <?php echo $lang['en'] ?>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="<?php dirname(__DIR__) ?>/public/lang/fr" class="dropdown-item">
+                <a href="/lang/fr" class="dropdown-item">
                     <i class="fas fa-language mr-2"></i> <?php echo $lang['fr'] ?>
                 </a>
             </div>
@@ -95,7 +95,7 @@
                 <a href="#" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media">
-                        <img src="../../../public/adminLTE/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                        <img src="/adminLTE/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 Brad Diesel
@@ -111,7 +111,7 @@
                 <a href="#" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media">
-                        <img src="../../../public/adminLTE/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                        <img src="/adminLTE/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 John Pierce
@@ -127,7 +127,7 @@
                 <a href="#" class="dropdown-item">
                     <!-- Message Start -->
                     <div class="media">
-                        <img src="../../../public/adminLTE/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                        <img src="/adminLTE/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                         <div class="media-body">
                             <h3 class="dropdown-item-title">
                                 Nora Silvester

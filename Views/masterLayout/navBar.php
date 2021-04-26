@@ -7,20 +7,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/public/home"> <?php echo $lang['home'] ?> <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/home"> <?= $lang['home'] ?> <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/public/contact"><?php echo $lang['contact'] ?></a>
+                <a class="nav-link" href="/contact"><?= $lang['contact'] ?></a>
             </li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php echo $lang['lang'] ?>
+                    <?= $lang['lang'] ?>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="<?php dirname(__DIR__) ?>/public/lang/en"><?php echo $lang['en'] ?></a>
+                    <a class="dropdown-item" href="/lang/en"><?= $lang['en'] ?></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?php dirname(__DIR__) ?>/public/lang/fr"><?php echo $lang['fr'] ?></a>
+                    <a class="dropdown-item" href="/lang/fr"><?= $lang['fr'] ?></a>
                 </div>
             </li>
 

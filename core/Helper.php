@@ -71,12 +71,11 @@ trait Helper
         return $errors;
     }
 
-    /*
     public function UploadFile($dir, $id)
     {
         $returned['errors'] = array();
         $returned['uploaded'] = array();
-        $directory = PUBLIC_PATH . DS . 'Uploads' . DS . $dir;
+        $directory = dirname(__DIR__) . '/public/Storage/Uploads/' . $dir;
         foreach ($_FILES["pictures"]["error"] as $key => $error) {
             if ($error == UPLOAD_ERR_OK) {
 
@@ -94,13 +93,13 @@ trait Helper
 
 
                 if ($_FILES["pictures"]["size"][$key] > 1000000) {
-                    $returned['errors'][] = "$name : this file depass the maximum size allowed";
+                    $returned['errors'][] = "$name : this file passed the maximum size allowed";
                     continue;
                 }
 
                 $name = uniqid($id) . $name;
 
-                if (move_uploaded_file($tmp_name, $directory . DS . $name)) {
+                if (move_uploaded_file($tmp_name, $directory . '/' . $name)) {
                     $returned['uploaded'][] = $name;
                 }
 
@@ -109,6 +108,6 @@ trait Helper
 
         return $returned;
     }
-    */
+
 
 }

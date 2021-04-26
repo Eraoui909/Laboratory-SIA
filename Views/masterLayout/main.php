@@ -7,7 +7,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="<?php dirname(__DIR__) ?>/Storage/Statics/images/logoLaboFst(35X35).png">
+    <link rel="shortcut icon" href="/public/Storage/Statics/images/logoLaboFst(35X35).png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -23,8 +23,8 @@
 
 {{ content }}
 
-<script src="../../public/js/jquery.comjquery-3.5.1.min.js"></script>
-<script src="/public/js/bootstrap.min.js"></script>
+<script src="/js/jquery.comjquery-3.5.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
 
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper)
