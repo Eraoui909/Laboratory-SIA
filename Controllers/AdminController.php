@@ -22,8 +22,12 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        if(!$this->session->hasSession('token')){
+        if(!$this->session->hasSession('token')) {
             $this->redirect('/public/admin/login');
+        }
+        
+        if(!$this->session->hasSession('token')){
+            return $this->loginPage();
         }
 
         return $this->renderAdmin('layout/contentWraper', []);
