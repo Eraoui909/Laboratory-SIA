@@ -15,8 +15,8 @@ class EnseignantController extends Controller
     use Helper;
     public function enseignantPage()
     {
-
-        return $this->renderAdmin('enseignant',[]);
+        $data = EnseignantModel::getAll();
+        return $this->renderAdmin('enseignant', $data);
     }
 
     public function ajouterEnseignant()

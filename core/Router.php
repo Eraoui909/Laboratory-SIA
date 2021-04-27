@@ -140,13 +140,12 @@ class Router
      */
     protected function viewAdmin($view, $params)
     {
-        foreach ($params as $key => $value)
-        {
-            $$key = $value;
-            //echo $key ." ".$value."<br>";
+        if(!is_array($params[0]))
+            foreach ($params as $key => $value)
+            {
+                $$key = $value;
+            }
 
-        };
-        //exit();
         ob_start();
         if(file_exists($this->ROOT_PATH . "/Views/admin/".$view.".php")){
             include_once $this->ROOT_PATH . "/Views/admin/".$view.".php";

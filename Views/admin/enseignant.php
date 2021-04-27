@@ -1,10 +1,5 @@
 
-<?php
-
-use app\models\EnseignantModel;
-$enseignant = new EnseignantModel();
-$data = $enseignant->getAll();
-?>
+<?php $data = $params;?>
 
 <div class="content-wrapper">
 
