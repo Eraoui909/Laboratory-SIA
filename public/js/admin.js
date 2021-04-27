@@ -7,10 +7,14 @@ $(document).ready(function()
         "lengthChange": false,
         buttons: [
             { extend: 'copy', className: 'datatableButton' },
-            { extend: 'csv', className: 'datatableButton' },
-            { extend: 'excel', className: 'datatableButton' },
-            { extend: 'pdf', className: 'datatableButton' },
-            { extend: 'print', className: 'datatableButton' },
+            { extend: 'csv', className: 'datatableButton',title: "SIA Laboratory" },
+            { extend: 'excel', className: 'datatableButton',title: "SIA Laboratory" },
+            { extend: 'pdf', className: 'datatableButton',title: "SIA Laboratory" },
+            {
+                extend: 'print',
+                className: 'datatableButton',
+                title: "SIA Laboratory"
+            },
         ]
     }).buttons().container().appendTo('#card-ens-doc .col-md-6:eq(0)');
 
