@@ -50,5 +50,5 @@
 
 
 <!-- this script is for enseignant page -->
-<script src="/js/enseigntView.js"></script>
+<script src="/js/admin.js"></script>
 <script src="/adminLTE/dist/js/pages/dashboard.js"></script>
