@@ -52,4 +52,61 @@ class EnseignantController extends Controller
         exit();
     }
 
+    public function modifierEnseignant()
+    {
+        $errors     = array();
+        $validator  = new Validator();
+        $data       = $validator->sanitize($_POST);
+        $params     = array();
+        if(empty($data['password']))
+        {
+            $errors['error']   = $validator->require(["prenom" => $data['prenom'],"nom" =>$data['nom'],"email" =>$data['email']]);
+            if(empty($errors['error']))
+            {
+                $params = [
+                    "prenom"=> $data['prenom'],
+                    "nom"   => $data['nom'],
+                    "email" => $data['email'],
+                ];
+            }
+        }else{
+            $errors['error']   = $validator->require($data);
+            if(empty($errors['error']))
+            {
+                $params = [
+                    "prenom"=> $data['prenom'],
+                    "nom"   => $data['nom'],
+                    "email" => $data['email'],
+                    "password" => $this->hash_undecrypted_data($data['password']),
+                ];
+            }
+        }
+
+
+        if(!empty($errors['error']))
+        {
+            $errors = json_encode($errors);
+            echo  $errors;
+        }else{
+
+            if(EnseignantModel::UpdateColumns($data['id'],$params))
+            {
+                echo json_encode("succes");
+            }else{
+                echo json_encode("error");
+            };
+        }
+
+    }
+
+    public function deleteEnseignant()
+    {
+        $query = "DELETE FROM enseignant WHERE id=".$_POST['id'];
+        if(EnseignantModel::executeQuery($query))
+        {
+            echo json_encode("success");
+        }else{
+            echo json_encode("error");
+        }
+    }
 }

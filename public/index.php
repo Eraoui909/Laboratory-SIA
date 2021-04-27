@@ -73,6 +73,8 @@ $app->router->get('/admin/deletePic',[AdminController::class,'deletePicture']);
 
 $app->router->get('/admin/enseignant',[EnseignantController::class,'enseignantPage']);
 $app->router->post('/admin/enseignant/add',[EnseignantController::class,'ajouterEnseignant']);
+$app->router->post('/admin/enseignant/modify',[EnseignantController::class,'modifierEnseignant']);
+$app->router->post('/admin/enseignant/delete',[EnseignantController::class,'deleteEnseignant']);
 
 
 

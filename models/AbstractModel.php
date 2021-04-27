@@ -118,7 +118,7 @@ class AbstractModel
         global $handler;
         $sql = 'DELETE FROM ' . static::$tableName . ' WHERE ' . static::$pk . ' = ' . $pk;
         $stmt = $handler->prepare($sql);
-        return $stmt->execute(array());
+        return $sql->execute();
     }
 
     public static function getByColumns(array $cols){

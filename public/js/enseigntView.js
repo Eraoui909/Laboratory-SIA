@@ -45,7 +45,7 @@ $(document).ready(function(){
                console.log(data);
                if(typeof data == "object") {
                    data.error.forEach(function (err) {
-                       errors += "<div class='alert alert-danger'>" + err + "</div>";
+                       errors += "<div class='alert alert-danger' style='padding: 5px'>" + err + "</div>";
                        $(".msg-add-enseignant").html(errors);
                    });
                }
@@ -63,10 +63,14 @@ $(document).ready(function(){
     });
 
     /**
-     * modifier enseeignant
+     * modifier enseignant
      */
     $(".modify-enseignant-btn").on("click",function (){
         $("#modal-modify-enseignant").css("display","block");
+        $(".input-modify-prenom").attr("value",$(this).attr("data-prenom"));
+        $(".input-modify-nom").attr("value",$(this).attr("data-nom"));
+        $(".input-modify-email").attr("value",$(this).attr("data-email"));
+        $(".input-modify-id").attr("value",$(this).attr("data-id"));
     });
 
     $("#modal-modify-enseignant-close").on("click",function (){
@@ -79,6 +83,61 @@ $(document).ready(function(){
 
     $('#modal-modify-enseignant-modify-btn').on("click",function (e){
         e.preventDefault();
-        alert("cliked");
+        let errors="";
+        let data    = $(".form-modify-enseignat").serialize();
+        $.ajax({
+            type:"post",
+            url:"/admin/enseignant/modify",
+            data:data,
+            dataType:"json",
+            success: function (msg)
+            {
+                console.log(msg);
+                if(typeof msg == "object")
+                {
+                    Object.values(msg.error).forEach(function (err) {
+                        errors += "<div class='alert alert-danger' style='padding: 5px'>" + err + "</div>";
+                        $(".msg-modify-enseignant").html(errors);
+                    });
+                }
+                if(typeof msg == "string")
+                {
+                    $("#modal-modify-enseignant-add-btn").attr("disabled","disabled");
+                    $(".msg-modify-enseignant").html("");
+                    $(".msg-modify-enseignant").html("<div class='alert alert-success'>Enseignant modified with success</div>");
+                    setTimeout(function (){
+                        window.location.replace("/admin/enseignant");
+                    },2000);
+                }
+            }
+        })
+    });
+
+    /**
+     * delete enseignant
+     */
+
+    $(".delete-enseignant-btn").on("click",function (e){
+        e.preventDefault();
+        let bool = confirm("are u sire ?");
+        let data = "id="+$(this).attr("data-id");
+        if(bool)
+        {
+            $.ajax({
+                type:"post",
+                url:"/admin/enseignant/delete",
+                data:data,
+                dataType:"json",
+                success:function (data){
+                    if(typeof data == "string")
+                    {
+
+                        setTimeout(function (){
+                            window.location.replace("/admin/enseignant");
+                        },1000);
+                    }
+                }
+            })
+        }
     });
 });

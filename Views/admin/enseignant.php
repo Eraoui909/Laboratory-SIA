@@ -88,7 +88,8 @@
                 <div class="modal-body">
                     <form action="/admin/enseignant/modify" class="form-modify-enseignat" method="post">
                         <div class="input-group mb-3">
-                            <input type="text" name="prenom" class="form-control" placeholder="First name">
+                            <input type="hidden" name="id" class="form-control input-modify-id" placeholder=>
+                            <input type="text" name="prenom" class="form-control input-modify-prenom" placeholder="First name">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-user"></span>
@@ -96,7 +97,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" name="nom" class="form-control" placeholder="Last name">
+                            <input type="text" name="nom" class="form-control input-modify-nom"  placeholder="Last name">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-user"></span>
@@ -104,7 +105,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" name="email" class="form-control" placeholder="Email">
+                            <input type="text" name="email" class="form-control input-modify-email" placeholder="Email">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-envelope"></span>
@@ -170,7 +171,12 @@
                         <td><?php echo $ens['tel'] ?></td>
                         <td><img width="45px" height="40px" src="\Storage\uploads\users\<?php echo $ens['avatar'] ?>" alt="ensignant picture"> </td>
                         <td>
-                            <button class="btn-sm btn-success modify-enseignant-btn" data-id="<?php echo $ens['id'] ?>">
+                            <button class="btn-sm btn-success modify-enseignant-btn"
+                                    data-prenom="<?php echo $ens['prenom'] ?>"
+                                    data-id="<?php echo $ens['id'] ?>"
+                                    data-nom="<?php echo $ens['nom'] ?>"
+                                    data-tel="<?php echo $ens['tel'] ?>"
+                                    data-email="<?php echo $ens['email'] ?>">
                                 <i class="fa fa-edit"></i>
                                 <span> Modify</span>
                             </button>
