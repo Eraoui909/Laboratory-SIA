@@ -4,7 +4,6 @@ namespace app\Controllers;
 
 use app\core\Controller;
 use app\core\Helper;
-use app\core\Request;
 use app\core\Session;
 use app\core\Validator;
 use app\models\AdminsModel;
@@ -40,8 +39,7 @@ class AdminController extends Controller
 
     public function registerAdmin()
     {
-        global $lang;
-        $errors = array();
+        //$errors = array();
         $session    = new Session();
         $validator  = new Validator();
         $adminModel = new AdminsModel();
@@ -121,9 +119,6 @@ class AdminController extends Controller
 
     public function profilePage()
     {
-        $adminModel = new AdminsModel();
-
-
         return $this->renderAdmin('profile', $_SESSION['token']);
     }
 
@@ -138,7 +133,7 @@ class AdminController extends Controller
         $adminModel = new AdminsModel();
 
         if (isset($_FILES["pictures"]["error"][1]))
-            $errors['uploads'][0] = "* You can't upload multiple files";
+            $errors['uploads'][] = "* You can't upload multiple files";
 
         if(empty($errors)){
             $upload = $this->UploadFile('users', $data['nom']);
@@ -146,7 +141,6 @@ class AdminController extends Controller
 
             if(empty($errors['uploads'])){
 
-                $avatar = $upload['uploaded'][0] ?? 'avatar.png';
                 $avatar = $upload['uploaded'][0] ?? $_SESSION['token']['avatar'];
                 $pass   = $_SESSION['token']['password'];
                 $id     = $_SESSION['token']['id'];
@@ -173,6 +167,7 @@ class AdminController extends Controller
             }
 
         }
+        
         $session->setFlash("errors", $errors);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
 

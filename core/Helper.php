@@ -86,16 +86,17 @@ trait Helper
 
                 $legalExt = array('jpg', 'jpge', 'png', 'gif');
 
+                if ($_FILES["pictures"]["size"][$key] > 1000000) {
+                    $returned['errors'][] = "$name : this file passed the maximum size allowed";
+                    continue;
+                }
+
                 if (!in_array($ext, $legalExt)) {
                     $returned['errors'][] = "$name : this type of files is not allowed";
                     continue;
                 }
 
 
-                if ($_FILES["pictures"]["size"][$key] > 1000000) {
-                    $returned['errors'][] = "$name : this file passed the maximum size allowed";
-                    continue;
-                }
 
                 $name = uniqid($id) . $name;
 

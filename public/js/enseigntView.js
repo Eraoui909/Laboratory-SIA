@@ -28,6 +28,10 @@ $(document).ready(function(){
         $("#modal-add-enseignant").css("display","none");
     });
 
+    /**
+     * ajouter enseignant
+     */
+
     $("#modal-add-enseignant-add-btn").on("click",function (e){
        e.preventDefault();
        let data = $(".form-add-enseignat").serialize();
@@ -58,4 +62,23 @@ $(document).ready(function(){
        });
     });
 
+    /**
+     * modifier enseeignant
+     */
+    $(".modify-enseignant-btn").on("click",function (){
+        $("#modal-modify-enseignant").css("display","block");
+    });
+
+    $("#modal-modify-enseignant-close").on("click",function (){
+        $("#modal-modify-enseignant").css("display","none");
+    });
+
+    $("#modal-modify-enseignant-close-btn").on("click",function (){
+        $("#modal-modify-enseignant").css("display","none");
+    });
+
+    $('#modal-modify-enseignant-modify-btn').on("click",function (e){
+        e.preventDefault();
+        alert("cliked");
+    });
 });

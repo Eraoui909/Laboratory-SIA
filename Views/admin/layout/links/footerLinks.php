@@ -1,8 +1,6 @@
 <!-- jQuery -->
 <script src="/adminLTE/plugins/jquery/jquery.min.js"></script>
 <script src="/js/jquery.comjquery-3.5.1.min.js"></script>
-<script src="/adminLTE/plugins/jquery/jquery.min.js"></script>
->>>>>>> 5adda1568aa832b410e110f02e072fbd0a93c574
 <!-- jQuery UI 1.11.4 -->
 <script src="/adminLTE/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
