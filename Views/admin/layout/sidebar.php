@@ -48,7 +48,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-users-cog"></i>
                         <p>
-                            Chercheurs
+                            <?= $lang['searchers']?>
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -56,13 +56,13 @@
                         <li class="nav-item">
                             <a href="/admin/enseignant" class="nav-link">
                                 <i class="fa fa-user-tie nav-icon"></i>
-                                <p>Enseignants</p>
+                                <p><?= $lang['enseignant']?></p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/admin/doctorant" class="nav-link">
                                 <i class="fa fa-user-graduate nav-icon"></i>
-                                <p>Doctorants</p>
+                                <p><?= $lang['doctorant']?></p>
                             </a>
                         </li>
                     </ul>

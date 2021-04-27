@@ -19,8 +19,8 @@ if(!isset($_SESSION['lang'])){
     $_SESSION['lang'] = "en";
 }
 
-$lang = $_SESSION['lang'] . ".php";
-include_once dirname(__DIR__) . "\language\\" . $lang;;
+$langFile = $_SESSION['lang'] . ".php";
+include_once dirname(__DIR__) . "\language\\" . $langFile;
 
 /*
  * the app variable is an instance from Application class

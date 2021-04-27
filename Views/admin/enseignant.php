@@ -1,5 +1,5 @@
 
-<?php $data = $params;?>
+<?php $data = $params; global $lang;?>
 
 <div class="content-wrapper">
 
@@ -7,7 +7,7 @@
         <div class="modal-dialog modal-lg" id="modal-add-enseignant-doctorant">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Ajouter Enseignant</h4>
+                    <h4 class="modal-title"><?= $lang['add'] . ' ' . $lang['enseignant']?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" id="modal-add-enseignant-doctorant-close">×</span>
                     </button>
@@ -20,7 +20,7 @@
                 <div class="modal-body">
                         <form action="/admin/enseignant/add" class="form-add-enseignant-doctorant" method="post">
                             <div class="input-group mb-3">
-                                <input type="text" name="prenom" class="form-control" placeholder="First name">
+                                <input type="text" name="prenom" class="form-control" placeholder="<?=$lang['firstName']?>">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-user"></span>
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <div class="input-group mb-3">
-                                <input type="text" name="nom" class="form-control" placeholder="Last name">
+                                <input type="text" name="nom" class="form-control" placeholder="<?=$lang['lastName']?>">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-user"></span>
@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="input-group mb-3">
-                                <input type="password" name="password" class="form-control" placeholder="Password">
+                                <input type="password" name="password" class="form-control" placeholder="<?=$lang['password']?>">
                                 <div class="input-group-append">
                                     <div class="input-group-text">
                                         <span class="fas fa-lock"></span>
@@ -56,8 +56,8 @@
 
                                 <!-- /.col -->
                                 <div class="modal-footer justify-content-between">
-                                    <button type="button" class="btn btn-default" id="modal-add-enseignant-doctorant-close-btn" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary" id="modal-add-enseignant-add-btn">Ajouter</button>
+                                    <button type="button" class="btn btn-default" id="modal-add-enseignant-doctorant-close-btn" data-dismiss="modal"><?=$lang['close']?></button>
+                                    <button type="submit" class="btn btn-primary" id="modal-add-enseignant-add-btn"><?= $lang['add'] ?></button>
                                 </div>
                                 <!-- /.col -->
                             </div>
@@ -75,7 +75,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Modifier Enseignant</h4>
+                    <h4 class="modal-title"><?=$lang['modify'] . ' ' . $lang['enseignant']?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" id="modal-modify-enseignant-doctorant-close">×</span>
                     </button>
@@ -89,7 +89,7 @@
                     <form action="" class="form-modify-enseignat" method="post">
                         <div class="input-group mb-3">
                             <input type="hidden" name="id" class="form-control input-modify-id" placeholder=>
-                            <input type="text" name="prenom" class="form-control input-modify-prenom" placeholder="First name">
+                            <input type="text" name="prenom" class="form-control input-modify-prenom" placeholder="<?=$lang['firstName']?>">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-user"></span>
@@ -97,7 +97,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" name="nom" class="form-control input-modify-nom"  placeholder="Last name">
+                            <input type="text" name="nom" class="form-control input-modify-nom"  placeholder="<?=$lang['lastName']?>">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-user"></span>
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" name="password" class="form-control" placeholder="Password">
+                            <input type="password" name="password" class="form-control" placeholder="<?=$lang['password']?>">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-lock"></span>
@@ -125,8 +125,8 @@
 
                             <!-- /.col -->
                             <div class="modal-footer justify-content-between">
-                                <button type="button" class="btn btn-default" id="modal-modify-enseignant-doctorant-close-btn" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-success" id="modal-modify-enseignant-modify-btn">Modify</button>
+                                <button type="button" class="btn btn-default" id="modal-modify-enseignant-doctorant-close-btn" data-dismiss="modal"><?=$lang['close']?></button>
+                                <button type="submit" class="btn btn-success" id="modal-modify-enseignant-modify-btn"><?=$lang['modify']?></button>
                             </div>
                             <!-- /.col -->
                         </div>
@@ -144,21 +144,21 @@
     <div class="card" id="card-ens-doc">
         <div class="card-header">
             <div class="card-title">
-                <h3>Enseignants</h3>
+                <h3><?=$lang['enseignant']?>s</h3>
             </div>
                 <button class="btn btn-info" id="add-enseignant-doctorant-btn" style="margin-left: 20px;cursor: pointer;">
-                    Ajouter enseignant
+                    <?=$lang['add'] . ' ' . $lang['enseignant']?>
                 </button>
         </div>
         <div class="card-body">
             <table id="enseignant-doctorant-table" class="display" style="width:100%">
                 <thead>
                 <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
+                    <th><?=$lang['firstName']?></th>
+                    <th><?=$lang['lastName']?></th>
                     <th>Email</th>
-                    <th>Tel</th>
-                    <th>Avatar</th>
+                    <th><?=$lang['phone']?></th>
+                    <th><?=$lang['avatar']?></th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -178,11 +178,11 @@
                                     data-tel="   <?= $ens['tel']    ?>"
                                     data-email=" <?= $ens['email']  ?>">
                                 <i class="fa fa-edit"></i>
-                                <span> Modify</span>
+                                <span> <?=$lang['modify']?></span>
                             </button>
                             <button class="btn-sm btn-danger btn-sm delete-enseignant-btn" data-id="<?= $ens['id'] ?>">
                                 <i class="fa fa-trash"></i>
-                                <span> Delete</span>
+                                <span> <?=$lang['delete']?></span>
                             </button>
                         </td>
                     </tr>
