@@ -73,6 +73,7 @@ trait Helper
 
     public function UploadFile($dir, $id)
     {
+        global $lang;
         $returned['errors'] = array();
         $returned['uploaded'] = array();
         $directory = dirname(__DIR__) . '/public/Storage/Uploads/' . $dir;
@@ -87,12 +88,12 @@ trait Helper
                 $legalExt = array('jpg', 'jpge', 'png', 'gif');
 
                 if ($_FILES["pictures"]["size"][$key] > 1000000) {
-                    $returned['errors'][] = "$name : this file passed the maximum size allowed";
+                    $returned['errors'][] = "$name : ".$lang['file_size_error'];
                     continue;
                 }
 
                 if (!in_array($ext, $legalExt)) {
-                    $returned['errors'][] = "$name : this type of files is not allowed";
+                    $returned['errors'][] = "$name : ".$lang['file_type_error'];
                     continue;
                 }
 

@@ -5,7 +5,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="index3.html" class="nav-link">Home</a>
+            <a href="index3.html" class="nav-link"><?php echo $lang['home']?></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="#" class="nav-link">Contact</a>
@@ -15,29 +15,6 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
 
-
-        <!-- Navbar Search
-        <li class="nav-item">
-            <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                <i class="fas fa-search"></i>
-            </a>
-            <div class="navbar-search-block">
-                <form class="form-inline">
-                    <div class="input-group input-group-sm">
-                        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-navbar" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                            <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </li>
-        -->
 
         <!-- Profile Dropdown Menu -->
         <li class="nav-item dropdown">
@@ -50,12 +27,12 @@
                     <div class="media">
                         <img src="\Storage\uploads\users\<?php echo $_SESSION['token']['avatar'] ?>" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                         <div class="media-body">
-                            <h3 class="dropdown-item-title">
-                                <?php echo  $_SESSION['token']['prenom'] ." ". $_SESSION['token']['nom'] ?>
-                                <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                            </h3>
-                            <p class="text-sm">Admin of sia laboratory</p>
-                            <p class="text-sm text-muted"><i class="fa fa-clock mr-1"></i> online</p>
+                                <h3 class="dropdown-item-title">
+                                    <?php echo  $_SESSION['token']['prenom'] ." ". $_SESSION['token']['nom'] ?>
+                                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                                </h3>
+                                <p class="text-sm"><?php echo $lang['admin_status'] ?></p>
+                                <p class="text-sm text-muted"><i class="fa fa-clock mr-1"></i> online</p>
                         </div>
                     </div>
                     <!-- Message End -->
@@ -63,7 +40,7 @@
 
 
                 <div class="dropdown-divider"></div>
-                <a href="/admin/logout" class="dropdown-item dropdown-footer">Log out</a>
+                <a href="/admin/logout" class="dropdown-item dropdown-footer"><?php echo $lang['logout'] ?></a>
             </div>
         </li>
         <!-- End Profile Dropdown Menu -->

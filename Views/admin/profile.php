@@ -1,4 +1,4 @@
-
+<?php global $lang;?>
 <!-- Content Wrapper. Contains profile content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -6,12 +6,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Profile</h1>
+                    <h1><?php echo $lang['profile'] ?></h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">User Profile</li>
+                        <li class="breadcrumb-item"><a href="#"><?php echo $lang['home'] ?></a></li>
+                        <li class="breadcrumb-item active"><?php echo $lang['profile'] ?></li>
                     </ol>
                 </div>
             </div>
@@ -35,7 +35,7 @@
 
                             <h3 class="profile-username text-center"><?= $prenom ." ". $nom;  ?></h3>
 
-                            <p class="text-muted text-center">Software Engineer</p>
+                            <p class="text-muted text-center"><?php echo $lang['admin_specialite'] ?></p>
 
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
@@ -55,21 +55,21 @@
                     <!-- About Me Box -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">About Me</h3>
+                            <h3 class="card-title"><?php echo $lang['aboutMe'] ?></h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <strong><i class="fas fa-book mr-1"></i> Education</strong>
+                            <strong><i class="fas fa-book mr-1"></i> <?php echo $lang['education'] ?></strong>
 
                             <p class="text-muted">
-                                B.S. in Computer Science from USMBA
+                                <?php echo $lang['degree'] ?>
                             </p>
 
                             <hr>
 
-                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+                            <strong><i class="fas fa-map-marker-alt mr-1"></i> <?php echo $lang['location'] ?></strong>
 
-                            <p class="text-muted">Morocco, Fes</p>
+                            <p class="text-muted"><?php echo $lang['locationCity'] ?></p>
 
                         </div>
                         <!-- /.card-body -->
@@ -83,7 +83,7 @@
                             <ul class="nav nav-pills">
                                 <li class="nav-item"><a class="nav-link " href="#activity" data-toggle="tab">Activity</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Timeline</a></li>
-                                <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Settings</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab"><?php echo $lang['settings'] ?></a></li>
                             </ul>
                         </div><!-- /.card-header -->
                         <div class="card-body">
@@ -306,7 +306,7 @@
                                             <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['prenom'] ?? '')) ?></p>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="" class="col-sm-2 col-form-label">First name</label>
+                                            <label for="" class="col-sm-2 col-form-label"><?php echo $lang['firstName'] ?></label>
                                             <div class="col-sm-10">
 
                                                 <input type="text" value="<?= $prenom ?>" name="prenom" class="form-control" id="" placeholder="First Name">
@@ -318,7 +318,7 @@
                                             <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['nom'] ?? '')) ?></p>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="" class="col-sm-2 col-form-label">Last name</label>
+                                            <label for="" class="col-sm-2 col-form-label"><?php echo $lang['lastName'] ?></label>
                                             <div class="col-sm-10">
                                                 <input type="text" name="nom" value="<?= $nom ?>" class="form-control" id="" placeholder="Last Name">
                                             </div>
@@ -348,9 +348,9 @@
                                             <p class="col-sm-10 error-message"><?=  ($_SESSION['flash_messages']['errors']['value']['uploads'][0] ?? '') ?></p>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="profileImg" class="col-sm-2 col-form-label">Avatar</label>
+                                            <label for="profileImg" class="col-sm-2 col-form-label"><?php echo $lang['avatar'] ?></label>
                                             <div class="col-sm-10 ">
-                                                <label for="profileImg" class="col-sm-2 col-form-label UploadLabel">Update Picture</label>
+                                                <label for="profileImg" class="col-sm-2 col-form-label UploadLabel"><?php echo $lang['updatePic'] ?></label>
                                                 <input type="file" name="pictures[]" class="form-control hiddenInput" id="profileImg" placeholder="Avatar">
                                             </div>
                                         </div>
@@ -359,24 +359,16 @@
                                             <div class="offset-sm-2 col-sm-10">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <a href="/admin/deletePic" class="delete-path">Delete </a> my picture
+                                                        <a href="/admin/deletePic" class="delete-path"> <?php echo $lang['deletePic'] ?></a>
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
 
+
                                         <div class="form-group row">
                                             <div class="offset-sm-2 col-sm-10">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="offset-sm-2 col-sm-10">
-                                                <button type="submit" class="btn btn-danger">Submit</button>
+                                                <button type="submit" class="btn btn-danger"><?php echo $lang['submit'] ?></button>
                                             </div>
                                         </div>
                                     </form>

@@ -7,6 +7,8 @@ use app\core\Helper;
 use app\core\Session;
 use app\core\Validator;
 use app\models\AdminsModel;
+use app\models\DoctorantModel;
+use app\models\EnseignantModel;
 
 class AdminController extends Controller
 {
@@ -24,12 +26,13 @@ class AdminController extends Controller
         if(!$this->session->hasSession('token')) {
             $this->redirect('/admin/login');
         }
-
-        if(!$this->session->hasSession('token')){
-            return $this->loginPage();
-        }
-
-        return $this->renderAdmin('layout/contentWraper', []);
+        $nbrOfDoctorant = DoctorantModel::getCountTable();
+        $nbrOfEnseignant = EnseignantModel::getCountTable();
+        $params = [
+            "nbrOfDoctorant" => $nbrOfDoctorant,
+            "nbrOfEnseignant"=> $nbrOfEnseignant,
+        ];
+        return $this->renderAdmin('layout/contentWraper', $params);
     }
 
     public function registerPage()

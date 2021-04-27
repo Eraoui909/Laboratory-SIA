@@ -201,4 +201,18 @@ class AbstractModel
         }
         return $stmt->execute();
     }
+
+    public static function getCountTable()
+    {
+        global $connect;
+        $sql = 'SELECT count(*) FROM ' . static::$tableName;
+        $stmt = $connect->prepare($sql);
+        $stmt->execute();
+        $results = $stmt->fetchColumn();
+        if(isset($results) && !empty($results)){
+            return $results;
+        }else{
+            return false;
+        }
+    }
 }
