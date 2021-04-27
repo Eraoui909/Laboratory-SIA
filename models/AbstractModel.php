@@ -121,7 +121,7 @@ class AbstractModel
         return $stmt->execute(array());
     }
 
-    static public function getByColumns(array $cols){
+    public static function getByColumns(array $cols){
 
         global $connect;
         $sql = 'SELECT * FROM ' . static::$tableName . ' WHERE ';
