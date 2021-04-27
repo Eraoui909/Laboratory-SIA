@@ -6,7 +6,7 @@ namespace app\models;
 
 use PDO;
 
-class EnseignantModel extends AbstractModel
+class DoctorantModel extends AbstractModel
 {
     public $id;
     public $nom;
@@ -14,7 +14,7 @@ class EnseignantModel extends AbstractModel
     public $email;
     public $password;
 
-    public static $tableName    ='enseignant';
+    public static $tableName    ='doctorant';
     public static $pk           ='id';
     public static $tableSchema  =array(
 

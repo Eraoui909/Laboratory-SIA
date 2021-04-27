@@ -1,6 +1,7 @@
 <?php
 
 use app\Controllers\AdminController;
+use app\Controllers\DoctorantController;
 use app\Controllers\EnseignantController;
 use app\Controllers\LangController;
 use app\Controllers\SiteController;
@@ -73,6 +74,9 @@ $app->router->get('/admin/deletePic',[AdminController::class,'deletePicture']);
 
 $app->router->get('/admin/enseignant',[EnseignantController::class,'enseignantPage']);
 $app->router->post('/admin/enseignant/add',[EnseignantController::class,'ajouterEnseignant']);
+
+$app->router->get('/admin/doctorant',[DoctorantController::class,'doctorantPage']);
+$app->router->post('/admin/doctorant/add',[DoctorantController::class,'ajouterDoctorant']);
 
 
 

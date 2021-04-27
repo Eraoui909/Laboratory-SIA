@@ -138,9 +138,9 @@ class Router
      * @param $params       //the params must be one dimensional array
      * @return false|string
      */
-    protected function viewAdmin($view, $params)
+    protected function viewAdmin($view, $params = [])
     {
-        if(!is_array($params[0]))
+        if(is_array($params) && !is_array(array_values($params)[0]))
             foreach ($params as $key => $value)
             {
                 $$key = $value;

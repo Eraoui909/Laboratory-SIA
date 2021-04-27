@@ -59,7 +59,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/admin/doctorant" class="nav-link">
                                 <i class="fa fa-user-graduate nav-icon"></i>
                                 <p>Doctorants</p>
                             </a>
