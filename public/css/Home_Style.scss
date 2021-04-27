@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=Poppins:wght@300;700&display=swap');
+
+
+@import 'General_style.scss';
+
+body{
+  @import "header_slider";
+
+}
+
+@import "Annimations";

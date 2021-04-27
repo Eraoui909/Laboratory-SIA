@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=Poppins:wght@300;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #3c3c3c;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.flex {
+  display: flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+body .header {
+  position: relative;
+  height: calc(80vh - 100px);
+  overflow: hidden;
+}
+body .header .slider {
+  background-position: center;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+body .header .slider1 {
+  background-image: url("/Storage/Statics/images/header1.jpg");
+}
+body .header .slider2 {
+  background-image: url("/Storage/Statics/images/header2.jpg");
+}
+body .header .slider3 {
+  background-image: url("/Storage/Statics/images/header3.jpg");
+}
+body .header .slider.active {
+  display: block;
+  animation: show-slider 2s;
+}
+body .header .pagination {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-transform: translateX(-50%);
+}
+body .header .pagination ul li {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #fff;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 3px;
+}
+body .header .pagination ul li:hover {
+  background-color: #fff;
+}
+body .header .pagination ul li.active {
+  background-color: #fff;
+}
+
+@-webkit-keyframes show-slider {
+  0% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -moz-opacity: 1;
+    opacity: 1;
+  }
+}
+@keyframes show-slider {
+  0% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -moz-opacity: 1;
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=Home_Style.css.map */
