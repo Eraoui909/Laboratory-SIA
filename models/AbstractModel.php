@@ -68,10 +68,10 @@ class AbstractModel
         return $stmt->execute();
     }
 
-    public function delete($pk)
+    public static function delete($pk)
     {
         global $connect;
-        $sql = 'DELETE FROM ' . static::$tableName . ' WHERE ' . static::$pk . ' = ' . $pk;
+        $sql = "DELETE FROM " . static::$tableName . " WHERE " . static::$pk . " = " . $pk ;
         $stmt = $connect->prepare($sql);
         return $stmt->execute(array());
     }
@@ -118,7 +118,7 @@ class AbstractModel
         global $handler;
         $sql = 'DELETE FROM ' . static::$tableName . ' WHERE ' . static::$pk . ' = ' . $pk;
         $stmt = $handler->prepare($sql);
-        return $stmt->execute(array());
+        return $sql->execute();
     }
 
     public static function getByColumns(array $cols){

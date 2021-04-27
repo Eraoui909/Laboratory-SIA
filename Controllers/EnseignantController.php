@@ -52,4 +52,41 @@ class EnseignantController extends Controller
         exit();
     }
 
+    public function modifierEnseignant()
+    {
+        $errors     = array();
+        $validator  = new Validator();
+        $data       = $validator->sanitize($_POST);
+
+        if(empty($data['password']))
+            unset($data['password']);
+
+        $errors     = $validator->require($data);
+
+        if(!empty($errors))
+        {
+            $errors = json_encode($errors);
+            echo  $errors;
+        }else{
+
+            if(EnseignantModel::UpdateColumns($data['id'], $data))
+            {
+                echo json_encode("succes");
+            }else{
+                echo json_encode("error");
+            };
+        }
+
+    }
+
+    public function deleteEnseignant()
+    {
+
+        if(EnseignantModel::delete($_POST['id']))
+        {
+            echo json_encode("deleted");
+        }else{
+            echo json_encode("error");
+        }
+    }
 }

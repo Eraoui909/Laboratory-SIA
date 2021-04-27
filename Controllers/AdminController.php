@@ -4,7 +4,6 @@ namespace app\Controllers;
 
 use app\core\Controller;
 use app\core\Helper;
-use app\core\Request;
 use app\core\Session;
 use app\core\Validator;
 use app\models\AdminsModel;
@@ -40,8 +39,7 @@ class AdminController extends Controller
 
     public function registerAdmin()
     {
-        global $lang;
-        $errors = array();
+        //$errors = array();
         $session    = new Session();
         $validator  = new Validator();
         $adminModel = new AdminsModel();
@@ -121,9 +119,6 @@ class AdminController extends Controller
 
     public function profilePage()
     {
-        $adminModel = new AdminsModel();
-
-
         return $this->renderAdmin('profile', $_SESSION['token']);
     }
 
@@ -145,8 +140,8 @@ class AdminController extends Controller
             $errors['uploads'] = $upload['errors'];
 
             if(empty($errors['uploads'])){
+
                 $avatar = $upload['uploaded'][0] ?? $_SESSION['token']['avatar'];
-                $avatar = $upload['uploaded'][0] ?? 'avatar.png';
                 $pass   = $_SESSION['token']['password'];
                 $id     = $_SESSION['token']['id'];
 

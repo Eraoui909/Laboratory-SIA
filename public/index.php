@@ -74,9 +74,13 @@ $app->router->get('/admin/deletePic',[AdminController::class,'deletePicture']);
 
 $app->router->get('/admin/enseignant',[EnseignantController::class,'enseignantPage']);
 $app->router->post('/admin/enseignant/add',[EnseignantController::class,'ajouterEnseignant']);
+$app->router->post('/admin/enseignant/modify',[EnseignantController::class,'modifierEnseignant']);
+$app->router->post('/admin/enseignant/delete',[EnseignantController::class,'deleteEnseignant']);
 
 $app->router->get('/admin/doctorant',[DoctorantController::class,'doctorantPage']);
 $app->router->post('/admin/doctorant/add',[DoctorantController::class,'ajouterDoctorant']);
+$app->router->post('/admin/doctorant/modify',[DoctorantController::class,'modifierDoctorant']);
+$app->router->post('/admin/doctorant/delete',[DoctorantController::class,'deleteDoctorant']);
 
 
 

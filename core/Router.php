@@ -135,7 +135,7 @@ class Router
 
     /**
      * @param $view
-     * @param $params       //the params must be one dimensional array
+     * @param $params
      * @return false|string
      */
     protected function viewAdmin($view, $params = [])
