@@ -27,12 +27,24 @@
         "settings"                      => "Settings",
         "firstName"                     => "First Name",
         "lastName"                      => "Last Name",
+        "password"                      => "password",
         "avatar"                        => "Picture",
         "updatePic"                     => "Update Picture",
         "deletePic"                     => "Delete <span style='color: black'>my Picture<span>",
         "submit"                        => "Submit",
         "file_size_error"               => "this file passed the maximum size allowed",
         "file_type_error"               => "this type of files is not allowed",
+        "searchers"                     => "Searchers",
+        "doctorant"                     => "Phd Student",
+        "enseignant"                    => "Teacher",
+        "add"                           => "Add",
+        "close"                         => "close",
+        "modify"                        => "modify",
+        "phone"                         => "Phone",
+        "delete"                        => "Delete",
+        "admin-panel"                   => "<b>Admin</b> panel",
+
+
 
 
     );

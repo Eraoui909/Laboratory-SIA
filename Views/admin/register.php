@@ -52,7 +52,7 @@
 <div class="register-box">
 
     <div class="register-logo">
-        <a href="#"><b>Admin</b> Panel</a>
+        <a href="#"><?= $lang['admin-panel']?> </a>
     </div>
 
     <div class="card">

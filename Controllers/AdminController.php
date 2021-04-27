@@ -37,6 +37,9 @@ class AdminController extends Controller
 
     public function registerPage()
     {
+        if($this->session->hasSession('token')) {
+            $this->redirect('/admin/dashboard');
+        }
         return $this->renderEmpty('admin/register', []);
     }
 
@@ -62,11 +65,24 @@ class AdminController extends Controller
                 $adminModel->setTel("");
                 $adminModel->setAvatar($avatar);
 
-                if($adminModel->register())
+                $arr = array(
+                    'email' => $data['email']
+                );
+
+
+                if($result = AdminsModel::getByAllColumns($arr))
                 {
-                    $session->setFlash("success","admin registered with success");
+                    $errors[]   = "*this email already exists";
+                    $session->setFlash("error", $errors);
                     header('Location: ' . $_SERVER['HTTP_REFERER']);
-                }
+                }else
+                    if($adminModel->register())
+                    {
+                        $result = AdminsModel::getByAllColumns($arr);
+                        $_SESSION['token'] = $result[0];
+                        $session->setFlash("success","admin registered with success");
+                        header('Location: ' . $_SERVER['HTTP_REFERER']);
+                    }
 
             }else{
                 $errors[]   = "two passwords must be identical";
@@ -157,10 +173,10 @@ class AdminController extends Controller
                 $adminModel->setAvatar($avatar);
 
                 if($adminModel->update()){
-                    $_SESSION['token']['nom'] = $data['nom'];
+                    $_SESSION['token']['nom']    = $data['nom'];
                     $_SESSION['token']['prenom'] = $data['prenom'];
-                    $_SESSION['token']['email'] = $data['email'];
-                    $_SESSION['token']['tel'] = $tel;
+                    $_SESSION['token']['email']  = $data['email'];
+                    $_SESSION['token']['tel']    = $tel;
                     $_SESSION['token']['avatar'] = $avatar;
 
                     $this->redirect('/admin/profile');

@@ -28,12 +28,23 @@
         "settings"                      => "Paramétres",
         "firstName"                     => "Prenom",
         "lastName"                      => "Nom",
+        "password"                      => "mot de pass",
         "avatar"                        => "Photo",
         "updatePic"                     => "Modifier Picture",
         "deletePic"                     => "Supprimer <span style='color: black'>ma Photo<span>",
         "submit"                        => "Modifier",
         "file_size_error"               => "ce fichier a dépassé la taille maximale autorisée",
         "file_type_error"               => "ce type de fichiers n'est pas autorisé",
+        "searchers"                     => "chercheurs",
+        "doctorant"                     => "Doctorant",
+        "enseignant"                    => "Enseignant",
+        "add"                           => "Ajouter",
+        "close"                         => "Fermer",
+        "modify"                        => "Modifier",
+        "phone"                         => "Tel",
+        "delete"                        => "Supprimer",
+        "admin-panel"                   => "panneau d'<b>Admin</b>",
+
 
 
 
