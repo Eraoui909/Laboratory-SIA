@@ -49,7 +49,7 @@ body .head p {
 body .head p b {
   color: #fff;
 }
-body nav {
+body nav.my-navbar {
   display: flex;
   align-content: center;
   min-height: 50px;
@@ -61,10 +61,10 @@ body nav {
   background-color: white;
   padding: 5px 0;
 }
-body nav .links ul {
+body nav.my-navbar .links ul {
   margin: 0;
 }
-body nav .links ul li {
+body nav.my-navbar .links ul li {
   display: inline-block;
   font-weight: 500;
   margin-right: 15px;
@@ -72,7 +72,7 @@ body nav .links ul li {
   transition: all 0.3s ease;
   position: relative;
 }
-body nav .links ul li span {
+body nav.my-navbar .links ul li span {
   position: absolute;
   top: -8px;
   left: 9px;
@@ -86,7 +86,7 @@ body nav .links ul li span {
   text-align: center;
   line-height: 22px;
 }
-body nav .links ul li:after {
+body nav.my-navbar .links ul li:after {
   content: "";
   display: block;
   height: 2px;
@@ -95,7 +95,7 @@ body nav .links ul li:after {
   transition: all 0.3s ease;
   margin-top: 5px;
 }
-body nav .links ul li .drop-down {
+body nav.my-navbar .links ul li .drop-down {
   position: absolute;
   top: calc(50% + 25px);
   right: 0;
@@ -110,31 +110,80 @@ body nav .links ul li .drop-down {
   overflow: hidden;
   visibility: hidden;
 }
-body nav .links ul li .drop-down a {
+body nav.my-navbar .links ul li .drop-down a {
   display: block;
   font-size: 0.8em;
   padding: 5px 10px;
 }
-body nav .links ul li .drop-down a:hover {
+body nav.my-navbar .links ul li .drop-down a:hover {
   background-color: #0C1021;
   color: #6cb5cc;
 }
-body nav .links ul li a {
+body nav.my-navbar .links ul li a {
   color: #8c8c8c;
 }
-body nav .links ul li a:hover {
+body nav.my-navbar .links ul li a:hover {
   color: #6cb5cc;
 }
-body nav .links ul li:hover {
+body nav.my-navbar .links ul li:not(.icone):hover {
   color: #000;
   text-decoration: none;
 }
-body nav .links ul li:hover:after {
+body nav.my-navbar .links ul li:not(.icone):hover:after {
   width: 100%;
 }
-body nav .links ul .account-link:hover .drop-down {
+@media only screen and (max-width: 1024px) {
+  body nav.my-navbar .links ul li:not(.keep) {
+    display: none;
+  }
+}
+body nav.my-navbar .links ul li#menu-btn-icon {
+  font-size: 2.2em;
+  margin-left: 20px;
+  min-width: 146px;
+  cursor: pointer;
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  body nav.my-navbar .links ul li#menu-btn-icon {
+    display: block;
+  }
+}
+body nav.my-navbar .links ul .account-link:hover .drop-down {
   height: 60px;
   visibility: visible;
+}
+@media only screen and (max-width: 1024px) {
+  body nav.my-navbar {
+    justify-content: space-between;
+  }
+}
+body nav.my-navbar .menu {
+  position: absolute;
+  background-color: #253b50;
+  top: 100%;
+  right: 0;
+  left: 0;
+  height: 0;
+  transition: height 1s ease;
+  overflow: hidden;
+  z-index: 20;
+}
+body nav.my-navbar .menu ul {
+  margin: 0;
+}
+body nav.my-navbar .menu ul li {
+  text-align: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #524d4d;
+  cursor: pointer;
+}
+body nav.my-navbar .menu ul li:hover {
+  background-color: #346382;
+}
+body nav.my-navbar .menu ul li a {
+  color: #fff;
+  display: block;
 }
 body .header {
   position: relative;
