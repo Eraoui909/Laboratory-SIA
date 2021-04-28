@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=Poppins:wght@300;700&display=swap');
+
+
+@import 'General_style.scss';
+
+$background-footer:#1D2B36;
+$links-color : #93a1b0;
+$title-color:white;
+
+.ha-footer{
+  position: relative;
+  width: 100%;
+  background-color: $background-footer;
+  margin-top: 20px;
+  padding: 20px 50px;
+
+  .ha-footer-head{
+    position: relative;
+    height: 75%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+
+    @media only screen and (max-width: 600px) {
+      flex-wrap: wrap;
+      .ha-footer-head-sec2{
+        border-top: 0.5px solid gray;
+        padding-top: 10px;
+      }
+      .ha-footer-head-sec3{
+        border-top: 0.5px solid gray;
+        padding-top: 10px;
+      }
+      .ha-footer-head-sec4{
+        border-top: 0.5px solid gray;
+        padding-top: 10px;
+      }
+    }
+
+    div{
+      width: 100%;
+      margin:10px;
+      .h3{
+        color: $title-color;
+      }
+    }
+    .ha-footer-head-sec{
+      h4 {
+        color: $links-color;
+      }
+
+      img{
+        margin: 20px 0px;
+      }
+
+      ul {
+
+        li{
+          color: $links-color;
+          a{
+            color: $links-color;
+          }
+        }
+      }
+
+      h3{
+        color: $title-color;
+
+      }
+    }
+  }
+
+  .ha-footer-foot{
+    position: relative;
+    height: 60px;
+    width: 100%;
+    bottom: -20px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 60px;
+    padding: 5px 15px;
+    border-top: 0.7px solid white;
+
+    @media only screen and (max-width: 600px) {
+      flex-wrap: wrap;
+    }
+
+    div{
+      color: white;
+    }
+
+  }
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+@import "Annimations";
