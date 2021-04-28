@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/Home_Style.css">
 
+    <link rel="stylesheet" href="/css/Footer_Style.css">
+
     <title>Framework</title>
 </head>
 <body>
@@ -28,6 +30,10 @@
 
 
 {{ content }}
+
+<?php
+include_once "footer.php";
+?>
 
 <script src="/js/jquery.comjquery-3.5.1.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
