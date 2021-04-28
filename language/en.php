@@ -43,6 +43,10 @@
         "phone"                         => "Phone",
         "delete"                        => "Delete",
         "admin-panel"                   => "<b>Admin</b> panel",
+        "search"                        => "search",
+        "aboutUs"                       => "About Us",
+        "account"                        => "Account",
+
 
 
 

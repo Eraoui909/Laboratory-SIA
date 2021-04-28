@@ -13,6 +13,14 @@ $pink: #fddbcf;
   text-decoration: none;
 }
 
+a{
+  color: #000;
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
 ul{
   list-style-type: none;
 }

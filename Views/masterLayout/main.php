@@ -7,7 +7,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="/public/Storage/Statics/images/logoLaboFst(35X35).png">
+    <link rel="shortcut icon" href="/Storage/Statics/images/logoLaboFst(35X35).png">
+    <link rel="stylesheet" href="/fontawesome/all.min.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -16,6 +17,10 @@
     <title>Framework</title>
 </head>
 <body>
+
+<div class="head">
+    <p>Decouvrez les recherches de nos <b>professeur</b> sur notre siteweb du laboratoire <b>LSIA</b> .</p>
+</div>
 
 <?php
     include_once "navBar.php";
@@ -26,6 +31,7 @@
 
 <script src="/js/jquery.comjquery-3.5.1.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="/fontawesome/all.min.js"></script>
 
 
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper)

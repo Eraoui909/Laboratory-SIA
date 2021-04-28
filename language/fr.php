@@ -44,6 +44,9 @@
         "phone"                         => "Tel",
         "delete"                        => "Supprimer",
         "admin-panel"                   => "panneau d'<b>Admin</b>",
+        "search"                        => "chercher",
+        "aboutUs"                       => "Qui sommes nous ?",
+        "account"                        => "Compte",
 
 
 

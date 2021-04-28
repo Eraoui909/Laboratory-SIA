@@ -10,6 +10,14 @@
   text-decoration: none;
 }
 
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
 ul {
   list-style-type: none;
 }
@@ -22,6 +30,127 @@ ul {
   justify-content: space-around;
 }
 
+body .head {
+  background-color: #6bb5cc;
+  padding: 5px 0;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 10;
+}
+body .head p {
+  text-align: center;
+  font-family: arial;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8em;
+  letter-spacing: 0.8px;
+  margin: 0;
+}
+body .head p b {
+  color: #fff;
+}
+body nav {
+  display: flex;
+  align-content: center;
+  min-height: 50px;
+  box-shadow: 0 2px 10px #ddd;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 26px;
+  z-index: 10;
+  background-color: white;
+}
+body nav .links ul {
+  margin: 0;
+}
+body nav .links ul li {
+  display: inline-block;
+  font-weight: 500;
+  margin-right: 15px;
+  color: #3c3c3c;
+  transition: all 0.3s ease;
+  position: relative;
+}
+body nav .links ul li span {
+  position: absolute;
+  top: -8px;
+  left: 9px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #ffb0a8;
+  color: darkred;
+  font-size: 0.9em;
+  font-weight: 700;
+  text-align: center;
+  line-height: 22px;
+}
+body nav .links ul li:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: #6cb5cc;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+body nav .links ul li .drop-down {
+  position: absolute;
+  top: calc(50% + 25px);
+  right: 0;
+  border-radius: 5px;
+  width: 150px;
+  box-shadow: 2px 2px 10px #ddd;
+  z-index: 5;
+  border: 1px solid #ddd;
+  background-color: #ffffffd4;
+  height: 0;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  visibility: hidden;
+}
+body nav .links ul li .drop-down a {
+  display: block;
+  font-size: 0.8em;
+  padding: 5px 10px;
+}
+body nav .links ul li .drop-down a:hover {
+  background-color: #0C1021;
+  color: #6cb5cc;
+}
+body nav .links ul li a {
+  color: #8c8c8c;
+}
+body nav .links ul li a:hover {
+  color: #6cb5cc;
+}
+body nav .links ul li:hover {
+  color: #000;
+  text-decoration: none;
+}
+body nav .links ul li:hover:after {
+  width: 100%;
+}
+body nav .links ul .account-link:hover .drop-down {
+  height: 60px;
+  visibility: visible;
+}
+body nav .links ul .shop-icon {
+  font-size: 1.2em;
+  cursor: pointer;
+}
+body nav .logo {
+  font-size: 30px;
+  opacity: 0.9;
+}
+body nav .logo h1 {
+  font-family: "Arvo", serif;
+}
+body nav .logo span {
+  font-family: "Arvo", serif;
+  color: #fddbcf;
+}
 body .header {
   position: relative;
   height: calc(80vh - 100px);

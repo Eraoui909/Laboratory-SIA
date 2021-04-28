@@ -1,31 +1,43 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/home"> <?= $lang['home'] ?> <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/contact"><?= $lang['contact'] ?></a>
-            </li>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?= $lang['lang'] ?>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/lang/en"><?= $lang['en'] ?></a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/lang/fr"><?= $lang['fr'] ?></a>
+<nav class="flex">
+    <div class="links flex">
+        <ul>
+            <li><a href="/"><?= $lang['home'] ?></a></li>
+            <li><a href="/contact"><?= $lang['contact'] ?></a></li>
+            <li><a href=""><?= $lang['enseignant'] ?></a></li>
+            <li><a href=""><?= $lang['doctorant'] ?></a></li>
+        </ul>
+    </div>
+    <div class="logo">
+        <a class="navbar-brand" href="#"><img width="140px" height="50px" src="/Storage/Statics/images/logo.jpg" alt=""></a>
+    </div>
+    <div class="links flex">
+        <ul>
+            <li><a href=""><?= $lang['aboutUs']?></a></li>
+            <li><a href=""><?= $lang['search']?></a></li>
+            <li class="account-link">
+                <?php
+                    if (isset($_SESSION['token']))
+                        echo '
+                            <a href="">' . $lang['account'] . '</a>
+                            <div class="drop-down">
+                                <a href="">' . $lang['logout'] . '</a>
+                                <a href="">' . $lang['settings'] . ' </a>
+                            </div>
+                        ';
+                    else
+                        echo '<li><a href="">' . $lang['login'] . '</a></li>';
+                ?>
+
+            </li>
+            <li class="account-link">
+                <a href=""><i class="fas fa-globe"></i> <i class="fas fa-caret-down"></i></a>
+                <div class="drop-down">
+                    <a href="/lang/fr"><?= $lang['fr']?></a>
+                    <a href="/lang/en"><?= $lang['en']?></a>
                 </div>
             </li>
-
-
-
         </ul>
     </div>
 </nav>

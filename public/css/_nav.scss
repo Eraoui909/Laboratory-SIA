@@ -1,0 +1,125 @@
+
+nav{
+  display: flex;
+  align-content: center;
+  min-height: 50px;
+  box-shadow: 0 2px 10px #ddd;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 26px;
+  z-index: 10;
+  background-color: white;
+
+  .links{
+    ul{
+      margin: 0;
+      li{
+        display: inline-block;
+        font-weight: 500;
+        margin-right: 15px;
+        color: $font-color;
+        transition: all .3s ease;
+        position: relative;
+
+        span{
+          position: absolute;
+          top: -8px;
+          left: 9px;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background-color: #ffb0a8;
+          color: darkred;
+          font-size: .9em;
+          font-weight: 700;
+          text-align: center;
+          line-height: 22px;
+        }
+
+        &:after{
+          content: '';
+          display: block;
+          height: 2px;
+          width: 0;
+          background-color: #6cb5cc;
+          transition: all .3s ease;
+          margin-top: 5px;
+        }
+
+        .drop-down{
+          position: absolute;
+          top: calc(50% + 25px);
+          right: 0;
+          border-radius: 5px;
+          width: 150px;
+          box-shadow: 2px 2px 10px #ddd;
+          z-index: 5;
+          border: 1px solid #ddd;
+          background-color: #ffffffd4;
+          height: 0;
+          transition: all .3s ease;
+          overflow: hidden;
+          visibility: hidden;
+
+          a{
+            display: block;
+            font-size: .8em;
+            padding: 5px 10px;
+
+            &:hover{
+              background-color: #0C1021;
+              color: #6cb5cc;
+            }
+          }
+        }
+
+        a{
+          color: #8c8c8c;
+          &:hover
+          {
+            color: #6cb5cc;
+          }
+        }
+
+        &:hover{
+          color: #000;
+          text-decoration: none;
+          &:after{
+            width: 100%;
+          }
+        }
+
+      }
+
+      .account-link{
+        &:hover{
+          .drop-down{
+            height: 60px;
+            visibility: visible;
+          }
+        }
+      }
+
+      .shop-icon {
+        font-size: 1.2em;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .logo{
+    font-size: 30px;
+    opacity: 0.9;
+
+    h1{
+
+      font-family: 'Arvo', serif;
+    }
+    span{
+
+      font-family: 'Arvo', serif;
+      color: $pink;
+    }
+  }
+
+}

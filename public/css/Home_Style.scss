@@ -4,6 +4,8 @@
 @import 'General_style.scss';
 
 body{
+  @import "head";
+  @import "nav";
   @import "header_slider";
 
 }
