@@ -32,7 +32,7 @@
 
             </li>
             <li class="account-link">
-                <a href=""><i class="fas fa-globe"></i> <i class="fas fa-caret-down"></i></a>
+                <a href=""><i class="fas fa-globe"></i> lang <i class="fas fa-caret-down"></i></a>
                 <div class="drop-down">
                     <a href="/lang/fr"><?= $lang['fr']?></a>
                     <a href="/lang/en"><?= $lang['en']?></a>
