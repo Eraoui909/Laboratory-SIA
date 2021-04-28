@@ -82,7 +82,8 @@ class Router
      */
     public function viewRender($view, $params = [])
     {
-        $mainView   = $this->mainLayoutContent();
+        $null = $params['null'] ?? false;
+        $mainView   = $this->mainLayoutContent($null);
         $currentView    = $this->viewContent($view, $params);
         return str_replace("{{ content }}", $currentView, $mainView);
     }
@@ -101,8 +102,10 @@ class Router
         return str_replace("{{ content }}", $currentView, $mainView);
     }
 
-    protected function mainLayoutContent()
+    protected function mainLayoutContent($par = '')
     {
+
+        $null = $par;
         ob_start();
         include_once $this->ROOT_PATH . "/Views/masterLayout/main.php";
         return ob_get_clean();

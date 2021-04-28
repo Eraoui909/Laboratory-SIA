@@ -12,9 +12,13 @@ use app\models\AdminsModel;
 class SiteController extends Controller
 {
 
-    public function homePage()
+    public function loginPage()
     {
-
+        $params = [
+            "title" => "Contact page",
+            "null" => true
+        ];
+        return $this->render('login', $params);
     }
 
 

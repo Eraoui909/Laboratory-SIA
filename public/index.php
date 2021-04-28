@@ -34,12 +34,14 @@ $app = new Application(dirname(__DIR__));
 $db = new Database();
 
 
-$app->router->get('/lang/en',[LangController::class, 'changeLangToEn']);
+$app->router->get('/lang/en', [LangController::class, 'changeLangToEn']);
 
-$app->router->get('/lang/fr',[LangController::class, 'changeLangToFr']);
+$app->router->get('/lang/fr', [LangController::class, 'changeLangToFr']);
 
 
 $app->router->get('/home','home');
+
+$app->router->get('/login', [SiteController::class, 'loginPage']);
 
 $app->router->get('/','home');
 

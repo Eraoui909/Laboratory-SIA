@@ -8,36 +8,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="/Storage/Statics/images/logoLaboFst(35X35).png">
-    <link rel="stylesheet" href="/fontawesome/all.min.css">
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/Home_Style.css">
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
 
     <link rel="stylesheet" href="/css/Footer_Style.css">
 
     <title>Framework</title>
 </head>
 <body>
-
-<div class="head">
-    <p>Decouvrez les recherches de nos <b>professeur</b> sur notre siteweb du laboratoire <b>LSIA</b> .</p>
-</div>
-
 <?php
-    include_once "navBar.php";
+    if($null != true)
+    {
+        echo '<div class="head">
+            <p>Decouvrez les recherches de nos <b>professeur</b> sur notre siteweb du laboratoire <b>LSIA</b> .</p>
+        </div>';
+        include_once "navBar.php";
+    }
 ?>
 
 
 {{ content }}
 
 <?php
-include_once "footer.php";
+if($null != true)
+    include_once "footer.php";
 ?>
 
 <script src="/js/jquery.comjquery-3.5.1.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-<script src="/fontawesome/all.min.js"></script>
+<script src="/font-awesome-4.7.0/all.min.js"></script>
 
 
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper)

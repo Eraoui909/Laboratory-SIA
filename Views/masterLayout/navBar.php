@@ -28,7 +28,7 @@
                             </div>
                         ';
                     else
-                        echo '<a href="">' . $lang['login'] . '</a>';
+                        echo '<a href="/login">' . $lang['login'] . '</a>';
                 ?>
 
             </li>
