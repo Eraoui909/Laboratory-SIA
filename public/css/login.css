@@ -474,6 +474,25 @@ iframe {
     opacity: 1;
 }
 
+.badLogin {
+    background-color: white;
+    border: 1px solid #c80000;
+    border-radius: 13px;
+    padding: 4px 25px 4px 10px;
+     -webkit-transform: translateY(-30%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-30%);
+    right: 8px;
+    pointer-events: none;
+    font-family: Poppins-Medium;
+    color: #c80000;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: left;
+}
+
 @media (max-width: 992px) {
     .alert-validate::before {
         visibility: visible;

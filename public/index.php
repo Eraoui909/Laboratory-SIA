@@ -19,6 +19,9 @@ if(!isset($_SESSION['lang'])){
     $_SESSION['lang'] = "en";
 }
 
+//unset($_SESSION['flash_messages']['error']['value'][0]);
+//exit;
+
 $langFile = $_SESSION['lang'] . ".php";
 include_once dirname(__DIR__) . "\language\\" . $langFile;
 
@@ -42,6 +45,7 @@ $app->router->get('/lang/fr', [LangController::class, 'changeLangToFr']);
 $app->router->get('/home','home');
 
 $app->router->get('/login', [SiteController::class, 'loginPage']);
+$app->router->post('/login', [SiteController::class, 'login']);
 
 $app->router->get('/','home');
 
@@ -63,7 +67,7 @@ $app->router->post('/admin/register',[AdminController::class,'registerAdmin']);
 
 
 $app->router->get('/admin/dashboard',[AdminController::class,'dashboard']);
-$app->router->get('/admin/',[AdminController::class,'dashboard']);
+$app->router->get('/admin',[AdminController::class,'dashboard']);
 
 $app->router->get('/admin/login',[AdminController::class,'loginPage']);
 $app->router->post('/admin/login',[AdminController::class,'loginHandler']);

@@ -11,17 +11,20 @@
                 <img src="/Storage/Statics/images/login.png" alt="IMG">
             </div>
 
-            <form class="login100-form validate-form">
-					<span class="login100-form-title">
-						Member Login
-					</span>
+            <form class="login100-form validate-form" method="post" action="/login">
+                <span class="login100-form-title">
+                    Member Login
+                </span>
 
+                <div class="badLogin" <?= !empty($_SESSION['flash_messages']) ? '' : 'style="padding:0; border:0;"'?> >
+                    <span><?= $_SESSION['flash_messages']['error']['value'][0] ?? '' ?></span>
+                </div>
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                     <input class="input100" type="text" name="email" placeholder="Email">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
+					</span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "Password is required">
@@ -29,13 +32,11 @@
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
+					</span>
                 </div>
 
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
-                        Login
-                    </button>
+                    <input class="login100-form-btn" type="submit" value="login">
                 </div>
 
                 <div class="forgetPass">

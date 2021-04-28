@@ -165,7 +165,7 @@ class AbstractModel
 
     public static function getByQuery($sql)
     {
-        global$connect;
+        global $connect;
         $stmt = $connect->prepare($sql);
         $stmt->execute();
         $results = $stmt->fetchAll(); //\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, get_called_class(), array_keys(static::$tableSchema)
@@ -209,6 +209,22 @@ class AbstractModel
         $stmt = $connect->prepare($sql);
         $stmt->execute();
         $results = $stmt->fetchColumn();
+        if(isset($results) && !empty($results)){
+            return $results;
+        }else{
+            return false;
+        }
+    }
+
+    public static function login($email)
+    {
+        global $connect;
+        $sql = "SELECT *, 'doc' FROM doctorant WHERE email = :email UNION SELECT *, 'ens' FROM enseignant WHERE email = :email";
+        $stmt = $connect->prepare($sql);
+        $stmt->bindValue(':email', $email);
+        $stmt->execute();
+        $results = $stmt->fetchAll(\PDO::FETCH_ASSOC); //\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, get_called_class(), array_keys(static::$tableSchema)
+
         if(isset($results) && !empty($results)){
             return $results;
         }else{
