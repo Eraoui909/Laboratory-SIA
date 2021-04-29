@@ -29,6 +29,7 @@ class SiteController extends Controller
     {
         if (isset($_SESSION['token']))
             $this->redirect('/');
+
         $params = [
             "title" => "Login",
             "null" => true
@@ -50,11 +51,13 @@ class SiteController extends Controller
         $data   = $validator->sanitize($_POST);
         $errors = $validator->require($data);
 
+
+
         if(empty($errors)){
 
             if ($result = EnseignantModel::login($data['email']))
             {
-                if($this->verify_hashed_undecrypted_data($data['pass'], $result[0]['password']))
+                if($this->verify_hashed_undecrypted_data($data['password'], $result[0]['password']))
                 {
 
                     $_SESSION['token'] = $result[0];

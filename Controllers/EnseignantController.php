@@ -94,6 +94,7 @@ class EnseignantController extends Controller
 
     public function teacherProfile()
     {
+
         if (!isset($_SESSION['token']['groupID']) || $_SESSION['token']['groupID'] != 'ens')
             $this->redirect('/login');
 
@@ -113,6 +114,7 @@ class EnseignantController extends Controller
         $errors = $validator->require($data);
         $teacherModel = new EnseignantModel();
 
+
         if (isset($_FILES["pictures"]["error"][1])){
             $errors['uploads'][] = "* You can't upload multiple files";
         }
@@ -121,12 +123,11 @@ class EnseignantController extends Controller
             $upload = $this->UploadFile('users', $data['nom']);
             $errors['uploads'] = $upload['errors'];
 
-
             if(empty($errors['uploads'])){
 
-                $avatar = $upload['uploaded'][0] ?? $_SESSION['teacher_auth']['avatar'];
-                $pass   = $_SESSION['teacher_auth']['password'];
-                $id     = $_SESSION['teacher_auth']['id'];
+                $avatar = $upload['uploaded'][0] ?? $_SESSION['token']['avatar'];
+                $pass   = $_SESSION['token']['password'];
+                $id     = $_SESSION['token']['id'];
 
                 $teacherModel->setId($id);
                 $teacherModel->setNom($data['nom']);
@@ -137,11 +138,11 @@ class EnseignantController extends Controller
                 $teacherModel->setAvatar($avatar);
 
                 if($teacherModel->update()){
-                    $_SESSION['teacher_auth']['nom']    = $data['nom'];
-                    $_SESSION['teacher_auth']['prenom'] = $data['prenom'];
-                    $_SESSION['teacher_auth']['email']  = $data['email'];
-                    $_SESSION['teacher_auth']['tel']    = $tel;
-                    $_SESSION['teacher_auth']['avatar'] = $avatar;
+                    $_SESSION['token']['nom']    = $data['nom'];
+                    $_SESSION['token']['prenom'] = $data['prenom'];
+                    $_SESSION['token']['email']  = $data['email'];
+                    $_SESSION['token']['tel']    = $tel;
+                    $_SESSION['token']['avatar'] = $avatar;
 
                     $this->redirect('/teacher/profile');
                 }
@@ -161,7 +162,7 @@ class EnseignantController extends Controller
             'avatar' => 'avatar.png'
         );
         if (EnseignantModel::UpdateColumns($_SESSION['teacher_auth']['id'], $data)){
-            $_SESSION['teacher_auth']['avatar'] = 'avatar.png';
+            $_SESSION['token']['avatar'] = 'avatar.png';
             $this->redirect('/teacher/profile');
         }
 
