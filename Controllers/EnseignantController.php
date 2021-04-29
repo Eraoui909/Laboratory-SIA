@@ -225,7 +225,6 @@ class EnseignantController extends Controller
                     $this->redirect('/teacher/profile');
                 }
                 return;
-
             }
 
         }

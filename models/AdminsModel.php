@@ -11,11 +11,11 @@ use PDO;
 class AdminsModel extends AbstractModel
 {
 
-    public $id;
-    public $nom;
-    public $prenom;
-    public $email;
-    public $password;
+    protected $id;
+    protected $nom;
+    protected $prenom;
+    protected $email;
+    protected $password;
 
     public static $tableName    ='admin';
     public static $pk           ='id';
