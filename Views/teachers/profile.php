@@ -91,9 +91,9 @@
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
                                 <li class="nav-item"><a class="nav-link " href="#activity" data-toggle="tab">Activity</a></li>
-                                <li class="nav-item"><a class="nav-link  active" href="#timeline" data-toggle="tab">Mon CV</a></li>
+                                <li class="nav-item"><a class="nav-link  " href="#timeline" data-toggle="tab">Mon CV</a></li>
                                 <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab"><?= $lang['settings'] ?></a></li>
-                                <li class="nav-item"><a class="nav-link " href="#addArticle" data-toggle="tab"><?= $lang['add'] . ' Acticle' ?></a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#addArticle" data-toggle="tab"><?= $lang['add'] . ' Acticle' ?></a></li>
                             </ul>
                         </div><!-- /.card-header -->
                         <div class="card-body">
@@ -213,7 +213,7 @@
                                 </div>
 
                                 <!-- /.tab-pane for CV -->
-                                <div class="tab-pane active" style="overflow: hidden" id="timeline">
+                                <div class="tab-pane" style="overflow: hidden" id="timeline">
                                     <a href="/teacher/cv/downoald">
                                         <i class="fa fa-download" style="color: #3659c1"></i>
                                     </a>
@@ -299,7 +299,7 @@
 
                                 <!-- #addArticle-->
 
-                                <div class=" tab-pane" id="addArticle">
+                                <div class=" tab-pane active" id="addArticle">
                                     <form class="form-horizontal" method="post" action="/teacher/addArticle" enctype="multipart/form-data">
 
                                         <div class="row">
