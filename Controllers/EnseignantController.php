@@ -104,6 +104,7 @@ class EnseignantController extends Controller
 
         $arr = $_SESSION['token']['ens'];
         $arr['title'] = $_SESSION['token']['ens']['nom'] . ' ' . $_SESSION['token']['ens']['prenom'];
+        $arr['articles'] = ArticleModel::getAll();
 
         return $this->render('/teachers/profile', $arr);
     }
