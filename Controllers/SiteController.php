@@ -27,7 +27,7 @@ class SiteController extends Controller
 
     public function loginPage()
     {
-        if (isset($_SESSION['token']['ens']))
+        if (isset($_SESSION['token']['ens']) || isset($_SESSION['token']['doc']))
             $this->redirect('/');
 
         $params = [
@@ -59,8 +59,8 @@ class SiteController extends Controller
             {
                 if($this->verify_hashed_undecrypted_data($data['password'], $result[0]['password']))
                 {
-                    $_SESSION['token'] = $result[0];
-                    $_SESSION['token']['groupID'] = $result[0]['ens'] ?? $result[0]['doc'];
+                    $groupID = $result[0]['ens'] ?? $result[0]['doc'];
+                    $_SESSION['token'][$groupID] = $result[0];
                     $this->redirect('/');
                 }
             }

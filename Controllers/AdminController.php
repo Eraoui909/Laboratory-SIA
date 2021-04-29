@@ -23,7 +23,7 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        if(!$this->session->hasSession('token')) {
+        if(!isset($_SESSION['token']['admin'])) {
             $this->redirect('/admin/login');
         }
         $nbrOfDoctorant = DoctorantModel::getCountTable();
