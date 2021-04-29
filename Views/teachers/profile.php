@@ -304,7 +304,7 @@
 
                                         <div class="row">
                                             <div class="col-sm-2"></div>
-                                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['prenom'] ?? '')) ?></p>
+                                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['title'] ?? '')) ?></p>
                                         </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label"><?= $lang['title'] ?></label>
@@ -315,7 +315,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-2"></div>
-                                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['nom'] ?? '')) ?></p>
+                                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['description'] ?? '')) ?></p>
                                         </div>
                                         <div class="form-group row descriptionEdit">
                                             <label for="" class="col-sm-2 col-form-label">description</label>
@@ -326,7 +326,7 @@
 
                                         <div class="row">
                                             <div class="col-sm-2"></div>
-                                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['nom'] ?? '')) ?></p>
+                                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['content'] ?? '')) ?></p>
                                         </div>
                                         <div class="form-group row contentEdit">
                                             <label for="" class="col-sm-2 col-form-label"><?= $lang['content'] ?></label>

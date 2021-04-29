@@ -8,19 +8,19 @@ use PDO;
 
 class EnseignantModel extends AbstractModel
 {
-    private $id;
+    protected $id;
 
 
-    private $nom;
-    private $prenom;
-    private $email;
-    private $password;
-    private $tel;
-    private $avatar;
+    protected $nom;
+    protected $prenom;
+    protected $email;
+    protected $password;
+    protected $tel;
+    protected $avatar;
 
-    private static $tableName    ='enseignant';
-    private static $pk           ='id';
-    private static $tableSchema  =array(
+    public static $tableName    ='enseignant';
+    public static $pk           ='id';
+    public static $tableSchema  =array(
 
         'nom'       => PDO::PARAM_STR,
         'prenom'    => PDO::PARAM_STR,

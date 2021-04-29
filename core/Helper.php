@@ -89,12 +89,12 @@ trait Helper
                 $legalExt = array('jpg', 'jpge', 'png', 'gif');
 
                 if ($_FILES[$index]["size"][$key] > 1000000) {
-                    $returned['errors'][] = "$name : ".$lang['file_size_error'];
+                    $returned['errors'][] = "*$name : ".$lang['file_size_error'];
                     continue;
                 }
 
                 if (!in_array($ext, $legalExt)) {
-                    $returned['errors'][] = "$name : ".$lang['file_type_error'];
+                    $returned['errors'][] = "*$name : ".$lang['file_type_error'];
                     continue;
                 }
 
