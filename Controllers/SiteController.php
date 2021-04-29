@@ -30,10 +30,16 @@ class SiteController extends Controller
         if (isset($_SESSION['token']))
             $this->redirect($_SERVER['HTTP_REFERER']);
         $params = [
-            "title" => "Contact page",
+            "title" => "Login",
             "null" => true
         ];
         return $this->render('login', $params);
+    }
+
+    public function logoutPage()
+    {
+        unset($_SESSION['token']);
+        $this->redirect('/');
     }
 
     public function Login()

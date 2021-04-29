@@ -12,12 +12,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/Home_Style.css">
+
     <link rel="stylesheet" type="text/css" href="/css/login.css">
-
     <link rel="stylesheet" href="/css/Footer_Style.css">
+    <link rel="stylesheet" href="/css/Home_Style.css">
 
-    <title>Framework</title>
+    <title><?= $title ?></title>
 </head>
 <body>
 <?php

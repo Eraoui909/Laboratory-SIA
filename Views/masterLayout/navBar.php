@@ -11,7 +11,7 @@
         </ul>
     </div>
     <div class="logo">
-        <a class="navbar-brand" href="#"><img width="140px" height="50px" src="/Storage/Statics/images/logo.jpg" alt=""></a>
+        <a class="navbar-brand" href="/"><img width="140px" height="50px" src="/Storage/Statics/images/logo.jpg" alt=""></a>
     </div>
     <div class="links flex">
         <ul>
@@ -23,7 +23,7 @@
                         echo '
                             <a href="">' . $lang['account'] . '</a>
                             <div class="drop-down">
-                                <a href="">' . $lang['logout'] . '</a>
+                                <a href="/logout">' . $lang['logout'] . '</a>
                                 <a href="">' . $lang['settings'] . ' </a>
                             </div>
                         ';

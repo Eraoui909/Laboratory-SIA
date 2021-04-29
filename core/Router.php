@@ -50,7 +50,7 @@ class Router
 
         }else if(is_string($callback))
         {
-            return $this->viewRender($callback);
+            return $this->viewRender($callback, array('title' => $callback));
 
         }else if(is_array($callback)){
 
@@ -82,8 +82,9 @@ class Router
      */
     public function viewRender($view, $params = [])
     {
-        $null = $params['null'] ?? false;
-        $mainView   = $this->mainLayoutContent($null);
+        $null  = $params['null']  ?? false;
+        $title = $params['title'] ?? 'SIA Laboratory';
+        $mainView   = $this->mainLayoutContent($null, $title);
         $currentView    = $this->viewContent($view, $params);
         return str_replace("{{ content }}", $currentView, $mainView);
     }
@@ -102,10 +103,11 @@ class Router
         return str_replace("{{ content }}", $currentView, $mainView);
     }
 
-    protected function mainLayoutContent($par = '')
+    protected function mainLayoutContent($par = false, $P_title = 'SIA Laboratory')
     {
 
-        $null = $par;
+        $null  = $par;
+        $title = $P_title;
         ob_start();
         include_once $this->ROOT_PATH . "/Views/masterLayout/main.php";
         return ob_get_clean();

@@ -43,18 +43,16 @@ $app->router->get('/lang/fr', [LangController::class, 'changeLangToFr']);
 
 
 $app->router->get('/home','home');
+$app->router->get('/','home');
 
 $app->router->get('/login', [SiteController::class, 'loginPage']);
 $app->router->post('/login', [SiteController::class, 'login']);
 
-$app->router->get('/','home');
+$app->router->get('/logout', [SiteController::class, 'logoutPage']);
 
 $app->router->get('/contact', [SiteController::class, 'contactPage']);
 
 $app->router->post('/contact',[SiteController::class, 'handleContact']);
-
-$app->router->get('/me','me');
-
 
 /* **********************************************
 *                                               *
