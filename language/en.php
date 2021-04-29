@@ -46,6 +46,9 @@
         "search"                        => "search",
         "aboutUs"                       => "About Us",
         "account"                        => "Account",
+        "title"                         => "title",
+        "content"                       => "content",
+        "add picture"                   => "Add Picture",
 
 
 

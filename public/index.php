@@ -99,6 +99,8 @@ $app->router->get('/teacher/profile',[EnseignantController::class, 'teacherProfi
 $app->router->post('/teacher/profile',[EnseignantController::class, 'updateProfile']);
 $app->router->get('/teacher/deletePic',[EnseignantController::class, 'deletePicture']);
 
+$app->router->post('/teacher/addArticle',[EnseignantController::class, 'addArticle']);
+
 $app->router->get('/teacher/cv',[EnseignantController::class, 'teacherCV']);
 $app->router->get('/teacher/cv/downoald',[EnseignantController::class, 'cvToPdf']);
 

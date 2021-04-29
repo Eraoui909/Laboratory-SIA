@@ -1,0 +1,9 @@
+session['token'] = {
+                        'id'  => 1,
+                        'nom' =>'xxx',
+                        .
+                        .
+                        .
+                        .
+                        'groupID' => 'ens'/'doc'
+                    }

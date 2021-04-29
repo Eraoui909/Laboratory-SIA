@@ -46,7 +46,10 @@
         "admin-panel"                   => "panneau d'<b>Admin</b>",
         "search"                        => "chercher",
         "aboutUs"                       => "Qui sommes nous ?",
-        "account"                        => "Compte",
+        "account"                       => "Compte",
+        "title"                         => "titre",
+        "content"                       => "contenu",
+        "add picture"                   => "Ajouter Image",
 
 
 

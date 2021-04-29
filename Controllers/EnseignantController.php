@@ -193,4 +193,54 @@ class EnseignantController extends Controller
         return $this->renderEmpty('/teachers/cvToPDF', $arr);
     }
 
+//    public function addArticle()
+//    {
+//        $session = new Session();
+//        $validator = new validator();
+//
+//        $data = $validator->sanitize($_POST);
+//        $errors = $validator->require($data);
+//
+//        $article = new ArticleModel();
+//
+//        if (isset($_FILES["pictures"]["error"][1])){
+//            $errors['uploads'][] = "* You can't upload multiple files";
+//        }
+//
+//        if(empty($errors)){
+//            $upload = $this->UploadFile('articles', $data['title']);
+//            $errors['uploads'] = $upload['errors'];
+//
+//            if(empty($errors['uploads'])){
+//
+//                $avatar = $upload['uploaded'][0] ?? $_SESSION['token']['avatar'];
+//                $pass   = $_SESSION['token']['password'];
+//                $teacher     = $_SESSION['token']['id'];
+//
+//                $article->setNom($data['nom']);
+//                $article->setPrenom($data['prenom']);
+//                $article->setEmail($data['email']);
+//                $article->setPassword($pass);
+//                $article->setTel($tel);
+//                $article->setAvatar($avatar);
+//
+//                if($article->update()){
+//                    $_SESSION['token']['nom']    = $data['nom'];
+//                    $_SESSION['token']['prenom'] = $data['prenom'];
+//                    $_SESSION['token']['email']  = $data['email'];
+//                    $_SESSION['token']['tel']    = $tel;
+//                    $_SESSION['token']['avatar'] = $avatar;
+//
+//                    $this->redirect('/teacher/profile');
+//                }
+//                return;
+//
+//            }
+//
+//        }
+//
+//        $session->setFlash("errors", $errors);
+//        header('Location: ' . $_SERVER['HTTP_REFERER']);
+//    }
+
 }

@@ -1,5 +1,14 @@
 <?php global $lang;?>
 
+<style>
+    .contentEdit p{
+        height: 250px;
+    }
+
+    .descriptionEdit p{
+        height: 100px;
+    }
+</style>
 <div class="content-wrapper" style="margin: 5px auto;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -84,6 +93,7 @@
                                 <li class="nav-item"><a class="nav-link " href="#activity" data-toggle="tab">Activity</a></li>
                                 <li class="nav-item"><a class="nav-link  active" href="#timeline" data-toggle="tab">Mon CV</a></li>
                                 <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab"><?= $lang['settings'] ?></a></li>
+                                <li class="nav-item"><a class="nav-link " href="#addArticle" data-toggle="tab"><?= $lang['add'] . ' Acticle' ?></a></li>
                             </ul>
                         </div><!-- /.card-header -->
                         <div class="card-body">
@@ -286,6 +296,64 @@
                                         </div>
                                     </form>
                                 </div>
+
+                                <!-- #addArticle-->
+
+                                <div class=" tab-pane" id="addArticle">
+                                    <form class="form-horizontal" method="post" action="/teacher/addArticle" enctype="multipart/form-data">
+
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['prenom'] ?? '')) ?></p>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-2 col-form-label"><?= $lang['title'] ?></label>
+                                            <div class="col-sm-10">
+
+                                                <input type="text" value="" name="title" class="form-control" id="" placeholder="<?= $lang['title'] ?>">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['nom'] ?? '')) ?></p>
+                                        </div>
+                                        <div class="form-group row descriptionEdit">
+                                            <label for="" class="col-sm-2 col-form-label">description</label>
+                                            <div class="col-sm-10">
+                                                <textarea name="description" class="editor" cols="30" rows="10"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['nom'] ?? '')) ?></p>
+                                        </div>
+                                        <div class="form-group row contentEdit">
+                                            <label for="" class="col-sm-2 col-form-label"><?= $lang['content'] ?></label>
+                                            <div class="col-sm-10">
+                                                <textarea name="content" class="editor" cols="30" rows="30"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?=  ($_SESSION['flash_messages']['errors']['value']['uploads'][0] ?? '') ?></p>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="profileImg" class="col-sm-2 col-form-label"><?= $lang['avatar'] ?></label>
+                                            <div class="col-sm-10 ">
+                                                <label for="profileImg" class="col-sm-2 col-form-label UploadLabel"><?= $lang['add picture'] ?></label>
+                                                <input type="file" name="pictures[]" class="form-control hiddenInput" id="Article Img" placeholder="Avatar">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="offset-sm-2 col-sm-10">
+                                                <button type="submit" class="btn btn-danger"><?= $lang['submit'] ?></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
                                 <!-- /.tab-pane -->
                             </div>
                             <!-- /.tab-content -->
@@ -300,3 +368,16 @@
     </section>
     <!-- /.content -->
 </div>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+<script>
+    items = document.querySelectorAll( '.editor' );
+    items.forEach(function(item){
+        ClassicEditor
+            .create( item )
+            .catch( error => {
+                console.error( error );
+            });
+    })
+
+</script>
