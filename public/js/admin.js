@@ -129,7 +129,7 @@ function addDocEns (person)
 function modifyResDoc (person)
 {
     let errors="";
-    let data    = $(".form-modify-enseignant-doctorant").serialize();
+    let data = $(".form-modify-enseignant-doctorant").serialize();
     console.log(data);
     $.ajax({
         type:"post",
