@@ -72,14 +72,15 @@ ul {
     position: relative;
     margin: 10px auto; }
     .ha-article-container .ha-article-container-body h1 {
-      margin: 20px 0px; }
+      margin: 30px 0px; }
     .ha-article-container .ha-article-container-body .ha-article-card {
       display: flex;
       justify-content: space-around;
       margin: 10px auto;
       width: 80%;
       height: 235px;
-      padding: 5px; }
+      padding: 5px;
+      box-shadow: 0px 0px 15px 0px #b2b2b2; }
       .ha-article-container .ha-article-container-body .ha-article-card .card-img {
         width: fit-content;
         margin-right: 10px;
