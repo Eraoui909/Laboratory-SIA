@@ -32,7 +32,7 @@
 
     <link rel="stylesheet" type="text/css" href="/css/login.css">
     <link rel="stylesheet" href="/css/Footer_Style.css">
-
+    <link rel="stylesheet" href="/css/article.css">
 
     <!-- STYLESHEETS FOR CV TEMPLATE-->
     <link rel="stylesheet" href="/assets/css/owl.carousel.css" type="text/css" media="all">

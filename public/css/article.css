@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=Poppins:wght@300;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: #3c3c3c;
+  text-decoration: none; }
+
+a {
+  color: #000;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: none; }
+
+ul {
+  list-style-type: none; }
+
+.flex {
+  display: flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-around; }
+
+.ha-article-container {
+  padding: 15px;
+  margin: 10px auto;
+  width: 80%;
+  position: relative;
+  cursor: pointer; }
+  .ha-article-container .ha-article-container-header-slider {
+    height: 500px;
+    background-image: url("/Storage/uploads/users/science_pic.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+  .ha-article-container .ha-article-container-header-title {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    color: #00aad4;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.4); }
+    .ha-article-container .ha-article-container-header-title * {
+      color: white; }
+    @media only screen and (max-width: 600px) {
+      .ha-article-container .ha-article-container-header-title {
+        font-size: 25px;
+        margin-right: 5px; } }
+
+/*# sourceMappingURL=article.css.map */
