@@ -15,7 +15,13 @@
     </div>
 
     <div class="ha-article-container-body">
-        this is body
+        <h1>Les articles disponible </h1>
+
+        <div class="ha-article-card">
+            <img src="" alt="">
+            <div class="title"></div>
+            <div class="desc"></div>
+        </div>
     </div>
 
     <div class="ha-article-container-footer">
