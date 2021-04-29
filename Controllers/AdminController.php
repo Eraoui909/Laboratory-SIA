@@ -37,7 +37,7 @@ class AdminController extends Controller
 
     public function registerPage()
     {
-        if($this->session->hasSession('token')) {
+        if(isset($_SESSION['token']['admin'])) {
             $this->redirect('/admin/dashboard');
         }
         return $this->renderEmpty('admin/register', []);
@@ -45,7 +45,6 @@ class AdminController extends Controller
 
     public function registerAdmin()
     {
-        //$errors = array();
         $session    = new Session();
         $validator  = new Validator();
         $adminModel = new AdminsModel();
@@ -79,7 +78,7 @@ class AdminController extends Controller
                     if($adminModel->register())
                     {
                         $result = AdminsModel::getByAllColumns($arr);
-                        $_SESSION['token'] = $result[0];
+                        $_SESSION['token']['admin'] = $result[0];
                         $session->setFlash("success","admin registered with success");
                         header('Location: ' . $_SERVER['HTTP_REFERER']);
                     }
@@ -98,7 +97,7 @@ class AdminController extends Controller
 
     public function loginPage()
     {
-        if($this->session->hasSession('token')){
+        if(isset($_SESSION['token']['admin'])){
             $this->redirect('/admin/dashboard');
         }
         return $this->renderEmpty('admin/login',[]);
@@ -120,7 +119,7 @@ class AdminController extends Controller
             if ($result = AdminsModel::getByAllColumns($arr)){
                 if($this->verify_hashed_undecrypted_data($data['password'], $result[0]['password'])){
 
-                    $_SESSION['token'] = $result[0];
+                    $_SESSION['token']['admin'] = $result[0];
                     $this->redirect('/admin/dashboard');
                 }else{
 
@@ -138,7 +137,7 @@ class AdminController extends Controller
 
     public function profilePage()
     {
-        return $this->renderAdmin('profile', $_SESSION['token']);
+        return $this->renderAdmin('profile', $_SESSION['token']['admin']);
     }
 
     public function updateProfile()
@@ -160,9 +159,9 @@ class AdminController extends Controller
 
             if(empty($errors['uploads'])){
 
-                $avatar = $upload['uploaded'][0] ?? $_SESSION['token']['avatar'];
-                $pass   = $_SESSION['token']['password'];
-                $id     = $_SESSION['token']['id'];
+                $avatar = $upload['uploaded'][0] ?? $_SESSION['token']['admin']['avatar'];
+                $pass   = $_SESSION['token']['admin']['password'];
+                $id     = $_SESSION['token']['admin']['id'];
 
                 $adminModel->setId($id);
                 $adminModel->setNom($data['nom']);
@@ -173,11 +172,11 @@ class AdminController extends Controller
                 $adminModel->setAvatar($avatar);
 
                 if($adminModel->update()){
-                    $_SESSION['token']['nom']    = $data['nom'];
-                    $_SESSION['token']['prenom'] = $data['prenom'];
-                    $_SESSION['token']['email']  = $data['email'];
-                    $_SESSION['token']['tel']    = $tel;
-                    $_SESSION['token']['avatar'] = $avatar;
+                    $_SESSION['token']['admin']['nom']    = $data['nom'];
+                    $_SESSION['token']['admin']['prenom'] = $data['prenom'];
+                    $_SESSION['token']['admin']['email']  = $data['email'];
+                    $_SESSION['token']['admin']['tel']    = $tel;
+                    $_SESSION['token']['admin']['avatar'] = $avatar;
 
                     $this->redirect('/admin/profile');
                 }
@@ -196,8 +195,8 @@ class AdminController extends Controller
         $data = array(
             'avatar' => 'avatar.png'
         );
-        if (AdminsModel::UpdateColumns($_SESSION['token']['id'], $data)){
-            $_SESSION['token']['avatar'] = 'avatar.png';
+        if (AdminsModel::UpdateColumns($_SESSION['token']['admin']['id'], $data)){
+            $_SESSION['token']['admin']['avatar'] = 'avatar.png';
             $this->redirect('/admin/profile');
         }
 
@@ -205,7 +204,7 @@ class AdminController extends Controller
 
     public function logoutHandler()
     {
-        unset($_SESSION['token']);
+        unset($_SESSION['token']['admin']);
         $this->redirect("/admin/login");
     }
 

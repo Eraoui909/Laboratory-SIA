@@ -15,6 +15,9 @@ class EnseignantController extends Controller
     use Helper;
     public function enseignantPage()
     {
+        if(!isset($_SESSION['token']['admin'])){
+            $this->redirect('/admin/login');
+        }
         $data = EnseignantModel::getAll();
         return $this->renderAdmin('enseignant', $data);
     }

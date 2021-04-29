@@ -107,10 +107,11 @@ function addDocEns (person)
         success:function (data)
         {
             if(typeof data == "object") {
-                data.error.forEach(function (err) {
+
+                for (const err in data.error) {
                     errors += "<div class='alert alert-danger'>" + err + "</div>";
                     $(".msg-add-enseignant-doctorant").html(errors);
-                });
+                }
             }
             if(typeof data == "string")
             {
