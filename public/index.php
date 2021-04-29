@@ -91,6 +91,18 @@ $app->router->post('/admin/doctorant/delete',[DoctorantController::class,'delete
 
 
 
+/* **********************************************
+*                                               *
+*  this side it's for all teachers ROUTES       *
+*                                               *
+* ********************************************* */
+
+$app->router->get('/teacher/profile',[EnseignantController::class,'teacherProfile']);
+$app->router->post('/teacher/profile',[EnseignantController::class,'updateProfile']);
+$app->router->get('/teacher/deletePic',[EnseignantController::class,'deletePicture']);
+
+$app->router->get('/teacher/cv',[EnseignantController::class,'teacherCV']);
+$app->router->get('/teacher/cv/downoald',[EnseignantController::class,'cvToPdf']);
 
 
 

@@ -89,4 +89,96 @@ class EnseignantController extends Controller
             echo json_encode("error");
         }
     }
+
+    public function teacherProfile()
+    {
+        $teacher = EnseignantModel::getByPk(0);
+        $_SESSION['teacher_auth'] = $teacher[0];
+        /*
+        echo "<pre>";
+        print_r($_SESSION);
+        echo "</pre>";
+        */
+        return $this->render('/teachers/profile',$_SESSION['teacher_auth']);
+    }
+
+    public function updateProfile()
+    {
+        $session = new Session();
+        $validator = new validator();
+        $tel = $_POST['tel'] ?? '';
+        unset($_POST['tel']);
+        $data = $validator->sanitize($_POST);
+        $errors = $validator->require($data);
+        $teacherModel = new EnseignantModel();
+
+        if (isset($_FILES["pictures"]["error"][1])){
+            $errors['uploads'][] = "* You can't upload multiple files";
+        }
+
+        if(empty($errors)){
+            $upload = $this->UploadFile('users', $data['nom']);
+            $errors['uploads'] = $upload['errors'];
+
+
+            if(empty($errors['uploads'])){
+
+                $avatar = $upload['uploaded'][0] ?? $_SESSION['teacher_auth']['avatar'];
+                $pass   = $_SESSION['teacher_auth']['password'];
+                $id     = $_SESSION['teacher_auth']['id'];
+
+                $teacherModel->setId($id);
+                $teacherModel->setNom($data['nom']);
+                $teacherModel->setPrenom($data['prenom']);
+                $teacherModel->setEmail($data['email']);
+                $teacherModel->setPassword($pass);
+                $teacherModel->setTel($tel);
+                $teacherModel->setAvatar($avatar);
+
+                if($teacherModel->update()){
+                    $_SESSION['teacher_auth']['nom']    = $data['nom'];
+                    $_SESSION['teacher_auth']['prenom'] = $data['prenom'];
+                    $_SESSION['teacher_auth']['email']  = $data['email'];
+                    $_SESSION['teacher_auth']['tel']    = $tel;
+                    $_SESSION['teacher_auth']['avatar'] = $avatar;
+
+                    $this->redirect('/teacher/profile');
+                }
+                return;
+
+            }
+
+        }
+
+        $session->setFlash("errors", $errors);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+
+    }
+
+    public function deletePicture(){
+        $data = array(
+            'avatar' => 'avatar.png'
+        );
+        if (EnseignantModel::UpdateColumns($_SESSION['teacher_auth']['id'], $data)){
+            $_SESSION['teacher_auth']['avatar'] = 'avatar.png';
+            $this->redirect('/teacher/profile');
+        }
+
+    }
+
+    public function teacherCV()
+    {
+        return $this->render('/teachers/cv',$_SESSION['teacher_auth']);
+    }
+
+    public function teacherCVDownoald()
+    {
+
+    }
+
+    public function cvToPdf()
+    {
+        return $this->renderEmpty('/teachers/cvToPDF',$_SESSION['teacher_auth']);
+    }
+
 }
