@@ -17,6 +17,13 @@
 
     <link rel="stylesheet" href="/css/Footer_Style.css">
 
+    <!-- STYLESHEETS FOR CV TEMPLATE-->
+    <link rel="stylesheet" href="/assets/css/owl.carousel.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/assets/css/owl.theme.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" media="all">
+
     <title>Framework</title>
 </head>
 <body>
@@ -43,14 +50,25 @@ if($null != true)
 <script src="/font-awesome-4.7.0/all.min.js"></script>
 
 
-<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper)
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
--->
-<!-- Option 2: jQuery, Popper.js, and Bootstrap JS
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
--->
+<!-- overlayScrollbars -->
+<script src="/adminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/adminLTE/dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/adminLTE/dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="/adminLTE/dist/js/pages/dashboard.js"></script>
+
+<!-- SCRIPTS FOR CV TEMPLATE -->
+<script type="text/javascript" src="/assets/js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.onepage-scroll.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.backstretch.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.filterizr.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/assets/js/custom.js"></script>
+<script type="text/javascript" src="/assets/js/smoothscroll.min.js"></script>
 </body>
 </html>
