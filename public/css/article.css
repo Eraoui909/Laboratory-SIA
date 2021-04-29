@@ -9,6 +9,14 @@
   color: #3c3c3c;
   text-decoration: none; }
 
+label.UploadLabel {
+  padding: 6px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  display: table-cell;
+  cursor: pointer; }
+
 a {
   color: #000;
   text-decoration: none; }
@@ -37,6 +45,9 @@ ul {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; }
+    @media only screen and (max-width: 600px) {
+      .ha-article-container .ha-article-container-header-slider {
+        height: 300px; } }
   .ha-article-container .ha-article-container-header-title {
     position: absolute;
     left: 20px;
@@ -50,7 +61,83 @@ ul {
       color: white; }
     @media only screen and (max-width: 600px) {
       .ha-article-container .ha-article-container-header-title {
-        font-size: 25px;
-        margin-right: 5px; } }
+        font-size: 22px;
+        margin-right: 5px;
+        color: white; }
+        .ha-article-container .ha-article-container-header-title small {
+          display: none; } }
+  .ha-article-container .ha-article-container-body {
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    margin: 10px auto; }
+    .ha-article-container .ha-article-container-body h1 {
+      margin: 20px 0px; }
+    .ha-article-container .ha-article-container-body .ha-article-card {
+      display: flex;
+      justify-content: space-around;
+      margin: 10px auto;
+      width: 80%;
+      height: 235px;
+      padding: 5px; }
+      .ha-article-container .ha-article-container-body .ha-article-card .card-img {
+        width: fit-content;
+        margin-right: 10px;
+        height: 100%; }
+      .ha-article-container .ha-article-container-body .ha-article-card .card-content {
+        margin-left: 10px; }
+        .ha-article-container .ha-article-container-body .ha-article-card .card-content .title {
+          font-weight: 1000;
+          font-size: 30px; }
+        .ha-article-container .ha-article-container-body .ha-article-card .card-content small {
+          color: gray; }
+        .ha-article-container .ha-article-container-body .ha-article-card .card-content .desc {
+          font-size: 26px; }
+      @media only screen and (max-width: 700px) {
+        .ha-article-container .ha-article-container-body .ha-article-card {
+          display: flex;
+          flex-wrap: wrap;
+          overflow: auto;
+          height: auto;
+          width: 110%; }
+          .ha-article-container .ha-article-container-body .ha-article-card .card-content .card-img {
+            width: 100%;
+            height: fit-content; }
+          .ha-article-container .ha-article-container-body .ha-article-card .card-content .title {
+            font-weight: bold;
+            font-size: 20px !important; }
+          .ha-article-container .ha-article-container-body .ha-article-card .card-content .desc {
+            font-size: 14px !important; }
+          .ha-article-container .ha-article-container-body .ha-article-card .card-content .time {
+            font-size: 10px !important; }
+          .ha-article-container .ha-article-container-body .ha-article-card .card-content button {
+            width: 60% !important;
+            margin: 5px auto;
+            font-size: 10px !important; } }
+      @media only screen and (max-width: 1200px) {
+        .ha-article-container .ha-article-container-body .ha-article-card {
+          display: flex;
+          flex-wrap: wrap;
+          overflow: auto;
+          height: auto;
+          width: 110%; }
+          .ha-article-container .ha-article-container-body .ha-article-card .card-content .card-img {
+            width: 100%;
+            height: fit-content;
+            position: relative !important;
+            left: -300px !important; }
+          .ha-article-container .ha-article-container-body .ha-article-card .card-content .title {
+            font-weight: bold;
+            font-size: 30px !important; }
+          .ha-article-container .ha-article-container-body .ha-article-card .card-content .desc {
+            font-size: 24px !important; }
+          .ha-article-container .ha-article-container-body .ha-article-card .card-content .time {
+            font-size: 20px !important; }
+          .ha-article-container .ha-article-container-body .ha-article-card .card-content button {
+            width: 30%;
+            margin: 5px auto;
+            font-size: 20px !important; } }
+    .ha-article-container .ha-article-container-body .ha-article-card:hover .title {
+      color: #17a2b8; }
 
 /*# sourceMappingURL=article.css.map */

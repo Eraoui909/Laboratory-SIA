@@ -16,6 +16,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    @media only screen and (max-width: 600px){
+      height: 300px;
+    }
   }
 
   .ha-article-container-header-title{
@@ -31,8 +34,123 @@
       color: white;
     }
     @media only screen and (max-width: 600px){
-      font-size: 25px;
+      font-size: 22px;
       margin-right: 5px;
+      color: white;
+      small{
+        display: none;
+      }
+    }
+  }
+
+  .ha-article-container-body{
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    margin: 10px auto;
+
+    h1{
+      margin:20px 0px;
+    }
+
+    .ha-article-card{
+      display: flex;
+      justify-content: space-around;
+      margin: 10px auto;
+      width: 80%;
+      height: 235px;
+      padding: 5px;
+
+      .card-img{
+        width: fit-content;
+        margin-right: 10px;
+        height: 100%;
+      }
+      .card-content{
+        margin-left: 10px;
+        .title{
+          font-weight: 1000;
+          font-size: 30px;
+        }
+        small{
+          color: gray;
+        }
+        .desc{
+          font-size: 26px;
+        }
+      }
+
+      @media only screen and (max-width: 700px) {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: auto;
+        height: auto;
+        width: 110%;
+
+        .card-content{
+          .card-img{
+            width: 100%;
+            height: fit-content;
+          }
+          .title{
+            font-weight: bold;
+            font-size: 20px !important;
+          }
+          .desc{
+            font-size: 14px !important;
+          }
+          .time{
+            font-size: 10px !important;
+          }
+          button{
+            width: 60% !important;
+            margin: 5px auto;
+            font-size: 10px !important;
+          }
+        }
+      }
+
+      @media only screen and (max-width: 1200px)
+      {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: auto;
+        height: auto;
+        width: 110%;
+
+        .card-content{
+          .card-img{
+            width: 100%;
+            height: fit-content;
+            position: relative !important;
+            left: -300px !important;
+          }
+          .title{
+            font-weight: bold;
+            font-size: 30px !important;
+          }
+          .desc{
+            font-size: 24px !important;
+          }
+          .time{
+            font-size: 20px !important;
+          }
+          button{
+            width: 30%;
+            margin: 5px auto;
+            font-size: 20px !important;
+          }
+        }
+      }
+
+
+
+    }
+
+    .ha-article-card:hover{
+        .title{
+          color: #17a2b8;
+        }
     }
   }
 }
