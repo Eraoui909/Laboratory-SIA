@@ -59,7 +59,6 @@ class SiteController extends Controller
             {
                 if($this->verify_hashed_undecrypted_data($data['password'], $result[0]['password']))
                 {
-
                     $_SESSION['token'] = $result[0];
                     $_SESSION['token']['groupID'] = $result[0]['ens'] ?? $result[0]['doc'];
                     $this->redirect('/');
