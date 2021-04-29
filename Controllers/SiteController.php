@@ -27,7 +27,7 @@ class SiteController extends Controller
 
     public function loginPage()
     {
-        if (isset($_SESSION['token']))
+        if (isset($_SESSION['token']['ens']))
             $this->redirect('/');
 
         $params = [
