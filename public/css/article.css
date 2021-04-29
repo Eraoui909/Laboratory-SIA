@@ -62,7 +62,8 @@ ul {
     @media only screen and (max-width: 600px) {
       .ha-article-container .ha-article-container-header-title {
         font-size: 22px;
-        margin-right: 5px; }
+        margin-right: 5px;
+        color: white; }
         .ha-article-container .ha-article-container-header-title small {
           display: none; } }
   .ha-article-container .ha-article-container-body {
@@ -104,16 +105,16 @@ ul {
             height: fit-content; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-content .title {
             font-weight: bold;
-            font-size: 22px !important; }
+            font-size: 20px !important; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-content .desc {
-            font-size: 16px !important; }
+            font-size: 14px !important; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-content .time {
-            font-size: 12px !important; }
+            font-size: 10px !important; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-content button {
-            width: 40%;
+            width: 60% !important;
             margin: 5px auto;
-            font-size: 12px !important; } }
-      @media only screen and (max-width: 1024px) {
+            font-size: 10px !important; } }
+      @media only screen and (max-width: 1200px) {
         .ha-article-container .ha-article-container-body .ha-article-card {
           display: flex;
           flex-wrap: wrap;

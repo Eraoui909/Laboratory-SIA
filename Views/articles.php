@@ -8,7 +8,7 @@
                 </div>
             </div>
             <div class="ha-article-container-header-title">
-                The title of article The title of article The title of article <br>
+                The title of article Lorem ipsum dolor sit amet <br>
                 <small class="ribbon-description">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
             </div>
         </div>
@@ -51,7 +51,6 @@
     </div>
 
     <div class="ha-article-container-footer">
-        this is footer
     </div>
 
 </div>
