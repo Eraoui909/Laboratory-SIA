@@ -41,6 +41,9 @@
     <link rel="stylesheet" href="/assets/css/magnific-popup.css" type="text/css" media="all">
     <link rel="stylesheet" href="/assets/css/style.css" type="text/css" media="all">
 
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800" rel="stylesheet">
+
+
     <link rel="stylesheet" href="/css/Home_Style.css">
 
     <title><?= $title ?></title>
