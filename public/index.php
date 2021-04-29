@@ -43,18 +43,16 @@ $app->router->get('/lang/fr', [LangController::class, 'changeLangToFr']);
 
 
 $app->router->get('/home','home');
+$app->router->get('/','home');
 
 $app->router->get('/login', [SiteController::class, 'loginPage']);
 $app->router->post('/login', [SiteController::class, 'login']);
 
-$app->router->get('/','home');
+$app->router->get('/logout', [SiteController::class, 'logoutPage']);
 
 $app->router->get('/contact', [SiteController::class, 'contactPage']);
 
 $app->router->post('/contact',[SiteController::class, 'handleContact']);
-
-$app->router->get('/me','me');
-
 
 /* **********************************************
 *                                               *
@@ -81,8 +79,8 @@ $app->router->get('/admin/deletePic',[AdminController::class,'deletePicture']);
 
 $app->router->get('/admin/enseignant',[EnseignantController::class,'enseignantPage']);
 $app->router->post('/admin/enseignant/add',[EnseignantController::class,'ajouterEnseignant']);
-$app->router->post('/admin/enseignant/modify',[EnseignantController::class,'modifierEnseignant']);
-$app->router->post('/admin/enseignant/delete',[EnseignantController::class,'deleteEnseignant']);
+$app->router->post('/admin/enseignant/modify',[EnseignantController::class, 'modifierEnseignant']);
+$app->router->post('/admin/enseignant/delete',[EnseignantController::class, 'deleteEnseignant']);
 
 $app->router->get('/admin/doctorant',[DoctorantController::class,'doctorantPage']);
 $app->router->post('/admin/doctorant/add',[DoctorantController::class,'ajouterDoctorant']);
@@ -97,12 +95,12 @@ $app->router->post('/admin/doctorant/delete',[DoctorantController::class,'delete
 *                                               *
 * ********************************************* */
 
-$app->router->get('/teacher/profile',[EnseignantController::class,'teacherProfile']);
-$app->router->post('/teacher/profile',[EnseignantController::class,'updateProfile']);
-$app->router->get('/teacher/deletePic',[EnseignantController::class,'deletePicture']);
+$app->router->get('/teacher/profile',[EnseignantController::class, 'teacherProfile']);
+$app->router->post('/teacher/profile',[EnseignantController::class, 'updateProfile']);
+$app->router->get('/teacher/deletePic',[EnseignantController::class, 'deletePicture']);
 
-$app->router->get('/teacher/cv',[EnseignantController::class,'teacherCV']);
-$app->router->get('/teacher/cv/downoald',[EnseignantController::class,'cvToPdf']);
+$app->router->get('/teacher/cv',[EnseignantController::class, 'teacherCV']);
+$app->router->get('/teacher/cv/downoald',[EnseignantController::class, 'cvToPdf']);
 
 
 

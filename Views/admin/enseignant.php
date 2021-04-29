@@ -1,5 +1,5 @@
 
-<?php $data = $params; global $lang;?>
+<?php $data = empty($params) ? [] : $params; global $lang;?>
 
 <div class="content-wrapper">
 
@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <form action="" class="form-modify-enseignat" method="post">
+                    <form action="/" class="form-modify-enseignant-doctorant" method="post">
                         <div class="input-group mb-3">
                             <input type="hidden" name="id" class="form-control input-modify-id" placeholder=>
                             <input type="text" name="prenom" class="form-control input-modify-prenom" placeholder="<?=$lang['firstName']?>">

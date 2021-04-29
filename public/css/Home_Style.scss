@@ -4,6 +4,13 @@
 @import 'General_style.scss';
 
 body{
+  margin: 0;
+  ui{
+    padding: 0;
+    li{
+      padding: 0;
+    }
+  }
   @import "head";
   @import "nav";
   @import "header_slider";

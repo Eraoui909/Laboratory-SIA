@@ -1,4 +1,4 @@
-<div class="header">
+<div id="header">
 
     <div class="slider1 slider active"></div>
     <div class="slider2 slider"></div>

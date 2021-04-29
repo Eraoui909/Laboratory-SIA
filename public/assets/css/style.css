@@ -165,7 +165,6 @@ li {
 .header {
     background: #5655da;
     padding: 46px;
-    position: fixed;
     height: 100%;
     width: 260px;
     z-index: 5;

@@ -40,7 +40,7 @@ body, html {
 }
 
 /*---------------------------------------------*/
-a {
+a.loginAnch {
     font-family: Poppins-Regular;
     font-size: 14px;
     line-height: 1.7;
@@ -52,11 +52,11 @@ a {
     -moz-transition: all 0.4s;
 }
 
-a:focus {
+a.loginAnch:focus {
     outline: none !important;
 }
 
-a:hover {
+a.loginAnch:hover {
     text-decoration: none;
     color: #74c4ea;
 }
@@ -66,7 +66,7 @@ h1,h2,h3,h4,h5,h6 {
     margin: 0px;
 }
 
-p {
+p.loginPar {
     font-family: Poppins-Regular;
     font-size: 14px;
     line-height: 1.7;
@@ -74,55 +74,55 @@ p {
     margin: 0px;
 }
 
-ul, li {
+ul.loginList, li.loginList {
     margin: 0px;
     list-style-type: none;
 }
 
 
 /*---------------------------------------------*/
-input {
+input.loginInput {
     outline: none;
     border: none;
 }
 
-textarea {
+textarea.loginTextarea {
     outline: none;
     border: none;
 }
 
-textarea:focus, input:focus {
+textarea.loginTextarea:focus, input:focus {
     border-color: transparent !important;
 }
 
-input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; }
-input:focus::-moz-placeholder { color:transparent; }
-input:focus:-ms-input-placeholder { color:transparent; }
+input.loginInput:focus::-webkit-input-placeholder { color:transparent; }
+input.loginInput:focus:-moz-placeholder { color:transparent; }
+input.loginInput:focus::-moz-placeholder { color:transparent; }
+input.loginInput:focus:-ms-input-placeholder { color:transparent; }
 
-textarea:focus::-webkit-input-placeholder { color:transparent; }
-textarea:focus:-moz-placeholder { color:transparent; }
-textarea:focus::-moz-placeholder { color:transparent; }
-textarea:focus:-ms-input-placeholder { color:transparent; }
+textarea.loginTextarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea.loginTextarea:focus:-moz-placeholder { color:transparent; }
+textarea.loginTextarea:focus::-moz-placeholder { color:transparent; }
+textarea.loginTextarea:focus:-ms-input-placeholder { color:transparent; }
 
-input::-webkit-input-placeholder { color: #999999; }
-input:-moz-placeholder { color: #999999; }
-input::-moz-placeholder { color: #999999; }
-input:-ms-input-placeholder { color: #999999; }
+input.loginInput::-webkit-input-placeholder { color: #999999; }
+input.loginInput:-moz-placeholder { color: #999999; }
+input.loginInput::-moz-placeholder { color: #999999; }
+input.loginInput:-ms-input-placeholder { color: #999999; }
 
-textarea::-webkit-input-placeholder { color: #999999; }
-textarea:-moz-placeholder { color: #999999; }
-textarea::-moz-placeholder { color: #999999; }
-textarea:-ms-input-placeholder { color: #999999; }
+textarea.loginTextarea::-webkit-input-placeholder { color: #999999; }
+textarea.loginTextarea:-moz-placeholder { color: #999999; }
+textarea.loginTextarea::-moz-placeholder { color: #999999; }
+textarea.loginTextarea:-ms-input-placeholder { color: #999999; }
 
 /*---------------------------------------------*/
-button {
+button.loginButton {
     outline: none !important;
     border: none;
     background: transparent;
 }
 
-button:hover {
+button.loginButton:hover {
     cursor: pointer;
 }
 

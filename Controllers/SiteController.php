@@ -28,12 +28,18 @@ class SiteController extends Controller
     public function loginPage()
     {
         if (isset($_SESSION['token']))
-            $this->redirect($_SERVER['HTTP_REFERER']);
+            $this->redirect('/');
         $params = [
-            "title" => "Contact page",
+            "title" => "Login",
             "null" => true
         ];
         return $this->render('login', $params);
+    }
+
+    public function logoutPage()
+    {
+        unset($_SESSION['token']);
+        $this->redirect('/');
     }
 
     public function Login()
@@ -53,7 +59,7 @@ class SiteController extends Controller
 
                     $_SESSION['token'] = $result[0];
                     $_SESSION['token']['groupID'] = $result[0]['ens'] ?? $result[0]['doc'];
-                    $this->redirect('/admin/dashboard');
+                    $this->redirect('/');
                 }
             }
 

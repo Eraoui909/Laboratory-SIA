@@ -61,6 +61,8 @@ class EnseignantController extends Controller
 
         if(empty($data['password']))
             unset($data['password']);
+        else
+            $data['password'] = $this->hash_undecrypted_data($data['password']);
 
         $errors     = $validator->require($data);
 
@@ -92,14 +94,13 @@ class EnseignantController extends Controller
 
     public function teacherProfile()
     {
-        $teacher = EnseignantModel::getByPk(0);
-        $_SESSION['teacher_auth'] = $teacher[0];
-        /*
-        echo "<pre>";
-        print_r($_SESSION);
-        echo "</pre>";
-        */
-        return $this->render('/teachers/profile',$_SESSION['teacher_auth']);
+        if (!isset($_SESSION['token']['groupID']) || $_SESSION['token']['groupID'] != 'ens')
+            $this->redirect('/login');
+
+        $arr = $_SESSION['token'];
+        $arr['title'] = $_SESSION['token']['nom'] . ' ' . $_SESSION['token']['prenom'];
+
+        return $this->render('/teachers/profile', $arr);
     }
 
     public function updateProfile()
@@ -168,7 +169,12 @@ class EnseignantController extends Controller
 
     public function teacherCV()
     {
-        return $this->render('/teachers/cv',$_SESSION['teacher_auth']);
+        if (!isset($_SESSION['token']['groupID']) || $_SESSION['token']['groupID'] != 'ens')
+            $this->redirect('/login');
+
+        $arr = $_SESSION['token'];
+        $arr['title'] = 'Download CV';
+        return $this->render('/teachers/cv', $arr);
     }
 
     public function teacherCVDownoald()
@@ -178,7 +184,12 @@ class EnseignantController extends Controller
 
     public function cvToPdf()
     {
-        return $this->renderEmpty('/teachers/cvToPDF',$_SESSION['teacher_auth']);
+        if (!isset($_SESSION['token']['groupID']) || $_SESSION['token']['groupID'] != 'ens')
+            $this->redirect('/login');
+
+        $arr = $_SESSION['token'];
+        $arr['title'] = 'Download CV PDF';
+        return $this->renderEmpty('/teachers/cvToPDF', $arr);
     }
 
 }

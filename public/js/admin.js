@@ -98,7 +98,6 @@ function addDocEns (person)
 {
     let data = $(".form-add-enseignant-doctorant").serialize();
     let errors ="";
-    console.log(data);
 
     $.ajax({
         type    : "post",
@@ -115,7 +114,7 @@ function addDocEns (person)
             }
             if(typeof data == "string")
             {
-                $("#modal-add-" + person + "-add-btn").attr("disabled","disabled");
+                $("#modal-add-" + person + "-add-btn").attr("disabled", "disabled");
                 // $(".msg-add-enseignant-doctorant").html(data);
                 $(".msg-add-enseignant-doctorant").html("<div class='alert alert-success'>" + person + " added with success</div>");
                 setTimeout(function (){
@@ -130,14 +129,8 @@ function addDocEns (person)
 function modifyResDoc (person)
 {
     let errors="";
-    let data="";
-    console.log(person);
-    if(person === "enseignant"){
-         data    = $(".form-modify-enseignat").serialize();
-    }else{
-         data    = $(".form-modify-doctorant").serialize();
-    }
-
+    let data = $(".form-modify-enseignant-doctorant").serialize();
+    console.log(data);
     $.ajax({
         type:"post",
         url:"/admin/" + person + "/modify",

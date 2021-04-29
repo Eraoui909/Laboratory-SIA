@@ -29,10 +29,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/Home_Style.css">
-    <link rel="stylesheet" type="text/css" href="/css/login.css">
 
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
     <link rel="stylesheet" href="/css/Footer_Style.css">
+
 
     <!-- STYLESHEETS FOR CV TEMPLATE-->
     <link rel="stylesheet" href="/assets/css/owl.carousel.css" type="text/css" media="all">
@@ -41,7 +41,10 @@
     <link rel="stylesheet" href="/assets/css/magnific-popup.css" type="text/css" media="all">
     <link rel="stylesheet" href="/assets/css/style.css" type="text/css" media="all">
 
-    <title>Framework</title>
+    <link rel="stylesheet" href="/css/Home_Style.css">
+
+    <title><?= $title ?></title>
+
 </head>
 <body>
 <?php
