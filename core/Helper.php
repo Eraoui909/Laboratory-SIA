@@ -71,23 +71,24 @@ trait Helper
         return $errors;
     }
 
-    public function UploadFile($dir, $id)
+    public function UploadFile($dir, $id, $index = 'pictures')
     {
         global $lang;
+
         $returned['errors'] = array();
         $returned['uploaded'] = array();
         $directory = dirname(__DIR__) . '/public/Storage/Uploads/' . $dir;
-        foreach ($_FILES["pictures"]["error"] as $key => $error) {
+        foreach ($_FILES[$index]["error"] as $key => $error) {
             if ($error == UPLOAD_ERR_OK) {
 
-                $tmp_name = $_FILES["pictures"]["tmp_name"][$key];
-                $name = basename($_FILES["pictures"]["name"][$key]);
+                $tmp_name = $_FILES[$index]["tmp_name"][$key];
+                $name = basename($_FILES[$index]["name"][$key]);
                 $elements = explode('.', $name);
                 $ext = $elements[count($elements) - 1];
 
                 $legalExt = array('jpg', 'jpge', 'png', 'gif');
 
-                if ($_FILES["pictures"]["size"][$key] > 1000000) {
+                if ($_FILES[$index]["size"][$key] > 1000000) {
                     $returned['errors'][] = "$name : ".$lang['file_size_error'];
                     continue;
                 }

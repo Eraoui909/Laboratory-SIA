@@ -6,22 +6,23 @@ namespace app\models;
 
 class ArticleModel extends AbstractModel
 {
-    private $id;
-    private $title;
-    private $description;
-    private $content;
-    private $teacher;
-    private $date;
+    protected $id;
+    protected $title;
+    protected $description;
+    protected $content;
+    protected $teacher;
+    protected $picture;
+    protected $date;
 
-    private static $tableName    ='article';
-    private static $pk           ='articleID';
-    private static $tableSchema  =array(
+    public static $tableName    ='article';
+    public static $pk           ='articleID';
+    public static $tableSchema  =array(
 
         'title'       => \PDO::PARAM_STR,
         'description' => \PDO::PARAM_STR,
         'content'     => \PDO::PARAM_STR,
         'teacher'     => \PDO::PARAM_INT,
-        'date'        => \PDO::PARAM_STR
+        'picture'     => \PDO::PARAM_STR,
     );
 
     /**
@@ -102,6 +103,22 @@ class ArticleModel extends AbstractModel
     public function setDate($date): void
     {
         $this->date = $date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param mixed $picture
+     */
+    public function setPicture($picture): void
+    {
+        $this->picture = $picture;
     }
 
 

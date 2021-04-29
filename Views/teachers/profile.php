@@ -340,10 +340,10 @@
                                             <p class="col-sm-10 error-message"><?=  ($_SESSION['flash_messages']['errors']['value']['uploads'][0] ?? '') ?></p>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="profileImg" class="col-sm-2 col-form-label"><?= $lang['avatar'] ?></label>
+                                            <label for="ArticleImg" class="col-sm-2 col-form-label"><?= $lang['avatar'] ?></label>
                                             <div class="col-sm-10 ">
-                                                <label for="profileImg" class="col-sm-2 col-form-label UploadLabel"><?= $lang['add picture'] ?></label>
-                                                <input type="file" name="pictures[]" class="form-control hiddenInput" id="Article Img" placeholder="Avatar">
+                                                <label for="ArticleImg" class="col-sm-2 col-form-label UploadLabel"><?= $lang['add picture'] ?></label>
+                                                <input type="file" name="ArticlePic[]" class="form-control hiddenInput" id="ArticleImg" >
                                             </div>
                                         </div>
                                         <div class="form-group row">
