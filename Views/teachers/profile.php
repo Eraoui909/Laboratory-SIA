@@ -1,4 +1,4 @@
-<?php global $lang;?>
+<?php $data = []; global $lang;?>
 
 <style>
     .contentEdit p{
@@ -94,6 +94,7 @@
                                 <li class="nav-item"><a class="nav-link  active" href="#timeline" data-toggle="tab">Mon CV</a></li>
                                 <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab"><?= $lang['settings'] ?></a></li>
                                 <li class="nav-item"><a class="nav-link " href="#addArticle" data-toggle="tab"><?= $lang['add'] . ' Acticle' ?></a></li>
+                                <li class="nav-item"><a class="nav-link " href="#allArticle" data-toggle="tab"><?= 'all articles'?></a></li>
                             </ul>
                         </div><!-- /.card-header -->
                         <div class="card-body">
@@ -104,9 +105,9 @@
                                         <div class="user-block">
                                             <img class="img-circle img-bordered-sm" src="/adminLTE/dist/img/user1-128x128.jpg" alt="user image">
                                             <span class="username">
-                          <a href="#">Jonathan Burke Jr.</a>
-                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                        </span>
+                                              <a href="#">Jonathan Burke Jr.</a>
+                                              <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                            </span>
                                             <span class="description">Shared publicly - 7:30 PM today</span>
                                         </div>
                                         <!-- /.user-block -->
@@ -122,10 +123,10 @@
                                             <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
                                             <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
                                             <span class="float-right">
-                          <a href="#" class="link-black text-sm">
-                            <i class="far fa-comments mr-1"></i> Comments (5)
-                          </a>
-                        </span>
+                                              <a href="#" class="link-black text-sm">
+                                                <i class="far fa-comments mr-1"></i> Comments (5)
+                                              </a>
+                                            </span>
                                         </p>
 
                                         <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
@@ -137,9 +138,9 @@
                                         <div class="user-block">
                                             <img class="img-circle img-bordered-sm" src="/adminLTE/dist/img/user7-128x128.jpg" alt="User Image">
                                             <span class="username">
-                          <a href="#">Sarah Ross</a>
-                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                        </span>
+                                              <a href="#">Sarah Ross</a>
+                                              <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                            </span>
                                             <span class="description">Sent you a message - 3 days ago</span>
                                         </div>
                                         <!-- /.user-block -->
@@ -274,7 +275,7 @@
                                             <label for="profileImg" class="col-sm-2 col-form-label"><?= $lang['avatar'] ?></label>
                                             <div class="col-sm-10 ">
                                                 <label for="profileImg" class="col-sm-2 col-form-label UploadLabel"><?= $lang['updatePic'] ?></label>
-                                                <input type="file" name="pictures[]" class="form-control hiddenInput" id="profileImg" placeholder="Avatar">
+                                                <input style="display: none" type="file" name="pictures[]" class="form-control hiddenInput" id="profileImg" placeholder="Avatar">
                                             </div>
                                         </div>
 
@@ -343,7 +344,7 @@
                                             <label for="ArticleImg" class="col-sm-2 col-form-label"><?= $lang['avatar'] ?></label>
                                             <div class="col-sm-10 ">
                                                 <label for="ArticleImg" class="col-sm-2 col-form-label UploadLabel"><?= $lang['add picture'] ?></label>
-                                                <input type="file" name="ArticlePic[]" class="form-control hiddenInput" id="ArticleImg" >
+                                                <input style="display: none" type="file" name="ArticlePic[]" class="form-control hiddenInput" id="ArticleImg" >
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -352,6 +353,10 @@
                                             </div>
                                         </div>
                                     </form>
+                                </div>
+
+                                <div class=" tab-pane" id="allArticle">
+                                    <?php include_once 'All Articles.php';?>
                                 </div>
 
                                 <!-- /.tab-pane -->
