@@ -54,6 +54,10 @@ $app->router->get('/contact', [SiteController::class, 'contactPage']);
 
 $app->router->post('/contact',[SiteController::class, 'handleContact']);
 
+$app->router->get('/contact', [SiteController::class, 'contactPage']);
+
+$app->router->get('/articles', 'articles');
+
 /* **********************************************
 *                                               *
 *  this side it's for all admin panel ROUTES    *
