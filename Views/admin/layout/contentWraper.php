@@ -1,5 +1,5 @@
 
-<?php global $lang;?>
+<?php global $lang; ?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">

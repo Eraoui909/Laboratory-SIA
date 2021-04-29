@@ -15,6 +15,9 @@ class EnseignantController extends Controller
     use Helper;
     public function enseignantPage()
     {
+        if(!isset($_SESSION['token']['admin'])){
+            $this->redirect('/admin/login');
+        }
         $data = EnseignantModel::getAll();
         return $this->renderAdmin('enseignant', $data);
     }
@@ -95,11 +98,11 @@ class EnseignantController extends Controller
     public function teacherProfile()
     {
 
-        if (!isset($_SESSION['token']['groupID']) || $_SESSION['token']['groupID'] != 'ens')
+        if (!isset($_SESSION['token']['ens']))
             $this->redirect('/login');
 
-        $arr = $_SESSION['token'];
-        $arr['title'] = $_SESSION['token']['nom'] . ' ' . $_SESSION['token']['prenom'];
+        $arr = $_SESSION['token']['ens'];
+        $arr['title'] = $_SESSION['token']['ens']['nom'] . ' ' . $_SESSION['token']['ens']['prenom'];
 
         return $this->render('/teachers/profile', $arr);
     }
@@ -125,9 +128,9 @@ class EnseignantController extends Controller
 
             if(empty($errors['uploads'])){
 
-                $avatar = $upload['uploaded'][0] ?? $_SESSION['token']['avatar'];
-                $pass   = $_SESSION['token']['password'];
-                $id     = $_SESSION['token']['id'];
+                $avatar = $upload['uploaded'][0] ?? $_SESSION['token']['ens']['avatar'];
+                $pass   = $_SESSION['token']['ens']['password'];
+                $id     = $_SESSION['token']['ens']['id'];
 
                 $teacherModel->setId($id);
                 $teacherModel->setNom($data['nom']);
@@ -138,11 +141,11 @@ class EnseignantController extends Controller
                 $teacherModel->setAvatar($avatar);
 
                 if($teacherModel->update()){
-                    $_SESSION['token']['nom']    = $data['nom'];
-                    $_SESSION['token']['prenom'] = $data['prenom'];
-                    $_SESSION['token']['email']  = $data['email'];
-                    $_SESSION['token']['tel']    = $tel;
-                    $_SESSION['token']['avatar'] = $avatar;
+                    $_SESSION['token']['ens']['nom']    = $data['nom'];
+                    $_SESSION['token']['ens']['prenom'] = $data['prenom'];
+                    $_SESSION['token']['ens']['email']  = $data['email'];
+                    $_SESSION['token']['ens']['tel']    = $tel;
+                    $_SESSION['token']['ens']['avatar'] = $avatar;
 
                     $this->redirect('/teacher/profile');
                 }
@@ -161,8 +164,8 @@ class EnseignantController extends Controller
         $data = array(
             'avatar' => 'avatar.png'
         );
-        if (EnseignantModel::UpdateColumns($_SESSION['teacher_auth']['id'], $data)){
-            $_SESSION['token']['avatar'] = 'avatar.png';
+        if (EnseignantModel::UpdateColumns($_SESSION['token']['ens'], $data)){
+            $_SESSION['token']['ens']['avatar'] = 'avatar.png';
             $this->redirect('/teacher/profile');
         }
 
@@ -170,25 +173,20 @@ class EnseignantController extends Controller
 
     public function teacherCV()
     {
-        if (!isset($_SESSION['token']['groupID']) || $_SESSION['token']['groupID'] != 'ens')
+        if (!isset($_SESSION['token']['ens']))
             $this->redirect('/login');
 
-        $arr = $_SESSION['token'];
+        $arr = $_SESSION['token']['ens'];
         $arr['title'] = 'Download CV';
         return $this->render('/teachers/cv', $arr);
     }
 
-    public function teacherCVDownoald()
-    {
-
-    }
-
     public function cvToPdf()
     {
-        if (!isset($_SESSION['token']['groupID']) || $_SESSION['token']['groupID'] != 'ens')
+        if (!isset($_SESSION['token']['ens']))
             $this->redirect('/login');
 
-        $arr = $_SESSION['token'];
+        $arr = $_SESSION['token']['ens'];
         $arr['title'] = 'Download CV PDF';
         return $this->renderEmpty('/teachers/cvToPDF', $arr);
     }

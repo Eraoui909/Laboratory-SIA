@@ -6,7 +6,7 @@
             <li class="keep icone" id="menu-btn-icon"><i class="fas fa-bars"></i></li>
             <li><a href="/"><?= $lang['home'] ?></a></li>
             <li><a href="/contact"><?= $lang['contact'] ?></a></li>
-            <li><a href=""><?= $lang['enseignant'] ?></a></li>
+            <li><a href="/teacher/profile"><?= $lang['enseignant'] ?></a></li>
             <li><a href=""><?= $lang['doctorant'] ?></a></li>
         </ul>
     </div>

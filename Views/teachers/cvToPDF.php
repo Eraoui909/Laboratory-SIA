@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>CV</title>
+    <title><?php echo $title ?></title>
     <meta name="description" content="Blvck - Personal vCard & Resume Template">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">

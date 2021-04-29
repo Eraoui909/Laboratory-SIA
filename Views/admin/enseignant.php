@@ -1,5 +1,5 @@
 
-<?php $data = empty($params) ? [] : $params; global $lang;?>
+<?php $data = empty($params) ? [] : $params; global $lang; ?>
 
 <div class="content-wrapper">
 
