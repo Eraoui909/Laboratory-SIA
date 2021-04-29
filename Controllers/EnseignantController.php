@@ -8,6 +8,7 @@ use app\core\Controller;
 use app\core\Helper;
 use app\core\Session;
 use app\core\Validator;
+use app\models\ArticleModel;
 use app\models\EnseignantModel;
 
 class EnseignantController extends Controller
@@ -189,6 +190,48 @@ class EnseignantController extends Controller
         $arr = $_SESSION['token']['ens'];
         $arr['title'] = 'Download CV PDF';
         return $this->renderEmpty('/teachers/cvToPDF', $arr);
+    }
+
+    public function addArticle()
+    {
+        $session = new Session();
+        $validator = new validator();
+
+        $data = $validator->sanitize($_POST);
+        $errors = $validator->require($data);
+        $article = new ArticleModel();
+
+        if (isset($_FILES["ArticlePic"]["name"][1])){
+            $errors['uploads'][] = "* You can't upload multiple files";
+        }
+
+        if(empty($errors)){
+            $upload = $this->UploadFile('articles', $data['title'], 'ArticlePic');
+            $errors['uploads'] = $upload['errors'];
+
+            if(empty($errors['uploads'])){
+
+                $picture = $upload['uploaded'][0] ?? '';
+                $teacher     = $_SESSION['token']['ens']['id'];
+
+                $article->setTitle($data['title']);
+                $article->setDescription($data['description']);
+                $article->setContent($data['content']);
+                $article->setTeacher($teacher);
+                $article->setPicture($picture);
+
+                if($article->register()){
+
+                    $this->redirect('/teacher/profile');
+                }
+                return;
+
+            }
+
+        }
+
+        $session->setFlash("errors", $errors);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
 }

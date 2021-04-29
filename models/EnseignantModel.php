@@ -8,23 +8,19 @@ use PDO;
 
 class EnseignantModel extends AbstractModel
 {
-    public $id;
+    private $id;
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id): void
-    {
-        $this->id = $id;
-    }
-    public $nom;
-    public $prenom;
-    public $email;
-    public $password;
 
-    public static $tableName    ='enseignant';
-    public static $pk           ='id';
-    public static $tableSchema  =array(
+    private $nom;
+    private $prenom;
+    private $email;
+    private $password;
+    private $tel;
+    private $avatar;
+
+    private static $tableName    ='enseignant';
+    private static $pk           ='id';
+    private static $tableSchema  =array(
 
         'nom'       => PDO::PARAM_STR,
         'prenom'    => PDO::PARAM_STR,
@@ -34,6 +30,13 @@ class EnseignantModel extends AbstractModel
         'avatar'    => PDO::PARAM_STR,
     );
 
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
 
     /**
      * @return mixed
@@ -130,8 +133,6 @@ class EnseignantModel extends AbstractModel
     {
         $this->avatar = $avatar;
     }
-    public $tel;
-    public $avatar;
 
 
 

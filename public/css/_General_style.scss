@@ -12,6 +12,15 @@ $font-color: #3c3c3c;
   text-decoration: none;
 }
 
+label.UploadLabel {
+  padding: 6px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  display: table-cell;
+  cursor: pointer;
+}
+
 a{
   color: #000;
   text-decoration: none;
