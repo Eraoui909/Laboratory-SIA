@@ -9,6 +9,14 @@ use PDO;
 class EnseignantModel extends AbstractModel
 {
     public $id;
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
     public $nom;
     public $prenom;
     public $email;

@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <form action="" class="form-modify-doctorant" method="post">
+                    <form action="" class="form-modify-enseignant-doctorant" method="post">
                         <div class="input-group mb-3">
                             <input type="hidden" name="id" class="form-control input-modify-id">
                             <input type="text" name="prenom" class="form-control input-modify-prenom" placeholder="<?= $lang['firstName'] ?>">

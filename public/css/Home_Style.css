@@ -30,6 +30,15 @@ ul {
   justify-content: space-around;
 }
 
+body {
+  margin: 0;
+}
+body ui {
+  padding: 0;
+}
+body ui li {
+  padding: 0;
+}
 body .head {
   background-color: #6bb5cc;
   padding: 5px 0;
@@ -71,6 +80,7 @@ body nav.my-navbar .links ul li {
   color: #3c3c3c;
   transition: all 0.3s ease;
   position: relative;
+  padding-top: 13px;
 }
 body nav.my-navbar .links ul li span {
   position: absolute;
@@ -185,12 +195,12 @@ body nav.my-navbar .menu ul li a {
   color: #fff;
   display: block;
 }
-body .header {
+body #header {
   position: relative;
   height: calc(80vh - 100px);
   overflow: hidden;
 }
-body .header .slider {
+body #header .slider {
   background-position: center;
   background-size: 100% 100%;
   position: absolute;
@@ -200,20 +210,20 @@ body .header .slider {
   left: 0;
   display: none;
 }
-body .header .slider1 {
+body #header .slider1 {
   background-image: url("/Storage/Statics/images/header1.jpg");
 }
-body .header .slider2 {
+body #header .slider2 {
   background-image: url("/Storage/Statics/images/header2.jpg");
 }
-body .header .slider3 {
+body #header .slider3 {
   background-image: url("/Storage/Statics/images/header3.jpg");
 }
-body .header .slider.active {
+body #header .slider.active {
   display: block;
   animation: show-slider 2s;
 }
-body .header .pagination {
+body #header .pagination {
   position: absolute;
   bottom: 30px;
   left: 50%;
@@ -221,7 +231,7 @@ body .header .pagination {
   cursor: pointer;
   -webkit-transform: translateX(-50%);
 }
-body .header .pagination ul li {
+body #header .pagination ul li {
   width: 12px;
   height: 12px;
   border: 1px solid #fff;
@@ -231,10 +241,10 @@ body .header .pagination ul li {
   display: inline-block;
   margin-right: 3px;
 }
-body .header .pagination ul li:hover {
+body #header .pagination ul li:hover {
   background-color: #fff;
 }
-body .header .pagination ul li.active {
+body #header .pagination ul li.active {
   background-color: #fff;
   transform: scale(1.5);
 }

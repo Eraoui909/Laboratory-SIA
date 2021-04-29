@@ -60,6 +60,8 @@ class DoctorantController extends Controller
 
         if(empty($data['password']))
             unset($data['password']);
+        else
+            $data['password'] = $this->hash_undecrypted_data($data['password']);
 
         $errors     = $validator->require($data);
 

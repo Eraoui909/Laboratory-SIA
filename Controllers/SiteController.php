@@ -28,7 +28,7 @@ class SiteController extends Controller
     public function loginPage()
     {
         if (isset($_SESSION['token']))
-            $this->redirect($_SERVER['HTTP_REFERER']);
+            $this->redirect('/');
         $params = [
             "title" => "Login",
             "null" => true
@@ -58,7 +58,7 @@ class SiteController extends Controller
                 {
                     $_SESSION['token'] = $result[0];
                     $_SESSION['token']['groupID'] = $result[0]['ens'] ?? $result[0]['doc'];
-                    $this->redirect('/admin/dashboard');
+                    $this->redirect('/');
                 }
             }
 
