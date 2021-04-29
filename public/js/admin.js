@@ -130,8 +130,14 @@ function addDocEns (person)
 function modifyResDoc (person)
 {
     let errors="";
-    let data    = $(".form-modify-doctorant").serialize();
-    console.log(typeof data);
+    let data="";
+    console.log(person);
+    if(person === "enseignant"){
+         data    = $(".form-modify-enseignat").serialize();
+    }else{
+         data    = $(".form-modify-doctorant").serialize();
+    }
+
     $.ajax({
         type:"post",
         url:"/admin/" + person + "/modify",

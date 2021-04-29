@@ -199,6 +199,7 @@ class AbstractModel
         foreach ($data as $key => $value){
             $stmt->bindValue(':' . $key, $value);
         }
+
         return $stmt->execute();
     }
 

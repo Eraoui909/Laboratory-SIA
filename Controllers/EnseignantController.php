@@ -58,6 +58,7 @@ class EnseignantController extends Controller
         $validator  = new Validator();
         $data       = $validator->sanitize($_POST);
 
+
         if(empty($data['password']))
             unset($data['password']);
 
@@ -68,7 +69,6 @@ class EnseignantController extends Controller
             $errors = json_encode($errors);
             echo  $errors;
         }else{
-
             if(EnseignantModel::UpdateColumns($data['id'], $data))
             {
                 echo json_encode("succes");
