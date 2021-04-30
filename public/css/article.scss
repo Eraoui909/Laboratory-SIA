@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=Poppins:wght@300;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 @import 'General_style.scss';
 
@@ -23,15 +23,20 @@
 
   .ha-article-container-header-title{
     position: absolute;
-    left: 20px;
-    bottom: 20px;
+    width: 100%;
+    left: 0px;
+    bottom: 40px;
     font-weight: bold;
     font-size: 30px;
     color: #00aad4;
-    padding: 5px;
+    padding: 5px 10px;
     background-color: rgba(0,0,0,0.4);
     *{
       color: white;
+      display: block;
+      text-indent: 30px;
+      font-size: .7em;
+      margin: -5px 30px 25px;
     }
     @media only screen and (max-width: 600px){
       font-size: 22px;
@@ -64,20 +69,20 @@
 
       .card-img{
         width: fit-content;
-        margin-right: 10px;
         height: 100%;
+        margin-right: auto;
       }
       .card-content{
         margin-left: 10px;
         .title{
           font-weight: 1000;
-          font-size: 30px;
+          font-size: 22px;
         }
         small{
           color: gray;
         }
         .desc{
-          font-size: 26px;
+          font-size: 18px;
         }
       }
 
@@ -95,18 +100,18 @@
           }
           .title{
             font-weight: bold;
-            font-size: 20px !important;
+            font-size: 12px !important;
           }
           .desc{
-            font-size: 14px !important;
+            font-size: 8px !important;
           }
           .time{
-            font-size: 10px !important;
+            font-size: 5px !important;
           }
           button{
             width: 60% !important;
             margin: 5px auto;
-            font-size: 10px !important;
+            font-size: 5px !important;
           }
         }
       }
@@ -128,18 +133,18 @@
           }
           .title{
             font-weight: bold;
-            font-size: 30px !important;
+            font-size: 22px !important;
           }
           .desc{
-            font-size: 24px !important;
+            font-size: 18px !important;
           }
           .time{
-            font-size: 20px !important;
+            font-size: 14px !important;
           }
           button{
             width: 30%;
             margin: 5px auto;
-            font-size: 20px !important;
+            font-size: 14px !important;
           }
         }
       }
@@ -154,4 +159,68 @@
         }
     }
   }
+}
+
+
+
+
+/*
+************************************************************************************************************************
+*************************************************  Single Article style    *********************************************
+************************************************************************************************************************
+ */
+
+.ha-single-article{
+  position: relative;
+  padding: 15px;
+  width: 80%;
+  margin: 10px auto;
+
+  .ha-single-article-title{
+    margin: 15px 5px;
+    h1{
+      font-weight: bold;
+    }
+
+    @media only screen and (max-width: 700px){
+      h1{
+        font-size: 25px;
+        font-weight: bold;
+      }
+    }
+  }
+
+
+  .ha-single-article-img{
+    width: 90%;
+    margin: 0px 10px;
+    img{
+      width: 100%;
+      height: 450px;
+    }
+
+  }
+
+  .ha-single-article-date{
+    padding: 15px;
+
+    small{
+      color: gray;
+    }
+  }
+
+  .ha-single-article-content{
+    width: 90%;
+    margin: 0px 10px;
+    p{
+      text-indent: 50px;
+      text-align: justify;
+      letter-spacing: 3px;
+    }
+  }
+
+  .ha-single-article-footer{
+    padding: 15px;
+  }
+
 }

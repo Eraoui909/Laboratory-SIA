@@ -72,6 +72,9 @@
                 </thead>
                 <tbody>
                 <?php
+                echo "<pre>";
+                print_r($articles);
+                echo "</pre>";
                 foreach ($articles as $article){
                 ?>
                     <tr>

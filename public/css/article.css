@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=Poppins:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -50,15 +51,20 @@ ul {
         height: 300px; } }
   .ha-article-container .ha-article-container-header-title {
     position: absolute;
-    left: 20px;
-    bottom: 20px;
+    width: 100%;
+    left: 0px;
+    bottom: 40px;
     font-weight: bold;
     font-size: 30px;
     color: #00aad4;
-    padding: 5px;
+    padding: 5px 10px;
     background-color: rgba(0, 0, 0, 0.4); }
     .ha-article-container .ha-article-container-header-title * {
-      color: white; }
+      color: white;
+      display: block;
+      text-indent: 30px;
+      font-size: .7em;
+      margin: -5px 30px 25px; }
     @media only screen and (max-width: 600px) {
       .ha-article-container .ha-article-container-header-title {
         font-size: 22px;
@@ -83,17 +89,17 @@ ul {
       box-shadow: 0px 0px 15px 0px #b2b2b2; }
       .ha-article-container .ha-article-container-body .ha-article-card .card-img {
         width: fit-content;
-        margin-right: 10px;
-        height: 100%; }
+        height: 100%;
+        margin-right: auto; }
       .ha-article-container .ha-article-container-body .ha-article-card .card-content {
         margin-left: 10px; }
         .ha-article-container .ha-article-container-body .ha-article-card .card-content .title {
           font-weight: 1000;
-          font-size: 30px; }
+          font-size: 22px; }
         .ha-article-container .ha-article-container-body .ha-article-card .card-content small {
           color: gray; }
         .ha-article-container .ha-article-container-body .ha-article-card .card-content .desc {
-          font-size: 26px; }
+          font-size: 18px; }
       @media only screen and (max-width: 700px) {
         .ha-article-container .ha-article-container-body .ha-article-card {
           display: flex;
@@ -106,15 +112,15 @@ ul {
             height: fit-content; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-content .title {
             font-weight: bold;
-            font-size: 20px !important; }
+            font-size: 12px !important; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-content .desc {
-            font-size: 14px !important; }
+            font-size: 8px !important; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-content .time {
-            font-size: 10px !important; }
+            font-size: 5px !important; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-content button {
             width: 60% !important;
             margin: 5px auto;
-            font-size: 10px !important; } }
+            font-size: 5px !important; } }
       @media only screen and (max-width: 1200px) {
         .ha-article-container .ha-article-container-body .ha-article-card {
           display: flex;
@@ -129,16 +135,54 @@ ul {
             left: -300px !important; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-content .title {
             font-weight: bold;
-            font-size: 30px !important; }
+            font-size: 22px !important; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-content .desc {
-            font-size: 24px !important; }
+            font-size: 18px !important; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-content .time {
-            font-size: 20px !important; }
+            font-size: 14px !important; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-content button {
             width: 30%;
             margin: 5px auto;
-            font-size: 20px !important; } }
+            font-size: 14px !important; } }
     .ha-article-container .ha-article-container-body .ha-article-card:hover .title {
       color: #17a2b8; }
+
+/*
+************************************************************************************************************************
+*************************************************  Single Article style    *********************************************
+************************************************************************************************************************
+ */
+.ha-single-article {
+  position: relative;
+  padding: 15px;
+  width: 80%;
+  margin: 10px auto; }
+  .ha-single-article .ha-single-article-title {
+    margin: 15px 5px; }
+    .ha-single-article .ha-single-article-title h1 {
+      font-weight: bold; }
+    @media only screen and (max-width: 700px) {
+      .ha-single-article .ha-single-article-title h1 {
+        font-size: 25px;
+        font-weight: bold; } }
+  .ha-single-article .ha-single-article-img {
+    width: 90%;
+    margin: 0px 10px; }
+    .ha-single-article .ha-single-article-img img {
+      width: 100%;
+      height: 450px; }
+  .ha-single-article .ha-single-article-date {
+    padding: 15px; }
+    .ha-single-article .ha-single-article-date small {
+      color: gray; }
+  .ha-single-article .ha-single-article-content {
+    width: 90%;
+    margin: 0px 10px; }
+    .ha-single-article .ha-single-article-content p {
+      text-indent: 50px;
+      text-align: justify;
+      letter-spacing: 3px; }
+  .ha-single-article .ha-single-article-footer {
+    padding: 15px; }
 
 /*# sourceMappingURL=article.css.map */

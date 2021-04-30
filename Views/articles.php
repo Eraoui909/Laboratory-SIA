@@ -48,6 +48,54 @@
                 <button class="btn btn-outline-info">Read more</button>
             </div>
         </div>
+        <hr>
+        <div class="ha-article-card">
+            <div class="card-img">
+                <img src="/Storage/uploads/users/science_pic.jpg" width="350px" alt="">
+            </div>
+            <div class="card-content">
+                <div class="title">
+                    The title of article
+                </div>
+                <small>2021-04-29 17:14:32</small>
+                <div class="desc">
+                    <small>Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info">Read more</button>
+            </div>
+        </div>
+        <hr>
+        <div class="ha-article-card">
+            <div class="card-img">
+                <img src="/Storage/uploads/users/science_pic.jpg" width="350px" alt="">
+            </div>
+            <div class="card-content">
+                <div class="title">
+                    The title of article
+                </div>
+                <small>2021-04-29 17:14:32</small>
+                <div class="desc">
+                    <small>Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info">Read more</button>
+            </div>
+        </div>
+        <hr>
+        <div class="ha-article-card">
+            <div class="card-img">
+                <img src="/Storage/uploads/users/science_pic.jpg" width="350px" alt="">
+            </div>
+            <div class="card-content">
+                <div class="title">
+                    The title of article
+                </div>
+                <small>2021-04-29 17:14:32</small>
+                <div class="desc">
+                    <small>Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info">Read more</button>
+            </div>
+        </div>
     </div>
 
     <div class="ha-article-container-footer">

@@ -58,6 +58,8 @@ $app->router->get('/contact', [SiteController::class, 'contactPage']);
 
 $app->router->get('/articles', 'articles');
 
+$app->router->get('/articles/15', 'singleArticle');
+
 /* **********************************************
 *                                               *
 *  this side it's for all admin panel ROUTES    *
