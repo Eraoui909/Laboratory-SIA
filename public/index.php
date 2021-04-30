@@ -108,6 +108,8 @@ $app->router->get('/teacher/deletePic',[EnseignantController::class, 'deletePict
 $app->router->post('/teacher/addArticle',[EnseignantController::class, 'addArticle']);
 $app->router->post('/teacher/modifyArticle',[EnseignantController::class, 'modifyArticle']);
 $app->router->post('/teacher/deleteArticle',[EnseignantController::class, 'deleteArticle']);
+$app->router->post('/teacher/modifyArticleImg',[EnseignantController::class, 'modifyArticleImg']);
+
 
 
 $app->router->get('/teacher/cv',[EnseignantController::class, 'teacherCV']);

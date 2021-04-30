@@ -132,3 +132,7 @@ $('.delete-article-btn').on("click",function (e)
         }
     })
 });
+
+$(document).on("click",".edit-article-img",function (){
+    $(".articleIDHidden").val($(this).attr("data-id"));
+});

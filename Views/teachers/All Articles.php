@@ -23,6 +23,30 @@
 
 <div class="content-wrapper " style="margin-left: 0">
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/teacher/modifyArticleImg" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <input type="file" name="pictures[]" id="">
+                        <input type="hidden" class="articleIDHidden" name="articleID" value="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary edit-article-image">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -114,7 +138,9 @@
                     <tr>
                         <td><?= $article['title'] ?></td>
                         <td><?= $article['date'] ?></td>
-                        <td><img width="45px" height="40px" src="\Storage\uploads\articles\<?= $article['picture'] ?>" alt="article picture"> </td>
+                        <td class="edit-article-img" data-id="<?= $article['articleID'] ?>" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal">
+                            <i class="fa fa-edit"></i>
+                            <img width="45px" height="40px" src="\Storage\uploads\articles\<?= $article['picture'] ?>" alt="article picture"> </td>
                         <td>
                             <button class="btn-sm btn-success btn-article-modify-form"
                                     data-toggle="modal"

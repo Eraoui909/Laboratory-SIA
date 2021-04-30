@@ -265,4 +265,25 @@ class EnseignantController extends Controller
             echo json_encode("error");
         }
     }
+
+    public function modifyArticleImg()
+    {
+        if(empty($_FILES['pictures']['name'][0]))
+        {
+            $this->redirect($_SERVER['HTTP_REFERER']);
+        }
+        $pic = Helper::UploadFile('articles',rand(50,1000));
+        if(isset($pic['errors'][0]))
+        {
+            echo "error";
+        }else{
+            $pice['picture'] = $pic['uploaded'][0];
+            if(ArticleModel::UpdateColumns($_POST['articleID'],$pice))
+            {
+                $this->redirect($_SERVER['HTTP_REFERER']);
+            }else{
+                $this->redirect($_SERVER['HTTP_REFERER']);
+            }
+        }
+    }
 }
