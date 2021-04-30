@@ -18,6 +18,19 @@
         <h1>Les articles disponible </h1>
 
         <div class="ha-article-card">
+            <div class="title hidden-title">
+                The title of article
+            </div>
+            <small class="hidden-date">added 2021-04-29 17:14:32</small>
+            <div class="hidden-content">
+                <div class="title hidden-title">
+                    The title of article
+                </div>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
             <div class="card-img">
                 <img class="img-fluid" src="/Storage/uploads/users/science_pic.jpg" width="350px" alt="">
             </div>
@@ -27,13 +40,28 @@
                 </div>
                 <small class="time">2021-04-29 17:14:32</small>
                 <div class="desc">
-                    <small>Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, dolorem doloribus eum explicabo iure reiciendis! Eius ipsa quis quisquam repellendus!</small>
                 </div>
-                <button class="btn btn-outline-info">Read more</button>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
             </div>
         </div>
         <hr>
         <div class="ha-article-card">
+
+            <div class="title hidden-title">
+                The title of article
+            </div>
+            <small class="hidden-date">added 2021-04-29 17:14:32</small>
+            <div class="hidden-content">
+                <div class="title hidden-title">
+                    The title of article
+                </div>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
+
             <div class="card-img">
                 <img src="/Storage/uploads/users/science_pic.jpg" width="350px" alt="">
             </div>
@@ -43,13 +71,26 @@
                 </div>
                 <small>2021-04-29 17:14:32</small>
                 <div class="desc">
-                    <small>Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
                 </div>
-                <button class="btn btn-outline-info">Read more</button>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
             </div>
         </div>
         <hr>
         <div class="ha-article-card">
+            <div class="title hidden-title">
+                The title of article
+            </div>
+            <small class="hidden-date">added 2021-04-29 17:14:32</small>
+            <div class="hidden-content">
+                <div class="title hidden-title">
+                    The title of article
+                </div>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
             <div class="card-img">
                 <img src="/Storage/uploads/users/science_pic.jpg" width="350px" alt="">
             </div>
@@ -59,13 +100,26 @@
                 </div>
                 <small>2021-04-29 17:14:32</small>
                 <div class="desc">
-                    <small>Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
                 </div>
-                <button class="btn btn-outline-info">Read more</button>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
             </div>
         </div>
         <hr>
         <div class="ha-article-card">
+            <div class="title hidden-title">
+                The title of article
+            </div>
+            <small class="hidden-date">added 2021-04-29 17:14:32</small>
+            <div class="hidden-content">
+                <div class="title hidden-title">
+                    The title of article
+                </div>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
             <div class="card-img">
                 <img src="/Storage/uploads/users/science_pic.jpg" width="350px" alt="">
             </div>
@@ -75,13 +129,26 @@
                 </div>
                 <small>2021-04-29 17:14:32</small>
                 <div class="desc">
-                    <small>Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
                 </div>
-                <button class="btn btn-outline-info">Read more</button>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
             </div>
         </div>
         <hr>
         <div class="ha-article-card">
+            <div class="title hidden-title">
+                The title of article
+            </div>
+            <small class="hidden-date">added 2021-04-29 17:14:32</small>
+            <div class="hidden-content">
+                <div class="title hidden-title">
+                    The title of article
+                </div>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
             <div class="card-img">
                 <img src="/Storage/uploads/users/science_pic.jpg" width="350px" alt="">
             </div>
@@ -91,9 +158,9 @@
                 </div>
                 <small>2021-04-29 17:14:32</small>
                 <div class="desc">
-                    <small>Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
                 </div>
-                <button class="btn btn-outline-info">Read more</button>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
             </div>
         </div>
     </div>
