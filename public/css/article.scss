@@ -3,12 +3,85 @@
 
 @import 'General_style.scss';
 
+.hidden-title, .hidden-content, .hidden-date{
+  display: none;
+}
+
+.hidden-title{
+  font-weight: 1000;
+  font-size: 22px;
+  padding: 15px 20px;
+  min-height: 78px;
+  color: #4c83e8;
+}
+
+.hidden-date{
+  padding-left: 10px;
+  font-weight: 700;
+  color: #848383;
+  margin-bottom: 5px;
+}
+
+.hidden-content{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #4c83e8;
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  .hidden-title {
+    padding: 15px 20px;
+    min-height: 85px;
+    color: #ffffff;
+  }
+  .desc{
+    padding: 0px 25px;
+    max-height: 116px;
+    overflow: hidden;
+    small{
+      color: #fff;
+      font-size: 1em;
+      letter-spacing: .8px;
+      font-weight: 600;
+    }
+  }
+  .article-read-more{
+    background-color: #0000006b;
+    position: absolute;
+    bottom: 50px;
+    width: 170px;
+    margin: auto;
+    left: 114px;
+    height: 45px;
+    color: #fff;
+    border-color: #ddd;
+
+    &:hover{
+      background-color: #04436f;
+    }
+  }
+}
+
 .ha-article-container{
   padding: 15px;
   margin: 10px auto;
   width: 80%;
   position: relative;
-  cursor: pointer;
+
+  @media only screen and (max-width: 1110px)
+  {
+    width: 90%;
+
+  }
+
+  @media only screen and (max-width: 1110px)
+  {
+    width: 103%;
+
+  }
 
   .ha-article-container-header-slider{
     height: 500px;
@@ -31,6 +104,7 @@
     color: #00aad4;
     padding: 5px 10px;
     background-color: rgba(0,0,0,0.4);
+
     *{
       color: white;
       display: block;
@@ -42,6 +116,7 @@
       font-size: 22px;
       margin-right: 5px;
       color: white;
+
       small{
         display: none;
       }
@@ -62,10 +137,11 @@
       display: flex;
       justify-content: space-around;
       margin: 10px auto;
-      width: 80%;
-      height: 235px;
+      width: 75%;
+      height: 200px;
       padding: 5px;
       box-shadow: 0px 0px 15px 0px #b2b2b2;
+      cursor: pointer;
 
       .card-img{
         width: fit-content;
@@ -83,6 +159,15 @@
         }
         .desc{
           font-size: 18px;
+          small.description-par {
+            height: 80px;
+            overflow: hidden;
+            display: inline-block;
+            line-height: 27px;
+          }
+        }
+        .article-read-more{
+
         }
       }
 
@@ -116,37 +201,55 @@
         }
       }
 
-      @media only screen and (max-width: 1200px)
+      @media only screen and (max-width: 1280px)
       {
-        display: flex;
-        flex-wrap: wrap;
-        overflow: auto;
-        height: auto;
-        width: 110%;
+        width: 90%;
 
-        .card-content{
-          .card-img{
-            width: 100%;
-            height: fit-content;
-            position: relative !important;
-            left: -300px !important;
-          }
-          .title{
-            font-weight: bold;
-            font-size: 22px !important;
-          }
-          .desc{
-            font-size: 18px !important;
-          }
-          .time{
-            font-size: 14px !important;
-          }
-          button{
-            width: 30%;
-            margin: 5px auto;
-            font-size: 14px !important;
+      }
+
+      @media only screen and (max-width: 900px)
+      {
+        height: auto;
+        width: 400px;
+        display: block;
+        border-radius: 0 50px;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+
+        .hidden-title, .hidden-date, .hidden-content{
+          display: block;
+        }
+
+        .hidden-content{
+          &:hover{
+            opacity: 1;
+            .hidden-title{
+              color: #fff;
+            }
           }
         }
+        .card-img
+        {
+          width: 100%;
+
+          img{
+            width: 100%;
+
+          }
+        }
+        .card-content
+        {
+          display: none;
+        }
+      }
+
+
+
+      @media only screen and (max-width: 510px)
+      {
+        width: 100%;
+
       }
 
 
