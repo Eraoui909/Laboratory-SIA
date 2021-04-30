@@ -93,8 +93,8 @@
                                 <li class="nav-item"><a class="nav-link " href="#activity" data-toggle="tab">Activity</a></li>
                                 <li class="nav-item"><a class="nav-link  " href="#timeline" data-toggle="tab">Mon CV</a></li>
                                 <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab"><?= $lang['settings'] ?></a></li>
-                                <li class="nav-item"><a class="nav-link active" href="#addArticle" data-toggle="tab"><?= $lang['add'] . ' Acticle' ?></a></li>
-                                <li class="nav-item"><a class="nav-link " href="#allArticle" data-toggle="tab"><?= 'all articles'?></a></li>
+                                <li class="nav-item"><a class="nav-link " href="#addArticle" data-toggle="tab"><?= $lang['add'] . ' Acticle' ?></a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#allArticle" data-toggle="tab"><?= 'all articles'?></a></li>
                             </ul>
                         </div><!-- /.card-header -->
                         <div class="card-body">
@@ -222,7 +222,7 @@
                                 </div>
                                 <!-- /.tab-pane -->
 
-                                <div class=" tab-pane" id="settings">
+                                <div class="tab-pane " id="settings">
                                     <form class="form-horizontal" method="post" action="/teacher/profile" enctype="multipart/form-data">
 
                                         <div class="row">
@@ -300,7 +300,7 @@
 
                                 <!-- #addArticle-->
 
-                                <div class=" tab-pane active" id="addArticle">
+                                <div class="tab-pane" id="addArticle">
                                     <form class="form-horizontal" method="post" action="/teacher/addArticle" enctype="multipart/form-data">
 
                                         <div class="row">
@@ -355,7 +355,7 @@
                                     </form>
                                 </div>
 
-                                <div class=" tab-pane" id="allArticle">
+                                <div class=" tab-pane active" id="allArticle">
                                     <?php include_once 'All Articles.php';?>
                                 </div>
 
