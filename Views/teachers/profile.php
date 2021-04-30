@@ -311,7 +311,7 @@
                                             <label for="" class="col-sm-2 col-form-label"><?= $lang['title'] ?></label>
                                             <div class="col-sm-10">
 
-                                                <input type="text" value="" name="title" class="form-control" id="" placeholder="<?= $lang['title'] ?>">
+                                                <input type="text" name="title" class="form-control add-article-title"  placeholder="<?= $lang['title'] ?>">
                                             </div>
                                         </div>
                                         <div class="row">
@@ -321,7 +321,7 @@
                                         <div class="form-group row descriptionEdit">
                                             <label for="" class="col-sm-2 col-form-label">description</label>
                                             <div class="col-sm-10">
-                                                <textarea name="description" class="" cols="80" rows="8"></textarea>
+                                                <textarea name="description" class="add-article-description" cols="80" rows="8"></textarea>
                                             </div>
                                         </div>
 
@@ -332,7 +332,7 @@
                                         <div class="form-group row contentEdit">
                                             <label for="" class="col-sm-2 col-form-label"><?= $lang['content'] ?></label>
                                             <div class="col-sm-10">
-                                                <textarea name="content" class="editor" cols="30" rows="30"></textarea>
+                                                <textarea name="content" class="editor add-article-content" cols="30" rows="30"></textarea>
                                             </div>
                                         </div>
 
@@ -349,7 +349,7 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="offset-sm-2 col-sm-10">
-                                                <button type="submit" class="btn btn-danger"><?= $lang['submit'] ?></button>
+                                                <button type="submit" class="btn btn-dange add-article-button"><?= $lang['submit'] ?></button>
                                             </div>
                                         </div>
                                     </form>

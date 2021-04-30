@@ -23,7 +23,7 @@
 
 <div class="content-wrapper " style="margin-left: 0">
 
-    <!-- Modal -->
+    <!-- image modification pop up -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -47,6 +47,7 @@
         </div>
     </div>
 
+    <!-- article modification pop up -->
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -55,7 +56,6 @@
 
                         <div class="row">
                             <div class="col-sm-2"></div>
-                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['title'] ?? '')) ?></p>
                         </div>
                         <div class="form-group row">
                             <label for="" class="col-sm-2 col-form-label"><?= $lang['title'] ?></label>
@@ -66,7 +66,6 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-2"></div>
-                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['description'] ?? '')) ?></p>
                         </div>
                         <div class="form-group row descriptionEdit">
                             <label for="" class="col-sm-2 col-form-label">description</label>
@@ -77,7 +76,6 @@
 
                         <div class="row">
                             <div class="col-sm-2"></div>
-                            <p class="col-sm-10 error-message"><?= (($_SESSION['flash_messages']['errors']['value']['content'] ?? '')) ?></p>
                         </div>
                         <div class="form-group row contentEdit">
                             <label for="" class="col-sm-2 col-form-label"><?= $lang['content'] ?></label>
@@ -88,7 +86,6 @@
                         <input type="hidden" name="articleID" class="article-id">
                         <div class="row">
                             <div class="col-sm-2"></div>
-                            <p class="col-sm-10 error-message"><?=  ($_SESSION['flash_messages']['errors']['value']['uploads'][0] ?? '') ?></p>
                         </div>
                         <!--
                         <div class="form-group row">

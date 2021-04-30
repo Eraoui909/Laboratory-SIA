@@ -136,3 +136,25 @@ $('.delete-article-btn').on("click",function (e)
 $(document).on("click",".edit-article-img",function (){
     $(".articleIDHidden").val($(this).attr("data-id"));
 });
+
+/**
+ * add article handler
+ */
+
+$(".add-article-button").on("click",function (e){
+    e.preventDefault();
+    let title = $(".add-article-title").val().split();
+    let desc    = $(".add-article-description").val().split();
+    let content = YourEditor.getData();
+    console.log(content);
+    //console.log(title === "" || desc === "");
+    if(title == "" || desc == "")
+    {
+        e.preventDefault();
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'All fields are required',
+        })
+    }
+});
