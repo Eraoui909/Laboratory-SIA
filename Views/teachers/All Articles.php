@@ -27,7 +27,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="container tab-pane active" id="addArticle">
-                    <form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+                    <form class="form-horizontal" id="modify-article-form" method="post" enctype="multipart/form-data">
 
                         <div class="row">
                             <div class="col-sm-2"></div>
@@ -47,7 +47,7 @@
                         <div class="form-group row descriptionEdit">
                             <label for="" class="col-sm-2 col-form-label">description</label>
                             <div class="col-sm-10">
-                                <textarea name="description" class="editor article-description" cols="30" rows="10" ></textarea>
+                                <textarea name="description" class="article-description" cols="70" rows="8" ></textarea>
                             </div>
                         </div>
 
@@ -61,21 +61,24 @@
                                 <textarea name="content"  class="editor" id="article-content" cols="30" rows="30"></textarea>
                             </div>
                         </div>
-
+                        <input type="hidden" name="articleID" class="article-id">
                         <div class="row">
                             <div class="col-sm-2"></div>
                             <p class="col-sm-10 error-message"><?=  ($_SESSION['flash_messages']['errors']['value']['uploads'][0] ?? '') ?></p>
                         </div>
+                        <!--
                         <div class="form-group row">
                             <label for="ArticleImg" class="col-sm-2 col-form-label"><?= $lang['avatar'] ?></label>
                             <div class="col-sm-10 ">
                                 <label for="ArticleImg" class="col-sm-2 col-form-label UploadLabel"><?= $lang['add picture'] ?></label>
-                                <input style="display: none" type="file" name="ArticlePic[]" class="form-control hiddenInput" id="ArticleImg" >
+                                <input  type="file" name="file[]" class="form-control hiddenInput article-modify-img" id="modify-file" >
                             </div>
                         </div>
+                        -->
+
                         <div class="form-group row">
                             <div class="offset-sm-2 col-sm-10">
-                                <button type="submit" class="btn btn-danger"><?= $lang['submit'] ?></button>
+                                <button type="submit" class="btn btn-danger modify-article-btn"><?= $lang['submit'] ?></button>
                             </div>
                         </div>
                     </form>

@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="/adminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/adminLTE/dist/css/adminlte.min.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="/adminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 
 
     <!-- Google Font: Source Sans Pro -->
@@ -55,6 +57,8 @@
 
 
     <link rel="stylesheet" href="/css/Home_Style.css">
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
 
 
     <title><?= $title ?></title>
@@ -166,11 +170,13 @@ if($null != true)
 <script src="/adminLTE/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="/adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+<!-- SweetAlert2 -->
+<script src="/adminLTE/plugins/sweetalert2/sweetalert2.min.js"></script>
+
 
 <!-- this script is for enseignant page -->
 <script src="/adminLTE/dist/js/pages/dashboard.js"></script>
 <script src="/js/admin.js"></script>
-<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 <script src="/js/article.js"></script>
 
 </body>

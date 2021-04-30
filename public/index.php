@@ -106,6 +106,9 @@ $app->router->post('/teacher/profile',[EnseignantController::class, 'updateProfi
 $app->router->get('/teacher/deletePic',[EnseignantController::class, 'deletePicture']);
 
 $app->router->post('/teacher/addArticle',[EnseignantController::class, 'addArticle']);
+$app->router->post('/teacher/modifyArticle',[EnseignantController::class, 'modifyArticle']);
+$app->router->post('/teacher/deleteArticle',[EnseignantController::class, 'deleteArticle']);
+
 
 $app->router->get('/teacher/cv',[EnseignantController::class, 'teacherCV']);
 $app->router->get('/teacher/cv/downoald',[EnseignantController::class, 'cvToPdf']);

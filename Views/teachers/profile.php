@@ -321,7 +321,7 @@
                                         <div class="form-group row descriptionEdit">
                                             <label for="" class="col-sm-2 col-form-label">description</label>
                                             <div class="col-sm-10">
-                                                <textarea name="description" class="editor" cols="30" rows="10"></textarea>
+                                                <textarea name="description" class="" cols="80" rows="8"></textarea>
                                             </div>
                                         </div>
 
@@ -374,12 +374,15 @@
     <!-- /.content -->
 </div>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
 <script>
     items = document.querySelectorAll( '.editor' );
     items.forEach(function(item){
         ClassicEditor
             .create( item )
+            .then(editor => {
+                window.editor = editor;
+                YourEditor = editor;
+            })
             .catch( error => {
                 console.error( error );
             });

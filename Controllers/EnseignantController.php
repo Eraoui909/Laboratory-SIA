@@ -234,4 +234,35 @@ class EnseignantController extends Controller
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
+    public function modifyArticle()
+    {
+        $_POST['content'] = $_POST['contente'];
+        unset($_POST['contente']);
+        $validator          = new Validator();
+        $data               = $validator->sanitize($_POST);
+        $errors['error']    = $validator->require($data);
+
+        if(!empty($errors['error']))
+        {
+            $errors = json_encode($errors);
+            echo  $errors;
+        }else{
+            if(ArticleModel::UpdateColumns($data['articleID'], $data))
+            {
+                echo json_encode("success");
+            }else{
+                echo json_encode("error");
+            };
+        }
+    }
+
+    public function deleteArticle()
+    {
+        if(ArticleModel::delete($_POST['articleID']))
+        {
+            echo json_encode("deleted");
+        }else{
+            echo json_encode("error");
+        }
+    }
 }
