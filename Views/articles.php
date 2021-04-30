@@ -1,3 +1,5 @@
+
+
 <div class="container-fluid ha-article-container">
 
     <div class="ha-article-container-header">
@@ -16,6 +18,41 @@
 
     <div class="ha-article-container-body">
         <h1>Les articles disponible </h1>
+
+        <?php foreach ($params as $param){ ?>
+            <div class="ha-article-card">
+                <div class="title hidden-title">
+                    <?php echo($param['title']) ?>
+                </div>
+                <small class="hidden-date"><?php echo $param['date'] ?></small>
+                <div class="hidden-content">
+                    <div class="title hidden-title">
+                        <?php echo($param['title']) ?>
+                    </div>
+                    <div class="desc">
+                        <small class="description-par"><?php echo($param['description']) ?></small>
+                    </div>
+                    <button class="btn btn-outline-info article-read-more">Read more</button>
+                </div>
+                <div class="card-img">
+                    <img class="img-fluid" src="/Storage/uploads/articles/<?= $param['picture'] ?>" width="350px" alt="">
+                </div>
+                <div class="card-content">
+                    <div class="title">
+                        <?php echo($param['title']) ?>
+                    </div>
+                    <small class="time"><?php echo $param['date'] ?></small>
+                    <div class="desc">
+                        <small class="description-par"><?php echo($param['description']) ?></small>
+                    </div>
+                    <form action="/article" method="post">
+                        <input type="hidden" name="id" value="<?php echo($param['articleID']) ?>">
+                        <button class="btn btn-outline-info article-read-more">Read more</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        <?php } ?>
 
         <div class="ha-article-card">
             <div class="title hidden-title">

@@ -2,34 +2,23 @@
 
     <div class="ha-single-article-title">
         <h1>
-            this is the title of the article lorem bandfh gomagt skdq
+            <?php echo $params['title'] ?>
         </h1>
     </div>
 
     <div class="ha-single-article-img">
-        <img src="/Storage/uploads/users/science_pic.jpg" alt="article image">
+        <img src="/Storage/uploads/articles/<?= $params['picture'] ?>" alt="article image">
     </div>
 
     <div class="ha-single-article-date">
-        <small>30/04/2021 00:35:15</small>
+        <small><?php echo $params['date'] ?></small>
     </div>
 
     <div class="ha-single-article-content">
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum molestiae, soluta? Animi aperiam commodi consectetur eveniet nisi porro velit voluptatum! Amet consectetur, dolorem enim illo magnam nam omnis quam voluptate!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet laborum laudantium magni modi mollitia nihil officiis, sequi. Animi architecto doloremque enim facere hic iste molestiae, quisquam tempora voluptates voluptatibus!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolores eius fuga harum ipsam natus nihil, quia quis quos sequi. Aspernatur consequuntur deleniti esse impedit numquam quidem repellendus vero voluptatibus.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum molestiae, soluta? Animi aperiam commodi consectetur eveniet nisi porro velit voluptatum! Amet consectetur, dolorem enim illo magnam nam omnis quam voluptate!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet laborum laudantium magni modi mollitia nihil officiis, sequi. Animi architecto doloremque enim facere hic iste molestiae, quisquam tempora voluptates voluptatibus!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolores eius fuga harum ipsam natus nihil, quia quis quos sequi. Aspernatur consequuntur deleniti esse impedit numquam quidem repellendus vero voluptatibus.
-        </p>
+            <?php echo $params['description'] ?></p>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum molestiae, soluta? Animi aperiam commodi consectetur eveniet nisi porro velit voluptatum! Amet consectetur, dolorem enim illo magnam nam omnis quam voluptate!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet laborum laudantium magni modi mollitia nihil officiis, sequi. Animi architecto doloremque enim facere hic iste molestiae, quisquam tempora voluptates voluptatibus!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolores eius fuga harum ipsam natus nihil, quia quis quos sequi. Aspernatur consequuntur deleniti esse impedit numquam quidem repellendus vero voluptatibus.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum molestiae, soluta? Animi aperiam commodi consectetur eveniet nisi porro velit voluptatum! Amet consectetur, dolorem enim illo magnam nam omnis quam voluptate!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus eveniet laborum laudantium magni modi mollitia nihil officiis, sequi. Animi architecto doloremque enim facere hic iste molestiae, quisquam tempora voluptates voluptatibus!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolores eius fuga harum ipsam natus nihil, quia quis quos sequi. Aspernatur consequuntur deleniti esse impedit numquam quidem repellendus vero voluptatibus.
+                <?php echo htmlspecialchars_decode( $params['content'] )?>
         </p>
     </div>
 

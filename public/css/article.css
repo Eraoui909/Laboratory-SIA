@@ -147,12 +147,16 @@ ul {
       .ha-article-container .ha-article-container-body .ha-article-card .card-img {
         width: fit-content;
         height: 100%;
-        margin-right: auto; }
+        margin-right: auto;
+        overflow: hidden; }
       .ha-article-container .ha-article-container-body .ha-article-card .card-content {
-        margin-left: 10px; }
+        margin-left: 10px;
+        width: 100%; }
         .ha-article-container .ha-article-container-body .ha-article-card .card-content .title {
           font-weight: 1000;
-          font-size: 22px; }
+          font-size: 22px;
+          height: 40px;
+          overflow: hidden; }
         .ha-article-container .ha-article-container-body .ha-article-card .card-content small {
           color: gray; }
         .ha-article-container .ha-article-container-body .ha-article-card .card-content .desc {
@@ -202,7 +206,8 @@ ul {
             .ha-article-container .ha-article-container-body .ha-article-card .hidden-content:hover .hidden-title {
               color: #fff; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-img {
-            width: 100%; }
+            width: 100%;
+            height: 200px; }
             .ha-article-container .ha-article-container-body .ha-article-card .card-img img {
               width: 100%; }
           .ha-article-container .ha-article-container-body .ha-article-card .card-content {

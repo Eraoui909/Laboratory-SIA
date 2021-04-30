@@ -166,7 +166,8 @@ class EnseignantController extends Controller
         $data = array(
             'avatar' => 'avatar.png'
         );
-        if (EnseignantModel::UpdateColumns($_SESSION['token']['ens'], $data)){
+
+        if (EnseignantModel::UpdateColumns($_SESSION['token']['ens']['id'], $data)){
             $_SESSION['token']['ens']['avatar'] = 'avatar.png';
             $this->redirect('/teacher/profile');
         }

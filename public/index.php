@@ -56,9 +56,9 @@ $app->router->post('/contact',[SiteController::class, 'handleContact']);
 
 $app->router->get('/contact', [SiteController::class, 'contactPage']);
 
-$app->router->get('/articles', 'articles');
+$app->router->get('/articles', [SiteController::class, 'articlesPage']);
 
-$app->router->get('/articles/15', 'singleArticle');
+$app->router->post('/article', [SiteController::class, 'singleArticle']);
 
 /* **********************************************
 *                                               *

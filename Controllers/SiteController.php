@@ -11,6 +11,7 @@ use app\core\Router;
 use app\core\Session;
 use app\core\Validator;
 use app\models\AdminsModel;
+use app\models\ArticleModel;
 use app\models\EnseignantModel;
 
 class SiteController extends Controller
@@ -86,16 +87,19 @@ class SiteController extends Controller
 
     public function handleContact(Request $request)
     {
-        $result = "";
-        echo "<pre>";
-        print_r($request->all());
-        echo "</pre>";
-        $admin = new AdminsModel();
-        //$admin->setUsername("hamza eraoui");
-        //$admin->setPassword("password");
-        $result = $admin->deleteAll();
-        echo "<pre>";
-        print_r($result);
-        echo "</pre>";
+
+    }
+
+    public function articlesPage()
+    {
+        $data = array();
+        $data = ArticleModel::getAll();
+        return$this->render("articles",$data);
+    }
+
+    public function singleArticle()
+    {
+        $data = ArticleModel::getByPk($_POST['id']);
+        return$this->render("singleArticle",$data[0]);
     }
 }
