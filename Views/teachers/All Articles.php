@@ -127,39 +127,37 @@
                 </thead>
                 <tbody>
                 <?php
-                /* echo "<pre>";
-                    print_r($articles);
-                echo "</pre>"; */
-                foreach ($articles as $article){
-                ?>
-                    <tr>
-                        <td><?= $article['title'] ?></td>
-                        <td><?= $article['date'] ?></td>
-                        <td class="edit-article-img" data-id="<?= $article['articleID'] ?>" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal">
-                            <i class="fa fa-edit"></i>
-                            <img width="45px" height="40px" src="\Storage\uploads\articles\<?= $article['picture'] ?>" alt="article picture"> </td>
-                        <td>
-                            <button class="btn-sm btn-success btn-article-modify-form"
-                                    data-toggle="modal"
-                                    data-target=".bd-example-modal-lg"
-                                    data-title="<?= $article['title'] ?>"
-                                    data-id="    <?= $article['articleID'] ?>"
-                                    data-description="   <?= $article['description']    ?>"
-                                    data-content="   <?= $article['content']    ?>"
-                                    data-teacher=" <?= $article['teacher']  ?>"
-                                    data-date=" <?= $article['date']  ?>"
-                                    data-picture=" <?= $article['picture']  ?>"
-                            >
+                if (!empty($articles))
+                    foreach ($articles as $article){
+                    ?>
+                        <tr>
+                            <td><?= $article['title'] ?></td>
+                            <td><?= $article['date'] ?></td>
+                            <td class="edit-article-img" data-id="<?= $article['articleID'] ?>" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal">
                                 <i class="fa fa-edit"></i>
-                                <span> <?=$lang['modify']?></span>
-                            </button>
-                            <button class="btn-sm btn-danger btn-sm delete-article-btn" data-id="<?= $article['articleID'] ?>">
-                                <i class="fa fa-trash"></i>
-                                <span> <?=$lang['delete']?></span>
-                            </button>
-                        </td>
-                    </tr>
-                <?php }?>
+                                <img width="45px" height="40px" src="\Storage\uploads\articles\<?= $article['picture'] ?>" alt="article picture"> </td>
+                            <td>
+                                <button class="btn-sm btn-success btn-article-modify-form"
+                                        data-toggle="modal"
+                                        data-target=".bd-example-modal-lg"
+                                        data-title="<?= $article['title'] ?>"
+                                        data-id="    <?= $article['articleID'] ?>"
+                                        data-description="   <?= $article['description']    ?>"
+                                        data-content="   <?= $article['content']    ?>"
+                                        data-teacher=" <?= $article['teacher']  ?>"
+                                        data-date=" <?= $article['date']  ?>"
+                                        data-picture=" <?= $article['picture']  ?>"
+                                >
+                                    <i class="fa fa-edit"></i>
+                                    <span> <?=$lang['modify']?></span>
+                                </button>
+                                <button class="btn-sm btn-danger btn-sm delete-article-btn" data-id="<?= $article['articleID'] ?>">
+                                    <i class="fa fa-trash"></i>
+                                    <span> <?=$lang['delete']?></span>
+                                </button>
+                            </td>
+                        </tr>
+                <?php   }?>
                 </tbody>
             </table>
         </div>

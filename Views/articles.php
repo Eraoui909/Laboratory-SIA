@@ -19,39 +19,41 @@
     <div class="ha-article-container-body">
         <h1>Les articles disponible </h1>
 
-        <?php foreach ($params as $param){ ?>
-            <div class="ha-article-card">
-                <div class="title hidden-title">
-                    <?php echo($param['title']) ?>
-                </div>
-                <small class="hidden-date"><?php echo $param['date'] ?></small>
-                <div class="hidden-content">
+        <?php
+        if (!empty($params))
+            foreach ($params as $param){ ?>
+                <div class="ha-article-card">
                     <div class="title hidden-title">
-                        <?php echo($param['title']) ?>
+                        <?= $param['title'] ?>
                     </div>
-                    <div class="desc">
-                        <small class="description-par"><?php echo($param['description']) ?></small>
-                    </div>
-                    <button class="btn btn-outline-info article-read-more">Read more</button>
-                </div>
-                <div class="card-img">
-                    <img class="img-fluid" src="/Storage/uploads/articles/<?= $param['picture'] ?>" width="350px" alt="">
-                </div>
-                <div class="card-content">
-                    <div class="title">
-                        <?php echo($param['title']) ?>
-                    </div>
-                    <small class="time"><?php echo $param['date'] ?></small>
-                    <div class="desc">
-                        <small class="description-par"><?php echo($param['description']) ?></small>
-                    </div>
-                    <form action="/article" method="post">
-                        <input type="hidden" name="id" value="<?php echo($param['articleID']) ?>">
+                    <small class="hidden-date"><?= $param['date'] ?></small>
+                    <div class="hidden-content">
+                        <div class="title hidden-title">
+                            <?= $param['title'] ?>
+                        </div>
+                        <div class="desc">
+                            <small class="description-par"><?= $param['description'] ?></small>
+                        </div>
                         <button class="btn btn-outline-info article-read-more">Read more</button>
-                    </form>
+                    </div>
+                    <div class="card-img">
+                        <img class="img-fluid" src="/Storage/uploads/articles/<?= $param['picture'] ?>" width="350px" style="height: 100% !important" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="title">
+                            <?= $param['title'] ?>
+                        </div>
+                        <small class="time"><?= $param['date'] ?></small>
+                        <div class="desc">
+                            <small class="description-par"><?= $param['description'] ?></small>
+                        </div>
+                        <form action="/article" method="post">
+                            <input type="hidden" name="id" value="<?= $param['articleID'] ?>">
+                            <button class="btn btn-outline-info article-read-more">Read more</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <hr>
+                <hr>
         <?php } ?>
 
         <div class="ha-article-card">
