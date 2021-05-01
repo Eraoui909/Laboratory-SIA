@@ -90,11 +90,11 @@
                     <div class="card">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link " href="#activity" data-toggle="tab">Activity</a></li>
-                                <li class="nav-item"><a class="nav-link  " href="#timeline" data-toggle="tab">Mon CV</a></li>
-                                <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab"><?= $lang['settings'] ?></a></li>
-                                <li class="nav-item"><a class="nav-link " href="#addArticle" data-toggle="tab"><?= $lang['add'] . ' Acticle' ?></a></li>
-                                <li class="nav-item"><a class="nav-link active" href="#allArticle" data-toggle="tab"><?= 'all articles'?></a></li>
+                                <li class="nav-item"><a id="c1" class="nav-link storageTheClick " href="#activity" >Activity</a></li>
+                                <li class="nav-item"><a id="c2" class="nav-link storageTheClick  " href="#timeline" >Mon CV</a></li>
+                                <li class="nav-item"><a id="c3" class="nav-link storageTheClick " href="#settings" ><?= $lang['settings'] ?></a></li>
+                                <li class="nav-item"><a id="c4" class="nav-link storageTheClick " href="#addArticle" ><?= $lang['add'] . ' Acticle' ?></a></li>
+                                <li class="nav-item"><a id="c5" class="nav-link storageTheClick " href="#allArticle" ><?= 'all articles'?></a></li>
                             </ul>
                         </div><!-- /.card-header -->
                         <div class="card-body">
@@ -321,7 +321,7 @@
                                         <div class="form-group row descriptionEdit">
                                             <label for="" class="col-sm-2 col-form-label">description</label>
                                             <div class="col-sm-10">
-                                                <textarea name="description" class="add-article-description" cols="80" rows="8"></textarea>
+                                                <textarea name="description" class="add-article-description" style="width: 100%" rows="8"></textarea>
                                             </div>
                                         </div>
 
@@ -355,7 +355,7 @@
                                     </form>
                                 </div>
 
-                                <div class=" tab-pane active" id="allArticle">
+                                <div class=" tab-pane" id="allArticle">
                                     <?php include_once 'All Articles.php';?>
                                 </div>
 

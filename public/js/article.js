@@ -139,7 +139,7 @@ $(document).on("click",".edit-article-img",function (){
 
 /**
  * add article handler
- */
+
 
 $(".add-article-button").on("click",function (e){
     e.preventDefault();
@@ -158,3 +158,30 @@ $(".add-article-button").on("click",function (e){
         })
     }
 });
+ */
+
+
+    /*******************************************************************************************************************
+     *******************************************************************************************************************
+     *  save the last profile page
+     *******************************************************************************************************************
+     ********************************************************************************************************************/
+
+
+
+   $(window).on("load",function (){
+       setTimeout(function (){
+           $("#"+localStorage.getItem("lastClick")).attr("class","nav-item storageTheClick active");
+           $("#"+localStorage.getItem("lastClick")).parent().attr("class","nav-link storageTheClick active");
+           $(".storageTheClick").attr("data-toggle","tab");
+           let id = $("#"+localStorage.getItem("lastClick")).attr("href");
+           $(id).attr("class","tab-pane active");
+       },1);
+   });
+
+    $(".storageTheClick").on("click",function (e){
+
+        localStorage.setItem("lastClick",$(this).attr("id"));
+
+    });
+
