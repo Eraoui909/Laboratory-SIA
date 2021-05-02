@@ -49,7 +49,7 @@
         "title"                         => "title",
         "content"                       => "content",
         "add picture"                   => "Add Picture",
-
+        "nbrArticle"                    => "Number of articles",
 
 
 

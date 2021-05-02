@@ -117,7 +117,14 @@ function addDocEns (person)
             {
                 $("#modal-add-" + person + "-add-btn").attr("disabled", "disabled");
                 // $(".msg-add-enseignant-doctorant").html(data);
-                $(".msg-add-enseignant-doctorant").html("<div class='alert alert-success'>" + person + " added with success</div>");
+                //$(".msg-add-enseignant-doctorant").html("<div class='alert alert-success'>" + person + " added with success</div>");
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title:  person + " added with success",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 setTimeout(function (){
                     window.location.replace("/admin/" + person);
                 },2000);
@@ -131,7 +138,7 @@ function modifyResDoc (person)
 {
     let errors="";
     let data = $(".form-modify-enseignant-doctorant").serialize();
-    console.log(data);
+    //console.log(data);
     $.ajax({
         type:"post",
         url:"/admin/" + person + "/modify",
@@ -142,15 +149,23 @@ function modifyResDoc (person)
             console.log(msg);
             if(typeof msg == "object")
             {
-                Object.values(msg.error).forEach(function (err) {
+                for (const err in msg)
+                {
                     errors += "<div class='alert alert-danger' style='padding: 5px'>" + err + "</div>";
                     $(".msg-modify-enseignant-doctorant").html(errors);
-                });
+                }
             }
             if(typeof msg == "string")
             {
                 $("#modal-modify-" + person + "-add-btn").attr("disabled","disabled");
-                $(".msg-modify-enseignant-doctorant").html("<div class='alert alert-success'>" + person + " modified with success</div>");
+                //$(".msg-modify-enseignant-doctorant").html("<div class='alert alert-success'>" + person + " modified with success</div>");
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title:  person + " modified with success",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 setTimeout(function (){
                     window.location.replace("/admin/" + person);
                 },2000);
@@ -162,33 +177,46 @@ function modifyResDoc (person)
 
 function deleteEnsDoc (person, id)
 {
-    let bool = confirm("are u sure you want to delete this " + person + " ?");
-    let data = "id=" + id;
-    console.log(data);
-    if(bool)
-    {
-        $.ajax({
-            method:"post",
-            url:"/admin/" + person + "/delete",
-            data:data,
-            dataType:"json",
-            success:function (data)
-            {
-                if(typeof data == "string")
-                    window.location.replace("/admin/" + person);
-            }
-        })
 
-        // $.post("/admin/" + person + "/delete",
-        //     {
-        //         :id: id
-        //     },
-        //     function(data, status){
-        //         console.log('data');
-        //         console.log(data);
-        //         setTimeout(function (){
-        //             // window.location.replace("/admin/" + person);
-        //      },1000);
-        // });
-    }
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            let data = "articleID="+$('.delete-article-btn').attr("data-id");
+            $.ajax({
+                method:"post",
+                url:"/admin/" + person + "/delete",
+                data:"id=" + id,
+                dataType:"json",
+                success:function (data)
+                {
+                    if(typeof data == "string")
+                    {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                        setTimeout(function (){
+                            window.location.replace("/admin/" + person);
+                        },1000);
+                    }else{
+                        alert("ERROR");
+                        setTimeout(function (){
+                            window.location.replace("/teacher/profile");
+                        },1000);
+                    }
+                }
+            })
+
+        }
+    })
+
+
 }

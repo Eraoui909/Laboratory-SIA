@@ -87,7 +87,6 @@ class EnseignantController extends Controller
 
     public function deleteEnseignant()
     {
-
         if(EnseignantModel::delete($_POST['id']))
         {
             echo json_encode("deleted");
