@@ -111,7 +111,7 @@ class AbstractModel
             return false;
         }
 
-        }
+    }
 
     public static function deleteByPk($pk)
     {

@@ -18,12 +18,12 @@
         <p>
             <?php echo $params['description'] ?></p>
         <p>
-                <?php echo htmlspecialchars_decode( $params['content'] )?>
+                <?= htmlspecialchars_decode( $params['content'] )?>
         </p>
     </div>
 
     <div class="ha-single-article-footer">
-        <strong>created by : </strong> Hamza Eraoui
+        <strong>created by : </strong> <?= $params['nom'] . ' ' . $params['prenom'] ?>
     </div>
 
 </div>

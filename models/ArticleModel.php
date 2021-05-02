@@ -25,6 +25,22 @@ class ArticleModel extends AbstractModel
         'picture'     => \PDO::PARAM_STR,
     );
 
+    public static function getByPk($pk)
+    {
+        global $connect;
+        $sql = 'SELECT title, description, content, picture, date, nom, prenom FROM article, enseignant WHERE teacher = id && articleID = :pk';
+        $stmt = $connect->prepare($sql);
+        $stmt->bindValue(':pk', $pk);
+        $stmt->execute();
+        $results = $stmt->fetchAll(\PDO::FETCH_ASSOC); //\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, get_called_class(), array_keys(static::$tableSchema)
+        if(isset($results) && !empty($results)){
+            return $results;
+        }else{
+            return false;
+        }
+
+    }
+
     /**
      * @return mixed
      */
