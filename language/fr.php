@@ -51,7 +51,8 @@
         "content"                       => "contenu",
         "add picture"                   => "Ajouter Image",
         "nbrArticle"                    => "Nombre d'articles",
-
+        "cv"                            => "Mon CV",
+        "allArticles"                   => "Tous les articles",
 
 
 

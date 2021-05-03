@@ -23,6 +23,12 @@
 
 <div class="content-wrapper " style="margin-left: 0">
 
+    <?php
+        //echo "<pre>";
+        //    print_r($_SESSION);
+        //echo "</pre>";
+    ?>
+
     <!-- image modification pop up -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

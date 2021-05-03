@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="/js/jquery.dataTables.min.css">
     <link rel="stylesheet" href="/adminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="/adminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-    <link rel="stylesheet" href="/adminLTE/plugins/summernote/summernote-bs4.min.css">
+    <!-- <link rel="stylesheet" href="/adminLTE/plugins/summernote/summernote-bs4.min.css"> -->
 
 
 
@@ -59,6 +59,7 @@
     <link rel="stylesheet" href="/css/Home_Style.css">
 
     <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+
 
 
     <title><?= $title ?></title>
@@ -170,6 +171,7 @@ if($null != true)
 <script src="/adminLTE/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="/adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+
 <!-- SweetAlert2 -->
 <script src="/adminLTE/plugins/sweetalert2/sweetalert2.min.js"></script>
 
@@ -178,6 +180,7 @@ if($null != true)
 <script src="/adminLTE/dist/js/pages/dashboard.js"></script>
 <script src="/js/admin.js"></script>
 <script src="/js/article.js"></script>
+
 
 </body>
 </html>
