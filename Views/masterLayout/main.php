@@ -56,6 +56,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800" rel="stylesheet">
 
 
+    <link rel="stylesheet" href="/css/marquee.css">
     <link rel="stylesheet" href="/css/Home_Style.css">
 
     <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
@@ -171,6 +172,9 @@ if($null != true)
 <script src="/adminLTE/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="/adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+<!-- SweetAlert2 -->
+<script src="/js/marquee.js"></script>
+
 
 <!-- SweetAlert2 -->
 <script src="/adminLTE/plugins/sweetalert2/sweetalert2.min.js"></script>
@@ -180,7 +184,7 @@ if($null != true)
 <script src="/adminLTE/dist/js/pages/dashboard.js"></script>
 <script src="/js/admin.js"></script>
 <script src="/js/article.js"></script>
-
+<script src="/js/HomeScript.js"></script>
 
 </body>
 </html>

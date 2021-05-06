@@ -1,0 +1,66 @@
+.simple-marquee-container *{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+	font-family:Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.simple-marquee-container {
+	width: 100%;
+	background: #ffffff;
+	border-bottom: 3px solid red;
+	color: #000000;
+	float: left;
+	display: inline-block;
+	overflow: hidden;
+	box-sizing: border-box;
+	height: 45px;
+	position: relative;
+	cursor: pointer;
+}
+
+.simple-marquee-container .marquee-sibling {
+	padding: 0;
+	background: red;
+	width: 15%;
+	height: 45px;
+	line-height: 42px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: center;
+	float: left;
+	left: 0;
+	z-index: 2000;
+}
+
+.simple-marquee-container .marquee, .simple-marquee-container *[class^="marquee"] {
+	display: inline-block;
+	white-space: nowrap;
+	position:absolute;
+}
+
+.simple-marquee-container .marquee{
+  margin-left: 25%;
+}
+
+.simple-marquee-container .marquee-content-items{
+  display: inline-block;
+  padding: 5px;
+  margin: 0;
+  height: 45px;
+  position: relative;
+}
+
+.simple-marquee-container .marquee-content-items li a{
+  display: inline-block;
+  line-height: 35px;
+  color: #000b16;
+	font-weight: bold;
+}
+
+.simple-marquee-container .marquee-content-items li:after{
+	content: "|";
+	margin: 0 1em;
+	color: #000b16;
+}
