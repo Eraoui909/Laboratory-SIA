@@ -93,6 +93,9 @@ $app->router->post('/admin/doctorant/add',[DoctorantController::class,'ajouterDo
 $app->router->post('/admin/doctorant/modify',[DoctorantController::class,'modifierDoctorant']);
 $app->router->post('/admin/doctorant/delete',[DoctorantController::class,'deleteDoctorant']);
 
+$app->router->get('/motDePresident',[SiteController::class,'motDePresidentPage']);
+$app->router->get('/teachers',[SiteController::class,'techersPage']);
+
 
 
 /* **********************************************

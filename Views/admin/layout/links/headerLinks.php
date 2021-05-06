@@ -18,6 +18,10 @@
 <link rel="stylesheet" href="/adminLTE/plugins/daterangepicker/daterangepicker.css">
 <!-- summernote -->
 <link rel="stylesheet" href="/adminLTE/plugins/summernote/summernote-bs4.min.css">
+
+<!-- SweetAlert2 -->
+<link rel="stylesheet" href="/adminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
 <!-- DataTables -->
 <link rel="stylesheet" href="/js/jquery.dataTables.min.css">
 <!-- <link rel="stylesheet" href="/public/adminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css"> -->

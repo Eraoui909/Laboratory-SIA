@@ -48,7 +48,13 @@
 <script src="/adminLTE/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="/adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+<!-- sweet alerts -->
+<script src="/adminLTE/plugins/sweetalert2/sweetalert2.min.js"></script>
+
+
 
 <!-- this script is for enseignant page -->
 <script src="/js/admin.js"></script>
 <script src="/adminLTE/dist/js/pages/dashboard.js"></script>
+
+

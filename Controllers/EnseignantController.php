@@ -87,7 +87,6 @@ class EnseignantController extends Controller
 
     public function deleteEnseignant()
     {
-
         if(EnseignantModel::delete($_POST['id']))
         {
             echo json_encode("deleted");
@@ -196,43 +195,51 @@ class EnseignantController extends Controller
 
     public function addArticle()
     {
-        $session = new Session();
-        $validator = new validator();
+        if(isset($_FILES['ArticlePic']) && isset($_POST['content']) )
+        {
+            $session = new Session();
+            $validator = new validator();
 
-        $data = $validator->sanitize($_POST);
-        $errors = $validator->require($data);
-        $article = new ArticleModel();
+            $data = $validator->sanitize($_POST);
+            $errors = $validator->require($data);
+            $article = new ArticleModel();
 
-        if (isset($_FILES["ArticlePic"]["name"][1])){
-            $errors['uploads'][] = "* You can't upload multiple files";
-        }
-
-        if(empty($errors)){
-            $upload = $this->UploadFile('articles', $data['title'], 'ArticlePic');
-            $errors['uploads'] = $upload['errors'];
-
-            if(empty($errors['uploads'])){
-
-                $picture = $upload['uploaded'][0] ?? '';
-                $teacher     = $_SESSION['token']['ens']['id'];
-
-                $article->setTitle($data['title']);
-                $article->setDescription($data['description']);
-                $article->setContent($data['content']);
-                $article->setTeacher($teacher);
-                $article->setPicture($picture);
-
-                if($article->register()){
-
-                    $this->redirect('/teacher/profile');
-                }
-                return;
+            if (isset($_FILES["ArticlePic"]["name"][1])){
+                $errors['uploads'][] = "* You can't upload multiple files";
             }
 
+            if(empty($errors)){
+                $upload = $this->UploadFile('articles', $data['title'], 'ArticlePic');
+                $errors['uploads'] = $upload['errors'];
+
+                if(empty($errors['uploads'])){
+
+                    $picture = $upload['uploaded'][0] ?? '';
+                    $teacher     = $_SESSION['token']['ens']['id'];
+
+                    $article->setTitle($data['title']);
+                    $article->setDescription($data['description']);
+                    $article->setContent($data['content']);
+                    $article->setTeacher($teacher);
+                    $article->setPicture($picture);
+
+                    if($article->register()){
+
+                        //$this->redirect('/teacher/profile');
+                        echo "success";
+                    }
+                    return;
+                }
+
+            }
+
+            //$session->setFlash("errors", $errors);
+            //header('Location: ' . $_SERVER['HTTP_REFERER']);
+            echo json_encode($errors);
+        }else{
+            echo "failed";
         }
 
-        $session->setFlash("errors", $errors);
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
     public function modifyArticle()

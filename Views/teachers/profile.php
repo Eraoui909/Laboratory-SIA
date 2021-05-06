@@ -9,6 +9,7 @@
         height: 100px;
     }
 </style>
+
 <div class="content-wrapper" style="margin: 5px auto;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -91,10 +92,10 @@
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
                                 <li class="nav-item"><a id="c1" class="nav-link storageTheClick " href="#activity" >Activity</a></li>
-                                <li class="nav-item"><a id="c2" class="nav-link storageTheClick  " href="#timeline" >Mon CV</a></li>
+                                <li class="nav-item"><a id="c2" class="nav-link storageTheClick  " href="#timeline" ><?= $lang['cv'] ?></a></li>
                                 <li class="nav-item"><a id="c3" class="nav-link storageTheClick " href="#settings" ><?= $lang['settings'] ?></a></li>
                                 <li class="nav-item"><a id="c4" class="nav-link storageTheClick " href="#addArticle" ><?= $lang['add'] . ' Acticle' ?></a></li>
-                                <li class="nav-item"><a id="c5" class="nav-link storageTheClick " href="#allArticle" ><?= 'all articles'?></a></li>
+                                <li class="nav-item"><a id="c5" class="nav-link storageTheClick " href="#allArticle" ><?= $lang['allArticles'] ?></a></li>
                             </ul>
                         </div><!-- /.card-header -->
                         <div class="card-body">
@@ -301,7 +302,7 @@
                                 <!-- #addArticle-->
 
                                 <div class="tab-pane" id="addArticle">
-                                    <form class="form-horizontal" method="post" action="/teacher/addArticle" enctype="multipart/form-data">
+                                    <form class="form-horizontal add-article-form" method="post" action="/teacher/addArticle" enctype="multipart/form-data">
 
                                         <div class="row">
                                             <div class="col-sm-2"></div>
@@ -332,7 +333,7 @@
                                         <div class="form-group row contentEdit">
                                             <label for="" class="col-sm-2 col-form-label"><?= $lang['content'] ?></label>
                                             <div class="col-sm-10">
-                                                <textarea name="content" class="editor add-article-content" cols="30" rows="30"></textarea>
+                                                <textarea name="content" class="editor1 add-article-content" cols="30" rows="30"></textarea>
                                             </div>
                                         </div>
 
@@ -375,17 +376,34 @@
 </div>
 
 <script>
+
     items = document.querySelectorAll( '.editor' );
     items.forEach(function(item){
         ClassicEditor
             .create( item )
             .then(editor => {
+                //console.log( 'Editor was initialized', editor );
                 window.editor = editor;
                 YourEditor = editor;
             })
             .catch( error => {
                 console.error( error );
             });
+    });
+
+    iteme = document.querySelectorAll( '.editor1' );
+    iteme.forEach(function(item){
+        ClassicEditor
+            .create( item )
+            .then(editor => {
+                //console.log( 'Editor was initialized', editor );
+                window.editor = editor;
+                MyEditor = editor;
+            })
+            .catch( error => {
+                console.error( error );
+            });
     })
+
 
 </script>

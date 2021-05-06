@@ -49,3 +49,21 @@ function toggleMenu()
         menuBar.style.height = '0';
     }
 }
+
+/** marquee tag **/
+
+let options = {
+    property: 'value',
+    duration: 40000,
+    padding: 10,
+    marquee_class: '.marquee',
+    container_class: '.simple-marquee-container',
+    sibling_class: 0,
+    hover: true,
+    velocity: 0.1,
+}
+
+$('.simple-marquee-container').SimpleMarquee(options);
+
+$(".marquee-1").trigger('mouseenter');
+$(".marquee-1").trigger('mouseleave');

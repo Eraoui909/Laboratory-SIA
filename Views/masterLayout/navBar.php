@@ -5,9 +5,17 @@
         <ul>
             <li class="keep icone" id="menu-btn-icon"><i class="fas fa-bars"></i></li>
             <li><a href="/"><?= $lang['home'] ?></a></li>
-            <li><a href="/contact"><?= $lang['contact'] ?></a></li>
-            <li><a href="/teacher/profile"><?= $lang['enseignant'] ?></a></li>
-            <li><a href=""><?= $lang['doctorant'] ?></a></li>
+            <li class="account-link keep">
+                <a href="#"><?= $lang['presentation'] ?></a>
+                <div class="drop-down">
+                    <a href="/motDePresident"><?= $lang['moDePresident'] ?></a>
+                    <a href="#"><?= $lang['desc&historique'] ?></a>
+                    <a href="#"><?= $lang['conditionDeSoutnance'] ?></a>
+                </div>
+            </li>
+
+            <li><a href="/teachers"><?= $lang['enseignants'] ?></a></li>
+            <li><a href=""><?= $lang['doctorants'] ?></a></li>
         </ul>
     </div>
     <div class="logo">
@@ -16,7 +24,7 @@
     <div class="links flex">
         <ul>
             <li><a href=""><?= $lang['aboutUs']?></a></li>
-            <li><a href=""><?= $lang['search']?></a></li>
+            <li><a href="/contact"><?= $lang['contact'] ?></a></li>
             <li class="account-link keep">
                 <?php
                     if (isset($_SESSION['token']))
@@ -24,7 +32,7 @@
                             <a href="">' . $lang['account'] . '</a>
                             <div class="drop-down">
                                 <a href="/logout">' . $lang['logout'] . '</a>
-                                <a href="">' . $lang['settings'] . ' </a>
+                                <a href="/teacher/profile">' . $lang['settings'] . ' </a>
                             </div>
                         ';
                     else

@@ -7,6 +7,7 @@ use app\core\Helper;
 use app\core\Session;
 use app\core\Validator;
 use app\models\AdminsModel;
+use app\models\ArticleModel;
 use app\models\DoctorantModel;
 use app\models\EnseignantModel;
 
@@ -26,11 +27,13 @@ class AdminController extends Controller
         if(!isset($_SESSION['token']['admin'])) {
             $this->redirect('/admin/login');
         }
-        $nbrOfDoctorant = DoctorantModel::getCountTable();
-        $nbrOfEnseignant = EnseignantModel::getCountTable();
+        $nbrOfDoctorant     = DoctorantModel::getCountTable();
+        $nbrOfEnseignant    = EnseignantModel::getCountTable();
+        $nbrOfArticles      = ArticleModel::getCountTable();
         $params = [
-            "nbrOfDoctorant" => $nbrOfDoctorant,
-            "nbrOfEnseignant"=> $nbrOfEnseignant,
+            "nbrOfDoctorant"    => $nbrOfDoctorant,
+            "nbrOfEnseignant"   => $nbrOfEnseignant,
+            "nbrOfArticles"     => $nbrOfArticles,
         ];
         return $this->renderAdmin('layout/contentWraper', $params);
     }

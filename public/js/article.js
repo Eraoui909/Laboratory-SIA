@@ -160,6 +160,73 @@ $(".add-article-button").on("click",function (e){
 });
  */
 
+$(document).on("click",".add-article-button",function (e){
+
+    e.preventDefault();
+
+    let desc = MyEditor.getData();
+
+    let dataa  = new FormData($(".add-article-form")[0]);
+
+    dataa.set('content',desc);
+
+    //console.log(dataa);
+
+        $.ajax({
+            type:"post",
+            enctype:"multipart/form-data",
+            url:"/teacher/addArticle",
+            data:dataa,
+            contentType: false,
+            processData: false,
+            datatype: "json",
+            success:function (data)
+            {
+                if(data === "success"){
+
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Data Added with success',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    setTimeout(function (){
+                        window.location.replace("/teacher/profile");
+                    },1000);
+
+                }else if(data === "failed")
+                {
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        html: "there is an undifined error",
+                    })
+                }
+                else{
+                    let elem = "";
+                    let obj = JSON.parse(data);
+                    for(const prop in obj)
+                    {
+                        elem+="<p style='color: red'>"+obj[prop]+"</p>";
+                    }
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        html: elem,
+                    })
+                }
+            },
+            error:function (request,error)
+            {
+                console.log("request : "+request);
+                console.log("error : "+error);
+            }
+        });
+
+});
+
 
     /*******************************************************************************************************************
      *******************************************************************************************************************
