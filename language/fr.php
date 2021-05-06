@@ -53,8 +53,13 @@
         "nbrArticle"                    => "Nombre d'articles",
         "cv"                            => "Mon CV",
         "allArticles"                   => "Tous les articles",
+        "enseignants"                   => "Enseignants",
+        "doctorants"                    => "Doctorants",
 
-
+        "presentation"                  => "Presentation",
+        "moDePresident"                 => "mot du président",
+        "desc&historique"               => "Description et historique",
+        "conditionDeSoutnance"          => "Nouvelle condition de soutnance",
 
 
     );

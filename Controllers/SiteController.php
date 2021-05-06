@@ -102,4 +102,14 @@ class SiteController extends Controller
         $data = ArticleModel::getByPk($_POST['id']);
         return$this->render("singleArticle",$data[0]);
     }
+
+    public function motDePresidentPage()
+    {
+        return $this->render('motDePresident',["title","mot de president"]);
+    }
+
+    public function techersPage()
+    {
+        return $this->render('teachers',["title","Teachers"]);
+    }
 }

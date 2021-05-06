@@ -52,6 +52,13 @@
         "nbrArticle"                    => "Number of articles",
         "cv"                            => "My CV",
         "allArticles"                   => "All articles",
+        "enseignants"                   => "Teachers",
+        "doctorants"                    => "Doctoral Students",
+
+        "presentation"                  => "Presentation",
+        "moDePresident"                 => "President's word",
+        "desc&historique"               => "Description and history",
+        "conditionDeSoutnance"          => "New soutnance condition",
 
 
     );
