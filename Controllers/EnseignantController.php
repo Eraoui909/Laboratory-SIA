@@ -52,8 +52,6 @@ class EnseignantController extends Controller
             $errors = json_encode($errors);
             echo  $errors;
         }
-
-        exit();
     }
 
     public function modifierEnseignant()

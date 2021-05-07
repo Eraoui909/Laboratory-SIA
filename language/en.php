@@ -54,7 +54,8 @@
         "allArticles"                   => "All articles",
         "enseignants"                   => "Teachers",
         "doctorants"                    => "Doctoral Students",
-
+        "team"                          => "Team",
+        "thematic"                      => "thematic",
         "presentation"                  => "Presentation",
         "moDePresident"                 => "President's word",
         "desc&historique"               => "Description and history",

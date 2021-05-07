@@ -18,4 +18,5 @@ include_once "header.php";
   <!-- /.content-wrapper -->
     {{ content }}
     <!-- Footer Container -->
+
 <?php include_once "footer.php"; ?>
