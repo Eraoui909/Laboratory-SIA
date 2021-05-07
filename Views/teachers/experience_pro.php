@@ -3,14 +3,10 @@
 <div class="container">
     <?php
         echo "<pre>";
-        print_r($_SESSION);
+        //print_r($_SESSION);
         echo "</pre>";
     ?>
-    <div class="">
-        <table id="article-table" class="display" style="width:100%">
 
-        </table>
-    </div>
     <form action="/teacher/experiencePro" method="post">
 
         <div class="form-group row">

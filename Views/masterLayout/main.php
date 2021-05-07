@@ -100,7 +100,7 @@
     if($null != true)
     {
         echo '<div class="head">
-            <p>Decouvrez les recherches de nos <b>professeur</b> sur notre siteweb du laboratoire <b>LSIA</b> .</p>
+            <p>Decouvrez les recherches de nos <b>professeurs</b> sur notre siteweb du laboratoire <b>LSIA</b> .</p>
         </div>';
         include_once "navBar.php";
     }
