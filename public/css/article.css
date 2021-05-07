@@ -11,7 +11,7 @@
   text-decoration: none;
 }
 
-svg:not(.edit-article-img svg.svg-inline--fa.fa-edit.fa-w-18) path {
+td svg:not(.edit-article-img svg.svg-inline--fa.fa-edit.fa-w-18) path {
   color: #fff;
 }
 
