@@ -122,7 +122,10 @@ $app->router->post('/teacher/deleteArticle',[EnseignantController::class, 'delet
 $app->router->post('/teacher/modifyArticleImg',[EnseignantController::class, 'modifyArticleImg']);
 
 $app->router->post('/teacher/experiencePro',[EnseignantController::class, 'experiencePro']);
+$app->router->post('/teacher/deleteExperiencePro',[EnseignantController::class, 'deleteExperiencePro']);
 
+$app->router->post('/teacher/diplome',[EnseignantController::class, 'diplome']);
+$app->router->post('/teacher/deleteDiplome',[EnseignantController::class, 'deleteDiplome']);
 
 
 $app->router->get('/teacher/cv',[EnseignantController::class, 'teacherCV']);

@@ -96,11 +96,12 @@
                     <div class="card">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a id="c1" class="nav-link storageTheClick " href="#activity" ><?= $lang['experience_pro'] ?></a></li>
-                                <li class="nav-item"><a id="c2" class="nav-link storageTheClick  " href="#timeline" ><?= $lang['cv'] ?></a></li>
                                 <li class="nav-item"><a id="c3" class="nav-link storageTheClick " href="#settings" ><?= $lang['settings'] ?></a></li>
                                 <li class="nav-item"><a id="c4" class="nav-link storageTheClick " href="#addArticle" ><?= $lang['add'] . ' Acticle' ?></a></li>
                                 <li class="nav-item"><a id="c5" class="nav-link storageTheClick " href="#allArticle" ><?= $lang['allArticles'] ?></a></li>
+                                <li class="nav-item"><a id="c2" class="nav-link storageTheClick  " href="#timeline" ><?= $lang['cv'] ?></a></li>
+                                <li class="nav-item"><a id="c1" class="nav-link storageTheClick " href="#activity" ><?= $lang['experience_pro'] ?></a></li>
+                                <li class="nav-item"><a id="c6" class="nav-link storageTheClick " href="#diplomes" ><?= $lang['diplomes'] ?></a></li>
                             </ul>
                         </div><!-- /.card-header -->
                         <div class="card-body">
@@ -306,6 +307,11 @@
                                     <?php include_once 'All Articles.php';?>
                                 </div>
 
+
+                                <div class=" tab-pane" id="diplomes">
+                                    <?php include_once 'diplomes.php';?>
+                                </div>
+
                                 <!-- /.tab-pane -->
                             </div>
                             <!-- /.tab-content -->
@@ -377,6 +383,6 @@
             .catch( error => {
                 console.error( error );
             });
-    })
+    });
 
 </script>
