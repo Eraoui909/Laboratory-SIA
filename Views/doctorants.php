@@ -38,27 +38,27 @@
         height: 400px;
     }
     .card__image-container {
-         margin: -2rem -2rem 1rem -2rem;
-        background-image: linear-gradient(to left,#6BB5CC,#181818);
-     }
+        margin: -2rem -2rem 1rem -2rem;
+        background-image: linear-gradient(to left, #cca56b,#181818);
+    }
 
     .card__line {
-         opacity: 0;
-         animation: LineFadeIn .8s .8s forwards ease-in;
-     }
+        opacity: 0;
+        animation: LineFadeIn .8s .8s forwards ease-in;
+    }
 
     .card__image {
-         opacity: 0;
-         animation: ImageFadeIn .8s 1.4s forwards;
-     }
+        opacity: 0;
+        animation: ImageFadeIn .8s 1.4s forwards;
+    }
 
     .card__title {
-         color: white;
-         margin-top: 0;
-         font-weight: 800;
-         letter-spacing: 0.01em;
+        color: white;
+        margin-top: 0;
+        font-weight: 800;
+        letter-spacing: 0.01em;
         font-size: 25px;
-     }
+    }
 
     .card__content {
         margin-top: -1rem;
@@ -66,7 +66,7 @@
         animation: ContentFadeIn .8s 1.6s forwards;
         color: #d9d9d9;
         text-align: center;
-     }
+    }
     .card__content h5{
         margin-top: 10px;
     }
@@ -76,10 +76,10 @@
     }
 
     .card__svg {
-         position: absolute;
-         left: 0;
-         top: 115px;
-     }
+        position: absolute;
+        left: 0;
+        top: 115px;
+    }
 
 
     @keyframes LineFadeIn {
@@ -102,23 +102,23 @@
 </style>
 
 <?php
-    echo "<pre>";
-    //print_r($params);
-    echo "</pre>";
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
 ?>
 
 <div class="teachers-container">
 
     <div class="teachers-title">
-        <h1>Liste des enseignants</h1>
+        <h1>Liste des doctorants</h1>
     </div>
 
     <div class="teachers-content">
 
 
         <?php foreach ($params[0] as $param){ ?>
-        <a href="mailto:<?= $param['email'] ?>">
-            <div class="card">
+            <a href="mailto:<?= $param['email'] ?>">
+                <div class="card">
                     <div class="card__image-container">
                         <img class="card__image" src="/Storage/uploads/users/<?= $param['avatar'] ?>" width="390px" height="318px" alt="">
                     </div>
@@ -131,12 +131,12 @@
 
                     <div class="card__content">
                         <h1 class="card__title"><?php echo $param['prenom'] ." ". $param['nom'] ?></h1>
-                        <h5><?= $param['thematique'] ?></h5>
+                        <h5><?= $param['thematique']??"" ?></h5>
                         <small><?= $param['email'] ?></small>
                     </div>
                 </div>
             </a>
-        <?php
+            <?php
         } ?>
 
     </div>

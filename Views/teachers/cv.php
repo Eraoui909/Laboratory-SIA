@@ -1,4 +1,5 @@
 
+<?php global $lang; ?>
 
 <div class="container " style="overflow:hidden;" id="myPDF">
 
@@ -16,16 +17,14 @@
             </div>
 
             <div class="name">
-                <h3 style="font-size: 21px"><?php echo $prenom ." ".$nom;  ?></h3>
+                <h3 style="font-size: 18px;font-weight: bold"><?php echo $prenom ." ".$nom;  ?></h3>
             </div>
 
             <!-- Navigation bar -->
             <nav class="main-nav">
                 <ul class="navigation">
-                        <li style="font-size: 18px"><strong>Birthday:</strong> August 14, 1982</li>
-                        <li style="font-size: 18px"><strong>Location:</strong> Central Main Rd, Australia</li>
-                        <li style="font-size: 18px"><strong>Email:</strong> <?php echo $email ;?></li>
-                        <li style="font-size: 18px"><strong>Phone:</strong> <?php echo $tel ;?></li>
+                        <li style="font-size: 15px"><strong>Email:</strong> <?php echo $email ;?></li>
+                        <li style="font-size: 15px"><strong>Phone:</strong> <?php echo $tel ;?></li>
                 </ul>
             </nav>
             <!-- Navigation bar end -->
@@ -42,18 +41,35 @@
             <section id="about" class="about">
 
                 <div class="section-header">
-                    <h2>About Me</h2>
+                    <h2><?= $lang['aboutMe'] ?></h2>
 
                 </div>
 
                 <!-- Intro -->
                 <div class="intro">
 
-                    <p>Hello, My name is <?php echo $prenom ." ".$nom ;?>. Lorem ipsum dolor sit amet, usu sumo dicant vulputate in. Quando fabellas adipiscing nam an. An vis congue oporteat, no eros facer suavitate eos. An debet affert aliquid ius. Veritus placerat est ea, est ne nominavi suscipit maluisset.</p>
-
-
-
-
+                    <table class="table">
+                        <tr>
+                            <td><strong><?= $lang['firstName'] ?>:</strong></td>
+                            <td><?= $prenom ?> </td>
+                        </tr>
+                        <tr>
+                            <td><strong><?= $lang['lastName'] ?>:</strong></td>
+                            <td><?= $nom ?> </td>
+                        </tr>
+                        <tr>
+                            <td><strong><?= $lang['date_naiss'] ?>:</strong></td>
+                            <td><?= $date_naissance ?> </td>
+                        </tr>
+                        <tr>
+                            <td><strong><?= $lang['etat_civil'] ?>:</strong></td>
+                            <td><?= $etat_civil ;?> </td>
+                        </tr>
+                        <tr>
+                            <td><strong><?= $lang['addresse'] ?>:</strong></td>
+                            <td><?= $addresse ?> </td>
+                        </tr>
+                    </table>
 
                 </div>
                 <!-- Intro end -->
@@ -116,27 +132,61 @@
 
 
 
-            <!-- Section Works -->
+            <!-- Situation present-->
             <section id="works" class="works clearfix">
 
                 <div class="section-header">
-                    <h2>Portfolio</h2>
+                    <h2><?= $lang['situation_present'] ?></h2>
                 </div>
 
                 <!-- Control -->
                 <div class="control">
                     <ul>
-                        <li class="active"><a class="filter" data-filter="all">Lorem ipsum dolor sit amet,
-                                consectetur adipisicing elit.
-                                At commodi consequatur.
-                            </a></li>
+                        <li class="active">
+                            <?= $situation_present ?>
+                        </li>
                     </ul>
                 </div>
 
+            </section>
+            <!-- Situation present end -->
 
+            <!-- Nombre d’années d’expérience-->
+            <section id="works" class="works clearfix">
+
+                <div class="section-header">
+                    <h2><?= $lang['nbr_annee_experience'] ?></h2>
+                </div>
+
+                <!-- Control -->
+                <div class="control">
+                    <ul>
+                        <li class="active">
+                            <?= $nbr_annee_experience ."  années" ?>
+                        </li>
+                    </ul>
+                </div>
 
             </section>
-            <!-- Section Works end -->
+            <!-- Nombre d’années d’expérience end -->
+            <!-- Qualifications principales-->
+                <section id="works" class="works clearfix">
+
+                    <div class="section-header">
+                        <h2><?= $lang['qualification_principale'] ?></h2>
+                    </div>
+
+                    <!-- Control -->
+                    <div class="control">
+                        <ul>
+                            <li class="active">
+                                <?= htmlspecialchars_decode($qualification_principale)  ?>
+                            </li>
+                        </ul>
+                    </div>
+
+                </section>
+            <!-- Qualifications principales end -->
 
             <!-- Section Testimonials -->
             <section id="testimonials" class="testimonials">

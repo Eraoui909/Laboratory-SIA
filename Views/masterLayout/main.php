@@ -63,7 +63,7 @@
 
 
 
-    <title><?= $title ?></title>
+    <title>SIA | <?= $title ?></title>
 
     <style>
         .hiddenInput{

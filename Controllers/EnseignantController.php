@@ -10,6 +10,7 @@ use app\core\Session;
 use app\core\Validator;
 use app\models\ArticleModel;
 use app\models\EnseignantModel;
+use app\models\ExperienceProModel;
 
 class EnseignantController extends Controller
 {
@@ -140,13 +141,29 @@ class EnseignantController extends Controller
                 $teacherModel->setPassword($pass);
                 $teacherModel->setTel($tel);
                 $teacherModel->setAvatar($avatar);
+                $teacherModel->setThematique($data['thematique']);
+
+                $teacherModel->setDateNaissance($data['date_naissance']);
+                $teacherModel->setEtatCivil($data['etat_civil']);
+                $teacherModel->setAddresse($data['addresse']);
+                $teacherModel->setSituationPresent($data['situation_present']);
+                $teacherModel->setNbrAnneeExperience($data['nbr_annee_experience']);
+                $teacherModel->setQualificationPrincipale($data['qualification_principale']);
 
                 if($teacherModel->update()){
-                    $_SESSION['token']['ens']['nom']    = $data['nom'];
-                    $_SESSION['token']['ens']['prenom'] = $data['prenom'];
-                    $_SESSION['token']['ens']['email']  = $data['email'];
-                    $_SESSION['token']['ens']['tel']    = $tel;
-                    $_SESSION['token']['ens']['avatar'] = $avatar;
+                    $_SESSION['token']['ens']['nom']                        = $data['nom'];
+                    $_SESSION['token']['ens']['prenom']                     = $data['prenom'];
+                    $_SESSION['token']['ens']['email']                      = $data['email'];
+                    $_SESSION['token']['ens']['tel']                        = $tel;
+                    $_SESSION['token']['ens']['avatar']                     = $avatar;
+                    $_SESSION['token']['ens']['thematique']                 = $data['thematique'];
+
+                    $_SESSION['token']['ens']['date_naissance']             = $data['date_naissance'];
+                    $_SESSION['token']['ens']['etat_civil']                 = $data['etat_civil'];
+                    $_SESSION['token']['ens']['addresse']                   = $data['addresse'];
+                    $_SESSION['token']['ens']['situation_present']          = $data['situation_present'];
+                    $_SESSION['token']['ens']['nbr_annee_experience']       = $data['nbr_annee_experience'];
+                    $_SESSION['token']['ens']['qualification_principale']   = $data['qualification_principale'];
 
                     $this->redirect('/teacher/profile');
                 }
@@ -294,4 +311,42 @@ class EnseignantController extends Controller
             }
         }
     }
+
+    public function experiencePro()
+    {
+        $validator  = new Validator();
+        $session    = new Session();
+        $data   = $validator->sanitize($_POST);
+        $errors = $validator->require($data);
+
+        if(empty($errors))
+        {
+            $experience = new ExperienceProModel();
+            $experience->setPersonneId($_SESSION['token']['ens']['id']);
+            $experience->setDateDebut($data['date_debut']);
+            $experience->setDateFin($data['date_fin']);
+            $experience->setEntreprise($data['entreprise']);
+            $experience->setFonction($data['fonction']);
+            $experience->setDescription($data['description']);
+
+            if($experience->register())
+            {
+                $session->setFlash('experience_error',[]);
+                $this->redirect("/teacher/profile");
+            }
+        }else{
+            $session->setFlash('experience_error',$errors);
+            $this->redirect("/teacher/profile");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 }
