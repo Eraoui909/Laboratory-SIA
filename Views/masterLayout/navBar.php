@@ -15,7 +15,7 @@
             </li>
 
             <li><a href="/teachers"><?= $lang['enseignants'] ?></a></li>
-            <li><a href=""><?= $lang['doctorants'] ?></a></li>
+            <li><a href="/doctorants"><?= $lang['doctorants'] ?></a></li>
         </ul>
     </div>
     <div class="logo">

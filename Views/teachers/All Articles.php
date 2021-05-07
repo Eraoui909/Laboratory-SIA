@@ -22,13 +22,6 @@
 </style>
 
 <div class="content-wrapper " style="margin-left: 0">
-
-    <?php
-        //echo "<pre>";
-        //    print_r($_SESSION);
-        //echo "</pre>";
-    ?>
-
     <!-- image modification pop up -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -139,7 +132,7 @@
                         <tr>
                             <td><?= $article['title'] ?></td>
                             <td><?= $article['date'] ?></td>
-                            <td class="edit-article-img" data-id="<?= $article['articleID'] ?>" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal">
+                            <td class="edit-article-img" data-id="<?= $article['articleID'] ?>" style="cursor: pointer;min-width: 90px" data-toggle="modal" data-target="#exampleModal">
                                 <i class="fa fa-edit"></i>
                                 <img width="45px" height="40px" src="\Storage\uploads\articles\<?= $article['picture'] ?>" alt="article picture"> </td>
                             <td>

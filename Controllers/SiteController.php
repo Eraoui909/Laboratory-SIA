@@ -12,6 +12,7 @@ use app\core\Session;
 use app\core\Validator;
 use app\models\AdminsModel;
 use app\models\ArticleModel;
+use app\models\DoctorantModel;
 use app\models\EnseignantModel;
 
 class SiteController extends Controller
@@ -53,9 +54,7 @@ class SiteController extends Controller
         $errors = $validator->require($data);
 
 
-
         if(empty($errors)){
-
             if ($result = EnseignantModel::login($data['email']))
             {
                 if($this->verify_hashed_undecrypted_data($data['password'], $result[0]['password']))
@@ -110,6 +109,15 @@ class SiteController extends Controller
 
     public function techersPage()
     {
-        return $this->render('teachers',["title","Teachers"]);
+        $data[] = EnseignantModel::getAll();
+        $data['title'] = "Teachers";
+        return $this->render('teachers',$data);
+    }
+
+    public function doctorantsPage()
+    {
+        $data['title'] = "Doctorants";
+        $data[] = DoctorantModel::getAll();
+        return $this->render('doctorants',$data);
     }
 }

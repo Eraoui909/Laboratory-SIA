@@ -30,7 +30,7 @@
         "password"                      => "password",
         "avatar"                        => "Picture",
         "updatePic"                     => "Update Picture",
-        "deletePic"                     => "Delete <span style='color: black'>my Picture<span>",
+        "deletePic"                     => "<span style='color: red'>Delete </span><span style='color: black'>my Picture  </span> <i class='fa fa-trash'></i>",
         "submit"                        => "Submit",
         "file_size_error"               => "this file passed the maximum size allowed",
         "file_type_error"               => "this type of files is not allowed",
@@ -60,6 +60,8 @@
         "moDePresident"                 => "President's word",
         "desc&historique"               => "Description and history",
         "conditionDeSoutnance"          => "New soutnance condition",
+
+        "thematique"                    => "thematic",
 
 
     );

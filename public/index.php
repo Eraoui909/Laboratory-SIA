@@ -102,6 +102,7 @@ $app->router->post('/admin/teams/delete-teacher',[TeamController::class,'deleteT
 
 $app->router->get('/motDePresident',[SiteController::class,'motDePresidentPage']);
 $app->router->get('/teachers',[SiteController::class,'techersPage']);
+$app->router->get('/doctorants',[SiteController::class,'doctorantsPage']);
 
 
 
@@ -119,6 +120,8 @@ $app->router->post('/teacher/addArticle',[EnseignantController::class, 'addArtic
 $app->router->post('/teacher/modifyArticle',[EnseignantController::class, 'modifyArticle']);
 $app->router->post('/teacher/deleteArticle',[EnseignantController::class, 'deleteArticle']);
 $app->router->post('/teacher/modifyArticleImg',[EnseignantController::class, 'modifyArticleImg']);
+
+$app->router->post('/teacher/experiencePro',[EnseignantController::class, 'experiencePro']);
 
 
 

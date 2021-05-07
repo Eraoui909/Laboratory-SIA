@@ -223,6 +223,8 @@ class AbstractModel
         $sql = "SELECT *, 'doc' FROM doctorant WHERE email = :email UNION SELECT *, 'ens' FROM enseignant WHERE email = :email";
         $stmt = $connect->prepare($sql);
         $stmt->bindValue(':email', $email);
+        //print_r($stmt);
+        //exit();
         $stmt->execute();
         $results = $stmt->fetchAll(\PDO::FETCH_ASSOC); //\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, get_called_class(), array_keys(static::$tableSchema)
 

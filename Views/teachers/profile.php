@@ -1,4 +1,6 @@
-<?php $data = []; global $lang;?>
+<?php $data = []; global $lang;
+//print_r($params);
+?>
 
 <style>
     .contentEdit p{
@@ -7,6 +9,9 @@
 
     .descriptionEdit p{
         height: 100px;
+    }
+    input.form-control.form-control-sm{
+        height: auto;
     }
 </style>
 
@@ -69,17 +74,17 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <strong><i class="fas fa-book mr-1"></i> <?= $lang['education'] ?></strong>
+                            <strong><i class="fas fa-book mr-1"></i> <?= $lang['thematique'] ?></strong>
 
                             <p class="text-muted">
-                                <?= $lang['degree'] ?>
+                                <?= $thematique ?>
                             </p>
 
                             <hr>
 
-                            <strong><i class="fas fa-map-marker-alt mr-1"></i> <?= $lang['location'] ?></strong>
+                            <strong><i class="fas fa-map-marker-alt mr-1"></i> <?= $lang['addresse'] ?></strong>
 
-                            <p class="text-muted"><?= $lang['locationCity'] ?></p>
+                            <p class="text-muted"><?= $addresse ?></p>
 
                         </div>
                         <!-- /.card-body -->
@@ -91,7 +96,7 @@
                     <div class="card">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a id="c1" class="nav-link storageTheClick " href="#activity" >Activity</a></li>
+                                <li class="nav-item"><a id="c1" class="nav-link storageTheClick " href="#activity" ><?= $lang['experience_pro'] ?></a></li>
                                 <li class="nav-item"><a id="c2" class="nav-link storageTheClick  " href="#timeline" ><?= $lang['cv'] ?></a></li>
                                 <li class="nav-item"><a id="c3" class="nav-link storageTheClick " href="#settings" ><?= $lang['settings'] ?></a></li>
                                 <li class="nav-item"><a id="c4" class="nav-link storageTheClick " href="#addArticle" ><?= $lang['add'] . ' Acticle' ?></a></li>
@@ -101,117 +106,9 @@
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class=" tab-pane" id="activity">
-                                    <!-- Post -->
-                                    <div class="post">
-                                        <div class="user-block">
-                                            <img class="img-circle img-bordered-sm" src="/adminLTE/dist/img/user1-128x128.jpg" alt="user image">
-                                            <span class="username">
-                                              <a href="#">Jonathan Burke Jr.</a>
-                                              <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                                            </span>
-                                            <span class="description">Shared publicly - 7:30 PM today</span>
-                                        </div>
-                                        <!-- /.user-block -->
-                                        <p>
-                                            Lorem ipsum represents a long-held tradition for designers,
-                                            typographers and the like. Some people hate it and argue for
-                                            its demise, but others ignore the hate as they create awesome
-                                            tools to help create filler text for everyone from bacon lovers
-                                            to Charlie Sheen fans.
-                                        </p>
 
-                                        <p>
-                                            <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-                                            <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                                            <span class="float-right">
-                                              <a href="#" class="link-black text-sm">
-                                                <i class="far fa-comments mr-1"></i> Comments (5)
-                                              </a>
-                                            </span>
-                                        </p>
+                                    <?php include_once "experience_pro.php";?>
 
-                                        <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
-                                    </div>
-                                    <!-- /.post -->
-
-                                    <!-- Post -->
-                                    <div class="post clearfix">
-                                        <div class="user-block">
-                                            <img class="img-circle img-bordered-sm" src="/adminLTE/dist/img/user7-128x128.jpg" alt="User Image">
-                                            <span class="username">
-                                              <a href="#">Sarah Ross</a>
-                                              <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                                            </span>
-                                            <span class="description">Sent you a message - 3 days ago</span>
-                                        </div>
-                                        <!-- /.user-block -->
-                                        <p>
-                                            Lorem ipsum represents a long-held tradition for designers,
-                                            typographers and the like. Some people hate it and argue for
-                                            its demise, but others ignore the hate as they create awesome
-                                            tools to help create filler text for everyone from bacon lovers
-                                            to Charlie Sheen fans.
-                                        </p>
-
-                                        <form class="form-horizontal">
-                                            <div class="input-group input-group-sm mb-0">
-                                                <input class="form-control form-control-sm" placeholder="Response">
-                                                <div class="input-group-append">
-                                                    <button type="submit" class="btn btn-danger">Send</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <!-- /.post -->
-
-                                    <!-- Post -->
-                                    <div class="post">
-                                        <div class="user-block">
-                                            <img class="img-circle img-bordered-sm" src="/adminLTE/dist/img/user6-128x128.jpg" alt="User Image">
-                                            <span class="username">
-                                              <a href="#">Adam Jones</a>
-                                              <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                                            </span>
-                                            <span class="description">Posted 5 photos - 5 days ago</span>
-                                        </div>
-                                        <!-- /.user-block -->
-                                        <div class="row mb-3">
-                                            <div class="col-sm-6">
-                                                <img class="img-fluid" src="/adminLTE/dist/img/photo1.png" alt="Photo">
-                                            </div>
-                                            <!-- /.col -->
-                                            <div class="col-sm-6">
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <img class="img-fluid mb-3" src="/adminLTE/dist/img/photo2.png" alt="Photo">
-                                                        <img class="img-fluid" src="/adminLTE/dist/img/photo3.jpg" alt="Photo">
-                                                    </div>
-                                                    <!-- /.col -->
-                                                    <div class="col-sm-6">
-                                                        <img class="img-fluid mb-3" src="/adminLTE/dist/img/photo4.jpg" alt="Photo">
-                                                        <img class="img-fluid" src="/adminLTE/dist/img/photo1.png" alt="Photo">
-                                                    </div>
-                                                    <!-- /.col -->
-                                                </div>
-                                                <!-- /.row -->
-                                            </div>
-                                            <!-- /.col -->
-                                        </div>
-                                        <!-- /.row -->
-
-                                        <p>
-                                            <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
-                                            <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                                            <span class="float-right">
-                          <a href="#" class="link-black text-sm">
-                            <i class="far fa-comments mr-1"></i> Comments (5)
-                          </a>
-                        </span>
-                                        </p>
-
-                                        <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
-                                    </div>
-                                    <!-- /.post -->
                                 </div>
 
                                 <!-- /.tab-pane for CV -->
@@ -268,6 +165,13 @@
                                             </div>
                                         </div>
 
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-2 col-form-label"><?= $lang['thematique'] ?></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="thematique" value="<?= $thematique ?>" class="form-control" id="" placeholder="Tel">
+                                            </div>
+                                        </div>
+
                                         <div class="row">
                                             <div class="col-sm-2"></div>
                                             <p class="col-sm-10 error-message"><?=  ($_SESSION['flash_messages']['errors']['value']['uploads'][0] ?? '') ?></p>
@@ -287,6 +191,48 @@
                                                         <a href="/teacher/deletePic" class="delete-path"> <?= $lang['deletePic'] ?></a>
                                                     </label>
                                                 </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-2 col-form-label"><?= $lang['date_naiss'] ?></label>
+                                            <div class="col-sm-10">
+                                                <input type="date" name="date_naissance" value="<?= $date_naissance ?>" class="form-control" id="" placeholder="Tel">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-2 col-form-label"><?= $lang['etat_civil'] ?></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="etat_civil" value="<?= $etat_civil ?>" class="form-control" id="" placeholder="Tel">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-2 col-form-label"><?= $lang['addresse'] ?></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="addresse" value="<?= $addresse ?>" class="form-control" id="" placeholder="Tel">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-2 col-form-label"><?= $lang['situation_present'] ?></label>
+                                            <div class="col-sm-10">
+                                                <textarea name="situation_present" style="width: 100%" rows="10"><?= $situation_present ?></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-2 col-form-label"><?= $lang['nbr_annee_experience'] ?></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="nbr_annee_experience" class="form-control"  value="<?= $nbr_annee_experience ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-2 col-form-label"><?= $lang['qualification_principale'] ?></label>
+                                            <div class="col-sm-10">
+                                                <textarea name="qualification_principale" class="qualification_editor" style="width: 100%" rows="15"><?= $qualification_principale ?></textarea>
                                             </div>
                                         </div>
 
@@ -403,7 +349,34 @@
             .catch( error => {
                 console.error( error );
             });
+    });
+
+    iteme = document.querySelectorAll( '.qualification_editor' );
+    iteme.forEach(function(item){
+    ClassicEditor
+        .create( item )
+        .then(editor => {
+            //console.log( 'Editor was initialized', editor );
+            window.editor = editor;
+            qualificationEditor = editor;
+        })
+        .catch( error => {
+            console.error( error );
+        });
     })
 
+    iteme = document.querySelectorAll( '.description_experience_editor' );
+    iteme.forEach(function(item){
+        ClassicEditor
+            .create( item )
+            .then(editor => {
+                //console.log( 'Editor was initialized', editor );
+                window.editor = editor;
+                DescriptionExperienceEditor = editor;
+            })
+            .catch( error => {
+                console.error( error );
+            });
+    })
 
 </script>
