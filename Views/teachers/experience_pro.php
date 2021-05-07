@@ -1,12 +1,7 @@
 
 
 <div class="container">
-    <?php
-        echo "<pre>";
-        //print_r($_SESSION);
-        echo "</pre>";
-    ?>
-
+    <center style="padding: 10px"><h3>Ajouter experience</h3></center>
     <form action="/teacher/experiencePro" method="post">
 
         <div class="form-group row">
@@ -56,4 +51,41 @@
         </div>
 
     </form>
+
+    <hr>
+
+    <center style="padding: 10px"><h3>Mes experiences</h3></center>
+    <div style="border: 1px solid #bababa;padding: 10px;box-shadow: 0px 0px 15px 0px #9e9e9e">
+        <table id="article-table" class="display" style="width:100%">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>DATE</th>
+                <th>Entreprise</th>
+                <th>Fonction</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <?php foreach ($experiences as $experienc){ ?>
+                <tr>
+                    <td><?= $experienc['id'] ?></td>
+                    <td><?= $experienc['date_debut']." - " .$experienc['date_fin'] ?></td>
+                    <td><?= $experienc['entreprise'] ?></td>
+                    <td><?= $experienc['fonction'] ?></td>
+                    <td style="max-height: 100px;overflow: hidden;"><?= htmlspecialchars_decode($experienc['description']) ?></td>
+                    <td>
+                        <button class="btn btn-danger supp-experience" data-id="<?= $experienc['id'] ?>"  style="background-color: #fe2b2b">
+                            <i class="fa fa-trash-alt"></i> supprimer
+                        </button>
+                    </td>
+                </tr>
+            <?php } ?>
+
+            </tbody>
+        </table>
+    </div>
+
 </div>

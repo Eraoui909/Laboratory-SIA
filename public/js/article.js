@@ -252,3 +252,113 @@ $(document).on("click",".add-article-button",function (e){
 
     });
 
+    /*******************************************************************************************************************
+     *******************************************************************************************************************
+     *  delete article
+     *******************************************************************************************************************
+     ********************************************************************************************************************/
+
+
+
+    $(".supp-experience").on("click",function (e) {
+        e.preventDefault();
+        let id = $(this).attr("data-id");
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                let data = "id="+id;
+                $.ajax({
+                    method:"post",
+                    url:"/teacher/deleteExperiencePro",
+                    data:data,
+                    dataType:"json",
+                    success:function (data)
+                    {
+                        //console.log(data);
+                        if(data === "deleted")
+                        {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                            setTimeout(function (){
+                                window.location.replace("/teacher/profile");
+                            },1000);
+                        }else{
+                            alert("ERROR");
+                            setTimeout(function (){
+                                window.location.replace("/teacher/profile");
+                            },1000);
+                        }
+                    }
+                })
+
+            }
+        })
+    });
+
+    /*******************************************************************************************************************
+     *******************************************************************************************************************
+     *  diploma datatable && delete diploma
+     *******************************************************************************************************************
+     ********************************************************************************************************************/
+
+
+    $("#diplome-table").dataTable({
+        "processing": true,
+        "responsive": true,
+        "lengthChange": false,
+    });
+
+    $(".supp-diplome").on("click",function (e) {
+        e.preventDefault();
+        let id = $(this).attr("data-id");
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                let data = "id="+id;
+                $.ajax({
+                    method:"post",
+                    url:"/teacher/deleteDiplome",
+                    data:data,
+                    dataType:"json",
+                    success:function (data)
+                    {
+                        //console.log(data);
+                        if(data === "deleted")
+                        {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                            setTimeout(function (){
+                                window.location.replace("/teacher/profile");
+                            },1000);
+                        }else{
+                            alert("ERROR");
+                            setTimeout(function (){
+                                window.location.replace("/teacher/profile");
+                            },1000);
+                        }
+                    }
+                })
+
+            }
+        })
+    });

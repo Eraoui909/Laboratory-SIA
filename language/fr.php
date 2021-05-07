@@ -74,5 +74,17 @@
         "entreprise"                    => "Entreprise",
         "fonction"                      => "Fonction",
         "description"                   => "Decription",
+        "diplomes"                      => "Diplômes",
+        "date_deplome_debut"            => "Date de debut de diplôme",
+        "date_deplome_fin"              => "Date de fin de diplôme",
+        "diplome_institut"              => "Institution",
+        "diplome_ville"                 => "Ville",
+        "diplome_diplome"               => "Diplôme",
+        "diplome_titre"                 => "Titre",
+        "diplome_certificat"            => "Certificat",
+
+
+
+
 
     );

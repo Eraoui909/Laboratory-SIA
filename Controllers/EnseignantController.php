@@ -9,6 +9,7 @@ use app\core\Helper;
 use app\core\Session;
 use app\core\Validator;
 use app\models\ArticleModel;
+use app\models\diplomesModel;
 use app\models\EnseignantModel;
 use app\models\ExperienceProModel;
 
@@ -105,6 +106,8 @@ class EnseignantController extends Controller
         $arr = $_SESSION['token']['ens'];
         $arr['title'] = $_SESSION['token']['ens']['nom'] . ' ' . $_SESSION['token']['ens']['prenom'];
         $arr['articles'] = ArticleModel::getAll();
+        $arr['experiences'] = ExperienceProModel::getAll();
+        $arr['diplomes']    = diplomesModel::getAll();
 
         return $this->render('/teachers/profile', $arr);
     }
@@ -207,6 +210,9 @@ class EnseignantController extends Controller
 
         $arr = $_SESSION['token']['ens'];
         $arr['title'] = 'Download CV PDF';
+        $arr['experiences'] = ExperienceProModel::getAll();
+        $arr['diplomes']    = diplomesModel::getAll();
+
         return $this->renderEmpty('/teachers/cvToPDF', $arr);
     }
 
@@ -341,12 +347,53 @@ class EnseignantController extends Controller
     }
 
 
+    public function deleteExperiencePro()
+    {
+        if(ExperienceProModel::delete($_POST['id']))
+        {
+            echo json_encode("deleted");
+        }else{
+            echo json_encode("error");
+        }
+    }
 
+    public function diplome()
+    {
+        $validator = new Validator();
+        $session = new Session();
+        $data = $validator->sanitize($_POST);
+        $errors = $validator->require($data);
 
+        if (empty($errors)) {
+            $diplome = new diplomesModel();
+            $diplome->setPersonneId($_SESSION['token']['ens']['id']);
+            $diplome->setInstitut($data['institut']);
+            $diplome->setVille($data['ville']);
+            $diplome->setDateDebut($data['date_debut']);
+            $diplome->setDateFin($data['date_fin']);
+            $diplome->setDiplome($data['diplome']);
+            $diplome->setTitre($data['titre']);
+            $diplome->setCertificat($data['certificat']);
 
+            if ($diplome->register()) {
+                $session->setFlash('experience_error', []);
+                $this->redirect("/teacher/profile");
+            }
+        } else {
+            $session->setFlash('experience_error', $errors);
+            $this->redirect("/teacher/profile");
+        }
 
+    }
 
-
-
+    public function deleteDiplome()
+    {
+        if(diplomesModel::delete($_POST['id']))
+        {
+            echo json_encode("deleted");
+        }else{
+            echo json_encode("error");
+        }
+    }
 
 }
