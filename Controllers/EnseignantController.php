@@ -120,7 +120,6 @@ class EnseignantController extends Controller
         $errors = $validator->require($data);
         $teacherModel = new EnseignantModel();
 
-
         if (isset($_FILES["pictures"]["error"][1])){
             $errors['uploads'][] = "* You can't upload multiple files";
         }
