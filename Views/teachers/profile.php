@@ -173,6 +173,13 @@
                                             </div>
                                         </div>
 
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-2 col-form-label"><?= $lang['nbr_annee_experience'] ?></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="nbr_annee_experience" class="form-control"  value="<?= $nbr_annee_experience ?>">
+                                            </div>
+                                        </div>
+
                                         <div class="row">
                                             <div class="col-sm-2"></div>
                                             <p class="col-sm-10 error-message"><?=  ($_SESSION['flash_messages']['errors']['value']['uploads'][0] ?? '') ?></p>
@@ -223,12 +230,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group row">
-                                            <label for="" class="col-sm-2 col-form-label"><?= $lang['nbr_annee_experience'] ?></label>
-                                            <div class="col-sm-10">
-                                                <input type="text" name="nbr_annee_experience" class="form-control"  value="<?= $nbr_annee_experience ?>">
-                                            </div>
-                                        </div>
 
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label"><?= $lang['qualification_principale'] ?></label>

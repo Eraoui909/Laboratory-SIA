@@ -103,9 +103,9 @@ class EnseignantController extends Controller
 
         $arr = $_SESSION['token']['ens'];
         $arr['title'] = $_SESSION['token']['ens']['nom'] . ' ' . $_SESSION['token']['ens']['prenom'];
-        $arr['articles'] = ArticleModel::getAll();
-        $arr['experiences'] = ExperienceProModel::getAll();
-        $arr['diplomes']    = diplomesModel::getAll();
+        $arr['articles'] = ArticleModel::getByQuery("SELECT * FROM article WHERE teacher=".$_SESSION['token']['ens']['id']);
+        $arr['experiences'] = ExperienceProModel::getByQuery("SELECT * FROM experience_pro WHERE personne_id=".$_SESSION['token']['ens']['id']);
+        $arr['diplomes']    = diplomesModel::getByQuery("SELECT * FROM diplomes WHERE personne_id=".$_SESSION['token']['ens']['id']);
 
         return $this->render('/teachers/profile', $arr);
     }
