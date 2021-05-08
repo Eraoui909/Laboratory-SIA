@@ -56,7 +56,7 @@
 
     <center style="padding: 10px"><h3>Mes experiences</h3></center>
     <div style="border: 1px solid #bababa;padding: 10px;box-shadow: 0px 0px 15px 0px #9e9e9e">
-        <table id="article-table" class="display" style="width:100%">
+        <table id="experience-table" class="display" style="width:100%">
             <thead>
             <tr>
                 <th>ID</th>
