@@ -88,7 +88,7 @@
             </thead>
             <tbody>
 
-            <?php foreach ($diplomes as $diplome){ ?>
+            <?php if (is_array($diplomes))foreach ($diplomes as $diplome){ ?>
                 <tr>
                     <td><?= $diplome['id'] ?></td>
                     <td><?= $diplome['institut']??"vide" ?></td>

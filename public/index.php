@@ -6,6 +6,7 @@ use app\Controllers\EnseignantController;
 use app\Controllers\LangController;
 use app\Controllers\SiteController;
 
+use app\Controllers\TeamController;
 use app\core\Application;
 use app\core\Database;
 
@@ -92,6 +93,12 @@ $app->router->get('/admin/doctorant',[DoctorantController::class,'doctorantPage'
 $app->router->post('/admin/doctorant/add',[DoctorantController::class,'ajouterDoctorant']);
 $app->router->post('/admin/doctorant/modify',[DoctorantController::class,'modifierDoctorant']);
 $app->router->post('/admin/doctorant/delete',[DoctorantController::class,'deleteDoctorant']);
+
+$app->router->get('/admin/teams',[AdminController::class,'teamsPage']);
+$app->router->post('/admin/teams/add',[TeamController::class,'addTeam']);
+$app->router->post('/admin/teams/delete',[TeamController::class,'deleteTeam']);
+$app->router->post('/admin/teams/add-teacher',[TeamController::class,'addTeacherToTeam']);
+$app->router->post('/admin/teams/delete-teacher',[TeamController::class,'deleteTeacherFromTeam']);
 
 $app->router->get('/motDePresident',[SiteController::class,'motDePresidentPage']);
 $app->router->get('/teachers',[SiteController::class,'techersPage']);

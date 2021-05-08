@@ -68,6 +68,15 @@
                     </ul>
                 </li>
 
+                <li class="nav-item">
+                    <a href="/admin/teams" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            <?= $lang['team']; ?>s
+                        </p>
+                    </a>
+                </li>
+
 
             </ul>
         </nav>

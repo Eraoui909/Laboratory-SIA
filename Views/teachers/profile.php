@@ -10,6 +10,9 @@
     .descriptionEdit p{
         height: 100px;
     }
+    input.form-control.form-control-sm{
+        height: auto;
+    }
 </style>
 
 <div class="content-wrapper" style="margin: 5px auto;">

@@ -1,22 +1,70 @@
-
+let teamID = '';
+let teamTeachers = '';
 $(document).ready(function()
 {
+
     $('#enseignant-doctorant-table').DataTable({
-        "processing": true,
-        "responsive": true,
-        "lengthChange": false,
-        buttons: [
-            { extend: 'copy', className: 'datatableButton' },
-            { extend: 'csv', className: 'datatableButton',title: "SIA Laboratory" },
-            { extend: 'excel', className: 'datatableButton',title: "SIA Laboratory" },
-            { extend: 'pdf', className: 'datatableButton',title: "SIA Laboratory" },
-            {
-                extend: 'print',
-                className: 'datatableButton',
-                title: "SIA Laboratory"
-            },
+    "processing": true,
+    "responsive": true,
+    "lengthChange": false,
+    buttons: [
+    { extend: 'copy', className: 'datatableButton' },
+    { extend: 'csv', className: 'datatableButton',title: "SIA Laboratory" },
+    { extend: 'excel', className: 'datatableButton',title: "SIA Laboratory" },
+    { extend: 'pdf', className: 'datatableButton',title: "SIA Laboratory" },
+    {
+        extend: 'print',
+        className: 'datatableButton',
+        title: "SIA Laboratory"
+    },
         ]
     }).buttons().container().appendTo('#card-ens-doc .col-md-6:eq(0)');
+
+
+    $("#show-add-btn").on("click", function ()
+    {
+        $("#add-div").css("display","block");
+    });
+
+    $(".show-add-teacher-btn").on("click", function ()
+    {
+        teamID = $(this).attr("data-Id");
+        $("#modify-div").css("display","block");
+    });
+
+    $(".close").on("click", function ()
+    {
+        $("#add-div").css("display","none");
+        $("#modify-div").css("display","none");
+    });
+
+    $("#close-btn").on("click", function ()
+    {
+        $("#add-div").css("display","none");
+        $("#modify-div").css("display","none");
+    });
+
+    $("#add-team-btn").on("click", function (e){
+        e.preventDefault();
+        addTeam();
+    });
+
+    $(".delete-team-btn").on("click", function (e){
+        e.preventDefault();
+        deleteTeam();
+    });
+
+    $("#add-teacher-to-team-btn").on("click", function (e){
+        e.preventDefault();
+        addTeacherToTeam();
+    });
+
+    $("#delete-teacher-frm-team-btn").on("click", function (e){
+        e.preventDefault();
+        deleteTeacherFromTeam();
+    });
+
+    ///////////////////////////////////////////////////////////////////////////
 
     $("#add-enseignant-doctorant-btn").on("click", function ()
     {
@@ -220,3 +268,175 @@ function deleteEnsDoc (person, id)
 
 
 }
+
+function addTeam ()
+{
+    let data = $(".add-team-form").serialize();
+    console.log(data);
+    let errors ="";
+
+    $.ajax({
+        type    : "post",
+        url     : "/admin/teams/add",
+        data    : data,
+        success:function (data)
+        {
+            data = JSON.parse(data);
+
+            if( data === "success")
+            {console.log(data)
+                $("#add-team-btn").attr("disabled", "disabled");
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: "Team added with success",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                setTimeout(function (){
+                    window.location.replace("/admin/teams");
+                },2000);
+
+            }else{
+                errors += "<div class='alert alert-danger'>" + data.error.thematic + "</div>";
+                $(".msg-add-enseignant-doctorant").html(errors);
+            }
+        }
+    });
+}
+
+function deleteTeam ()
+{
+
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            let data = "equipeID="+$('.delete-team-btn').attr("data-id");
+            $.ajax(
+    {
+                method : "post",
+                url    : "/admin/teams/delete",
+                data   : data,
+                success: function (data)
+                {
+                    data = JSON.parse(data);
+                    console.log(data);
+                    if(data === "deleted")
+                    {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                        setTimeout(function (){
+                            window.location.replace("/admin/teams");
+                        },1000);
+
+                    }else{
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: "Team is not deleted",
+                            showConfirmButton: false,
+                            timer: 2000
+                        })
+                    }
+                }
+            });
+
+        }
+    });
+
+
+}
+
+function addTeacherToTeam ()
+{
+    let data = $(".modify-team-form").serialize();
+    let errors ="";
+
+    data += "&equipeID=" + teamID;
+
+    $.ajax({
+        type    : "post",
+        url     : "/admin/teams/add-teacher",
+        data    : data,
+        success:function (data)
+        {
+            data = JSON.parse(data);
+            console.log(data)
+
+            if( data === "success")
+            {
+                $("#add-teacher-to-team-btn").attr("disabled", "disabled");
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: "Team added with success",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                setTimeout(function (){
+                    window.location.replace("/admin/teams");
+                },2000);
+
+            }else{
+                data.forEach((err) => {
+                    errors += "<div class='alert alert-danger'>" + err + "</div>";
+                });
+
+                $(".msg-add-enseignant-doctorant").html(errors);
+            }
+        }
+    });
+}
+
+function deleteTeacherFromTeam ()
+{
+    let data = $(".modify-team-form").serialize();
+    let errors ="";
+
+    data += "&equipeID=" + teamID;
+
+    $.ajax({
+        type    : "post",
+        url     : "/admin/teams/delete-teacher",
+        data    : data,
+        success:function (data)
+        {
+            data = JSON.parse(data);
+            console.log(data)
+
+            if( data === "success")
+            {
+                $("#add-teacher-to-team-btn").attr("disabled", "disabled");
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: "Teacher deleted with success",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                setTimeout(function (){
+                    window.location.replace("/admin/teams");
+                },2000);
+
+            }else{
+                data.forEach((err) => {
+                    errors += "<div class='alert alert-danger'>" + err + "</div>";
+                });
+
+                $(".msg-add-enseignant-doctorant").html(errors);
+            }
+        }
+    });
+}
+
+

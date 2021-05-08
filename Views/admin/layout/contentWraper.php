@@ -10,8 +10,8 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#"><?php echo $lang['home']?></a></li>
-                        <li class="breadcrumb-item active"><?php echo $lang['dashboard']?></li>
+                        <li class="breadcrumb-item"><a href="#"><?= $lang['home']?></a></li>
+                        <li class="breadcrumb-item active"><?= $lang['dashboard']?></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,14 +28,14 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3><?php echo $nbrOfEnseignant; ?></h3>
+                            <h3><?= $nbrOfEnseignant; ?></h3>
 
-                            <p><?php echo $lang['nbrOfEnseignant']?></p>
+                            <p><?= $lang['nbrOfEnseignant']?></p>
                         </div>
                         <div class="icon">
                             <i class="fa fa-user-tie"></i>
                         </div>
-                        <a href="/admin/enseignant" class="small-box-footer"><?php echo $lang['moreInfo']?> <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/admin/enseignant" class="small-box-footer"><?= $lang['moreInfo']?> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -43,14 +43,14 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3><?php echo $nbrOfDoctorant; ?></h3>
+                            <h3><?= $nbrOfDoctorant; ?></h3>
 
-                            <p><?php echo $lang['nbrOfDoctorant']?></p>
+                            <p><?= $lang['nbrOfDoctorant']?></p>
                         </div>
                         <div class="icon">
                             <i class="fa fa-user-graduate"></i>
                         </div>
-                        <a href="/admin/doctorant" class="small-box-footer"><?php echo $lang['moreInfo']?> <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/admin/doctorant" class="small-box-footer"><?= $lang['moreInfo']?> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -58,14 +58,14 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3><?php echo $nbrOfArticles; ?></h3>
+                            <h3><?= $nbrOfArticles; ?></h3>
 
-                            <p><?php echo $lang['nbrArticle'] ?> </p>
+                            <p><?= $lang['nbrArticle'] ?> </p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="/articles" class="small-box-footer"><?php echo $lang['moreInfo']?> <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/articles" class="small-box-footer"><?= $lang['moreInfo']?> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -80,7 +80,7 @@
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="#" class="small-box-footer"><?php echo $lang['moreInfo']?> <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="#" class="small-box-footer"><?= $lang['moreInfo']?> <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

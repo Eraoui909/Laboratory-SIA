@@ -69,7 +69,7 @@
             </thead>
             <tbody>
 
-            <?php foreach ($experiences as $experienc){ ?>
+            <?php if (is_array($experiences))foreach ($experiences as $experienc){ ?>
                 <tr>
                     <td><?= $experienc['id'] ?></td>
                     <td><?= $experienc['date_debut']." - " .$experienc['date_fin'] ?></td>

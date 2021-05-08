@@ -10,6 +10,7 @@ use app\models\AdminsModel;
 use app\models\ArticleModel;
 use app\models\DoctorantModel;
 use app\models\EnseignantModel;
+use app\models\TeamModel;
 
 class AdminController extends Controller
 {
@@ -138,6 +139,12 @@ class AdminController extends Controller
 
     }
 
+    public function logoutHandler()
+    {
+        unset($_SESSION['token']['admin']);
+        $this->redirect("/admin/login");
+    }
+
     public function profilePage()
     {
         return $this->renderAdmin('profile', $_SESSION['token']['admin']);
@@ -205,10 +212,30 @@ class AdminController extends Controller
 
     }
 
-    public function logoutHandler()
+    public function TeamsPage()
     {
-        unset($_SESSION['token']['admin']);
-        $this->redirect("/admin/login");
+        if(!isset($_SESSION['token']['admin'])){
+            $this->redirect('/admin/login');
+        }
+
+        $teachers = ['teacher' => ''];
+
+        $data = TeamModel::getAll() ? TeamModel::getAll() : [];
+
+        foreach ($data as $index => $equipe){
+
+            foreach (TeamModel::getTeachers($equipe['equipeID']) as $teacher){
+                $teachers['teacher'] .= $teacher['nom'] . ' ' . $teacher['prenom'] . ', ';
+            }
+            $teachers['teacher'] = trim($teachers['teacher'], ', ');
+            $data[$index] = array_merge($data[$index], $teachers);
+        }
+
+        $params['teams'] = $data;
+        $params['ens']   = EnseignantModel::getAll() ? EnseignantModel::getAll() : [];
+
+
+        return $this->renderAdmin('team', $params);
     }
 
 
