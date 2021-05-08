@@ -62,7 +62,6 @@
         "desc&historique"               => "Description et historique",
         "conditionDeSoutnance"          => "Nouvelle condition de soutnance",
         "thematique"                    => "thematique",
-
         "date_naiss"                    => "date de naissance",
         "etat_civil"                    => "Etat civil",
         "addresse"                      => "Addresse",

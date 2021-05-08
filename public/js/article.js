@@ -258,7 +258,11 @@ $(document).on("click",".add-article-button",function (e){
      *******************************************************************************************************************
      ********************************************************************************************************************/
 
-
+    $("#experience-table").dataTable({
+        "processing": true,
+        "responsive": true,
+        "lengthChange": false,
+    });
 
     $(".supp-experience").on("click",function (e) {
         e.preventDefault();

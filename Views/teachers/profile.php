@@ -1,5 +1,7 @@
 <?php $data = []; global $lang;
-//print_r($params);
+/*echo "<pre>";
+print_r($_SESSION['flash_messages']['errors']);
+echo "</pre>";*/
 ?>
 
 <style>
@@ -166,10 +168,25 @@
                                             </div>
                                         </div>
 
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= ($_SESSION['flash_messages']['errors']['value']['thematique'] ?? '') ?></p>
+                                        </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label"><?= $lang['thematique'] ?></label>
                                             <div class="col-sm-10">
                                                 <input type="text" name="thematique" value="<?= $thematique ?>" class="form-control" id="" placeholder="Tel">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= ($_SESSION['flash_messages']['errors']['value']['nbr_annee_experience'] ?? '') ?></p>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-sm-2 col-form-label"><?= $lang['nbr_annee_experience'] ?></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="nbr_annee_experience" class="form-control"  value="<?= $nbr_annee_experience ?>">
                                             </div>
                                         </div>
 
@@ -195,6 +212,10 @@
                                             </div>
                                         </div>
 
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= ($_SESSION['flash_messages']['errors']['value']['date_naissance'] ?? '') ?></p>
+                                        </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label"><?= $lang['date_naiss'] ?></label>
                                             <div class="col-sm-10">
@@ -202,6 +223,10 @@
                                             </div>
                                         </div>
 
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= ($_SESSION['flash_messages']['errors']['value']['etat_civil'] ?? '') ?></p>
+                                        </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label"><?= $lang['etat_civil'] ?></label>
                                             <div class="col-sm-10">
@@ -209,6 +234,10 @@
                                             </div>
                                         </div>
 
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= ($_SESSION['flash_messages']['errors']['value']['addresse'] ?? '') ?></p>
+                                        </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label"><?= $lang['addresse'] ?></label>
                                             <div class="col-sm-10">
@@ -216,6 +245,10 @@
                                             </div>
                                         </div>
 
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= ($_SESSION['flash_messages']['errors']['value']['situation_present'] ?? '') ?></p>
+                                        </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label"><?= $lang['situation_present'] ?></label>
                                             <div class="col-sm-10">
@@ -223,13 +256,11 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group row">
-                                            <label for="" class="col-sm-2 col-form-label"><?= $lang['nbr_annee_experience'] ?></label>
-                                            <div class="col-sm-10">
-                                                <input type="text" name="nbr_annee_experience" class="form-control"  value="<?= $nbr_annee_experience ?>">
-                                            </div>
-                                        </div>
 
+                                        <div class="row">
+                                            <div class="col-sm-2"></div>
+                                            <p class="col-sm-10 error-message"><?= ($_SESSION['flash_messages']['errors']['value']['qualification_principale'] ?? '') ?></p>
+                                        </div>
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label"><?= $lang['qualification_principale'] ?></label>
                                             <div class="col-sm-10">
