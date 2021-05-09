@@ -40,7 +40,7 @@ ul {
   justify-content: space-around; }
 
 body .cards-container {
-  background-color: #2fa689;
+  background-color: #EEE;
   /*margin: 200px 0;*/
   display: flex;
   align-items: center;

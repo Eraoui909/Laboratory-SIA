@@ -117,7 +117,8 @@ class SiteController extends Controller
 
     public function motDePresidentPage()
     {
-        return $this->render('motDePresident',["title","mot de president"]);
+        $data['title'] = "mot de president";
+        return $this->render('motDePresident',$data);
     }
 
     public function techersPage()
@@ -132,7 +133,9 @@ class SiteController extends Controller
     public function doctorantsPage()
     {
         $data['title'] = "Doctorants";
-        $data[] = DoctorantModel::getAll();
+        $data['person'] = DoctorantModel::getAll();
+        $data['style'] = ['teachers_list.css'];
+        $data['script'] = ['teachers_list.js'];
         return $this->render('doctorants',$data);
     }
 }
