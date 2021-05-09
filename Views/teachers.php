@@ -6,7 +6,7 @@
     <div class="card">
         <div class="header-card">
             <div class="profile-img">
-                <img src="/Storage/uploads/users/<?= $param['avatar'] ?>" height="100px" alt="">
+                <img src="/Storage/uploads/users/<?= $param['avatar'] ?>" height="100px" style="border-radius: 50%">
             </div>
             <div class="header-content">
                 <h3><?= $param['prenom'] ." ". $param['nom'] ?></h3>

@@ -8,7 +8,7 @@
 .simple-marquee-container {
 	width: 100%;
 	background: #ffffff;
-	border-bottom: 3px solid red;
+	border-bottom: 3px solid #CE0000;
 	color: #000000;
 	float: left;
 	display: inline-block;
@@ -21,11 +21,11 @@
 
 .simple-marquee-container .marquee-sibling {
 	padding: 0;
-	background: red;
-	width: 15%;
+	background: #CE0000;
+	width: 10%;
 	height: 45px;
 	line-height: 42px;
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: bold;
 	color: #ffffff;
 	text-align: center;

@@ -65,7 +65,7 @@ body nav.my-navbar {
   top: 0;
   z-index: 100;
   background-color: white;
-  padding: 5px 0; }
+  padding: 12px 0; }
   body nav.my-navbar .links ul {
     margin: 0; }
     body nav.my-navbar .links ul li {
@@ -117,7 +117,8 @@ body nav.my-navbar {
             background-color: #0C1021;
             color: #6cb5cc; }
       body nav.my-navbar .links ul li a {
-        color: #8c8c8c; }
+        color: #8c8c8c;
+        font-size: large; }
         body nav.my-navbar .links ul li a:hover {
           color: #6cb5cc; }
       body nav.my-navbar .links ul li:not(.icone):hover {
