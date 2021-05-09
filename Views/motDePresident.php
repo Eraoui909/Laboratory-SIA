@@ -8,20 +8,44 @@
         width: 80%;
         position: relative;
     }
-    .mot-container h1{
+
+    .mot-container h1 {
         padding: 5px;
+        text-align: center;
+        margin-top: 80px;
     }
+
     .mot-title{
         display: flex;
         justify-content: space-between;
+        margin-top: -118px;
     }
+
     .mot-content{
         padding: 10px;
     }
+
     .mot-content p{
-        text-indent: 50px;
+        text-indent: 36px;
         text-align: justify;
-        letter-spacing: 3px;
+        letter-spacing: 1px;
+        margin-top: 10px;
+        /* font-size: .9em; */
+        font-family: -webkit-pictograph;
+    }
+
+    .mot-signature {
+        /* text-align: center; */
+        padding: 0 24px;
+    }
+
+    h2 {
+        margin-top: -5px;
+    }
+
+    h2, h5 {
+        font-size: 1.1em;
+        color: #bdbdbd;
     }
 </style>
 

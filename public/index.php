@@ -100,9 +100,9 @@ $app->router->post('/admin/teams/delete',[TeamController::class,'deleteTeam']);
 $app->router->post('/admin/teams/add-teacher',[TeamController::class,'addTeacherToTeam']);
 $app->router->post('/admin/teams/delete-teacher',[TeamController::class,'deleteTeacherFromTeam']);
 
-$app->router->get('/motDePresident',[SiteController::class,'motDePresidentPage']);
-$app->router->get('/teachers',[SiteController::class,'techersPage']);
-$app->router->get('/doctorants',[SiteController::class,'doctorantsPage']);
+$app->router->get('/motDePresident',[SiteController::class, 'motDePresidentPage']);
+$app->router->get('/teachers',[SiteController::class, 'techersPage']);
+$app->router->get('/doctorants',[SiteController::class, 'doctorantsPage']);
 
 
 

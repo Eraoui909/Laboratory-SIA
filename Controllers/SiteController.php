@@ -112,7 +112,8 @@ class SiteController extends Controller
 
     public function motDePresidentPage()
     {
-        return $this->render('motDePresident',["title","mot de president"]);
+        $data['title'] = "Teachers";
+        return $this->render('motDePresident', $data);
     }
 
     public function techersPage()
