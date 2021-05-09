@@ -40,19 +40,16 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-
     <link rel="stylesheet" type="text/css" href="/css/login.css">
     <link rel="stylesheet" href="/css/Footer_Style.css">
     <link rel="stylesheet" href="/css/article.css">
 
     <!-- STYLESHEETS FOR CV TEMPLATE-->
-    <link rel="stylesheet" href="/assets/css/owl.carousel.css" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/css/owl.theme.css" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/css/magnific-popup.css" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" media="all">
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800" rel="stylesheet">
+    <?php
+    if(isset($params['CV'])):
+        include_once "CVHeader.php";
+    endif;
+    ?>
 
 
     <link rel="stylesheet" href="/css/marquee.css">
@@ -132,18 +129,6 @@ if($null != true)
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/adminLTE/dist/js/pages/dashboard.js"></script>
 
-<!-- SCRIPTS FOR CV TEMPLATE -->
-<script type="text/javascript" src="/assets/js/jquery-1.12.3.min.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.onepage-scroll.min.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.easing.min.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.backstretch.min.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.filterizr.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.magnific-popup.min.js"></script>
-<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/assets/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="/assets/js/custom.js"></script>
-<script type="text/javascript" src="/assets/js/smoothscroll.min.js"></script>
-
 <!-- jQuery -->
 <script src="/adminLTE/plugins/jquery/jquery.min.js"></script>
 <script src="/js/jquery.comjquery-3.5.1.min.js"></script>
@@ -187,7 +172,7 @@ if($null != true)
 <!-- this script is for enseignant page -->
 <script src="/adminLTE/dist/js/pages/dashboard.js"></script>
 <script src="/js/admin.js"></script>
-<script src="/js/article.js"></script>
+<!-- <script src="/js/article.js"></script> -->
 <script src="/js/HomeScript.js"></script>
 
 <?php if (isset($params['script'])) foreach ($params['script'] as $script) {?>

@@ -1,4 +1,9 @@
 <?php $data = []; global $lang;
+/*
+echo "<pre>";
+    print_r($_SESSION['token']['ens']);
+echo "</pre>";
+*/
 ?>
 
 <style>
@@ -130,7 +135,6 @@
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label"><?= $lang['firstName'] ?></label>
                                             <div class="col-sm-10">
-
                                                 <input type="text" value="<?= $prenom ?>" name="prenom" class="form-control" id="" placeholder="First Name">
                                             </div>
                                         </div>

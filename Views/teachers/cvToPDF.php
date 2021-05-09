@@ -2,18 +2,18 @@
 <html lang="en-US">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title><?php echo $title ?></title>
     <meta name="description" content="Blvck - Personal vCard & Resume Template">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/Storage/Statics/images/logoLaboFst(35X35).png">
 
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/css/owl.carousel.css" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/css/owl.theme.css" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/css/magnific-popup.css" type="text/css" media="all">
+
     <link rel="stylesheet" href="/assets/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" type="text/css" media="all">
+
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800" rel="stylesheet">
@@ -57,17 +57,6 @@
 </div>
 <?php include_once "cv.php";?>
 
-<!-- SCRIPTS -->
-<script type="text/javascript" src="/assets/js/jquery-1.12.3.min.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.onepage-scroll.min.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.easing.min.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.backstretch.min.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.filterizr.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.magnific-popup.min.js"></script>
-<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/assets/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="/assets/js/custom.js"></script>
-<script type="text/javascript" src="/assets/js/smoothscroll.min.js"></script>
 
 </body>
 </html>

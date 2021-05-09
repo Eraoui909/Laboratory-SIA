@@ -162,10 +162,17 @@ li {
 /*-----------------------------------------------------------------*/
 /*                      HEADER                                     */
 /*-----------------------------------------------------------------*/
+.ha-cv-container{
+    overflow:hidden;
+    border-top: 33px solid #2196f3;
+    border-radius: 100px;
+    border-left: 1px solid #2196f3;
+    border-right: 1px solid #2196f3;
+}
 .header {
-    background: #5655da;
+    background: #2196f3;
     padding: 46px;
-    height: 100%;
+    height: 800px;
     width: 260px;
     z-index: 5;
 }
@@ -237,10 +244,16 @@ li {
     list-style: none;
     padding: 0;
     margin: 0;
+    position: relative;
+    left: -30px;
 }
 
 .header .main-nav ul li {
     padding-bottom: 15px;
+}
+
+.header .main-nav ul li strong{
+    display: block;
 }
 
 .header .main-nav ul li a {

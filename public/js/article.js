@@ -248,6 +248,8 @@ $(document).on("click",".add-article-button",function (e){
 
     $(".storageTheClick").on("click",function (e){
 
+        $(this).parent().siblings().attr("class","nav-item ");
+        $(this).parent().siblings().children().attr("class","nav-link ");
         localStorage.setItem("lastClick", $(this).attr("id"));
 
     });
