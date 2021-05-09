@@ -31,7 +31,7 @@
 
                 </tr>
             </table>
-            <a href="#">
+            <a href="/teacher/cv/downoald?cv=<?= $param['id'] ?>">
 					<span class="show-cv">
 						Show CV
 					</span>

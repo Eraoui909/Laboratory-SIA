@@ -206,13 +206,27 @@ class EnseignantController extends Controller
 
     public function cvToPdf()
     {
-        if (!isset($_SESSION['token']['ens']))
-            $this->redirect('/login');
+        if(isset($_GET['cv'])&& !empty($_GET['cv']))
+        {
+            if(!$arr = EnseignantModel::getByPk($_GET['cv'])[0])
+            {
+                $this->redirect('/home');
+            }
 
-        $arr = $_SESSION['token']['ens'];
-        $arr['title'] = 'Download CV PDF';
-        $arr['experiences'] = ExperienceProModel::getAll();
-        $arr['diplomes']    = diplomesModel::getAll();
+            $arr['title'] = 'Download CV PDF';
+            $arr['experiences'] = ExperienceProModel::getByQuery("SELECT * FROM experience_pro WHERE personne_id=".$_GET['cv']);
+            $arr['diplomes']    = diplomesModel::getByQuery("SELECT * FROM diplomes WHERE personne_id=".$_GET['cv']);
+        }else{
+            if (!isset($_SESSION['token']['ens']))
+                $this->redirect('/login');
+
+            $arr = $_SESSION['token']['ens'];
+            $arr['title'] = 'Download CV PDF';
+            $arr['experiences'] = ExperienceProModel::getAll();
+            $arr['diplomes']    = diplomesModel::getAll();
+        }
+
+
 
         return $this->renderEmpty('/teachers/cvToPDF', $arr);
     }
