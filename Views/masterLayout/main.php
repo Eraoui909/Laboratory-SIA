@@ -1,5 +1,13 @@
 <?php global $lang; ?>
 
+<?php
+/*
+echo "<pre>";
+print_r($params);
+echo "</pre>";
+*/
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,23 +15,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="/Storage/Statics/images/logoLaboFst(35X35).png">
-    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/adminLTE/plugins/fontawesome-free/css/all.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="/adminLTE/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="/adminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="/adminLTE/dist/css/adminlte.min.css">
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="/adminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -34,15 +32,10 @@
     <link rel="stylesheet" href="/js/jquery.dataTables.min.css">
     <link rel="stylesheet" href="/adminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="/adminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-    <!-- <link rel="stylesheet" href="/adminLTE/plugins/summernote/summernote-bs4.min.css"> -->
 
 
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/login.css">
     <link rel="stylesheet" href="/css/Footer_Style.css">
-    <link rel="stylesheet" href="/css/article.css">
 
     <!-- STYLESHEETS FOR CV TEMPLATE-->
     <?php
@@ -55,6 +48,9 @@
     <link rel="stylesheet" href="/css/marquee.css">
     <link rel="stylesheet" href="/css/Home_Style.css">
 
+    <!-- -------------------------------------------- -->
+    <!-- -------------------------------------------- -->
+    <!-- -------------------------------------------- -->
     <?php if (isset($params['style'])) foreach ($params['style'] as $style) {?>
         <link rel="stylesheet" href="/css/<?= $style?>">
 
@@ -119,32 +115,6 @@ if($null != true)
 <script src="/js/bootstrap.min.js"></script>
 <script src="/font-awesome-4.7.0/all.min.js"></script>
 
-
-<!-- overlayScrollbars -->
-<script src="/adminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="/adminLTE/dist/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="/adminLTE/dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/adminLTE/dist/js/pages/dashboard.js"></script>
-
-<!-- jQuery -->
-<script src="/adminLTE/plugins/jquery/jquery.min.js"></script>
-<script src="/js/jquery.comjquery-3.5.1.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="/adminLTE/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="/adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="/adminLTE/plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="/adminLTE/plugins/sparklines/sparkline.js"></script>
-
 <!-- AdminLTE App -->
 <script src="/adminLTE/dist/js/adminlte.js"></script>
 <!-- DataTables  & Plugins -->
@@ -161,19 +131,12 @@ if($null != true)
 <script src="/adminLTE/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="/adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-<!-- SweetAlert2 -->
-<script src="/js/marquee.js"></script>
 
 
 <!-- SweetAlert2 -->
 <script src="/adminLTE/plugins/sweetalert2/sweetalert2.min.js"></script>
 
 
-<!-- this script is for enseignant page -->
-<script src="/adminLTE/dist/js/pages/dashboard.js"></script>
-<script src="/js/admin.js"></script>
-<!-- <script src="/js/article.js"></script> -->
-<script src="/js/HomeScript.js"></script>
 
 <?php if (isset($params['script'])) foreach ($params['script'] as $script) {?>
     <script src="/js/<?= $script?>"></script>

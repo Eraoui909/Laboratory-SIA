@@ -44,6 +44,7 @@ class SiteController extends Controller
             "title" => "Login",
             "null" => true
         ];
+        $params['style'] = ["login.css"];
         return $this->render('login', $params);
     }
 
@@ -101,13 +102,17 @@ class SiteController extends Controller
     {
         $data = array();
         $data = ArticleModel::getAll();
+        $data['title'] = "Articles";
+        $data['style'] = ["article.css"];
         return$this->render("articles",$data);
     }
 
     public function singleArticle()
     {
         $data = ArticleModel::getByPk($_POST['id']);
-        return$this->render("singleArticle",$data[0]);
+        $data['title'] = $data[0]['title'];
+        $data['style'] = ["article.css"];
+        return$this->render("singleArticle",$data);
     }
 
     public function motDePresidentPage()

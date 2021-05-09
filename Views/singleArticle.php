@@ -2,28 +2,28 @@
 
     <div class="ha-single-article-title">
         <h1>
-            <?php echo $params['title'] ?>
+            <?php echo $params[0]['title'] ?>
         </h1>
     </div>
 
     <div class="ha-single-article-img">
-        <img src="/Storage/uploads/articles/<?= $params['picture'] ?>" alt="article image">
+        <img src="/Storage/uploads/articles/<?= $params[0]['picture'] ?>" alt="article image">
     </div>
 
     <div class="ha-single-article-date">
-        <small><?php echo $params['date'] ?></small>
+        <small><?php echo $params[0]['date'] ?></small>
     </div>
 
     <div class="ha-single-article-content">
         <p>
-            <?php echo $params['description'] ?></p>
+            <?php echo $params[0]['description'] ?></p>
         <p>
-                <?= htmlspecialchars_decode( $params['content'] )?>
+                <?= htmlspecialchars_decode( $params[0]['content'] )?>
         </p>
     </div>
 
     <div class="ha-single-article-footer">
-        <strong>created by : </strong> <?= $params['nom'] . ' ' . $params['prenom'] ?>
+        <strong>created by : </strong> <?= $params[0]['nom'] . ' ' . $params[0]['prenom'] ?>
     </div>
 
 </div>
