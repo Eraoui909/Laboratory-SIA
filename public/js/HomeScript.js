@@ -5,7 +5,7 @@ let index = 0;
 
 
 let timer = setInterval(slide, 8000);
-menuBtn.addEventListener('click', toggleMenu);
+//menuBtn.addEventListener('click', toggleMenu);
 
 function slide(){
     if(index == (sliders.length - 1))
@@ -22,6 +22,7 @@ function slide(){
 
 
 }
+
 
 pagination_disks.forEach(function(element, key){
     element.addEventListener('click', function(){

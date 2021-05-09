@@ -5,7 +5,7 @@
     //echo "</pre>";
 ?>
 
-<div class="container " style="overflow:hidden;" id="myPDF">
+<div class="container ha-cv-container" style="" id="myPDF">
 
     <!-- Main Wrapper -->
     <main class="wrapper">

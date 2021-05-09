@@ -43,7 +43,7 @@ $app->router->get('/lang/en', [LangController::class, 'changeLangToEn']);
 $app->router->get('/lang/fr', [LangController::class, 'changeLangToFr']);
 
 
-$app->router->get('/home','homePage');
+$app->router->get('/home',[SiteController::class, 'homePage']);
 $app->router->get('/',[SiteController::class, 'homePage']);
 
 $app->router->get('/login', [SiteController::class, 'loginPage']);
