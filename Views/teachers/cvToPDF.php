@@ -1,3 +1,10 @@
+<?php
+/*
+echo "<pre>";
+print_r($params);
+echo "</pre>";
+*/
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
