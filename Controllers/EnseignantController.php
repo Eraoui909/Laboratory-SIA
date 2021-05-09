@@ -107,6 +107,10 @@ class EnseignantController extends Controller
         $arr['experiences'] = ExperienceProModel::getByQuery("SELECT * FROM experience_pro WHERE personne_id=".$_SESSION['token']['ens']['id']);
         $arr['diplomes']    = diplomesModel::getByQuery("SELECT * FROM diplomes WHERE personne_id=".$_SESSION['token']['ens']['id']);
 
+        $arr['admin']  = true;
+        $arr['CV']  = true;
+        $arr['script'] = ['navbar.js'];
+        $arr['style']  = ['profile.css'];
         return $this->render('/teachers/profile', $arr);
     }
 

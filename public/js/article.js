@@ -248,7 +248,7 @@ $(document).on("click",".add-article-button",function (e){
 
     $(".storageTheClick").on("click",function (e){
 
-        localStorage.setItem("lastClick",$(this).attr("id"));
+        localStorage.setItem("lastClick", $(this).attr("id"));
 
     });
 

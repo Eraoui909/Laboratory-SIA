@@ -1,7 +1,4 @@
 <?php $data = []; global $lang;
-/*echo "<pre>";
-print_r($_SESSION['flash_messages']['errors']);
-echo "</pre>";*/
 ?>
 
 <style>

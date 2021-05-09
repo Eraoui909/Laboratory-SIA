@@ -1,4 +1,3 @@
-
 <?php global $lang; ?>
 
 <!doctype html>
@@ -59,6 +58,11 @@
     <link rel="stylesheet" href="/css/marquee.css">
     <link rel="stylesheet" href="/css/Home_Style.css">
 
+    <?php if (isset($params['style'])) foreach ($params['style'] as $style) {?>
+        <link rel="stylesheet" href="/css/<?= $style?>">
+
+    <?php }?>
+
     <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
 
 
@@ -97,13 +101,13 @@
 </head>
 <body>
 <?php
-    if($null != true)
-    {
-        echo '<div class="head">
+if($null != true)
+{
+    echo '<div class="head">
             <p>Decouvrez les recherches de nos <b>professeurs</b> sur notre siteweb du laboratoire <b>LSIA</b> .</p>
         </div>';
-        include_once "navBar.php";
-    }
+    include_once "navBar.php";
+}
 ?>
 
 
@@ -185,6 +189,10 @@ if($null != true)
 <script src="/js/admin.js"></script>
 <script src="/js/article.js"></script>
 <script src="/js/HomeScript.js"></script>
+
+<?php if (isset($params['script'])) foreach ($params['script'] as $script) {?>
+    <script src="/js/<?= $script?>"></script>
+<?php }?>
 
 </body>
 </html>

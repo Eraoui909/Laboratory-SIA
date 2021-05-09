@@ -2,8 +2,6 @@ const sliders = document.querySelectorAll('.slider');
 const pagination_disks = document.querySelectorAll('.pagination ul li');
 let index = 0;
 
-let menuBtn = document.getElementById('menu-btn-icon');
-let menuBar = document.getElementById('menuRespBar');
 
 
 let timer = setInterval(slide, 8000);
@@ -37,18 +35,6 @@ pagination_disks.forEach(function(element, key){
         sliders[key].classList.add('active');
     });
 });
-
-/** menu (responsive navbar) **/
-
-function toggleMenu()
-{
-    let height = menuBar.style.height;
-    if (height === '' || height === '0px'){
-        menuBar.style.height = "285px";
-    }else{
-        menuBar.style.height = '0';
-    }
-}
 
 /** marquee tag **/
 

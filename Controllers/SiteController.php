@@ -27,6 +27,14 @@ class SiteController extends Controller
         $this->session = new Session();
     }
 
+    public function homePage()
+    {
+        $data['title'] = "Home";
+        $data['style'] = ['marquee.css', 'Home_Style.css'];
+        $data['script'] = ['marquee.js', 'HomeScript.js', 'navbar.js'];
+        return $this->render('home', $data);
+    }
+
     public function loginPage()
     {
         if (isset($_SESSION['token']['ens']) || isset($_SESSION['token']['doc']))
@@ -109,9 +117,11 @@ class SiteController extends Controller
 
     public function techersPage()
     {
-        $data[] = EnseignantModel::getAll();
+        $data['person'] = EnseignantModel::getAll();
         $data['title'] = "Teachers";
-        return $this->render('teachers',$data);
+        $data['style'] = ['teachers_list.css'];
+        $data['script'] = ['teachers_list.js'];
+        return $this->render('teachers', $data);
     }
 
     public function doctorantsPage()
