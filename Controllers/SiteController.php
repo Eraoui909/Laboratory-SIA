@@ -138,4 +138,10 @@ class SiteController extends Controller
         $data['script'] = ['teachers_list.js'];
         return $this->render('doctorants',$data);
     }
+
+    public function conditionSoutnancePage()
+    {
+        $arr['title'] = "Condition de outnance";
+        return $this->render('conditionSoutnance',$arr);
+    }
 }
