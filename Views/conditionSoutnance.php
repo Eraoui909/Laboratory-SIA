@@ -1,4 +1,10 @@
 <style>
+    body{
+        background-image: url("/Storage/statics/images/neural-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
     .card{
         padding: 15px;
     }
@@ -7,7 +13,7 @@
     }
 </style>
 
-<div class="ha-condition-container">
+<div class="container ha-condition-container">
     <center>
         <h1>
             Nouvelles Conditions de soutenance / Formulaires soutenance

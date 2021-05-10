@@ -9,7 +9,7 @@
                 <a href="#"><?= $lang['presentation'] ?></a>
                 <div class="drop-down">
                     <a href="/motDePresident"><?= $lang['moDePresident'] ?></a>
-                    <a href="#"><?= $lang['desc&historique'] ?></a>
+                    <a href="/presentation"> presentation de labo </a>
                     <a href="/conditionSoutnance"><?= $lang['conditionDeSoutnance'] ?></a>
                 </div>
             </li>

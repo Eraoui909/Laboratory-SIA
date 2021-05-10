@@ -7,13 +7,14 @@
         background-image: url("/Storage/statics/images/neural-background.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-attachment: fixed;
     }
 
     .mot-container{
         margin: 50px auto;
         width: 80%;
         position: relative;
-        background-color: #0000001c;
+        background-image: linear-gradient(to right ,#0000000a,white );
         padding: 15px;
     }
 
@@ -53,7 +54,7 @@
 
     h2, h5 {
         font-size: 1.1em;
-        color: #ffffff;
+        color: #000000;
     }
 </style>
 

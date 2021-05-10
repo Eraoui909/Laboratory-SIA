@@ -144,4 +144,12 @@ class SiteController extends Controller
         $arr['title'] = "Condition de outnance";
         return $this->render('conditionSoutnance',$arr);
     }
+
+    public function presentationPage()
+    {
+        $arr['title'] = "PresentationP de labo";
+        return $this->render('presentation',$arr);
+    }
+
+
 }

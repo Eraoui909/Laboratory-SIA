@@ -102,6 +102,7 @@ $app->router->post('/admin/teams/delete-teacher',[TeamController::class,'deleteT
 
 $app->router->get('/motDePresident',[SiteController::class, 'motDePresidentPage']);
 $app->router->get('/conditionSoutnance',[SiteController::class, 'conditionSoutnancePage']);
+$app->router->get('/presentation',[SiteController::class, 'presentationPage']);
 $app->router->get('/teachers',[SiteController::class, 'techersPage']);
 $app->router->get('/doctorants',[SiteController::class, 'doctorantsPage']);
 
