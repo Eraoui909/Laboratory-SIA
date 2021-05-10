@@ -86,7 +86,7 @@ trait Helper
                 $elements = explode('.', $name);
                 $ext = $elements[count($elements) - 1];
 
-                $legalExt = array('jpg', 'jpge', 'png', 'gif');
+                $legalExt = array('jpg', 'jpge', 'png', 'gif' , 'JPG' , 'JPGE' , 'PNG' , 'GIF');
 
                 if ($_FILES[$index]["size"][$key] > 1000000) {
                     $returned['errors'][] = "*$name : ".$lang['file_size_error'];

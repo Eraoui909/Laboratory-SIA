@@ -135,6 +135,11 @@ class EnseignantController extends Controller
             if(empty($errors['uploads'])){
 
                 $avatar = $upload['uploaded'][0] ?? $_SESSION['token']['ens']['avatar'];
+                $lastPic = dirname(__DIR__) . "/public/Storage/uploads/users/".$_SESSION['token']['ens']['avatar'];
+                if($_SESSION['token']['ens']['avatar'] != "avatar.png" && $_SESSION['token']['ens']['avatar']!=$avatar)
+                {
+                    unlink($lastPic);
+                }
                 $pass   = $_SESSION['token']['ens']['password'];
                 $id     = $_SESSION['token']['ens']['id'];
 
@@ -186,6 +191,11 @@ class EnseignantController extends Controller
         $data = array(
             'avatar' => 'avatar.png'
         );
+        $lastPic = dirname(__DIR__) . "/public/Storage/uploads/users/".$_SESSION['token']['ens']['avatar'];
+        if($_SESSION['token']['ens']['avatar'] != "avatar.png")
+        {
+            unlink($lastPic);
+        }
 
         if (EnseignantModel::UpdateColumns($_SESSION['token']['ens']['id'], $data)){
             $_SESSION['token']['ens']['avatar'] = 'avatar.png';
@@ -304,6 +314,13 @@ class EnseignantController extends Controller
 
     public function deleteArticle()
     {
+        $picname = ArticleModel::getByQuery("SELECT picture FROM article WHERE articleID=".$_POST['articleID']);
+        $lastPic = dirname(__DIR__) . "/public/Storage/uploads/articles/".$picname[0]['picture'];
+
+        if(!empty($lastPic))
+        {
+            unlink($lastPic);
+        }
         if(ArticleModel::delete($_POST['articleID']))
         {
             echo json_encode("deleted");
@@ -318,11 +335,20 @@ class EnseignantController extends Controller
         {
             $this->redirect($_SERVER['HTTP_REFERER']);
         }
+
+
         $pic = Helper::UploadFile('articles',rand(50,1000));
         if(isset($pic['errors'][0]))
         {
-            echo "error";
+            $this->redirect($_SERVER['HTTP_REFERER']);
         }else{
+            $picname = ArticleModel::getByQuery("SELECT picture FROM article WHERE articleID=".$_POST['articleID']);
+            $lastPic = dirname(__DIR__) . "/public/Storage/uploads/articles/".$picname[0]['picture'];
+
+            if(!empty($lastPic))
+            {
+                unlink($lastPic);
+            }
             $pice['picture'] = $pic['uploaded'][0];
             if(ArticleModel::UpdateColumns($_POST['articleID'],$pice))
             {
