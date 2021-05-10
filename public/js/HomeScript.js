@@ -54,3 +54,31 @@ $('.simple-marquee-container').SimpleMarquee(options);
 
 $(".marquee-1").trigger('mouseenter');
 $(".marquee-1").trigger('mouseleave');
+
+/**
+ ***********************************************************************************************************************
+ ***********************************************************************************************************************
+ ************************************** inscription in news letter *****************************************************
+ ***********************************************************************************************************************
+ ***********************************************************************************************************************
+ **/
+
+$(".ha-global-popup-newsletter").on("click",function () {
+    $(this).addClass("ha-global-popup-newsletter-active");
+    $(".ha-newletter-container")
+        .fadeOut(1000);
+    setTimeout(function () {
+        $(".ha-newletter-container").addClass("ha-global-popup-newsletter-active");
+    },1100);
+})
+
+$(window).on("load",function () {
+
+    setTimeout(function () {
+
+        $(".ha-global-popup-newsletter").removeClass("ha-global-popup-newsletter-active");
+        $(".ha-newletter-container").removeClass("ha-global-popup-newsletter-active");
+
+    },10000);
+
+});
