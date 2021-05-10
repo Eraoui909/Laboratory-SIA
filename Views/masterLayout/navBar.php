@@ -10,7 +10,7 @@
                 <div class="drop-down">
                     <a href="/motDePresident"><?= $lang['moDePresident'] ?></a>
                     <a href="#"><?= $lang['desc&historique'] ?></a>
-                    <a href="#"><?= $lang['conditionDeSoutnance'] ?></a>
+                    <a href="/conditionSoutnance"><?= $lang['conditionDeSoutnance'] ?></a>
                 </div>
             </li>
 
