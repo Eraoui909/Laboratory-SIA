@@ -82,3 +82,49 @@ $(window).on("load",function () {
     },10000);
 
 });
+
+$(".ha-abonner-newsletter").on("click",function (e) {
+    e.preventDefault();
+    let emaill = $('.newsletter-email').val().split();
+    if(emaill == "")
+    {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Email is required!',
+        });
+    }else{
+        $.ajax({
+            method: "post",
+            url: "/newsletter/inscription",
+            data:"email="+emaill,
+            datatype: "json",
+            success:function (data){
+                if(data == '"empty"')
+                {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Email is required!',
+                    });
+                }else if(data == '"success"'){
+                    Swal.fire(
+                        'Good job!',
+                        'You have successfully registered',
+                        'success'
+                    );
+
+                    setTimeout(function (){
+                        window.location.replace("/");
+                    },1000);
+                }else if(data == '"repeat"'){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'This email already registered',
+                    });
+                }
+            }
+        })
+    }
+})

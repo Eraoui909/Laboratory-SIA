@@ -4,6 +4,7 @@ use app\Controllers\AdminController;
 use app\Controllers\DoctorantController;
 use app\Controllers\EnseignantController;
 use app\Controllers\LangController;
+use app\Controllers\NewsLetterInscriController;
 use app\Controllers\SiteController;
 
 use app\Controllers\TeamController;
@@ -132,6 +133,24 @@ $app->router->post('/teacher/deleteDiplome',[EnseignantController::class, 'delet
 
 $app->router->get('/teacher/cv',[EnseignantController::class, 'teacherCV']);
 $app->router->get('/teacher/cv/downoald',[EnseignantController::class, 'cvToPdf']);
+
+
+/* ****************************************************
+*                                                     *
+*  this side it's for news letter inscription ROUTES  *
+*                                                     *
+* *************************************************** */
+
+$app->router->post('/newsletter/inscription',[NewsLetterInscriController::class,'inscription']);
+$app->router->get('/admin/newsletter',[NewsLetterInscriController::class,'newsletterPage']);
+$app->router->post('/admin/newsletter/delete',[NewsLetterInscriController::class,'newsletterDelete']);
+$app->router->get('/admin/sendEmails',[NewsLetterInscriController::class,'sendEmails']);
+
+
+
+
+
+
 
 
 

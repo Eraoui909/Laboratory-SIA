@@ -147,6 +147,9 @@ class AdminController extends Controller
 
     public function profilePage()
     {
+        if(!isset($_SESSION['token']['admin'])) {
+            $this->redirect('/admin/login');
+        }
         return $this->renderAdmin('profile', $_SESSION['token']['admin']);
     }
 

@@ -77,6 +77,15 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="/admin/newsletter" class="nav-link">
+                        <i class="nav-icon fas fa-newspaper"></i>
+                        <p>
+                            <?= $lang['newsletter']; ?>s
+                        </p>
+                    </a>
+                </li>
+
 
             </ul>
         </nav>

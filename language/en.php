@@ -82,5 +82,6 @@
         "diplome_diplome"               => "Diploma",
         "diplome_titre"                 => "Title",
         "diplome_certificat"            => "Certificate",
+        "newsletter"                    => "NewsLetter",
 
     );

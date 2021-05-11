@@ -164,13 +164,13 @@ li {
 /*-----------------------------------------------------------------*/
 .ha-cv-container{
     overflow:hidden;
-    border-top: 33px solid #2196f3;
+    border-top: 33px solid #1D80CE;
     border-radius: 100px;
-    border-left: 1px solid #2196f3;
-    border-right: 1px solid #2196f3;
+    border-left: 1px solid #1D80CE;
+    border-right: 1px solid #1D80CE;
 }
 .header {
-    background: #2196f3;
+    background: #1D80CE;
     padding: 46px;
     height: 800px;
     width: 260px;
@@ -193,6 +193,9 @@ li {
 
 .header .name {
     margin: 34px 0;
+    position: relative;
+    left: -50px;
+    width: 150%;
 }
 
 .header .name h3 {
@@ -245,7 +248,9 @@ li {
     padding: 0;
     margin: 0;
     position: relative;
-    left: -30px;
+    left: -40px;
+    width: 150%;
+    overflow-wrap: break-word;
 }
 
 .header .main-nav ul li {

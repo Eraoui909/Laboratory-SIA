@@ -21,7 +21,9 @@
             </div>
 
             <div class="name">
-                <h3 style="font-size: 18px;font-weight: bold"><?php echo $prenom ." ".$nom;  ?></h3>
+                <center>
+                    <h3 style="font-size: 18px;font-weight: bold"><?php echo $prenom ." ".$nom;  ?></h3>
+                </center>
             </div>
 
             <!-- Navigation bar -->
@@ -218,14 +220,14 @@
                 </section>
             <!-- Qualifications principales end -->
 
-            <!-- Section Testimonials -->
+            <!-- Section Testimonials
             <section id="testimonials" class="testimonials">
 
                 <div class="section-header">
                     <h2>Testimonials</h2>
                 </div>
 
-                <!-- Carousel -->
+                <!-- Carousel
                 <div class="testimonial-carousel">
 
                     <div class="item">
@@ -240,7 +242,7 @@
 
 
 
-                </div>
+                </div>-->
                 <!-- Carousel end -->
 
             </section>

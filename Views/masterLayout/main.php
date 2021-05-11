@@ -231,6 +231,9 @@ echo "</pre>";
             z-index: 100001;
             padding: 40px;
         }
+        .swal2-container {
+            z-index: 1000000000000000 !important;
+        }
     </style>
 
 </head>
@@ -247,8 +250,10 @@ echo "</pre>";
             <h1>Rejoignez notre news letter</h1>
             <p>Recevez les derniers articles de nos professeurs!</p>
             <div>
-                <input type="email" name="" placeholder="  Entrer votre addresse email">
-                <button class="btn btn-secondary">S'abonner</button>
+                <form action="/newsletter/inscription" method="post">
+                    <input type="email" name="email" class="newsletter-email" placeholder="  Entrer votre addresse email">
+                    <button type="submit" class="btn btn-secondary ha-abonner-newsletter">S'abonner</button>
+                </form>
             </div>
         </center>
     </div>
@@ -274,7 +279,6 @@ if($null != true)
 <script src="/js/jquery.comjquery-3.5.1.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/font-awesome-4.7.0/all.min.js"></script>
-
 <!-- AdminLTE App -->
 <script src="/adminLTE/dist/js/adminlte.js"></script>
 <!-- DataTables  & Plugins -->
@@ -305,7 +309,6 @@ if($null != true)
 <script>
     document.onreadystatechange = function () {
         let state = document.readyState;
-        console.log(state);
         if (state === 'interactive') {
             //$(".ha-global-popup-newsletter").removeClass("ha-global-popup-newsletter-active");
         } else if (state === 'complete') {
