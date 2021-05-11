@@ -62,26 +62,31 @@ $(".marquee-1").trigger('mouseleave');
  ***********************************************************************************************************************
  ***********************************************************************************************************************
  **/
+let c = new CokiesHandler();
 
-$(".ha-global-popup-newsletter").on("click",function () {
-    $(this).addClass("ha-global-popup-newsletter-active");
-    $(".ha-newletter-container")
-        .fadeOut(1000);
-    setTimeout(function () {
-        $(".ha-newletter-container").addClass("ha-global-popup-newsletter-active");
-    },1100);
-})
+//c.setCookie("newsletter_registered","false",30);
+//console.log(c.getCookie("newsletter_registered"));
+if(c.getCookie("newsletter_registered") == "false") {
+    $(".ha-global-popup-newsletter").on("click", function () {
+        $(this).addClass("ha-global-popup-newsletter-active");
+        $(".ha-newletter-container")
+            .fadeOut(1000);
+        setTimeout(function () {
+            $(".ha-newletter-container").addClass("ha-global-popup-newsletter-active");
+        }, 1100);
+    })
 
-$(window).on("load",function () {
+    $(window).on("load", function () {
 
-    setTimeout(function () {
+        setTimeout(function () {
 
-        $(".ha-global-popup-newsletter").removeClass("ha-global-popup-newsletter-active");
-        $(".ha-newletter-container").removeClass("ha-global-popup-newsletter-active");
+            $(".ha-global-popup-newsletter").removeClass("ha-global-popup-newsletter-active");
+            $(".ha-newletter-container").removeClass("ha-global-popup-newsletter-active");
 
-    },10000);
+        }, 10000);
 
-});
+    });
+}
 
 $(".ha-abonner-newsletter").on("click",function (e) {
     e.preventDefault();
@@ -113,7 +118,7 @@ $(".ha-abonner-newsletter").on("click",function (e) {
                         'You have successfully registered',
                         'success'
                     );
-
+                    c.setCookie("newsletter_registered","true",30);
                     setTimeout(function (){
                         window.location.replace("/");
                     },1000);
@@ -123,6 +128,10 @@ $(".ha-abonner-newsletter").on("click",function (e) {
                         title: 'Oops...',
                         text: 'This email already registered',
                     });
+                    c.setCookie("newsletter_registered","true",30);
+                    setTimeout(function (){
+                        window.location.replace("/");
+                    },1000);
                 }
             }
         })

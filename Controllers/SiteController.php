@@ -31,7 +31,7 @@ class SiteController extends Controller
     {
         $data['title'] = "Home";
         $data['style'] = ['marquee.css', 'Home_Style.css'];
-        $data['script'] = ['marquee.js', 'HomeScript.js', 'navbar.js'];
+        $data['script'] = ['CokiesHandler.js','marquee.js', 'HomeScript.js', 'navbar.js'];
         return $this->render('home', $data);
     }
 
