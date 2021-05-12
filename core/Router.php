@@ -46,7 +46,8 @@ class Router
         if($callback === false)
         {
             $this->response->setHTTPResponseCode(404);
-            return $this->viewRender("__404");
+            $title['title'] = "404";
+            return $this->viewRender("__404",$title);
 
         }else if(is_string($callback))
         {

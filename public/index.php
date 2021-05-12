@@ -74,6 +74,7 @@ $app->router->post('/admin/register',[AdminController::class,'registerAdmin']);
 
 $app->router->get('/admin/dashboard',[AdminController::class,'dashboard']);
 $app->router->get('/admin',[AdminController::class,'dashboard']);
+$app->router->get('/admin/',[AdminController::class,'dashboard']);
 
 $app->router->get('/admin/login',[AdminController::class,'loginPage']);
 $app->router->post('/admin/login',[AdminController::class,'loginHandler']);

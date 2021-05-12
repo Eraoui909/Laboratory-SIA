@@ -20,8 +20,11 @@
         <h1>Les articles disponible </h1>
 
         <?php
-        if (!empty($params))
-            foreach ($params as $param){ ?>
+        echo "<pre>";
+            //print_r($params['articles']);
+        echo "</pre>";
+        if (isset($params['articles']) && !empty($params['articles']))
+            foreach ($params['articles'] as $param): ?>
                 <div class="ha-article-card">
                     <div class="title hidden-title">
                         <?= $param['title'] ?>
@@ -54,7 +57,7 @@
                     </div>
                 </div>
                 <hr>
-        <?php } ?>
+        <?php endforeach; ?>
 
         <div class="ha-article-card">
             <div class="title hidden-title">
@@ -71,7 +74,7 @@
                 <button class="btn btn-outline-info article-read-more">Read more</button>
             </div>
             <div class="card-img">
-                <img class="img-fluid" src="/Storage/uploads/users/science_pic.jpg" width="350px" alt="">
+                <img class="img-fluid" src="/Storage/uploads/articles/91560995691b7781science_pic.jpg" width="350px" alt="">
             </div>
             <div class="card-content">
                 <div class="title">

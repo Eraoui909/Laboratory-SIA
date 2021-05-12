@@ -101,7 +101,7 @@ class SiteController extends Controller
     public function articlesPage()
     {
         $data = array();
-        $data = ArticleModel::getAll();
+        $data['articles'] = ArticleModel::getAll();
         $data['title'] = "Articles";
         $data['style'] = ["article.css"];
         return$this->render("articles",$data);

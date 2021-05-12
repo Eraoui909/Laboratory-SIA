@@ -15,11 +15,7 @@
     </div>
 
     <div class="ha-single-article-content">
-        <p>
-            <?php echo $params[0]['description'] ?></p>
-        <p>
-                <?= htmlspecialchars_decode( $params[0]['content'] )?>
-        </p>
+        <?= htmlspecialchars_decode( $params[0]['content'] )?>
     </div>
 
     <div class="ha-single-article-footer">

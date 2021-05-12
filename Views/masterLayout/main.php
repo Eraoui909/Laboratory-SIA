@@ -6,6 +6,7 @@ echo "<pre>";
 print_r($params);
 echo "</pre>";
 */
+
 ?>
 
 <!doctype html>
@@ -307,6 +308,8 @@ if($null != true)
 <?php }?>
 
 <script>
+    $("#load").hide();
+    /*
     document.onreadystatechange = function () {
         let state = document.readyState;
         if (state === 'interactive') {
@@ -315,6 +318,8 @@ if($null != true)
             $("#load").hide();
         }
     }
+    */
+
 </script>
 
 </body>

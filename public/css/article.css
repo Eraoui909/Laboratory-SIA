@@ -254,11 +254,14 @@ ul {
       color: gray; }
   .ha-single-article .ha-single-article-content {
     width: 90%;
-    margin: 0px 10px; }
-    .ha-single-article .ha-single-article-content p {
+    margin: 0px 10px;
+    /*
+    p{
       text-indent: 50px;
       text-align: justify;
-      letter-spacing: 3px; }
+      letter-spacing: 3px;
+    }
+    */ }
   .ha-single-article .ha-single-article-footer {
     padding: 15px; }
 
