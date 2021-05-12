@@ -14,11 +14,11 @@
 </style>
 
 <div class="container ha-condition-container">
-    <center>
+    <div style="text-align: center;">
         <h1>
             Nouvelles Conditions de soutenance / Formulaires soutenance
         </h1>
-    </center>
+    </div>
     <div class="row">
         <div class="col-12" id="accordion">
 
