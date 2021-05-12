@@ -142,7 +142,7 @@ class SiteController extends Controller
     public function conditionSoutnancePage()
     {
         $arr['title'] = "Condition de outnance";
-        return $this->render('conditionSoutnance',$arr);
+        return $this->render('conditionSoutnance', $arr);
     }
 
     public function presentationPage()

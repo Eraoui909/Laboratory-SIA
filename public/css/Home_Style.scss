@@ -4,6 +4,8 @@
 @import 'General_style.scss';
 
 body{
+  background-color: #fff;
+
   margin: 0;
   ui{
     padding: 0;
@@ -14,6 +16,171 @@ body{
   @import "head";
   @import "nav";
   @import "header_slider";
+
+  .home-container {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: white;
+
+    .home-principal {
+      width: calc(100% - 310px);
+
+      h1{
+        width: 100%;
+        padding-left: 26px;
+      }
+
+      .post-container{
+        display: flex;
+        flex-wrap: wrap;
+
+        .card.home-post{
+          width: 48%;
+          min-width: 415px;
+          margin: 10px 1%;
+          padding: 10px 10px 60px;
+          position: relative;
+          height: 100%;
+
+          .post-body{
+            padding: 20px 20px 0;
+
+            h2{
+              text-align: center;
+
+              a{
+                color: #007dec;
+                display: inline-block;
+                width: 100%;
+              }
+
+              &:hover{
+                a{
+                  color: #4D4D4D;
+                  text-decoration-line: underline;
+                  text-decoration-color: #969494;
+                }
+
+              }
+            }
+          }
+
+          .card-footer.text-muted {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 50px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+
+        .see-all{
+          width: 100%;
+          a{
+            width: 100%;
+            display: inline-block;
+            text-align: right;
+            padding: 2px 30px;
+            color: #909090;
+
+            path{
+              color: #909090;
+            }
+          }
+        }
+      }
+
+      .separe {
+        background-image: url("/Storage/Statics/images/separe.jpg");
+        width: 98%;
+        height: 70px;
+        background-size: contain;
+        margin: 15px auto;
+      }
+
+    }
+
+    .home-widgets{
+      width: 300px;
+      padding: 0 10px;
+    }
+
+    @media only screen and (max-width: 1360px) {
+      width: 95%;
+    }
+
+    @media only screen and (max-width: 1257px) {
+      justify-content: center;
+
+      .home-principal{
+        width: 100%;
+      }
+
+      .home-widgets{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .card{
+          margin: 0 10px;
+          min-width: 250px;
+        }
+
+      }
+    }
+
+    @media only screen and (max-width: 930px){
+      .home-principal{
+        .post-container{
+          justify-content: center;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 630px){
+      .home-principal{
+        h1{
+          font-size: 1.9rem;
+        }
+
+        .post-container{
+
+          .card.home-post{
+            width: 90%;
+            min-width: auto;
+          }
+
+        }
+
+      }
+    }
+
+    @media only screen and (max-width: 470px){
+      .home-principal{
+
+        .post-container{
+
+          .card.home-post{
+            width: 98%;
+            min-width: auto;
+          }
+
+        }
+
+      }
+    }
+  }
+
+
+
+
 }
 
 @import "Annimations";

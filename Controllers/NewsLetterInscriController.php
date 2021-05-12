@@ -26,7 +26,7 @@ class NewsLetterInscriController extends Controller
         $errors = $validator->require($data);
         if(empty($errors))
         {
-            $test = NewsLetterInscriModel::getByQuery("SELECT email FROM newsletter_inscription WHERE email='".$data['email']."'");
+            $test = NewsLetterInscriModel::getByQuery("SELECT email FROM newsletter_inscription WHERE email = '".$data['email']."'");
             if(empty($test))
             {
                 $new = new NewsLetterInscriModel();
