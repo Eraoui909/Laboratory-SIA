@@ -36,6 +36,7 @@
     </div>
 </div>
 <!-- Page content-->
+<?php include_once "acceuil.php";?>
 
 <div class="home-container">
 

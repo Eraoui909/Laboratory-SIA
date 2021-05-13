@@ -59,8 +59,8 @@
             <li class="presentation-drop-down hidden drop"><a href="/presentation"> presentation de labo </a></li>
             <li class="presentation-drop-down hidden drop"><a href="/conditionSoutnance"><?= $lang['conditionDeSoutnance'] ?></a></li>
 
-            <li><a href=""><?= $lang['enseignant'] ?></a></li>
-            <li><a href=""><?= $lang['doctorant'] ?></a></li>
+            <li><a href="/teachers"><?= $lang['enseignant'] ?></a></li>
+            <li><a href="/doctorants"><?= $lang['doctorant'] ?></a></li>
             <li><a href=""><?= $lang['aboutUs']?></a></li>
             <li><a href="/contact"><?= $lang['contact'] ?></a></li>
 

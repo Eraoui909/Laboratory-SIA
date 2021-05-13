@@ -323,98 +323,96 @@ body {
     margin: auto;
     margin-top: 45px;
     position: relative; }
-    body .ha-acceuil-container .container-fluid {
-      background-color: #EEE; }
-      body .ha-acceuil-container .container-fluid .ha-acceuil-statistics {
-        height: 150px;
-        width: 80%;
-        border-radius: 8px;
-        margin: 10px auto;
-        background-color: white;
-        display: flex;
-        justify-content: space-between;
-        padding: 15px;
-        box-shadow: 0px 0px 4px 2px #d2d2d2; }
-        body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section {
-          width: 30%; }
-        body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-1 span {
-          margin: 5px;
-          line-height: 40px; }
-        body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-1 strong {
-          font-size: 22px; }
-        body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 {
+    body .ha-acceuil-container .container-fluid .ha-acceuil-statistics {
+      height: 150px;
+      width: 80%;
+      border-radius: 8px;
+      margin: 10px auto;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      box-shadow: 0px 0px 4px 2px #d2d2d2; }
+      body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section {
+        width: 30%; }
+      body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-1 span {
+        margin: 5px;
+        line-height: 40px; }
+      body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-1 strong {
+        font-size: 22px; }
+      body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 {
+        background-color: #f4fae5;
+        height: 100%;
+        padding: 10px;
+        border: 3px solid #a8d511;
+        border-radius: 5px;
+        position: relative; }
+        body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .card-teacher {
           background-color: #f4fae5;
+          border: none;
+          width: 100%;
           height: 100%;
-          padding: 10px;
-          border: 3px solid #a8d511;
-          border-radius: 5px;
-          position: relative; }
-          body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .card-teacher {
-            background-color: #f4fae5;
-            border: none;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: space-around; }
-            body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .card-teacher div {
-              width: 40%; }
-            body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .card-teacher .icon {
-              left: 20px;
-              transform: translateY(10px);
-              position: relative; }
-              body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .card-teacher .icon svg {
-                font-size: 3.5vw; }
-            body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .card-teacher .content {
-              font-size: 1.3vw;
-              position: relative;
-              transform: translateY(10px); }
-        body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 {
-          background-color: #e6e6e6;
-          height: 100%;
-          padding: 10px;
-          border-radius: 5px;
-          position: relative; }
-          body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .card-article {
-            background-color: #e6e6e6;
-            border: none;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: space-around; }
-            body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .card-article div {
-              width: 40%; }
-            body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .card-article .icon {
-              left: 20px;
-              transform: translateY(10px);
-              position: relative; }
-              body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .card-article .icon svg {
-                font-size: 3.5vw; }
-            body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .card-article .content {
-              font-size: 1.3vw;
-              position: relative;
-              transform: translateY(10px); }
-      @media only screen and (max-width: 700px) {
-        body .ha-acceuil-container .container-fluid .ha-acceuil-statistics {
           display: flex;
-          height: auto;
-          flex-wrap: wrap;
+          justify-content: space-around; }
+          body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .card-teacher div {
+            width: 40%; }
+          body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .card-teacher .icon {
+            left: 20px;
+            transform: translateY(10px);
+            position: relative; }
+            body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .card-teacher .icon svg {
+              font-size: 3.5vw; }
+          body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .card-teacher .content {
+            font-size: 1.3vw;
+            position: relative;
+            transform: translateY(10px); }
+      body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 {
+        background-color: #e6e6e6;
+        height: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        position: relative; }
+        body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .card-article {
+          background-color: #e6e6e6;
+          border: none;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: space-around; }
+          body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .card-article div {
+            width: 40%; }
+          body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .card-article .icon {
+            left: 20px;
+            transform: translateY(10px);
+            position: relative; }
+            body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .card-article .icon svg {
+              font-size: 3.5vw; }
+          body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .card-article .content {
+            font-size: 1.3vw;
+            position: relative;
+            transform: translateY(10px); }
+    @media only screen and (max-width: 700px) {
+      body .ha-acceuil-container .container-fluid .ha-acceuil-statistics {
+        display: flex;
+        height: auto;
+        flex-wrap: wrap;
+        width: 100%; }
+        body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-1 {
           width: 100%; }
-          body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-1 {
-            width: 100%; }
-          body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2, body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 {
-            width: 45%;
-            margin: 0px 5px;
-            height: 60px;
-            padding: 5px; }
-            body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .content, body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .content {
-              font-size: 1.4vh !important;
-              position: relative !important;
-              left: -10px !important; }
-            body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .icon, body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .icon {
-              position: relative !important;
-              left: 0px !important; }
-            body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 svg, body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 svg {
-              font-size: 3.2vh !important; } }
+        body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2, body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 {
+          width: 45%;
+          margin: 0px 5px;
+          height: 60px;
+          padding: 5px; }
+          body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .content, body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .content {
+            font-size: 1.4vh !important;
+            position: relative !important;
+            left: -10px !important; }
+          body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 .icon, body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 .icon {
+            position: relative !important;
+            left: 0px !important; }
+          body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-2 svg, body .ha-acceuil-container .container-fluid .ha-acceuil-statistics .section-3 svg {
+            font-size: 3.2vh !important; } }
 
 @-webkit-keyframes show-slider {
   0% {

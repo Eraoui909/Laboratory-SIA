@@ -301,7 +301,7 @@ if($null != true)
 <!-- SweetAlert2 -->
 <script src="/adminLTE/plugins/sweetalert2/sweetalert2.min.js"></script>
 
-
+<script src="/js/navbar.js"></script>
 
 <?php if (isset($params['script'])) foreach ($params['script'] as $script) {?>
     <script src="/js/<?= $script?>"></script>
