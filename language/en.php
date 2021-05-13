@@ -53,7 +53,7 @@
         "cv"                            => "My CV",
         "allArticles"                   => "All articles",
         "enseignants"                   => "Teachers",
-        "doctorants"                    => "Doctoral Students",
+        "doctorants"                    => "PhD Students",
         "team"                          => "Team",
         "thematic"                      => "thematic",
         "presentation"                  => "Presentation",

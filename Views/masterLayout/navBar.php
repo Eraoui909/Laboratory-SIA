@@ -5,7 +5,7 @@
         <ul>
             <li class="keep icone" id="menu-btn-icon"><i class="fas fa-bars"></i></li>
             <li><a href="/"><?= $lang['home'] ?></a></li>
-            <li>
+            <li class="account-link">
                 <a href="#"><?= $lang['presentation'] ?></a>
                 <div class="drop-down">
                     <a href="/motDePresident"><?= $lang['moDePresident'] ?></a>
