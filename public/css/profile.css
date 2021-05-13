@@ -90,19 +90,8 @@ body nav.my-navbar .links ul li {
   position: relative;
   padding-top: 13px;
 }
-body nav.my-navbar .links ul li span {
-  position: absolute;
-  top: -8px;
-  left: 9px;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background-color: #ffb0a8;
-  color: darkred;
-  font-size: 0.9em;
-  font-weight: 700;
-  text-align: center;
-  line-height: 22px;
+body nav.my-navbar .links ul li span.show {
+  display: none;
 }
 body nav.my-navbar .links ul li:after {
   content: "";
@@ -154,6 +143,14 @@ body nav.my-navbar .links ul li:not(.icone):hover:after {
     display: none;
   }
 }
+@media only screen and (max-width: 600px) {
+  body nav.my-navbar .links ul li.lang span.hide {
+    display: none;
+  }
+  body nav.my-navbar .links ul li.lang span.show {
+    display: inline;
+  }
+}
 body nav.my-navbar .links ul li#menu-btn-icon {
   font-size: 2.2em;
   margin-left: 20px;
@@ -164,6 +161,11 @@ body nav.my-navbar .links ul li#menu-btn-icon {
 @media only screen and (max-width: 1024px) {
   body nav.my-navbar .links ul li#menu-btn-icon {
     display: block;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body nav.my-navbar .links ul li#menu-btn-icon {
+    min-width: auto;
   }
 }
 body nav.my-navbar .links ul .account-link:hover .drop-down {
@@ -181,7 +183,7 @@ body nav.my-navbar .menu {
   right: 0;
   left: 0;
   height: 0;
-  transition: height 1s ease;
+  transition: height 0.3s ease;
   overflow: hidden;
   z-index: 20;
 }
@@ -193,6 +195,10 @@ body nav.my-navbar .menu ul li {
   padding: 16px 0;
   border-bottom: 1px solid #524d4d;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+body nav.my-navbar .menu ul li path {
+  color: #c1c1c1;
 }
 body nav.my-navbar .menu ul li:hover {
   background-color: #346382;
@@ -200,6 +206,15 @@ body nav.my-navbar .menu ul li:hover {
 body nav.my-navbar .menu ul li a {
   color: #fff;
   display: block;
+}
+body nav.my-navbar .menu ul li.hidden {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+}
+body nav.my-navbar .menu ul li.drop {
+  background-color: #24303c;
 }
 body #header {
   position: relative;
