@@ -3,6 +3,18 @@
 
 <div id="header">
 
+    <div class="pop-up-search-box">
+        <p>Consulter plus de <strong style="color: #A8D511">200</strong> articles</p>
+        <div class="pop-up-search-box-input">
+            <div class="div-1">
+                <input type="text" name="search-for-article" placeholder="le titre d'article..">
+            </div>
+            <div class="div-2">
+                <span>Recherche  </span><i class="fa fa-search"></i>
+            </div>
+        </div>
+    </div>
+
     <div class="slider1 slider active"></div>
     <div class="slider2 slider"></div>
     <div class="slider3 slider"></div>

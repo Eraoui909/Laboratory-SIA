@@ -65,4 +65,53 @@
     }
   }
 
+  .pop-up-search-box{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    width: 50%;
+    height: 30%;
+    text-align: center;
+
+    p{
+      color: white;
+      font-size: 5vh;
+      font-weight: bold;
+    }
+
+    .pop-up-search-box-input{
+      border-radius: 5px;
+      background-color: white;
+      display: flex;
+
+      .div-1{
+        background-color: yellow;
+        width: 80%;
+
+        input{
+          width: 100%;
+          border: none;
+          outline: none;
+          padding: 10px;
+        }
+      }
+
+      .div-2{
+        background-color: #A8D511;
+        width: 20%;
+        padding: 10px;
+        font-weight: bold;
+
+        @media only screen and (max-width: 1280px){
+          span{
+            display: none;
+          }
+        }
+      }
+
+    }
+
+  }
 }
