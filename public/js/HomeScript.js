@@ -65,7 +65,7 @@ $(".marquee-1").trigger('mouseleave');
 let c = new CokiesHandler();
 
 //c.setCookie("newsletter_registered","false",30);
-//console.log(c.getCookie("newsletter_registered"));
+console.log(c.getCookie("newsletter_registered"));
 if(c.getCookie("newsletter_registered") == "false") {
     $(".ha-global-popup-newsletter").on("click", function () {
         $(this).addClass("ha-global-popup-newsletter-active");

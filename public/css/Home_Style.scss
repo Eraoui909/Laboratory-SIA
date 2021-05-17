@@ -334,5 +334,132 @@ body{
   }
 
 }
+/********************************************************************************************************************/
+/********************************************************************************************************************/
+/**************************************** last article style 17-05-2021         ******************************************/
+/********************************************************************************************************************/
+/********************************************************************************************************************/
+
+.home__sector{
+  padding: 15px;
+}
+.home__sector li {
+  margin:1rem 0
+}
+.home__sector li:last-child{
+  display:flex;align-items:center;justify-content:center;margin:2rem 0 1rem
+}
+.home__sector li>div{
+  display:flex;justify-content:flex-start;height:92px;background-size:cover;background-repeat:no-repeat
+}
+@media (min-width:576px){
+  .home__sector li>div{height:100%}
+}
+.home__sector li>div>div{
+  background-image:linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,.5));padding:1rem;width:100%
+}
+@media (max-width:576px){
+  .home__sector li>div>div{display:flex;align-items:center}
+}
+.home__sector li>div span{
+  color:#fff;display:block;text-shadow:0 0 4px rgba(0,0,0,.75)
+}
+@media (min-width:576px){
+  .home__sector li{
+    margin:0
+  }
+  .home__sector .sectors{
+    max-width:100%;
+    margin:1.5rem 4.5rem 0;
+    display:grid;
+    grid-gap:10px;
+    grid-template-columns:49.1525423729% repeat(2,minmax(0,1fr));
+    grid-template-rows:calc(170px - 10px) calc(100px - 10px) calc(25px - 10px) calc(115px - 10px);
+    grid-template-areas:"start-top middle-top end-top" "start-top middle-bottom end-bottom" "start-bottom middle-bottom end-bottom" "start-bottom cta cta"
+  }
+  .home__sector .sectors__start-top{grid-area:start-top}
+  .home__sector .sectors__start-bottom{grid-area:start-bottom}
+  .home__sector .sectors__middle-top{grid-area:middle-top}
+  .home__sector .sectors__middle-bottom{grid-area:middle-bottom}
+  .home__sector .sectors__end-top{grid-area:end-top}
+  .home__sector .sectors__end-bottom{grid-area:end-bottom}
+  .home__sector .sectors__cta{grid-area:cta}
+}
+
+.h6-like{
+  font-size:1.4rem;
+  font-weight:900
+}
+@media (min-width:576px){
+  h6,.h6-like{
+    font-size:1.6rem
+  }
+}
+.h4-like,.h6-like,blockquote,label,ul,ol{
+  color:#000;
+  margin:auto
+}
+.home__sector li>div span {
+  color: #fff;
+  display: block;
+  text-shadow: 0 0 4px #000000bf;
+  font-size: medium;
+}
+
+
+.btn--primary, .button--primary {
+  background-color: #a8d511;
+  color: #000;
+  box-shadow: none;
+  text-transform: none;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 2vh;
+}
+
+.title-flex-w-img{
+  display:flex;justify-content:flex-start
+}
+.title-flex-w-img__center{
+  //align-items:center
+}
+.title-flex-w-img__top{
+  align-items:flex-start
+}
+.title-flex-w-img__wrap{
+  flex-wrap:wrap
+}
+.title-flex-w-img img{
+  flex-shrink:0;
+  margin-right:1.25rem;
+  font-weight: bold;
+}
+.h4-like{
+  font-weight: bold;
+}
+.title-flex-w-img img:lang(ar) {
+   margin-right:0;
+  margin-left:1.25rem
+ }
+.title-flex-w-img .subhead{
+  display:block;font-weight:400
+}
+@media (min-width:768px){
+  .title-flex-w-img .title-h{
+    display:inline-block;margin-left:.5rem
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 @import "Annimations";

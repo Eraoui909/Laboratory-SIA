@@ -50,6 +50,10 @@
 <!-- Page content-->
 <?php include_once "acceuil.php";?>
 
+<?php include_once "lastArticles.php";?>
+
+
+
 <div class="home-container">
 
     <!-- Blog entries-->
@@ -72,7 +76,7 @@
             </div>
             <!-- Blog post-->
             <div class="card home-post">
-                <img class="card-img-top" src="/Storage/Statics/images/logo.jpg" height="200px" alt="Card image cap" />
+                <img class="card-img-top" src="/Storage/Statics/images/header2.jpg" height="200px" alt="Card image cap" />
                 <div class="post-body">
                     <h2 class="post-title"><a href="#">Post Title</a></h2>
 
@@ -108,7 +112,7 @@
             </div>
             <!-- Blog post-->
             <div class="card home-post">
-                <img class="card-img-top" src="/Storage/Statics/images/logo.jpg" height="200px" alt="Card image cap" />
+                <img class="card-img-top" src="/Storage/Statics/images/header2.jpg" height="200px" alt="Card image cap" />
                 <div class="post-body">
                     <h2 class="post-title"><a href="#">Post Title</a></h2>
 

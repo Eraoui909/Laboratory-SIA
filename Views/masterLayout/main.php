@@ -223,12 +223,12 @@ echo "</pre>";
             padding: 40px;
         }
         #load img{
-            width: 25%;
+            width: 15%;
             position: fixed;
             transform: translate(-50%, -50%);
             left: 50%;
             top: 50%;
-            height: 200px;
+            height: 250px;
             z-index: 100001;
             padding: 40px;
         }
@@ -243,7 +243,8 @@ echo "</pre>";
 <div class="ha-global-popup-newsletter ha-global-popup-newsletter-active">
 </div>
 <div id="load">
-    <img src="https://miro.medium.com/max/1600/1*CsJ05WEGfunYMLGfsT2sXA.gif"  alt="">
+    <!-- https://miro.medium.com/max/1600/1*CsJ05WEGfunYMLGfsT2sXA.gif -->
+    <img src="https://i.gifer.com/1LBN.gif"  alt="">
 </div>
 <div class="ha-newletter-container ha-global-popup-newsletter-active">
     <div class="ha-newsletter-content">
