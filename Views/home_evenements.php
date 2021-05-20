@@ -3,7 +3,7 @@
     <div class="home__sector card card--1dp home__margin-block">
         <div class="title-flex-w-img title-flex-w-img__center">
             <img src="/Storage/Statics/images/pictograms-google-material-format-list-bulleted.svg" width="36" alt="" height="36">
-            <h2 class="h4-like">Explorez les 26 équipes </h2>
+            <h2 class="h4-like">Explorez les évenements</h2>
         </div>
         <ul class="sectors">
             <li class="sectors__start-top">
@@ -85,10 +85,10 @@
             </li>
 
             <li class="sectors__cta">
-                <a href="#"  class="btn btn--primary" >
+                <a href="/evenements"  class="btn btn--primary" >
                     <div>
                         <img src="/Storage/Statics/images/pictograms-google-material-format-list-bulleted.svg" width="36" alt="" height="36">
-                        <span class="btn-label u-bold">Parcourir les équipes</span>
+                        <span class="btn-label u-bold">Parcourir les évenements</span>
                     </div>
                 </a>
             </li>

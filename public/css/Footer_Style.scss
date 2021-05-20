@@ -21,7 +21,7 @@ $title-color:white;
     justify-content: space-between;
     color: white;
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 800px) {
       flex-wrap: wrap;
       .ha-footer-head-sec2{
         border-top: 0.5px solid gray;
@@ -82,7 +82,7 @@ $title-color:white;
     padding: 5px 15px;
     border-top: 0.7px solid white;
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 800px) {
       flex-wrap: wrap;
     }
 
@@ -94,29 +94,5 @@ $title-color:white;
 }
 
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-
-}
 
 @import "Annimations";

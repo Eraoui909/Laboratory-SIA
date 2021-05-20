@@ -62,6 +62,8 @@ $app->router->get('/articles', [SiteController::class, 'articlesPage']);
 
 $app->router->post('/article', [SiteController::class, 'singleArticle']);
 
+$app->router->get('/evenements',[SiteController::class,'evenementsPage']);
+
 /* **********************************************
 *                                               *
 *  this side it's for all admin panel ROUTES    *

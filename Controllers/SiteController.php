@@ -151,5 +151,10 @@ class SiteController extends Controller
         return $this->render('presentation',$arr);
     }
 
+    public function evenementsPage()
+    {
+        $arr['title'] = "évenements";
+        return $this->render('evenements',$arr);
+    }
 
 }
