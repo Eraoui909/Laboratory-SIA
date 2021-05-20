@@ -13,7 +13,7 @@
                 <a href="#">
                     <p> <?= $param['title']; ?> <span> ...Lire la suite → </span></p>
                 </a>
-                <small><?= $param['date']; ?></small>
+                <small class="badge-info" style="width: fit-content;padding: 3px"><?= $param['date']; ?></small>
             </div>
             <?php endforeach;?>
         </div>

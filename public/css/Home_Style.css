@@ -467,7 +467,7 @@ body {
     flex-wrap: wrap;
     justify-content: center; }
     .ha-events-container .ha-events .ha-event-card {
-      width: 500px;
+      width: 400px;
       overflow: hidden;
       border: 1px solid #bbb;
       border-radius: 10px;
