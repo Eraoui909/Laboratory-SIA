@@ -50,7 +50,7 @@ ul {
     display: flex;
     justify-content: space-between;
     color: white; }
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 800px) {
       .ha-footer .ha-footer-head {
         flex-wrap: wrap; }
         .ha-footer .ha-footer-head .ha-footer-head-sec2 {
@@ -88,17 +88,12 @@ ul {
     line-height: 60px;
     padding: 5px 15px;
     border-top: 0.7px solid white; }
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 800px) {
       .ha-footer .ha-footer-foot {
         flex-wrap: wrap; } }
     .ha-footer .ha-footer-foot div {
       color: white; }
 
-/* Extra small devices (phones, 600px and down) */
-/* Small devices (portrait tablets and large phones, 600px and up) */
-/* Medium devices (landscape tablets, 768px and up) */
-/* Large devices (laptops/desktops, 992px and up) */
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 @-webkit-keyframes show-slider {
   0% {
     -webkit-transform: scale(1.2);

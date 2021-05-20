@@ -28,11 +28,11 @@
                <a href="#">
                    <div class="card-article">
                        <div class="icon">
-                           <i class="fa fa-newspaper"></i>
+                           <i class="fa fa-users"></i>
                        </div>
                        <div class="content">
                            <center>
-                               <strong>+200</strong><p><strong>Articles</strong></p>
+                               <strong>4</strong><p><strong>Groupes</strong></p>
                            </center>
                        </div>
                    </div>
