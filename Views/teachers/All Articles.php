@@ -77,9 +77,9 @@
                             <div class="col-sm-2"></div>
                         </div>
                         <div class="form-group row contentEdit">
-                            <label for="" class="col-sm-2 col-form-label"><?= $lang['content'] ?></label>
+                            <label for="" class="col-sm-2 col-form-label"><?= $lang['journal'] ?></label>
                             <div class="col-sm-10">
-                                <textarea name="content"  class="editor" id="article-content" cols="30" rows="30"></textarea>
+                                <input type="text" value="" name="journal" class="form-control article-journal" id="" placeholder="<?= $lang['journal'] ?>">
                             </div>
                         </div>
                         <input type="hidden" name="articleID" class="article-id">
@@ -119,8 +119,8 @@
                 <thead>
                 <tr>
                     <th><?=$lang['title']?></th>
+                    <th><?=$lang['journal']?></th>
                     <th><?= 'date'?></th>
-                    <th><?=$lang['avatar']?></th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -131,10 +131,8 @@
                     ?>
                         <tr>
                             <td><?= $article['title'] ?></td>
+                            <td><?= $article['journal']?></td>
                             <td><?= $article['date'] ?></td>
-                            <td class="edit-article-img" data-id="<?= $article['articleID'] ?>" style="cursor: pointer;min-width: 90px" data-toggle="modal" data-target="#exampleModal">
-                                <i class="fa fa-edit"></i>
-                                <img width="45px" height="40px" src="\Storage\uploads\articles\<?= $article['picture'] ?>" alt="article picture"> </td>
                             <td>
                                 <button class="btn-sm btn-success btn-article-modify-form"
                                         data-toggle="modal"
@@ -142,10 +140,7 @@
                                         data-title="<?= $article['title'] ?>"
                                         data-id="    <?= $article['articleID'] ?>"
                                         data-description="   <?= $article['description']    ?>"
-                                        data-content="   <?= $article['content']    ?>"
-                                        data-teacher=" <?= $article['teacher']  ?>"
-                                        data-date=" <?= $article['date']  ?>"
-                                        data-picture=" <?= $article['picture']  ?>"
+                                        data-journal="   <?= $article['journal']    ?>"
                                 >
                                     <i class="fa fa-edit"></i>
                                     <span> <?=$lang['modify']?></span>

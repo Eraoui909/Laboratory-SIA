@@ -16,6 +16,7 @@ use app\models\ExperienceProModel;
 class EnseignantController extends Controller
 {
     use Helper;
+
     public function enseignantPage()
     {
         if(!isset($_SESSION['token']['admin'])){
@@ -103,9 +104,9 @@ class EnseignantController extends Controller
 
         $arr = $_SESSION['token']['ens'];
         $arr['title'] = $_SESSION['token']['ens']['nom'] . ' ' . $_SESSION['token']['ens']['prenom'];
-        $arr['articles'] = ArticleModel::getByQuery("SELECT * FROM article WHERE teacher=".$_SESSION['token']['ens']['id']);
-        $arr['experiences'] = ExperienceProModel::getByQuery("SELECT * FROM experience_pro WHERE personne_id=".$_SESSION['token']['ens']['id']);
-        $arr['diplomes']    = diplomesModel::getByQuery("SELECT * FROM diplomes WHERE personne_id=".$_SESSION['token']['ens']['id']);
+        $arr['articles'] = ArticleModel::getByQuery("SELECT * FROM article WHERE author = " . $_SESSION['token']['ens']['id']);
+        $arr['experiences'] = ExperienceProModel::getByQuery("SELECT * FROM experience_pro WHERE personne_id = " . $_SESSION['token']['ens']['id']);
+        $arr['diplomes']    = diplomesModel::getByQuery("SELECT * FROM diplomes WHERE personne_id = " . $_SESSION['token']['ens']['id']);
 
         $arr['admin']  = true;
         $arr['CV']  = true;
@@ -243,7 +244,7 @@ class EnseignantController extends Controller
 
     public function addArticle()
     {
-        if(isset($_FILES['ArticlePic']) && isset($_POST['content']) )
+        if( isset($_POST['journal']) )
         {
             $session = new Session();
             $validator = new validator();
@@ -252,37 +253,25 @@ class EnseignantController extends Controller
             $errors = $validator->require($data);
             $article = new ArticleModel();
 
-            if (isset($_FILES["ArticlePic"]["name"][1])){
-                $errors['uploads'][] = "* You can't upload multiple files";
-            }
-
             if(empty($errors)){
-                $upload = $this->UploadFile('articles', $data['title'], 'ArticlePic');
-                $errors['uploads'] = $upload['errors'];
+                $author     = $_SESSION['token']['ens']['id'];
 
-                if(empty($errors['uploads'])){
+                $article->setTitle($data['title']);
+                $article->setDescription($data['description']);
+                $article->setJournal($data['journal']);
+                $article->setAuthor($author);
 
-                    $picture = $upload['uploaded'][0] ?? '';
-                    $teacher     = $_SESSION['token']['ens']['id'];
+                if($article->register()){
 
-                    $article->setTitle($data['title']);
-                    $article->setDescription($data['description']);
-                    $article->setContent($data['content']);
-                    $article->setTeacher($teacher);
-                    $article->setPicture($picture);
-
-                    if($article->register()){
-
-                        //$this->redirect('/teacher/profile');
-                        echo "success";
-                    }
-                    return;
+                    $this->redirect('/teacher/profile');
+                    echo "success";
                 }
+                return;
 
             }
 
-            //$session->setFlash("errors", $errors);
-            //header('Location: ' . $_SERVER['HTTP_REFERER']);
+            $session->setFlash("errors", $errors);
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
             echo json_encode($errors);
         }else{
             echo "failed";
@@ -292,8 +281,6 @@ class EnseignantController extends Controller
 
     public function modifyArticle()
     {
-        $_POST['content'] = $_POST['contente'];
-        unset($_POST['contente']);
         $validator          = new Validator();
         $data               = $validator->sanitize($_POST);
         $errors['error']    = $validator->require($data);
@@ -314,13 +301,6 @@ class EnseignantController extends Controller
 
     public function deleteArticle()
     {
-        $picname = ArticleModel::getByQuery("SELECT picture FROM article WHERE articleID=".$_POST['articleID']);
-        $lastPic = dirname(__DIR__) . "/public/Storage/uploads/articles/".$picname[0]['picture'];
-
-        if(!empty($lastPic))
-        {
-            unlink($lastPic);
-        }
         if(ArticleModel::delete($_POST['articleID']))
         {
             echo json_encode("deleted");
@@ -329,35 +309,35 @@ class EnseignantController extends Controller
         }
     }
 
-    public function modifyArticleImg()
-    {
-        if(empty($_FILES['pictures']['name'][0]))
-        {
-            $this->redirect($_SERVER['HTTP_REFERER']);
-        }
-
-
-        $pic = Helper::UploadFile('articles',rand(50,1000));
-        if(isset($pic['errors'][0]))
-        {
-            $this->redirect($_SERVER['HTTP_REFERER']);
-        }else{
-            $picname = ArticleModel::getByQuery("SELECT picture FROM article WHERE articleID=".$_POST['articleID']);
-            $lastPic = dirname(__DIR__) . "/public/Storage/uploads/articles/".$picname[0]['picture'];
-
-            if(!empty($lastPic))
-            {
-                unlink($lastPic);
-            }
-            $pice['picture'] = $pic['uploaded'][0];
-            if(ArticleModel::UpdateColumns($_POST['articleID'],$pice))
-            {
-                $this->redirect($_SERVER['HTTP_REFERER']);
-            }else{
-                $this->redirect($_SERVER['HTTP_REFERER']);
-            }
-        }
-    }
+/**    public function modifyArticleImg() **/
+//    {
+//        if(empty($_FILES['pictures']['name'][0]))
+//        {
+//            $this->redirect($_SERVER['HTTP_REFERER']);
+//        }
+//
+//
+//        $pic = Helper::UploadFile('articles',rand(50,1000));
+//        if(isset($pic['errors'][0]))
+//        {
+//            $this->redirect($_SERVER['HTTP_REFERER']);
+//        }else{
+//            $picname = ArticleModel::getByQuery("SELECT picture FROM article WHERE articleID=".$_POST['articleID']);
+//            $lastPic = dirname(__DIR__) . "/public/Storage/uploads/articles/".$picname[0]['picture'];
+//
+//            if(!empty($lastPic))
+//            {
+//                unlink($lastPic);
+//            }
+//            $pice['picture'] = $pic['uploaded'][0];
+//            if(ArticleModel::UpdateColumns($_POST['articleID'],$pice))
+//            {
+//                $this->redirect($_SERVER['HTTP_REFERER']);
+//            }else{
+//                $this->redirect($_SERVER['HTTP_REFERER']);
+//            }
+//        }
+//    }
 
     public function experiencePro()
     {

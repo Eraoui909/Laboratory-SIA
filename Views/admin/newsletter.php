@@ -42,7 +42,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($params['inscriptions'] as $inscri): ?>
+                            <?php if (isset($params['inscriptions']) && is_array($params['inscriptions'])) foreach ($params['inscriptions'] as $inscri): ?>
                                 <tr>
                                     <td><?= $inscri['id'] ?></td>
                                     <td><?= $inscri['email'] ?></td>

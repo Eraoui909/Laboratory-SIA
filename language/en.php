@@ -55,6 +55,7 @@
         "enseignants"                   => "Teachers",
         "doctorants"                    => "PhD Students",
         "team"                          => "Team",
+        "journal"                       => "newspaper",
         "thematic"                      => "thematic",
         "presentation"                  => "Presentation",
         "moDePresident"                 => "President's word",
