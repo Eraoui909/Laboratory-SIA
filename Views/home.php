@@ -34,16 +34,19 @@
         News
     </div>
     <div class="marquee">
+
         <ul class="marquee-content-items">
+            <?php
+            $count = 0;
+            foreach ($params['marquee'] as $param):?>
             <li>
-                <a href="#">SICoM Organize a seminar under the theme : MODEL BASED DESIGN, Animated by Dr. ABDELILAH KADI (ALTEN MAROC)</a>
+                <a href="#"><?= $param['title']; ++$count; ?></a>
             </li>
-            <li>
-                <a href="#">Enseignements en présentiel : Emplois du temps Actualisés</a>
-            </li>
-            <li>
-                <a href="#">Item 3</a>
-            </li>
+            <?php
+            if($count === 3)
+                break;
+            endforeach; ?>
+
         </ul>
     </div>
 </div>
@@ -51,6 +54,8 @@
 <?php include_once "acceuil.php";?>
 
 <?php include_once "home_evenements.php";?>
+
+<?php include_once "lastArticles.php";?>
 
 
 

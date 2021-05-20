@@ -539,7 +539,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat; }
 
-@media (min-width: 576px) {
+@media (min-width: 800px) {
   .home__sector li > div {
     height: 100%; } }
 .home__sector li > div > div {
@@ -547,7 +547,7 @@ body {
   padding: 1rem;
   width: 100%; }
 
-@media (max-width: 576px) {
+@media (max-width: 800px) {
   .home__sector li > div > div {
     display: flex;
     align-items: center; } }
@@ -556,7 +556,7 @@ body {
   display: block;
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.75); }
 
-@media (min-width: 576px) {
+@media (min-width: 800px) {
   .home__sector li {
     margin: 0; }
 
@@ -593,7 +593,7 @@ body {
   font-size: 1.4rem;
   font-weight: 900; }
 
-@media (min-width: 576px) {
+@media (min-width: 800px) {
   h6, .h6-like {
     font-size: 1.6rem; } }
 .h4-like, .h6-like, blockquote, label, ul, ol {
@@ -650,6 +650,41 @@ body {
   .title-flex-w-img .title-h {
     display: inline-block;
     margin-left: 0.5rem; } }
+/********************************************************************************************************************/
+/********************************************************************************************************************/
+/************************************ last articles style 20-05-2021         ****************************************/
+/********************************************************************************************************************/
+/********************************************************************************************************************/
+.ha-lastarticles-container {
+  position: relative; }
+  .ha-lastarticles-container .ha-lastarticles {
+    position: relative;
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #E9E9E9; }
+    .ha-lastarticles-container .ha-lastarticles .ha-title {
+      font-size: 3vh;
+      margin: 10px; }
+    .ha-lastarticles-container .ha-lastarticles .ha-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap; }
+      .ha-lastarticles-container .ha-lastarticles .ha-content .ha-article {
+        margin: 10px;
+        width: 45%;
+        background-color: #F9F9F9;
+        padding: 10px;
+        box-shadow: 0px 0px 5px 3px #f0f0f0; }
+        .ha-lastarticles-container .ha-lastarticles .ha-content .ha-article p {
+          color: black;
+          font-size: 19px; }
+          .ha-lastarticles-container .ha-lastarticles .ha-content .ha-article p span {
+            color: #21759b; }
+      @media (max-width: 700px) {
+        .ha-lastarticles-container .ha-lastarticles .ha-content .ha-article {
+          width: 100%; } }
+
 @-webkit-keyframes show-slider {
   0% {
     -webkit-transform: scale(1.2);

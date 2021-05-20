@@ -29,6 +29,7 @@ class SiteController extends Controller
 
     public function homePage()
     {
+        $data['marquee'] = ArticleModel::getByQuery('SELECT articleID,title,DATE_FORMAT(date, "%W %M %e %Y") as "date" FROM article order by date');
         $data['title'] = "Home";
         $data['style'] = ['marquee.css', 'Home_Style.css'];
         $data['script'] = ['CokiesHandler.js','marquee.js', 'HomeScript.js', 'navbar.js'];

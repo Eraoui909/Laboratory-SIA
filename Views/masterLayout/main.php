@@ -23,6 +23,9 @@ echo "</pre>";
     -->
     <!-- Font Awesome -->
 
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
     <!-- SweetAlert2  -->
     <link rel="stylesheet" href="/adminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 
@@ -56,8 +59,9 @@ echo "</pre>";
 
     <!--
     <link rel="stylesheet" href="/css/marquee.css">
-    <link rel="stylesheet" href="/css/Home_Style.css">
     -->
+    <link rel="stylesheet" href="/css/Home_Style.css">
+
 
     <!-- -------------------------------------------- -->
     <!-- -------------------------------------------- -->
