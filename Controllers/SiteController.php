@@ -118,6 +118,7 @@ class SiteController extends Controller
     public function motDePresidentPage()
     {
         $data['title'] = "mot de president";
+        $data['style'] = ["Home_Style.css"];
         return $this->render('motDePresident',$data);
     }
 
@@ -142,18 +143,21 @@ class SiteController extends Controller
     public function conditionSoutnancePage()
     {
         $arr['title'] = "Condition de outnance";
+        $arr['style'] = ['Home_Style.css'];
         return $this->render('conditionSoutnance', $arr);
     }
 
     public function presentationPage()
     {
         $arr['title'] = "PresentationP de labo";
+        $arr['style'] = ['Home_Style.css'];
         return $this->render('presentation',$arr);
     }
 
     public function evenementsPage()
     {
         $arr['title'] = "évenements";
+        $arr['style'] = ['Home_Style.css'];
         return $this->render('evenements',$arr);
     }
 

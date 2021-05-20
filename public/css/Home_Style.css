@@ -606,6 +606,11 @@ body {
   text-shadow: 0 0 4px #000000bf;
   font-size: medium; }
 
+.btn--primary div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
 .btn--primary, .button--primary {
   background-color: #a8d511;
   color: #000;

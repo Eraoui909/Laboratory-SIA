@@ -17,23 +17,32 @@ echo "</pre>";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="/Storage/Statics/images/logoLaboFst(35X35).png">
 
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="/adminLTE/plugins/fontawesome-free/css/all.min.css">
-    <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="/adminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 
-    <!-- Google Font: Source Sans Pro -->
+    <!-- Google Font: Source Sans Pro
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    -->
+    <!-- Font Awesome -->
+
+    <!-- SweetAlert2
+    <link rel="stylesheet" href="/adminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    -->
+
+    <!-- Google Font: Source Sans Pro
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    -->
 
     <!-- Theme style -->
-    <link rel="stylesheet" href="/adminLTE/dist/css/adminlte.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="/js/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="/adminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="/adminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <?php if (isset($params['adminlte']) && $params['adminlte'] === true): ?>
+        <link rel="stylesheet" href="/adminLTE/plugins/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="/adminLTE/dist/css/adminlte.min.css">
+    <?php endif; ?>
 
+    <!-- DataTables -->
+    <?php if (isset($params['datatable']) && $params['datatable'] === true): ?>
+        <link rel="stylesheet" href="/js/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="/adminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+        <link rel="stylesheet" href="/adminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <?php endif; ?>
 
 
     <link rel="stylesheet" href="/css/Footer_Style.css">
@@ -45,9 +54,10 @@ echo "</pre>";
     endif;
     ?>
 
-
+    <!--
     <link rel="stylesheet" href="/css/marquee.css">
     <link rel="stylesheet" href="/css/Home_Style.css">
+    -->
 
     <!-- -------------------------------------------- -->
     <!-- -------------------------------------------- -->
@@ -57,7 +67,15 @@ echo "</pre>";
 
     <?php }?>
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+    <?php
+        if(isset($params['script']) && in_array('ckeditor.js',$params['script']))
+        {
+
+            echo '<script src="/js/ckeditor.js"></script>';
+            unset($params['script']['ckeditor']);
+
+        }
+    ?>
 
 
 
@@ -245,6 +263,7 @@ echo "</pre>";
 <div id="load">
     <!-- https://miro.medium.com/max/1600/1*CsJ05WEGfunYMLGfsT2sXA.gif -->
     <img src="https://i.gifer.com/1LBN.gif"  alt="">
+
 </div>
 <div class="ha-newletter-container ha-global-popup-newsletter-active">
     <div class="ha-newsletter-content">
@@ -281,21 +300,27 @@ if($null != true)
 <script src="/js/jquery.comjquery-3.5.1.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/font-awesome-4.7.0/all.min.js"></script>
+
 <!-- AdminLTE App -->
-<script src="/adminLTE/dist/js/adminlte.js"></script>
+<?php if (isset($params['adminlte']) && $params['adminlte'] === true): ?>
+    <script src="/adminLTE/dist/js/adminlte.js"></script>
+<?php endif; ?>
+
+
 <!-- DataTables  & Plugins -->
-<script src="/adminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/adminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="/adminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="/adminLTE/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="/adminLTE/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="/adminLTE/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="/adminLTE/plugins/jszip/jszip.min.js"></script>
-<script src="/adminLTE/plugins/pdfmake/pdfmake.min.js"></script>
-<script src="/adminLTE/plugins/pdfmake/vfs_fonts.js"></script>
-<script src="/adminLTE/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="/adminLTE/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="/adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<?php if (isset($params['datatable']) && $params['datatable'] === true): ?>
+    <script src="/adminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/adminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/adminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/adminLTE/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="/adminLTE/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/adminLTE/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="/adminLTE/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="/adminLTE/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="/adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<?php endif; ?>
+
+
 
 
 

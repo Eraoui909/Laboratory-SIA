@@ -512,6 +512,12 @@ body{
 }
 
 
+.btn--primary div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .btn--primary, .button--primary {
   background-color: #a8d511;
   color: #000;

@@ -109,8 +109,10 @@ class EnseignantController extends Controller
 
         $arr['admin']  = true;
         $arr['CV']  = true;
-        $arr['script'] = ['navbar.js','article.js'];
+        $arr['script'] = ['navbar.js','article.js','ckeditor'=>'ckeditor.js'];
         $arr['style']  = ['profile.css'];
+        $arr['datatable'] = true;
+        $arr['adminlte'] = true;
         return $this->render('/teachers/profile', $arr);
     }
 

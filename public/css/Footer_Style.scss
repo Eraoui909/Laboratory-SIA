@@ -21,6 +21,21 @@ $title-color:white;
     justify-content: space-between;
     color: white;
 
+    .ha-footer-head-sec4{
+      width: 150%;
+      ul{
+        li{
+          display: flex;
+          align-items: center;
+
+          a{
+            margin-left: 15px;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+
     @media only screen and (max-width: 800px) {
       flex-wrap: wrap;
       .ha-footer-head-sec2{
@@ -34,6 +49,7 @@ $title-color:white;
       .ha-footer-head-sec4{
         border-top: 0.5px solid gray;
         padding-top: 10px;
+
       }
     }
 

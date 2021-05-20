@@ -7,7 +7,7 @@
         <p>Consulter plus de <strong style="color: #A8D511">200</strong> articles</p>
         <div class="pop-up-search-box-input">
             <div class="div-1">
-                <input type="text" name="search-for-article" placeholder="le titre d'article..">
+                <input type="text" name="search-for-article" style="height: 100%" placeholder="le titre d'article..">
             </div>
             <div class="div-2">
                 <span>Recherche  </span><i class="fa fa-search"></i>

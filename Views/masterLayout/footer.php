@@ -82,7 +82,6 @@
 
     </div>
 
-    <hr>
 
     <div class="ha-footer-foot">
         <div class="ha-footer-foot-left">

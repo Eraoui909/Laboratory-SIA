@@ -18,7 +18,7 @@ session_start();
  * this is for multi language
  */
 if(!isset($_SESSION['lang'])){
-    $_SESSION['lang'] = "en";
+    $_SESSION['lang'] = "fr";
 }
 
 //unset($_SESSION['flash_messages']['error']['value'][0]);
@@ -32,6 +32,7 @@ include_once dirname(__DIR__) . "\language\\" . $langFile;
  */
 $app = new Application(dirname(__DIR__));
 
+//header("Cache-Control: max-age=31536000");
 
 /*
  * the db variable is an instance from Database class : connection to database

@@ -50,6 +50,14 @@ ul {
     display: flex;
     justify-content: space-between;
     color: white; }
+    .ha-footer .ha-footer-head .ha-footer-head-sec4 {
+      width: 150%; }
+      .ha-footer .ha-footer-head .ha-footer-head-sec4 ul li {
+        display: flex;
+        align-items: center; }
+        .ha-footer .ha-footer-head .ha-footer-head-sec4 ul li a {
+          margin-left: 15px;
+          line-height: 25px; }
     @media only screen and (max-width: 800px) {
       .ha-footer .ha-footer-head {
         flex-wrap: wrap; }
