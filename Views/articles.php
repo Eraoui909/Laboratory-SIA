@@ -20,9 +20,6 @@
         <h1>Les articles disponible </h1>
 
         <?php
-        echo "<pre>";
-            //print_r($params['articles']);
-        echo "</pre>";
         if (isset($params['articles']) && !empty($params['articles']))
             foreach ($params['articles'] as $param): ?>
                 <div class="ha-article-card">

@@ -9,9 +9,8 @@ class ArticleModel extends AbstractModel
     protected $id;
     protected $title;
     protected $description;
-    protected $content;
-    protected $teacher;
-    protected $picture;
+    protected $journal;
+    protected $author;
     protected $date;
 
     public static $tableName    ='article';
@@ -20,15 +19,14 @@ class ArticleModel extends AbstractModel
 
         'title'       => \PDO::PARAM_STR,
         'description' => \PDO::PARAM_STR,
-        'content'     => \PDO::PARAM_STR,
-        'teacher'     => \PDO::PARAM_INT,
-        'picture'     => \PDO::PARAM_STR,
+        'author'     => \PDO::PARAM_INT,
+        'journal'     => \PDO::PARAM_STR,
     );
 
     public static function getByPk($pk)
     {
         global $connect;
-        $sql = 'SELECT title, description, content, picture, date, nom, prenom FROM article, enseignant WHERE teacher = id && articleID = :pk';
+        $sql = "SELECT title, description, journal, date, nom, prenom FROM article, enseignant WHERE author = id && articleID = :pk";
         $stmt = $connect->prepare($sql);
         $stmt->bindValue(':pk', $pk);
         $stmt->execute();
@@ -76,33 +74,17 @@ class ArticleModel extends AbstractModel
     /**
      * @return mixed
      */
-    public function getContent()
+    public function getAuthor()
     {
-        return $this->content;
+        return $this->author;
     }
 
     /**
-     * @param mixed $content
+     * @param mixed $author
      */
-    public function setContent($content): void
+    public function setAuthor($author): void
     {
-        $this->content = $content;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTeacher()
-    {
-        return $this->teacher;
-    }
-
-    /**
-     * @param mixed $teacher
-     */
-    public function setTeacher($teacher): void
-    {
-        $this->teacher = $teacher;
+        $this->author = $author;
     }
 
     /**
@@ -135,6 +117,22 @@ class ArticleModel extends AbstractModel
     public function setPicture($picture): void
     {
         $this->picture = $picture;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getJournal()
+    {
+        return $this->journal;
+    }
+
+    /**
+     * @param mixed $journal
+     */
+    public function setJournal($journal): void
+    {
+        $this->journal = $journal;
     }
 
 

@@ -1,17 +1,17 @@
-    $('#article-table').DataTable({
+$('#article-table').DataTable({
     "processing": true,
     "responsive": true,
     "lengthChange": false,
     buttons: [
-{ extend: 'copy', className: 'datatableButton' },
-{ extend: 'csv', className: 'datatableButton',title: "SIA Laboratory" },
-{ extend: 'excel', className: 'datatableButton',title: "SIA Laboratory" },
-{ extend: 'pdf', className: 'datatableButton',title: "SIA Laboratory" },
-{
-    extend: 'print',
-    className: 'datatableButton',
-    title: "SIA Laboratory"
-},
+        { extend: 'copy', className: 'datatableButton' },
+        { extend: 'csv', className: 'datatableButton',title: "SIA Laboratory" },
+        { extend: 'excel', className: 'datatableButton',title: "SIA Laboratory" },
+        { extend: 'pdf', className: 'datatableButton',title: "SIA Laboratory" },
+        {
+            extend: 'print',
+            className: 'datatableButton',
+            title: "SIA Laboratory"
+        },
     ]
 }).buttons().container().appendTo('#card-ens-doc .col-md-6:eq(0)');
 
@@ -22,15 +22,17 @@
 
 $(".btn-article-modify-form").on('click',function (e){
     e.preventDefault();
-    console.log($(this).attr("data-id"));
+
     let id      = $(this).attr("data-id");
     let title   = $(this).attr("data-title");
     let desc    = $(this).attr("data-description");
-    let content = $(this).attr("data-content");
+    let journal = $(this).attr("data-journal");
+
     $(".article-id").val(id);
     $(".article-title").val(title);
+    $(".article-journal").val(journal);
     $(".article-description").text(desc);
-    YourEditor.setData(content);
+
 
 });
 
@@ -38,13 +40,11 @@ $('.modify-article-btn').on("click",function (e)
     {
         e.preventDefault();
 
-        let content = YourEditor.getData();
-
         //let files = $('#modify-file')[0].files;
 
         let form = $("#modify-article-form")[0];
         let data  = new FormData(form);
-        data.append("contente", content);
+
         //jQuery.each(files, function(i, file) {
         //    data.append('file-'+i, file);
         //});
@@ -101,7 +101,7 @@ $('.delete-article-btn').on("click",function (e)
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            let data = "articleID="+$('.delete-article-btn').attr("data-id");
+            let data = "articleID=" + $('.delete-article-btn').attr("data-id");
             $.ajax({
                 method:"post",
                 url:"/teacher/deleteArticle",
