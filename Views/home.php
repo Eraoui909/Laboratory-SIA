@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="/css/HomeScript.css">
+<?php global $GLOBAL_DIR ?>
+<link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/css/HomeScript.css">
 <!--https://via.placeholder.com/750x300-->
 
 <div id="header">

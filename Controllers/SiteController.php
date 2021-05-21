@@ -38,8 +38,9 @@ class SiteController extends Controller
 
     public function loginPage()
     {
+        global $GLOBAL_DIR;
         if (isset($_SESSION['token']['ens']) || isset($_SESSION['token']['doc']))
-            $this->redirect('/');
+            $this->redirect(  $GLOBAL_DIR.'/');
 
         $params = [
             "title" => "Login",
@@ -51,8 +52,9 @@ class SiteController extends Controller
 
     public function logoutPage()
     {
+        global $GLOBAL_DIR ;
         unset($_SESSION['token']);
-        $this->redirect('/');
+        $this->redirect($GLOBAL_DIR.'/');
     }
 
     public function Login()
@@ -69,9 +71,10 @@ class SiteController extends Controller
             {
                 if($this->verify_hashed_undecrypted_data($data['password'], $result[0]['password']))
                 {
+                    global $GLOBAL_DIR ;
                     $groupID = $result[0]['ens'] ?? $result[0]['doc'];
                     $_SESSION['token'][$groupID] = $result[0];
-                    $this->redirect('/');
+                    $this->redirect($GLOBAL_DIR.'/');
                 }
             }
 

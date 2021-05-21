@@ -1,17 +1,17 @@
-
+<?php global $GLOBAL_DIR ?>
 
 <div class="limiter">
     <div class="container-login100">
 
         <div class="wrap-login100">
             <div class="retour">
-                <a class="loginAnch" href="/"><i class="fas fa-arrow-left"></i></a>
+                <a class="loginAnch" href="<?php echo $GLOBAL_DIR ?>/"><i class="fas fa-arrow-left"></i></a>
             </div>
             <div class="login100-pic js-tilt" data-tilt>
-                <img src="/Storage/Statics/images/login.png" alt="IMG">
+                <img src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/images/login.png" alt="IMG">
             </div>
 
-            <form class="login100-form validate-form" method="post" action="/login">
+            <form class="login100-form validate-form" method="post" action="<?php echo $GLOBAL_DIR ?>/login">
                 <span class="login100-form-title">
                     Member Login
                 </span>
@@ -52,5 +52,5 @@
     </div>
 </div>
 <!--===============================================================================================-->
-<script src="js/login.js"></script>
+<script src="<?php echo $GLOBAL_DIR ?>/js/login.js"></script>
 

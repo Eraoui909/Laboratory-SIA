@@ -32,7 +32,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="/teacher/modifyArticleImg" method="post" enctype="multipart/form-data">
+                <form action="<?php echo $GLOBAL_DIR ?>/teacher/modifyArticleImg" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                         <input type="file" name="pictures[]" id="">
                         <input type="hidden" class="articleIDHidden" name="articleID" value="">

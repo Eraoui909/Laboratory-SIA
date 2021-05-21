@@ -1,11 +1,14 @@
 <?php global $lang; ?>
 
 <?php
+global $GLOBAL_DIR;
 /*
 echo "<pre>";
-print_r($params);
+print_r(realpath(''));
 echo "</pre>";
+exit();
 */
+
 
 ?>
 
@@ -15,7 +18,7 @@ echo "</pre>";
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="/Storage/Statics/images/logoLaboFst(35X35).png">
+    <link rel="shortcut icon" href="<?php echo $GLOBAL_DIR ?>/Storage/Statics/images/logoLaboFst(35X35).png">
 
 
     <!-- Google Font: Source Sans Pro
@@ -24,10 +27,10 @@ echo "</pre>";
     <!-- Font Awesome -->
 
     <!-- bootstrap -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/css/bootstrap.min.css">
 
     <!-- SweetAlert2  -->
-    <link rel="stylesheet" href="/adminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 
 
     <!-- Google Font: Source Sans Pro
@@ -36,19 +39,19 @@ echo "</pre>";
 
     <!-- Theme style -->
     <?php if (isset($params['adminlte']) && $params['adminlte'] === true): ?>
-        <link rel="stylesheet" href="/adminLTE/plugins/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="/adminLTE/dist/css/adminlte.min.css">
+        <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/adminLTE/dist/css/adminlte.min.css">
     <?php endif; ?>
 
     <!-- DataTables -->
     <?php if (isset($params['datatable']) && $params['datatable'] === true): ?>
-        <link rel="stylesheet" href="/js/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="/adminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-        <link rel="stylesheet" href="/adminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+        <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/js/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+        <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <?php endif; ?>
 
 
-    <link rel="stylesheet" href="/css/Footer_Style.css">
+    <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/css/Footer_Style.css">
 
     <!-- STYLESHEETS FOR CV TEMPLATE-->
     <?php
@@ -60,14 +63,14 @@ echo "</pre>";
     <!--
     <link rel="stylesheet" href="/css/marquee.css">
     -->
-    <link rel="stylesheet" href="/css/Home_Style.css">
+    <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/css/Home_Style.css">
 
 
     <!-- -------------------------------------------- -->
     <!-- -------------------------------------------- -->
     <!-- -------------------------------------------- -->
     <?php if (isset($params['style'])) foreach ($params['style'] as $style) {?>
-        <link rel="stylesheet" href="/css/<?= $style?>">
+        <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/css/<?= $style?>">
 
     <?php }?>
 
@@ -75,7 +78,8 @@ echo "</pre>";
         if(isset($params['script']) && in_array('ckeditor.js',$params['script']))
         {
 
-            echo '<script src="/js/ckeditor.js"></script>';
+            ?><script src="<?php echo $GLOBAL_DIR ?>/js/ckeditor.js"></script>';
+    <?php
             unset($params['script']['ckeditor']);
 
         }
@@ -301,27 +305,27 @@ if($null != true)
     include_once "footer.php";
 ?>
 
-<script src="/js/jquery.comjquery-3.5.1.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/font-awesome-4.7.0/all.min.js"></script>
+<script src="<?php echo $GLOBAL_DIR ?>/js/jquery.comjquery-3.5.1.min.js"></script>
+<script src="<?php echo $GLOBAL_DIR ?>/js/bootstrap.min.js"></script>
+<script src="<?php echo $GLOBAL_DIR ?>/font-awesome-4.7.0/all.min.js"></script>
 
 <!-- AdminLTE App -->
 <?php if (isset($params['adminlte']) && $params['adminlte'] === true): ?>
-    <script src="/adminLTE/dist/js/adminlte.js"></script>
+    <script src="<?php echo $GLOBAL_DIR ?>/adminLTE/dist/js/adminlte.js"></script>
 <?php endif; ?>
 
 
 <!-- DataTables  & Plugins -->
 <?php if (isset($params['datatable']) && $params['datatable'] === true): ?>
-    <script src="/adminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="/adminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="/adminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="/adminLTE/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-    <script src="/adminLTE/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="/adminLTE/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-    <script src="/adminLTE/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-    <script src="/adminLTE/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-    <script src="/adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <script src="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <?php endif; ?>
 
 
@@ -329,12 +333,12 @@ if($null != true)
 
 
 <!-- SweetAlert2 -->
-<script src="/adminLTE/plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/sweetalert2/sweetalert2.min.js"></script>
 
-<script src="/js/navbar.js"></script>
+<script src="<?php echo $GLOBAL_DIR ?>/js/navbar.js"></script>
 
 <?php if (isset($params['script'])) foreach ($params['script'] as $script) {?>
-    <script src="/js/<?= $script?>"></script>
+    <script src="<?php echo $GLOBAL_DIR ?>/js/<?= $script?>"></script>
 <?php }?>
 
 <script>

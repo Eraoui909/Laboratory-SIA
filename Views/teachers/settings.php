@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="post" action="/teacher/profile" enctype="multipart/form-data">
+<form class="form-horizontal" method="post" action="<?php echo $GLOBAL_DIR ?>/teacher/profile" enctype="multipart/form-data">
 
     <div class="row">
         <div class="col-sm-2"></div>
@@ -79,7 +79,7 @@
         <div class="offset-sm-2 col-sm-10">
             <div class="checkbox">
                 <label>
-                    <a href="/teacher/deletePic" class="delete-path"> <?= $lang['deletePic'] ?></a>
+                    <a href="<?php echo $GLOBAL_DIR ?>/teacher/deletePic" class="delete-path"> <?= $lang['deletePic'] ?></a>
                 </label>
             </div>
         </div>

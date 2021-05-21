@@ -1,3 +1,4 @@
+<?php global $GLOBAL_DIR ?>
 <style>
     .teachers-title{
         position: absolute;
@@ -35,7 +36,7 @@
     <div class="card">
         <div class="header-card">
             <div class="profile-img">
-                <img src="/Storage/uploads/users/<?= $param['avatar'] ?>" height="100px" style="border-radius: 50%">
+                <img src="<?php echo $GLOBAL_DIR ?>/Storage/uploads/users/<?= $param['avatar'] ?>" height="100px" style="border-radius: 50%">
             </div>
             <div class="header-content">
                 <h3 id="filter-head"><?= $param['prenom'] ." ". $param['nom'] ?></h3>
@@ -60,7 +61,7 @@
 
                 </tr>
             </table>
-            <a href="/teacher/cv/downoald?cv=<?= $param['id'] ?>">
+            <a href="<?php echo $GLOBAL_DIR ?>/teacher/cv/downoald?cv=<?= $param['id'] ?>">
 					<span class="show-cv">
 						Show CV
 					</span>

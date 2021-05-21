@@ -1,4 +1,5 @@
 <?php $data = []; global $lang;
+global $GLOBAL_DIR;
 /*
 echo "<pre>";
     print_r($_SESSION['token']['ens']);
@@ -48,7 +49,7 @@ echo "</pre>";
                         <div class="card-body box-profile">
                             <div class="text-center">
                                 <img class="profile-user-img img-fluid img-circle"
-                                     src="<?= '/Storage/uploads/users/' . $avatar;  ?>"
+                                     src="<?=  $GLOBAL_DIR .'/Storage/uploads/users/' . $avatar;  ?>"
                                      alt="User profile picture">
                             </div>
 
@@ -138,7 +139,7 @@ echo "</pre>";
 
                                 <!-- /.tab-pane for CV -->
                                 <div class="tab-pane" style="overflow: hidden" id="cv">
-                                    <a href="/teacher/cv/downoald">
+                                    <a href="<?php echo $GLOBAL_DIR ?>/teacher/cv/downoald">
                                         <i class="fa fa-download" style="color: #3659c1"></i>
                                     </a>
                                     <?php include_once "cv.php";?>

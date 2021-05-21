@@ -3,7 +3,7 @@
 
 <div class="container">
     <center style="padding: 10px"><h3>Ajouter experience</h3></center>
-    <form action="/teacher/diplome" method="post">
+    <form action="<?php echo $GLOBAL_DIR ?>/teacher/diplome" method="post">
 
         <div class="form-group row">
             <label for="" class="col-sm-2 col-form-label"><?= $lang['diplome_institut'] ?></label>

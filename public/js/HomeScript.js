@@ -1,3 +1,12 @@
+let globalDIR = window.location.href;
+
+if(globalDIR.includes('public'))
+{
+    globalDIR = "/public";
+}else{
+    globalDIR = "";
+}
+
 const sliders = document.querySelectorAll('.slider');
 const pagination_disks = document.querySelectorAll('.pagination ul li');
 let index = 0;
@@ -101,7 +110,7 @@ $(".ha-abonner-newsletter").on("click",function (e) {
     }else{
         $.ajax({
             method: "post",
-            url: "/newsletter/inscription",
+            url: globalDIR+"/newsletter/inscription",
             data:"email="+emaill,
             datatype: "json",
             success:function (data){
@@ -120,7 +129,7 @@ $(".ha-abonner-newsletter").on("click",function (e) {
                     );
                     c.setCookie("newsletter_registered","true",30);
                     setTimeout(function (){
-                        window.location.replace("/");
+                        window.location.replace(globalDIR+"/");
                     },1000);
                 }else if(data == '"repeat"'){
                     Swal.fire({
@@ -130,7 +139,7 @@ $(".ha-abonner-newsletter").on("click",function (e) {
                     });
                     c.setCookie("newsletter_registered","true",30);
                     setTimeout(function (){
-                        window.location.replace("/");
+                        window.location.replace(globalDIR+"/");
                     },1000);
                 }
             }

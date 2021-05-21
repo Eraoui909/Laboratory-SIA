@@ -1,6 +1,7 @@
 
 <?php global $lang;
-    //echo "<pre>";
+global $GLOBAL_DIR;
+//echo "<pre>";
     //print_r($experiences);
     //echo "</pre>";
 ?>
@@ -17,7 +18,7 @@
 
 
             <div class="avatar">
-                <img src="<?= '/Storage/uploads/users/' . $avatar;  ?>" alt="avatar">
+                <img src="<?=  $GLOBAL_DIR .'/Storage/uploads/users/' . $avatar;  ?>" alt="avatar">
             </div>
 
             <div class="name">

@@ -13,6 +13,9 @@ use app\core\Database;
 
 require_once __DIR__ . '\..\vendor\autoload.php';
 
+global $GLOBAL_DIR;
+$GLOBAL_DIR = ''; // /public
+
 session_start();
 /*
  * this is for multi language
@@ -20,6 +23,7 @@ session_start();
 if(!isset($_SESSION['lang'])){
     $_SESSION['lang'] = "fr";
 }
+
 
 //unset($_SESSION['flash_messages']['error']['value'][0]);
 //exit;

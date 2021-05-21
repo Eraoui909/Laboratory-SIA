@@ -4,6 +4,7 @@ echo "<pre>";
 print_r($params);
 echo "</pre>";
 */
+global $GLOBAL_DIR;
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -13,19 +14,19 @@ echo "</pre>";
     <title><?php echo $title ?></title>
     <meta name="description" content="Blvck - Personal vCard & Resume Template">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="/Storage/Statics/images/logoLaboFst(35X35).png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $GLOBAL_DIR ?>/Storage/Statics/images/logoLaboFst(35X35).png">
 
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/assets/bootstrap/css/bootstrap.min.css" type="text/css" media="all">
 
-    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" type="text/css" media="all">
+    <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/assets/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/assets/css/font-awesome.min.css" type="text/css" media="all">
 
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800" rel="stylesheet">
 
-    <script src="/js/html2pdf.bundle.js"></script>
+    <script src="<?php echo $GLOBAL_DIR ?>/js/html2pdf.bundle.js"></script>
 
     <style>
         .downoald-btn{

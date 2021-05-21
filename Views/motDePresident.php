@@ -1,10 +1,11 @@
+<?php global $GLOBAL_DIR ?>
 <style>
     /***********************/
     /**** Mot de Doyen *****/
     /***********************/
 
     body{
-        background-image: url("/Storage/statics/images/neural-background.jpg");
+        background-image: url("<?php echo $GLOBAL_DIR ?>/Storage/statics/images/neural-background.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
@@ -62,7 +63,7 @@
     <h1>Mot de president</h1>
     <div class="mot-title">
         <div>
-            <img src="/Storage/uploads/users/avatar.png" width="150px" height="150px" alt="photo_de_president">
+            <img src="<?php echo $GLOBAL_DIR ?>/Storage/uploads/users/avatar.png" width="150px" height="150px" alt="photo_de_president">
         </div>
         <div >
         </div>

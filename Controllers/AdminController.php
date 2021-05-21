@@ -25,8 +25,10 @@ class AdminController extends Controller
 
     public function dashboard()
     {
+        global $GLOBAL_DIR ;
+
         if(!isset($_SESSION['token']['admin'])) {
-            $this->redirect('/admin/login');
+            $this->redirect($GLOBAL_DIR.'/admin/login');
         }
         $nbrOfDoctorant     = DoctorantModel::getCountTable();
         $nbrOfEnseignant    = EnseignantModel::getCountTable();
@@ -41,8 +43,9 @@ class AdminController extends Controller
 
     public function registerPage()
     {
+        global $GLOBAL_DIR ;
         if(isset($_SESSION['token']['admin'])) {
-            $this->redirect('/admin/dashboard');
+            $this->redirect($GLOBAL_DIR.'/admin/dashboard');
         }
         return $this->renderEmpty('admin/register', []);
     }
@@ -101,14 +104,17 @@ class AdminController extends Controller
 
     public function loginPage()
     {
+        global $GLOBAL_DIR ;
         if(isset($_SESSION['token']['admin'])){
-            $this->redirect('/admin/dashboard');
+            $this->redirect($GLOBAL_DIR.'/admin/dashboard');
         }
         return $this->renderEmpty('admin/login',[]);
     }
 
     public function loginHandler()
     {
+        global $GLOBAL_DIR ;
+
         $validator = new Validator();
         $session   = new Session();
 
@@ -124,7 +130,7 @@ class AdminController extends Controller
                 if($this->verify_hashed_undecrypted_data($data['password'], $result[0]['password'])){
 
                     $_SESSION['token']['admin'] = $result[0];
-                    $this->redirect('/admin/dashboard');
+                    $this->redirect($GLOBAL_DIR.'/admin/dashboard');
                 }else{
 
                     $session->setFlash("error", ['wrong password']);
@@ -141,20 +147,24 @@ class AdminController extends Controller
 
     public function logoutHandler()
     {
+        global $GLOBAL_DIR ;
         unset($_SESSION['token']['admin']);
-        $this->redirect("/admin/login");
+        $this->redirect($GLOBAL_DIR."/admin/login");
     }
 
     public function profilePage()
     {
+        global $GLOBAL_DIR ;
         if(!isset($_SESSION['token']['admin'])) {
-            $this->redirect('/admin/login');
+            $this->redirect($GLOBAL_DIR.'/admin/login');
         }
         return $this->renderAdmin('profile', $_SESSION['token']['admin']);
     }
 
     public function updateProfile()
     {
+        global $GLOBAL_DIR ;
+
         $session = new Session();
         $validator = new validator();
         $tel = $_POST['tel'] ?? '';
@@ -191,7 +201,7 @@ class AdminController extends Controller
                     $_SESSION['token']['admin']['tel']    = $tel;
                     $_SESSION['token']['admin']['avatar'] = $avatar;
 
-                    $this->redirect('/admin/profile');
+                    $this->redirect($GLOBAL_DIR.'/admin/profile');
                 }
                 return;
 
@@ -205,20 +215,23 @@ class AdminController extends Controller
     }
 
     public function deletePicture(){
+        global $GLOBAL_DIR ;
         $data = array(
             'avatar' => 'avatar.png'
         );
         if (AdminsModel::UpdateColumns($_SESSION['token']['admin']['id'], $data)){
             $_SESSION['token']['admin']['avatar'] = 'avatar.png';
-            $this->redirect('/admin/profile');
+            $this->redirect($GLOBAL_DIR.'/admin/profile');
         }
 
     }
 
     public function TeamsPage()
     {
+        global $GLOBAL_DIR ;
+
         if(!isset($_SESSION['token']['admin'])){
-            $this->redirect('/admin/login');
+            $this->redirect($GLOBAL_DIR.'/admin/login');
         }
 
         $teachers = ['teacher' => ''];

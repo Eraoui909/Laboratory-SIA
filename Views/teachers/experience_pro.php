@@ -2,7 +2,7 @@
 
 <div class="container">
     <center style="padding: 10px"><h3>Ajouter experience</h3></center>
-    <form action="/teacher/experiencePro" method="post">
+    <form action="<?php echo $GLOBAL_DIR ?>/teacher/experiencePro" method="post">
 
         <div class="form-group row">
             <label for="" class="col-sm-2 col-form-label"><?= $lang['date_experience_debut'] ?></label>

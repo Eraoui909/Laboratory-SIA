@@ -15,8 +15,10 @@ class DoctorantController extends Controller
     use Helper;
     public function doctorantPage()
     {
+        global $GLOBAL_DIR ;
+
         if(!isset($_SESSION['token']['admin'])){
-            $this->redirect('/admin/login');
+            $this->redirect($GLOBAL_DIR.'/admin/login');
         }
         $data = DoctorantModel::getAll();
         return $this->renderAdmin('doctorant', $data);

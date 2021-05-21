@@ -1,3 +1,13 @@
+let globalDIR = window.location.href;
+
+if(globalDIR.includes('public'))
+{
+    globalDIR = "/public";
+}else{
+    globalDIR = "";
+}
+
+
 $('#article-table').DataTable({
     "processing": true,
     "responsive": true,
@@ -52,7 +62,7 @@ $('.modify-article-btn').on("click",function (e)
         $.ajax({
             type        : "post",
             enctype     : "multipart/form-data",
-            url         : "/teacher/modifyArticle",
+            url         : globalDIR+"/teacher/modifyArticle",
             data        : data,
             datatype    : "json",
             processData : false,
@@ -72,7 +82,7 @@ $('.modify-article-btn').on("click",function (e)
                         timer: 1500
                     })
                     setTimeout(function (){
-                        window.location.replace("/teacher/profile");
+                        window.location.replace(globalDIR+"/teacher/profile");
                     },1000);
                 }else{
                     Swal.fire({
@@ -104,7 +114,7 @@ $('.delete-article-btn').on("click",function (e)
             let data = "articleID=" + $('.delete-article-btn').attr("data-id");
             $.ajax({
                 method:"post",
-                url:"/teacher/deleteArticle",
+                url:globalDIR+"/teacher/deleteArticle",
                 data:data,
                 dataType:"json",
                 success:function (data)
@@ -118,12 +128,12 @@ $('.delete-article-btn').on("click",function (e)
                             'success'
                         )
                         setTimeout(function (){
-                            window.location.replace("/teacher/profile");
+                            window.location.replace(globalDIR+"/teacher/profile");
                         },1000);
                     }else{
                         alert("ERROR");
                         setTimeout(function (){
-                            window.location.replace("/teacher/profile");
+                            window.location.replace(globalDIR+"/teacher/profile");
                         },1000);
                     }
                 }
@@ -175,7 +185,7 @@ $(document).on("click",".add-article-button",function (e){
         $.ajax({
             type:"post",
             enctype:"multipart/form-data",
-            url:"/teacher/addArticle",
+            url:globalDIR+"/teacher/addArticle",
             data:dataa,
             contentType: false,
             processData: false,
@@ -192,7 +202,7 @@ $(document).on("click",".add-article-button",function (e){
                         timer: 1500
                     })
                     setTimeout(function (){
-                        window.location.replace("/teacher/profile");
+                        window.location.replace(globalDIR+"/teacher/profile");
                     },1000);
 
                 }else if(data === "failed")
@@ -283,7 +293,7 @@ $(document).on("click",".add-article-button",function (e){
                 let data = "id="+id;
                 $.ajax({
                     method:"post",
-                    url:"/teacher/deleteExperiencePro",
+                    url:globalDIR+"/teacher/deleteExperiencePro",
                     data:data,
                     dataType:"json",
                     success:function (data)
@@ -297,12 +307,12 @@ $(document).on("click",".add-article-button",function (e){
                                 'success'
                             )
                             setTimeout(function (){
-                                window.location.replace("/teacher/profile");
+                                window.location.replace(globalDIR+"/teacher/profile");
                             },1000);
                         }else{
                             alert("ERROR");
                             setTimeout(function (){
-                                window.location.replace("/teacher/profile");
+                                window.location.replace(globalDIR+"/teacher/profile");
                             },1000);
                         }
                     }
@@ -341,7 +351,7 @@ $(document).on("click",".add-article-button",function (e){
                 let data = "id="+id;
                 $.ajax({
                     method:"post",
-                    url:"/teacher/deleteDiplome",
+                    url:globalDIR+"/teacher/deleteDiplome",
                     data:data,
                     dataType:"json",
                     success:function (data)
@@ -355,12 +365,12 @@ $(document).on("click",".add-article-button",function (e){
                                 'success'
                             )
                             setTimeout(function (){
-                                window.location.replace("/teacher/profile");
+                                window.location.replace(globalDIR+"/teacher/profile");
                             },1000);
                         }else{
                             alert("ERROR");
                             setTimeout(function (){
-                                window.location.replace("/teacher/profile");
+                                window.location.replace(globalDIR+"/teacher/profile");
                             },1000);
                         }
                     }

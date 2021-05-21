@@ -19,8 +19,9 @@ class EnseignantController extends Controller
 
     public function enseignantPage()
     {
+        global $GLOBAL_DIR ;
         if(!isset($_SESSION['token']['admin'])){
-            $this->redirect('/admin/login');
+            $this->redirect($GLOBAL_DIR.'/admin/login');
         }
         $data = EnseignantModel::getAll();
         return $this->renderAdmin('enseignant', $data);
@@ -98,9 +99,9 @@ class EnseignantController extends Controller
 
     public function teacherProfile()
     {
-
+        global $GLOBAL_DIR ;
         if (!isset($_SESSION['token']['ens']))
-            $this->redirect('/login');
+            $this->redirect($GLOBAL_DIR.'/login');
 
         $arr = $_SESSION['token']['ens'];
         $arr['title'] = $_SESSION['token']['ens']['nom'] . ' ' . $_SESSION['token']['ens']['prenom'];
@@ -177,7 +178,8 @@ class EnseignantController extends Controller
                     $_SESSION['token']['ens']['nbr_annee_experience']       = $data['nbr_annee_experience'];
                     $_SESSION['token']['ens']['qualification_principale']   = $data['qualification_principale'];
 
-                    $this->redirect('/teacher/profile');
+                    global $GLOBAL_DIR ;
+                    $this->redirect($GLOBAL_DIR.'/teacher/profile');
                 }
                 return;
 
@@ -201,16 +203,18 @@ class EnseignantController extends Controller
         }
 
         if (EnseignantModel::UpdateColumns($_SESSION['token']['ens']['id'], $data)){
+            global $GLOBAL_DIR ;
             $_SESSION['token']['ens']['avatar'] = 'avatar.png';
-            $this->redirect('/teacher/profile');
+            $this->redirect($GLOBAL_DIR.'/teacher/profile');
         }
 
     }
 
     public function teacherCV()
     {
+        global $GLOBAL_DIR ;
         if (!isset($_SESSION['token']['ens']))
-            $this->redirect('/login');
+            $this->redirect($GLOBAL_DIR.'/login');
 
         $arr = $_SESSION['token']['ens'];
         $arr['title'] = 'Download CV';
@@ -219,11 +223,12 @@ class EnseignantController extends Controller
 
     public function cvToPdf()
     {
+        global $GLOBAL_DIR ;
         if(isset($_GET['cv'])&& !empty($_GET['cv']))
         {
             if(!$arr = EnseignantModel::getByPk($_GET['cv'])[0])
             {
-                $this->redirect('/home');
+                $this->redirect($GLOBAL_DIR.'/home');
             }
 
             $arr['title'] = 'Download CV PDF';
@@ -231,7 +236,7 @@ class EnseignantController extends Controller
             $arr['diplomes']    = diplomesModel::getByQuery("SELECT * FROM diplomes WHERE personne_id=".$_GET['cv']);
         }else{
             if (!isset($_SESSION['token']['ens']))
-                $this->redirect('/login');
+                $this->redirect($GLOBAL_DIR.'/login');
 
             $arr = $_SESSION['token']['ens'];
             $arr['title'] = 'Download CV PDF';
@@ -246,6 +251,7 @@ class EnseignantController extends Controller
 
     public function addArticle()
     {
+        global $GLOBAL_DIR ;
         if( isset($_POST['journal']) )
         {
             $session = new Session();
@@ -265,7 +271,7 @@ class EnseignantController extends Controller
 
                 if($article->register()){
 
-                    $this->redirect('/teacher/profile');
+                    $this->redirect($GLOBAL_DIR.'/teacher/profile');
                     echo "success";
                 }
                 return;
@@ -343,6 +349,8 @@ class EnseignantController extends Controller
 
     public function experiencePro()
     {
+        global $GLOBAL_DIR ;
+
         $validator  = new Validator();
         $session    = new Session();
         $data   = $validator->sanitize($_POST);
@@ -361,11 +369,11 @@ class EnseignantController extends Controller
             if($experience->register())
             {
                 $session->setFlash('experience_error',[]);
-                $this->redirect("/teacher/profile");
+                $this->redirect($GLOBAL_DIR."/teacher/profile");
             }
         }else{
             $session->setFlash('experience_error',$errors);
-            $this->redirect("/teacher/profile");
+            $this->redirect($GLOBAL_DIR."/teacher/profile");
         }
     }
 
@@ -382,6 +390,8 @@ class EnseignantController extends Controller
 
     public function diplome()
     {
+        global $GLOBAL_DIR ;
+
         $validator = new Validator();
         $session = new Session();
         $data = $validator->sanitize($_POST);
@@ -400,11 +410,11 @@ class EnseignantController extends Controller
 
             if ($diplome->register()) {
                 $session->setFlash('experience_error', []);
-                $this->redirect("/teacher/profile");
+                $this->redirect($GLOBAL_DIR."/teacher/profile");
             }
         } else {
             $session->setFlash('experience_error', $errors);
-            $this->redirect("/teacher/profile");
+            $this->redirect($GLOBAL_DIR."/teacher/profile");
         }
 
     }

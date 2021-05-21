@@ -1,6 +1,6 @@
-
+<?php global $GLOBAL_DIR ?>
 <div class="container">
-    <form method="post" action="/public/contact">
+    <form method="post" action="<?php echo $GLOBAL_DIR ?>/contact">
         <div class="form-group">
             <label >Email address</label>
             <input type="email" name="email" class="form-control" >

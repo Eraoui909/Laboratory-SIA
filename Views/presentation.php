@@ -1,6 +1,7 @@
+<?php global $GLOBAL_DIR ?>
 <style>
     body{
-        background-image: url("/Storage/statics/images/neural-background.jpg");
+        background-image: url(<?php echo $GLOBAL_DIR ?>"/Storage/statics/images/neural-background.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;

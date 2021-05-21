@@ -1,4 +1,4 @@
-<form class="form-horizontal add-article-form" method="post" action="/teacher/addArticle" enctype="multipart/form-data">
+<form class="form-horizontal add-article-form" method="post" action="<?php echo $GLOBAL_DIR ?>/teacher/addArticle" enctype="multipart/form-data">
 
     <div class="row">
         <div class="col-sm-2"></div>

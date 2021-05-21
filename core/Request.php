@@ -9,13 +9,21 @@ class Request
 
     public function getPath()
     {
+        global $GLOBAL_DIR;
         $realPath   = $_SERVER["REQUEST_URI"]?:"/";
         $position   = strpos($realPath,'?');
         if($position)
         {
+
             $path = substr($realPath ,0,$position);
+            if(strpos($GLOBAL_DIR, 'public') !== false){
+                $path = str_replace('/public','',$path);
+            }
             return $path;
         }else{
+            if(strpos($GLOBAL_DIR, 'public') !== false) {
+                $realPath = str_replace('/public', '', $realPath);
+            }
             return $realPath;
         }
     }
