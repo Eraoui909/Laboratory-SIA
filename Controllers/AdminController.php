@@ -237,15 +237,19 @@ class AdminController extends Controller
         $teachers = ['teacher' => ''];
 
         $data = TeamModel::getAll() ? TeamModel::getAll() : [];
-
         foreach ($data as $index => $equipe){
 
             foreach (TeamModel::getTeachers($equipe['equipeID']) as $teacher){
                 $teachers['teacher'] .= $teacher['nom'] . ' ' . $teacher['prenom'] . ', ';
+
             }
+
             $teachers['teacher'] = trim($teachers['teacher'], ', ');
+
             $data[$index] = array_merge($data[$index], $teachers);
+            $teachers =['teacher' => ''];
         }
+
 
         $params['teams'] = $data;
         $params['ens']   = EnseignantModel::getAll() ? EnseignantModel::getAll() : [];

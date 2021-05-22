@@ -57,12 +57,7 @@ class TeamModel extends AbstractModel
 
     public static function getALLEquipeAndTechers(){
         global $connect;
-        $sql = '
-                SELECT eq.equipeID, eq.thematic
-                FROM equipe eq,equipe_enseignant ee 
-                WHERE eq.equipeID=ee.equipe
-                GROUP BY eq.equipeID
-                ';
+        $sql = 'SELECT * FROM equipe';
         $stmt = $connect->prepare($sql);
         $stmt->execute();
         $results = $stmt->fetchAll(\PDO::FETCH_ASSOC);
