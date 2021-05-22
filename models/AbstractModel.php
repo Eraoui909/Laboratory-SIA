@@ -84,10 +84,10 @@ class AbstractModel
         return $stmt->execute(array());
     }
 
-    public static function getAll()
+    public static function getAll($condition = "")
     {
         global $connect;
-        $sql = 'SELECT * FROM ' . static::$tableName;
+        $sql = 'SELECT * FROM ' . static::$tableName . ' '. $condition;
         $stmt = $connect->prepare($sql);
         $stmt->execute();
         $results = $stmt->fetchAll(\PDO::FETCH_ASSOC); //\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, get_called_class(), array_keys(static::$tableSchema)
@@ -199,14 +199,13 @@ class AbstractModel
         foreach ($data as $key => $value){
             $stmt->bindValue(':' . $key, $value);
         }
-
         return $stmt->execute();
     }
 
-    public static function getCountTable()
+    public static function getCountTable($condition = "")
     {
         global $connect;
-        $sql = 'SELECT count(*) FROM ' . static::$tableName;
+        $sql = 'SELECT count(*) FROM ' . static::$tableName .' '.$condition;
         $stmt = $connect->prepare($sql);
         $stmt->execute();
         $results = $stmt->fetchColumn();
@@ -220,7 +219,7 @@ class AbstractModel
     public static function login($email)
     {
         global $connect;
-        $sql = "SELECT *, 'doc' FROM doctorant WHERE email = :email UNION SELECT *, 'ens' FROM enseignant WHERE email = :email";
+        $sql = "SELECT * FROM enseignant WHERE email = :email";
         $stmt = $connect->prepare($sql);
         $stmt->bindValue(':email', $email);
         //print_r($stmt);

@@ -4,15 +4,11 @@ namespace app\Controllers;
 use app\core\Controller;
 
 
-use app\core\Application;
 use app\core\Helper;
 use app\core\Request;
-use app\core\Router;
 use app\core\Session;
 use app\core\Validator;
-use app\models\AdminsModel;
 use app\models\ArticleModel;
-use app\models\DoctorantModel;
 use app\models\EnseignantModel;
 
 class SiteController extends Controller
@@ -39,7 +35,7 @@ class SiteController extends Controller
     public function loginPage()
     {
         global $GLOBAL_DIR;
-        if (isset($_SESSION['token']['ens']) || isset($_SESSION['token']['doc']))
+        if (isset($session_actuel) || isset($_SESSION['token']['doc']))
             $this->redirect(  $GLOBAL_DIR.'/');
 
         $params = [
@@ -72,7 +68,7 @@ class SiteController extends Controller
                 if($this->verify_hashed_undecrypted_data($data['password'], $result[0]['password']))
                 {
                     global $GLOBAL_DIR ;
-                    $groupID = $result[0]['ens'] ?? $result[0]['doc'];
+                    $groupID = $result[0]['specialite'] ?? $result[0]['specialite'];
                     $_SESSION['token'][$groupID] = $result[0];
                     $this->redirect($GLOBAL_DIR.'/');
                 }
@@ -128,7 +124,7 @@ class SiteController extends Controller
 
     public function techersPage()
     {
-        $data['person'] = EnseignantModel::getAll();
+        $data['person'] = EnseignantModel::getAll("WHERE specialite='ens'");
         $data['title'] = "Teachers";
         $data['style'] = ['teachers_list.css'];
         $data['script'] = ['teachers_list.js'];
@@ -138,7 +134,7 @@ class SiteController extends Controller
     public function doctorantsPage()
     {
         $data['title'] = "Doctorants";
-        $data['person'] = DoctorantModel::getAll();
+        $data['person'] = EnseignantModel::getAll("WHERE specialite='doc'");
         $data['style'] = ['teachers_list.css'];
         $data['script'] = ['teachers_list.js'];
         return $this->render('doctorants',$data);

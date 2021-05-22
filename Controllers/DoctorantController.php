@@ -20,7 +20,7 @@ class DoctorantController extends Controller
         if(!isset($_SESSION['token']['admin'])){
             $this->redirect($GLOBAL_DIR.'/admin/login');
         }
-        $data = DoctorantModel::getAll();
+        $data = DoctorantModel::getByQuery("SELECT * FROM enseignant WHERE specialite='doc'");
         return $this->renderAdmin('doctorant', $data);
     }
 
@@ -97,14 +97,4 @@ class DoctorantController extends Controller
         }
     }
 
-//    public function deleteDoctorant()
-//    {
-//        $query = "DELETE FROM doctorant WHERE id=".$_POST['id'];
-//        if(DoctorantModel::executeQuery($query))
-//        {
-//            echo json_encode("success");
-//        }else{
-//            echo json_encode("error");
-//        }
-//    }
 }

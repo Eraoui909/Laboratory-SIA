@@ -24,6 +24,8 @@ class EnseignantModel extends AbstractModel
     protected $situation_present;
     protected $nbr_annee_experience;
     protected $qualification_principale;
+    protected $specialite;
+
 
 
 
@@ -44,6 +46,7 @@ class EnseignantModel extends AbstractModel
         'situation_present'             => PDO::PARAM_STR,
         'nbr_annee_experience'          => PDO::PARAM_INT,
         'qualification_principale'      => PDO::PARAM_STR,
+        'specialite'                    => PDO::PARAM_STR,
     );
 
     /**
@@ -259,6 +262,23 @@ class EnseignantModel extends AbstractModel
     {
         $this->qualification_principale = $qualification_principale;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSpecialite()
+    {
+        return $this->specialite;
+    }
+
+    /**
+     * @param mixed $specialite
+     */
+    public function setSpecialite($specialite): void
+    {
+        $this->specialite = $specialite;
+    }
+
 
 
 }

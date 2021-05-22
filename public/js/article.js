@@ -101,6 +101,7 @@ $('.modify-article-btn').on("click",function (e)
 
 $('.delete-article-btn').on("click",function (e)
 {
+    let data = "articleID=" + $(this).attr("data-id");
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -111,7 +112,6 @@ $('.delete-article-btn').on("click",function (e)
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            let data = "articleID=" + $('.delete-article-btn').attr("data-id");
             $.ajax({
                 method:"post",
                 url:globalDIR+"/teacher/deleteArticle",

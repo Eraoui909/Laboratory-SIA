@@ -30,8 +30,8 @@ class AdminController extends Controller
         if(!isset($_SESSION['token']['admin'])) {
             $this->redirect($GLOBAL_DIR.'/admin/login');
         }
-        $nbrOfDoctorant     = DoctorantModel::getCountTable();
-        $nbrOfEnseignant    = EnseignantModel::getCountTable();
+        $nbrOfDoctorant     = EnseignantModel::getCountTable("WHERE specialite='doc'");
+        $nbrOfEnseignant    = EnseignantModel::getCountTable("WHERE specialite='ens'");
         $nbrOfArticles      = ArticleModel::getCountTable();
         $params = [
             "nbrOfDoctorant"    => $nbrOfDoctorant,

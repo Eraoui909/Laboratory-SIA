@@ -1,7 +1,9 @@
 <?php
 
-
 namespace app\Controllers;
+
+global $session_actuel;
+
 
 
 use app\core\Controller;
@@ -17,13 +19,14 @@ class EnseignantController extends Controller
 {
     use Helper;
 
+
     public function enseignantPage()
     {
         global $GLOBAL_DIR ;
         if(!isset($_SESSION['token']['admin'])){
             $this->redirect($GLOBAL_DIR.'/admin/login');
         }
-        $data = EnseignantModel::getAll();
+        $data = EnseignantModel::getByQuery("SELECT * FROM enseignant WHERE specialite='ens'");
         return $this->renderAdmin('enseignant', $data);
     }
 
@@ -46,6 +49,7 @@ class EnseignantController extends Controller
             $ensignant->setPassword($this->hash_undecrypted_data($data['password']));
             $ensignant->setTel("");
             $ensignant->setAvatar("avatar.png");
+            $ensignant->setSpecialite($data['specialite']);
 
             $ensignant->register();
 
@@ -100,14 +104,22 @@ class EnseignantController extends Controller
     public function teacherProfile()
     {
         global $GLOBAL_DIR ;
-        if (!isset($_SESSION['token']['ens']))
-            $this->redirect($GLOBAL_DIR.'/login');
+        global $session_actuel;
 
-        $arr = $_SESSION['token']['ens'];
-        $arr['title'] = $_SESSION['token']['ens']['nom'] . ' ' . $_SESSION['token']['ens']['prenom'];
-        $arr['articles'] = ArticleModel::getByQuery("SELECT * FROM article WHERE author = " . $_SESSION['token']['ens']['id']);
-        $arr['experiences'] = ExperienceProModel::getByQuery("SELECT * FROM experience_pro WHERE personne_id = " . $_SESSION['token']['ens']['id']);
-        $arr['diplomes']    = diplomesModel::getByQuery("SELECT * FROM diplomes WHERE personne_id = " . $_SESSION['token']['ens']['id']);
+
+        if (!isset($_SESSION['token']['ens']) && !isset($_SESSION['token']['doc'])  ) {
+            $this->redirect($GLOBAL_DIR . '/login');
+        }
+
+        $arr = $_SESSION['token']['ens'] ?? $_SESSION['token']['doc'];
+        $session_actuel = $arr;
+
+
+
+        $arr['title']  = $_SESSION['token'][$session_actuel['specialite']]['nom'] . ' ' .$_SESSION['token'][$session_actuel['specialite']]['prenom'];
+        $arr['articles'] = ArticleModel::getByQuery("SELECT * FROM article WHERE author = " .$session_actuel['id']);
+        $arr['experiences'] = ExperienceProModel::getByQuery("SELECT * FROM experience_pro WHERE personne_id = " .$session_actuel['id']);
+        $arr['diplomes']    = diplomesModel::getByQuery("SELECT * FROM diplomes WHERE personne_id = " .$session_actuel['id']);
 
         $arr['admin']  = true;
         $arr['CV']  = true;
@@ -120,6 +132,11 @@ class EnseignantController extends Controller
 
     public function updateProfile()
     {
+        global $session_actuel;
+
+        $arr = $_SESSION['token']['ens'] ?? $_SESSION['token']['doc'];
+        $session_actuel = $arr;
+
         $session = new Session();
         $validator = new validator();
         $tel = $_POST['tel'] ?? '';
@@ -138,14 +155,14 @@ class EnseignantController extends Controller
 
             if(empty($errors['uploads'])){
 
-                $avatar = $upload['uploaded'][0] ?? $_SESSION['token']['ens']['avatar'];
-                $lastPic = dirname(__DIR__) . "/public/Storage/uploads/users/".$_SESSION['token']['ens']['avatar'];
-                if($_SESSION['token']['ens']['avatar'] != "avatar.png" && $_SESSION['token']['ens']['avatar']!=$avatar)
+                $avatar = $upload['uploaded'][0] ?? $session_actuel['avatar'];
+                $lastPic = dirname(__DIR__) . "/public/Storage/uploads/users/".$session_actuel['avatar'];
+                if($session_actuel['avatar'] != "avatar.png" && $session_actuel['avatar']!=$avatar)
                 {
                     unlink($lastPic);
                 }
-                $pass   = $_SESSION['token']['ens']['password'];
-                $id     = $_SESSION['token']['ens']['id'];
+                $pass   = $session_actuel['password'];
+                $id     = $session_actuel['id'];
 
                 $teacherModel->setId($id);
                 $teacherModel->setNom($data['nom']);
@@ -163,20 +180,22 @@ class EnseignantController extends Controller
                 $teacherModel->setNbrAnneeExperience($data['nbr_annee_experience']);
                 $teacherModel->setQualificationPrincipale($data['qualification_principale']);
 
-                if($teacherModel->update()){
-                    $_SESSION['token']['ens']['nom']                        = $data['nom'];
-                    $_SESSION['token']['ens']['prenom']                     = $data['prenom'];
-                    $_SESSION['token']['ens']['email']                      = $data['email'];
-                    $_SESSION['token']['ens']['tel']                        = $tel;
-                    $_SESSION['token']['ens']['avatar']                     = $avatar;
-                    $_SESSION['token']['ens']['thematique']                 = $data['thematique'];
+                $teacherModel->setSpecialite($session_actuel['specialite']);
 
-                    $_SESSION['token']['ens']['date_naissance']             = $data['date_naissance'];
-                    $_SESSION['token']['ens']['etat_civil']                 = $data['etat_civil'];
-                    $_SESSION['token']['ens']['addresse']                   = $data['addresse'];
-                    $_SESSION['token']['ens']['situation_present']          = $data['situation_present'];
-                    $_SESSION['token']['ens']['nbr_annee_experience']       = $data['nbr_annee_experience'];
-                    $_SESSION['token']['ens']['qualification_principale']   = $data['qualification_principale'];
+                if($teacherModel->update()){
+                    $_SESSION['token'][$session_actuel['specialite']]['nom']                        = $data['nom'];
+                    $_SESSION['token'][$session_actuel['specialite']]['prenom']                     = $data['prenom'];
+                    $_SESSION['token'][$session_actuel['specialite']]['email']                      = $data['email'];
+                    $_SESSION['token'][$session_actuel['specialite']]['tel']                        = $tel;
+                    $_SESSION['token'][$session_actuel['specialite']]['avatar']                     = $avatar;
+                    $_SESSION['token'][$session_actuel['specialite']]['thematique']                 = $data['thematique'];
+
+                    $_SESSION['token'][$session_actuel['specialite']]['date_naissance']             = $data['date_naissance'];
+                    $_SESSION['token'][$session_actuel['specialite']]['etat_civil']                 = $data['etat_civil'];
+                    $_SESSION['token'][$session_actuel['specialite']]['addresse']                   = $data['addresse'];
+                    $_SESSION['token'][$session_actuel['specialite']]['situation_present']          = $data['situation_present'];
+                    $_SESSION['token'][$session_actuel['specialite']]['nbr_annee_experience']       = $data['nbr_annee_experience'];
+                    $_SESSION['token'][$session_actuel['specialite']]['qualification_principale']   = $data['qualification_principale'];
 
                     global $GLOBAL_DIR ;
                     $this->redirect($GLOBAL_DIR.'/teacher/profile');
@@ -193,18 +212,21 @@ class EnseignantController extends Controller
     }
 
     public function deletePicture(){
+        global $session_actuel;
         $data = array(
             'avatar' => 'avatar.png'
         );
-        $lastPic = dirname(__DIR__) . "/public/Storage/uploads/users/".$_SESSION['token']['ens']['avatar'];
-        if($_SESSION['token']['ens']['avatar'] != "avatar.png")
+        $arr = $_SESSION['token']['ens'] ?? $_SESSION['token']['doc'];
+        $session_actuel = $arr;
+        $lastPic = dirname(__DIR__) . "/public/Storage/uploads/users/".$session_actuel['avatar'];
+        if($session_actuel['avatar'] != "avatar.png")
         {
             unlink($lastPic);
         }
 
-        if (EnseignantModel::UpdateColumns($_SESSION['token']['ens']['id'], $data)){
+        if (EnseignantModel::UpdateColumns($session_actuel['id'], $data)){
             global $GLOBAL_DIR ;
-            $_SESSION['token']['ens']['avatar'] = 'avatar.png';
+            $_SESSION['token'][$session_actuel['specialite']]['avatar'] = 'avatar.png';
             $this->redirect($GLOBAL_DIR.'/teacher/profile');
         }
 
@@ -213,10 +235,10 @@ class EnseignantController extends Controller
     public function teacherCV()
     {
         global $GLOBAL_DIR ;
-        if (!isset($_SESSION['token']['ens']))
+        if (!isset($session_actuel))
             $this->redirect($GLOBAL_DIR.'/login');
 
-        $arr = $_SESSION['token']['ens'];
+        $arr = $session_actuel;
         $arr['title'] = 'Download CV';
         return $this->render('/teachers/cv', $arr);
     }
@@ -235,10 +257,10 @@ class EnseignantController extends Controller
             $arr['experiences'] = ExperienceProModel::getByQuery("SELECT * FROM experience_pro WHERE personne_id=".$_GET['cv']);
             $arr['diplomes']    = diplomesModel::getByQuery("SELECT * FROM diplomes WHERE personne_id=".$_GET['cv']);
         }else{
-            if (!isset($_SESSION['token']['ens']))
+            if (!isset($session_actuel))
                 $this->redirect($GLOBAL_DIR.'/login');
 
-            $arr = $_SESSION['token']['ens'];
+            $arr = $session_actuel;
             $arr['title'] = 'Download CV PDF';
             $arr['experiences'] = ExperienceProModel::getAll();
             $arr['diplomes']    = diplomesModel::getAll();
@@ -252,6 +274,9 @@ class EnseignantController extends Controller
     public function addArticle()
     {
         global $GLOBAL_DIR ;
+        global $session_actuel;
+        $arr = $_SESSION['token']['ens'] ?? $_SESSION['token']['doc'];
+        $session_actuel = $arr;
         if( isset($_POST['journal']) )
         {
             $session = new Session();
@@ -262,7 +287,7 @@ class EnseignantController extends Controller
             $article = new ArticleModel();
 
             if(empty($errors)){
-                $author     = $_SESSION['token']['ens']['id'];
+                $author     = $session_actuel['id'];
 
                 $article->setTitle($data['title']);
                 $article->setDescription($data['description']);
@@ -317,39 +342,15 @@ class EnseignantController extends Controller
         }
     }
 
-/**    public function modifyArticleImg() **/
-//    {
-//        if(empty($_FILES['pictures']['name'][0]))
-//        {
-//            $this->redirect($_SERVER['HTTP_REFERER']);
-//        }
-//
-//
-//        $pic = Helper::UploadFile('articles',rand(50,1000));
-//        if(isset($pic['errors'][0]))
-//        {
-//            $this->redirect($_SERVER['HTTP_REFERER']);
-//        }else{
-//            $picname = ArticleModel::getByQuery("SELECT picture FROM article WHERE articleID=".$_POST['articleID']);
-//            $lastPic = dirname(__DIR__) . "/public/Storage/uploads/articles/".$picname[0]['picture'];
-//
-//            if(!empty($lastPic))
-//            {
-//                unlink($lastPic);
-//            }
-//            $pice['picture'] = $pic['uploaded'][0];
-//            if(ArticleModel::UpdateColumns($_POST['articleID'],$pice))
-//            {
-//                $this->redirect($_SERVER['HTTP_REFERER']);
-//            }else{
-//                $this->redirect($_SERVER['HTTP_REFERER']);
-//            }
-//        }
-//    }
 
     public function experiencePro()
     {
         global $GLOBAL_DIR ;
+        global $session_actuel;
+
+        $arr = $_SESSION['token']['ens'] ?? $_SESSION['token']['doc'];
+        $session_actuel = $arr;
+
 
         $validator  = new Validator();
         $session    = new Session();
@@ -358,8 +359,9 @@ class EnseignantController extends Controller
 
         if(empty($errors))
         {
+            global $session_actuel;
             $experience = new ExperienceProModel();
-            $experience->setPersonneId($_SESSION['token']['ens']['id']);
+            $experience->setPersonneId($session_actuel['id']);
             $experience->setDateDebut($data['date_debut']);
             $experience->setDateFin($data['date_fin']);
             $experience->setEntreprise($data['entreprise']);
@@ -390,7 +392,11 @@ class EnseignantController extends Controller
 
     public function diplome()
     {
+        global $session_actuel;
         global $GLOBAL_DIR ;
+
+        $arr = $_SESSION['token']['ens'] ?? $_SESSION['token']['doc'];
+        $session_actuel = $arr;
 
         $validator = new Validator();
         $session = new Session();
@@ -399,7 +405,7 @@ class EnseignantController extends Controller
 
         if (empty($errors)) {
             $diplome = new diplomesModel();
-            $diplome->setPersonneId($_SESSION['token']['ens']['id']);
+            $diplome->setPersonneId($session_actuel['id']);
             $diplome->setInstitut($data['institut']);
             $diplome->setVille($data['ville']);
             $diplome->setDateDebut($data['date_debut']);

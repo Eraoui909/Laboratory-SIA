@@ -19,6 +19,7 @@
                 </div>
                 <div class="modal-body">
                         <form action="/admin/enseignant/add" class="form-add-enseignant-doctorant" method="post">
+                            <input type="hidden" name="specialite" value="ens">
                             <div class="input-group mb-3">
                                 <input type="text" name="prenom" class="form-control" placeholder="<?=$lang['firstName']?>">
                                 <div class="input-group-append">

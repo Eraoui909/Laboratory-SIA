@@ -32,7 +32,7 @@
 
                     </tr>
                 </table>
-                <a href="#">
+                <a href="<?php echo $GLOBAL_DIR ?>/teacher/cv/downoald?cv=<?= $param['id'] ?>">
 					<span class="show-cv">
 						Show CV
 					</span>

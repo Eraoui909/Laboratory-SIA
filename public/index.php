@@ -43,6 +43,12 @@ $app = new Application(dirname(__DIR__));
  */
 $db = new Database();
 
+/*
+echo "<pre>";
+    print_r($_SESSION['token']);
+echo "</pre>";
+*/
+
 
 $app->router->get('/lang/en', [LangController::class, 'changeLangToEn']);
 
@@ -99,9 +105,16 @@ $app->router->post('/admin/enseignant/modify',[EnseignantController::class, 'mod
 $app->router->post('/admin/enseignant/delete',[EnseignantController::class, 'deleteEnseignant']);
 
 $app->router->get('/admin/doctorant',[DoctorantController::class,'doctorantPage']);
+$app->router->post('/admin/doctorant/add',[EnseignantController::class,'ajouterEnseignant']);
+$app->router->post('/admin/doctorant/modify',[EnseignantController::class, 'modifierEnseignant']);
+$app->router->post('/admin/doctorant/delete',[EnseignantController::class, 'deleteEnseignant']);
+
+/*
+$app->router->get('/admin/doctorant',[DoctorantController::class,'doctorantPage']);
 $app->router->post('/admin/doctorant/add',[DoctorantController::class,'ajouterDoctorant']);
 $app->router->post('/admin/doctorant/modify',[DoctorantController::class,'modifierDoctorant']);
 $app->router->post('/admin/doctorant/delete',[DoctorantController::class,'deleteDoctorant']);
+*/
 
 $app->router->get('/admin/teams',[AdminController::class,'teamsPage']);
 $app->router->post('/admin/teams/add',[TeamController::class,'addTeam']);
