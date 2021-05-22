@@ -114,9 +114,7 @@ class EnseignantController extends Controller
         $arr = $_SESSION['token']['ens'] ?? $_SESSION['token']['doc'];
         $session_actuel = $arr;
 
-
-
-        $arr['title']  = $_SESSION['token'][$session_actuel['specialite']]['nom'] . ' ' .$_SESSION['token'][$session_actuel['specialite']]['prenom'];
+        $arr['title']  = $_SESSION["token"][$session_actuel["specialite"]]["nom"] . ' ' .$_SESSION["token"][$session_actuel["specialite"]]["prenom"];
         $arr['articles'] = ArticleModel::getByQuery("SELECT * FROM article WHERE author = " .$session_actuel['id']);
         $arr['experiences'] = ExperienceProModel::getByQuery("SELECT * FROM experience_pro WHERE personne_id = " .$session_actuel['id']);
         $arr['diplomes']    = diplomesModel::getByQuery("SELECT * FROM diplomes WHERE personne_id = " .$session_actuel['id']);

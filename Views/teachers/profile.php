@@ -1,10 +1,7 @@
-<?php $data = []; global $lang;
-global $GLOBAL_DIR;
-/*
-echo "<pre>";
-    print_r($_SESSION['token']['ens']);
-echo "</pre>";
-*/
+<?php
+    $data = [];
+    global $lang;
+    global $GLOBAL_DIR;
 ?>
 
 <style>

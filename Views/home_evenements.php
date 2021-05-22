@@ -1,5 +1,5 @@
 <?php global $GLOBAL_DIR ?>
-<div class="container-fluid"  style="margin: 0px auto;
+<div class="container-fluid ha-container-respons"  style="margin: 0px auto;
     width: 80%;">
     <div class="home__sector card card--1dp home__margin-block">
         <div class="title-flex-w-img title-flex-w-img__center">

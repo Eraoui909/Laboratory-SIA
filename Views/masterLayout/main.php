@@ -20,22 +20,11 @@ exit();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="<?php echo $GLOBAL_DIR ?>/Storage/Statics/images/logoLaboFst(35X35).png">
 
-
-    <!-- Google Font: Source Sans Pro
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    -->
-    <!-- Font Awesome -->
-
     <!-- bootstrap -->
     <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/css/bootstrap.min.css">
 
     <!-- SweetAlert2  -->
     <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/adminLTE/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-
-
-    <!-- Google Font: Source Sans Pro
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    -->
 
     <!-- Theme style -->
     <?php if (isset($params['adminlte']) && $params['adminlte'] === true): ?>
@@ -60,9 +49,6 @@ exit();
     endif;
     ?>
 
-    <!--
-    <link rel="stylesheet" href="/css/marquee.css">
-    -->
     <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/css/Home_Style.css">
 
 
@@ -223,18 +209,6 @@ exit();
 
         }
 
-        /* Small devices (portrait tablets and large phones, 600px and up) */
-        @media only screen and (min-width: 600px) {...}
-
-        /* Medium devices (landscape tablets, 768px and up) */
-        @media only screen and (min-width: 768px) {...}
-
-        /* Large devices (laptops/desktops, 992px and up) */
-        @media only screen and (min-width: 992px) {...}
-
-        /* Extra large devices (large laptops and desktops, 1200px and up) */
-        @media only screen and (min-width: 1200px) {...}
-
 
         #load {
             width: 100%;
@@ -270,7 +244,7 @@ exit();
 </div>
 <div id="load">
     <!-- https://miro.medium.com/max/1600/1*CsJ05WEGfunYMLGfsT2sXA.gif -->
-    <img src="https://i.gifer.com/1LBN.gif"  alt="">
+    <img src="https://i.gifer.com/1LBN.gif" style="font-size: 2.5vh"  alt="">
 
 </div>
 <div class="ha-newletter-container ha-global-popup-newsletter-active">
@@ -343,7 +317,6 @@ if($null != true)
 
 <script>
     $("#load").hide();
-    /*
     document.onreadystatechange = function () {
         let state = document.readyState;
         if (state === 'interactive') {
@@ -352,7 +325,6 @@ if($null != true)
             $("#load").hide();
         }
     }
-    */
 
 </script>
 

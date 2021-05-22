@@ -28,14 +28,14 @@
             <li class="account-link keep lang">
                 <?php
                     if (isset($_SESSION['token'])){ ?>
-                            <a href="#"><span class="hide"><?php echo $lang['account'] ?> </span> <span class="show"><i class="fas fa-user-alt"></i></span></a>
+                            <a href="#"><span class="hide"><?php echo $lang['account'] ?> </span> <span class="show"><i class="fas fa-user"></i></span></a>
                             <div class="drop-down">
                                 <a href="<?php echo $GLOBAL_DIR ?>/logout"><?php echo $lang['logout'] ?></a>
                                 <a href="<?php echo $GLOBAL_DIR ?>/teacher/profile"><?php echo $lang['settings'] ?>  </a>
                             </div>
                 <?php
                     }else
-                        echo '<a href="'.$GLOBAL_DIR .'/login">' . $lang['login'] . '</a>';
+                        echo '<a href="'.$GLOBAL_DIR .'/login"><span class="hide">'.  $lang["login"] .' </span> <span class="show"><i class="fa fa-sign-in-alt"></i></span></a>';
                 ?>
 
             </li>

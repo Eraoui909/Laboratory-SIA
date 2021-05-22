@@ -7,6 +7,17 @@ if(globalDIR.includes('public'))
     globalDIR = "";
 }
 
+//scrolling to top
+    $(".to-top").on("click",function (e){
+        e.preventDefault();
+        setTimeout(function (){
+            $('html,body').animate(
+                {
+                    scrollTop:0
+                },900);
+        },200);
+});
+//6---------
 const sliders = document.querySelectorAll('.slider');
 const pagination_disks = document.querySelectorAll('.pagination ul li');
 let index = 0;
@@ -153,6 +164,12 @@ $(".ha-abonner-newsletter").on("click",function (e) {
 /**************************************** acceeil style 13-05-2021         ******************************************/
 /********************************************************************************************************************/
 /********************************************************************************************************************/
+
+$(window).on("load",function (e) {
+   setTimeout(function (){
+       $(".ha-teams-dropdown").slideToggle("slow");
+   },1500) ;
+});
 
 $(".ha-toggle-teams-table").on("click" , function (e) {
     e.preventDefault();

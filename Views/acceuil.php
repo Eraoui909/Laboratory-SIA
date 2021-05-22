@@ -44,22 +44,24 @@
             </div>
         </div>
 
-        <div class="ha-teams-dropdown">
+        <div class="ha-teams-dropdown ha-teams-dropdown-style">
             <table class="table table-hover  table-responsive-lg">
                 <thead>
                     <tr>
-                        <th>Nome de group</th>
-                        <th>Membre de group </th>
+                        <th>Nom du group</th>
+                        <th>Membres du group </th>
                         <td></td>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($params['teams'] as $team):?>
+                    <?php
+                    $calsses = ["badge-info","badge-success","badge-secondary","badge-danger","badge-warning"];
+                    foreach ($params['teams'] as $team):?>
                             <tr>
-                                <td><?= $team['thematic'] ?></td>
+                                <td ><?= $team['thematic'] ?></td>
                                 <td>
                                     <?php foreach ($team['enseignant'] as $ens){
-                                        echo $ens['prenom'].' '.$ens['nom'].', ';
+                                        echo '<span class="badge '.$calsses[rand(0,4)].'" style="padding: 3px">'.$ens['prenom'].' '.$ens['nom'].'</span>   ';
                                     } ?>
                                 </td>
                                 <td>
@@ -75,6 +77,7 @@
                 </tbody>
             </table>
         </div>
+
     </div>
 
 </div>

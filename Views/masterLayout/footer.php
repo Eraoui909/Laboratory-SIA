@@ -1,5 +1,8 @@
 <?php global $GLOBAL_DIR ?>
 <div class="ha-footer">
+    <div class="to-top">
+        <span>^</span>
+    </div>
     <div class="ha-footer-head">
 
         <div class="ha-footer-head-sec ha-footer-head-sec1" style="width: 150%">
@@ -87,6 +90,9 @@
     <div class="ha-footer-foot">
         <div class="ha-footer-foot-left">
             Copyright <?php echo date("Y")?> | LabSIA
+        </div>
+        <div class="ha-footer-foot-right">
+            Developed by <span style="font-weight: bold;color: white;font-size: 18px">Hamza Eraoui</span> & <span style="font-weight: bold;color: white;font-size: 18px">Achraf Zaim</span>
         </div>
 
     </div>
