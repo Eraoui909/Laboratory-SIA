@@ -10,6 +10,7 @@ use app\core\Session;
 use app\core\Validator;
 use app\models\ArticleModel;
 use app\models\EnseignantModel;
+use app\models\TeamModel;
 
 class SiteController extends Controller
 {
@@ -26,6 +27,9 @@ class SiteController extends Controller
     public function homePage()
     {
         $data['marquee'] = ArticleModel::getByQuery('SELECT articleID,title,DATE_FORMAT(date, "%W %M %e %Y") as "date" FROM article order by date');
+        $data['teams']  =TeamModel::getALLEquipeAndTechers();
+        $data['nbrOfTeam'] = TeamModel::getCountTable();
+        $data['nbrOfTeacher'] = EnseignantModel::getCountTable('WHERE specialite="ens"');
         $data['title'] = "Home";
         $data['style'] = ['marquee.css', 'Home_Style.css'];
         $data['script'] = ['CokiesHandler.js','marquee.js', 'HomeScript.js', 'navbar.js'];

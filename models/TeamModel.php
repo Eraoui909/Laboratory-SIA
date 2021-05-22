@@ -18,7 +18,7 @@ class TeamModel extends AbstractModel
     public static function getTeachers($id)
     {
         global $connect;
-        $sql = 'SELECT nom, prenom, id FROM equipe_enseignant, enseignant WHERE id = enseignant AND equipe = :id';
+        $sql = 'SELECT nom, prenom, id ,avatar FROM equipe_enseignant, enseignant WHERE id = enseignant AND equipe = :id';
         $stmt = $connect->prepare($sql);
         $stmt->bindvalue(':id', $id);
         $stmt->execute();
@@ -54,6 +54,31 @@ class TeamModel extends AbstractModel
 
         return $stmt->execute();
     }
+
+    public static function getALLEquipeAndTechers(){
+        global $connect;
+        $sql = '
+                SELECT eq.equipeID, eq.thematic
+                FROM equipe eq,equipe_enseignant ee 
+                WHERE eq.equipeID=ee.equipe
+                GROUP BY eq.equipeID
+                ';
+        $stmt = $connect->prepare($sql);
+        $stmt->execute();
+        $results = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $teams = array();
+        foreach ($results as $result)
+        {
+            $result['enseignant'] = self::getTeachers($result['equipeID']);
+            $teams[] = $result;
+        }
+        if(isset($teams) && !empty($teams)){
+            return $teams;
+        }else{
+            return [];
+        }
+    }
+
 
     /**
      * @return mixed
