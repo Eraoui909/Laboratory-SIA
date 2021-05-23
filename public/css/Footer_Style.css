@@ -44,23 +44,6 @@ ul {
   width: 100%;
   background-color: #1D2B36;
   padding: 20px 50px; }
-  .ha-footer .to-top {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #4A90E2;
-    text-align: center;
-    cursor: pointer;
-    opacity: 0.1;
-    transition-duration: 0.6s; }
-    .ha-footer .to-top:hover {
-      opacity: 1; }
-    .ha-footer .to-top span {
-      font-size: 40px;
-      color: white; }
   .ha-footer .ha-footer-head {
     position: relative;
     height: 75%;

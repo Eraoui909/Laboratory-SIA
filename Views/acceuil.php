@@ -61,7 +61,7 @@
                                 <td ><?= $team['thematic'] ?></td>
                                 <td>
                                     <?php foreach ($team['enseignant'] as $ens){
-                                        echo '<span class="badge '.$calsses[rand(0,4)].'" style="padding: 3px">'.$ens['prenom'].' '.$ens['nom'].'</span>   ';
+                                        echo '<span class="badge '.$calsses[rand(0,4)].'" style="padding: 6px">'.$ens['prenom'].' '.$ens['nom'].'</span>   ';
                                     } ?>
                                 </td>
                                 <td>

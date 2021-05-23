@@ -31,7 +31,7 @@
 
 
 <div class="simple-marquee-container">
-    <div class="marquee-sibling ">
+    <div class="marquee-sibling " style="font-size: 2vh;">
         News
     </div>
     <div class="marquee">

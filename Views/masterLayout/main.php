@@ -239,7 +239,9 @@ exit();
 
 </head>
 <body>
-
+<div class="to-top">
+    <span> <i class="fa fa-arrow-up"></i></span>
+</div>
 <div class="ha-global-popup-newsletter ha-global-popup-newsletter-active">
 </div>
 <div id="load">
@@ -326,6 +328,25 @@ if($null != true)
         }
     }
 
+    //scrolling to top
+    setInterval(function (){
+        console.log(window.pageYOffset);
+        if(window.pageYOffset < 500)
+        {
+            $(".to-top").hide();
+        }else{
+            $(".to-top").show();
+        }
+    },300);
+    $(".to-top").on("click",function (e){
+        e.preventDefault();
+        setTimeout(function (){
+            $('html,body').animate(
+                {
+                    scrollTop:0
+                },900);
+        },200);
+    });
 </script>
 
 </body>

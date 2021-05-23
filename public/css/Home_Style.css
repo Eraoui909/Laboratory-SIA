@@ -48,6 +48,24 @@ body {
   /**************************************** acceeil style 13-05-2021         ******************************************/
   /********************************************************************************************************************/
   /********************************************************************************************************************/ }
+  body .to-top {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #6DB6CD;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.5;
+    transition-duration: 0.6s;
+    z-index: 1000000000000000; }
+    body .to-top:hover {
+      opacity: 1; }
+    body .to-top span {
+      font-size: 30px;
+      color: white; }
   body ui {
     padding: 0; }
     body ui li {
