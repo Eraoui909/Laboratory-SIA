@@ -42,19 +42,20 @@ nav.my-navbar{
           top: calc(50% + 25px);
           right: 0;
           //border-radius: 5px;
-          width: 150px;
-          box-shadow: 2px 2px 10px #ddd;
+          width: 250px;
+          box-shadow: 2px 2px 5px #ddd;
           z-index: 5;
           border: 1px solid #ddd;
-          background-color: #ffffffd4;
+          background-color: #ffffff;
           //height: 0;
           transition: all .3s ease;
           overflow: hidden;
           visibility: hidden;
+          line-height: 30px;
 
           a{
             display: block;
-            font-size: .8em;
+            font-size: .9em;
             padding: 5px 10px;
 
             &:hover{

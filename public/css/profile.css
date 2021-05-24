@@ -90,17 +90,18 @@ body nav.my-navbar {
         position: absolute;
         top: calc(50% + 25px);
         right: 0;
-        width: 150px;
-        box-shadow: 2px 2px 10px #ddd;
+        width: 250px;
+        box-shadow: 2px 2px 5px #ddd;
         z-index: 5;
         border: 1px solid #ddd;
-        background-color: #ffffffd4;
+        background-color: #ffffff;
         transition: all .3s ease;
         overflow: hidden;
-        visibility: hidden; }
+        visibility: hidden;
+        line-height: 30px; }
         body nav.my-navbar .links ul li .drop-down a {
           display: block;
-          font-size: .8em;
+          font-size: .9em;
           padding: 5px 10px; }
           body nav.my-navbar .links ul li .drop-down a:hover {
             background-color: #0C1021;

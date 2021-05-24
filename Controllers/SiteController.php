@@ -39,7 +39,7 @@ class SiteController extends Controller
     public function loginPage()
     {
         global $GLOBAL_DIR;
-        if (isset($session_actuel) || isset($_SESSION['token']['doc']))
+        if (isset($_SESSION['token']['ens']) || isset($_SESSION['token']['doc']))
             $this->redirect(  $GLOBAL_DIR.'/');
 
         $params = [
@@ -57,7 +57,7 @@ class SiteController extends Controller
         $this->redirect($GLOBAL_DIR.'/');
     }
 
-    public function Login()
+    public function login()
     {
         $validator = new Validator();
         $session   = new Session();
@@ -74,7 +74,7 @@ class SiteController extends Controller
                     global $GLOBAL_DIR ;
                     $groupID = $result[0]['specialite'] ?? $result[0]['specialite'];
                     $_SESSION['token'][$groupID] = $result[0];
-                    $this->redirect($GLOBAL_DIR.'/');
+                    $this->redirect($GLOBAL_DIR.'/teacher/profile');
                 }
             }
 

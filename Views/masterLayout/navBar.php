@@ -30,8 +30,8 @@
                     if (isset($_SESSION['token'])){ ?>
                             <a href="#"><span class="hide"><?php echo $lang['account'] ?> </span> <span class="show"><i class="fas fa-user"></i></span></a>
                             <div class="drop-down">
-                                <a href="<?php echo $GLOBAL_DIR ?>/logout"><?php echo $lang['logout'] ?></a>
                                 <a href="<?php echo $GLOBAL_DIR ?>/teacher/profile"><?php echo $lang['settings'] ?>  </a>
+                                <a href="<?php echo $GLOBAL_DIR ?>/logout"><?php echo $lang['logout'] ?></a>
                             </div>
                 <?php
                     }else

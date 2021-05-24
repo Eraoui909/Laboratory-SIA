@@ -136,7 +136,7 @@
 
                                 <!-- /.tab-pane for CV -->
                                 <div class="tab-pane" style="overflow: hidden" id="cv">
-                                    <a href="<?php echo $GLOBAL_DIR ?>/teacher/cv/downoald">
+                                    <a href="<?php echo $GLOBAL_DIR ?>/teacher/cv/downoald?cv=<?= $idd ?>" target="_blank">
                                         <i class="fa fa-download" style="color: #3659c1"></i>
                                     </a>
                                     <?php include_once "cv.php";?>

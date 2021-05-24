@@ -114,6 +114,7 @@ class EnseignantController extends Controller
         $session_actuel = $arr;
 
         $arr['title']  = $_SESSION["token"][$session_actuel["specialite"]]["nom"] . ' ' .$_SESSION["token"][$session_actuel["specialite"]]["prenom"];
+        $arr['idd'] = $_SESSION["token"][$session_actuel["specialite"]]["id"];
         $arr['articles'] = ArticleModel::getByQuery("SELECT * FROM article WHERE author = " .$session_actuel['id']);
         $arr['experiences'] = ExperienceProModel::getByQuery("SELECT * FROM experience_pro WHERE personne_id = " .$session_actuel['id']);
         $arr['diplomes']    = diplomesModel::getByQuery("SELECT * FROM diplomes WHERE personne_id = " .$session_actuel['id']);
@@ -241,11 +242,14 @@ class EnseignantController extends Controller
     public function teacherCV()
     {
         global $GLOBAL_DIR ;
-        if (!isset($session_actuel))
+        if (!isset($_SESSION['token']['ens']) || !isset($_SESSION['token']['doc']) ){
             $this->redirect($GLOBAL_DIR.'/login');
+        }
 
-        $arr = $session_actuel;
+        $arr = $_SESSION['token']['ens'] ??$_SESSION['token']['doc'];
+
         $arr['title'] = 'Download CV';
+
         return $this->render('/teachers/cv', $arr);
     }
 

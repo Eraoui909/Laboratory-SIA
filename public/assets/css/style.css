@@ -1,26 +1,4 @@
-/*
-Template Name: Blvck - Personal vCard & Resume Template
-Version: 1.0
-Author: PxlSolutions
-Author URI: http://themeforest.net/user/pxlsolutions
-Description: CV, Resume, vCard HTML Template
 
-[TABLE OF CONTENTS]
-
-01. Global Styles
-02. Preloader
-03. Layout
-04. Header
-05. Main Content
-08. Section Resume
-09. Section Works
-10. Section Testimonials
-11. Section Blog
-12. Section Customers
-13. Section Contact
-14. Other Elements
-15. Responsive
-*/
 /*-----------------------------------------------------------------*/
 /*                      GLOBAL STYLES                              */
 /*-----------------------------------------------------------------*/
@@ -326,7 +304,7 @@ li {
     position: relative;
     transform: translateY(25px);
     background: #fff;
-    transition: all 0 300ms;
+    //transition: all 0 300ms;
 }
 
 .header .bar.animate {
