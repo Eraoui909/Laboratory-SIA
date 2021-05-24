@@ -14,7 +14,7 @@
             </div>
 
             <div class="section section-2">
-                <a href="#">
+                <a href="/teachers">
                     <div class="card-teacher">
                         <div class="icon">
                             <i class="fa fa-chalkboard-teacher"></i>

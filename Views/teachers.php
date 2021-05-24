@@ -50,18 +50,18 @@
             <div class="style"></div>
         </div>
         <div class="description">
-            <table>
+            <table class="table table-sm" style="width: 90%;border-style: hidden">
                 <tr>
                     <td>E-mail: </td>
                     <td><?= $param['email'] ?></td>
                 </tr>
-                <tr>
+                <tr style="border-style: hidden">
                     <td>Thematique: </td>
                     <td><?= $param['thematique'] ?></td>
 
                 </tr>
             </table>
-            <a href="<?php echo $GLOBAL_DIR ?>/teacher/cv/downoald?cv=<?= $param['id'] ?>">
+            <a target="_blank" href="<?php echo $GLOBAL_DIR ?>/teacher/cv/downoald?cv=<?= $param['id'] ?>">
 					<span class="show-cv">
 						Show CV
 					</span>

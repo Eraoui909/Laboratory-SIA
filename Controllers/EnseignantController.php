@@ -106,7 +106,6 @@ class EnseignantController extends Controller
         global $GLOBAL_DIR ;
         global $session_actuel;
 
-
         if (!isset($_SESSION['token']['ens']) && !isset($_SESSION['token']['doc'])  ) {
             $this->redirect($GLOBAL_DIR . '/login');
         }
@@ -131,6 +130,13 @@ class EnseignantController extends Controller
     public function updateProfile()
     {
         global $session_actuel;
+
+        /*
+        echo "<pre>";
+        print_r($_FILES);
+        echo "</pre>";
+
+        exit(); */
 
         $arr = $_SESSION['token']['ens'] ?? $_SESSION['token']['doc'];
         $session_actuel = $arr;
@@ -196,7 +202,8 @@ class EnseignantController extends Controller
                     $_SESSION['token'][$session_actuel['specialite']]['qualification_principale']   = $data['qualification_principale'];
 
                     global $GLOBAL_DIR ;
-                    $this->redirect($GLOBAL_DIR.'/teacher/profile');
+                    //$this->redirect($GLOBAL_DIR.'/teacher/profile');
+                    echo json_encode("success");
                 }
                 return;
 
@@ -205,7 +212,8 @@ class EnseignantController extends Controller
         }
 
         $session->setFlash("errors", $errors);
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        //header('Location: ' . $_SERVER['HTTP_REFERER']);
+        echo json_encode("error");
 
     }
 
@@ -273,6 +281,8 @@ class EnseignantController extends Controller
     {
         global $GLOBAL_DIR ;
         global $session_actuel;
+
+
         $arr = $_SESSION['token']['ens'] ?? $_SESSION['token']['doc'];
         $session_actuel = $arr;
         if( isset($_POST['journal']) )
@@ -294,16 +304,16 @@ class EnseignantController extends Controller
 
                 if($article->register()){
 
-                    $this->redirect($GLOBAL_DIR.'/teacher/profile');
-                    echo "success";
+                    //$this->redirect($GLOBAL_DIR.'/teacher/profile');
+                    echo json_encode("success");
                 }
                 return;
 
             }
 
             $session->setFlash("errors", $errors);
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
-            echo json_encode($errors);
+            //header('Location: ' . $_SERVER['HTTP_REFERER']);
+            echo json_encode("error");
         }else{
             echo "failed";
         }
@@ -369,11 +379,13 @@ class EnseignantController extends Controller
             if($experience->register())
             {
                 $session->setFlash('experience_error',[]);
-                $this->redirect($GLOBAL_DIR."/teacher/profile");
+                //$this->redirect($GLOBAL_DIR."/teacher/profile");
+                echo json_encode('success');
             }
         }else{
             $session->setFlash('experience_error',$errors);
-            $this->redirect($GLOBAL_DIR."/teacher/profile");
+            //$this->redirect($GLOBAL_DIR."/teacher/profile");
+            echo json_encode('error');
         }
     }
 

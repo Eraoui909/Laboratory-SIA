@@ -78,7 +78,7 @@ let c = new CokiesHandler();
 //c.setCookie("newsletter_registered","false",30);
 console.log(c.getCookie("newsletter_registered"));
 if(c.getCookie("newsletter_registered") == "false") {
-    $(".ha-global-popup-newsletter").on("click", function () {
+    $(document).on("click",".ha-global-popup-newsletter", function () {
         $(this).addClass("ha-global-popup-newsletter-active");
         $(".ha-newletter-container")
             .fadeOut(1000);
@@ -99,7 +99,7 @@ if(c.getCookie("newsletter_registered") == "false") {
     });
 }
 
-$(".ha-abonner-newsletter").on("click",function (e) {
+$(document).on("click",".ha-abonner-newsletter",function (e) {
     e.preventDefault();
     let emaill = $('.newsletter-email').val().split();
     if(emaill == "")
@@ -162,7 +162,7 @@ $(window).on("load",function (e) {
    },1500) ;
 });
 
-$(".ha-toggle-teams-table").on("click" , function (e) {
+$(document).on("click",".ha-toggle-teams-table" , function (e) {
     e.preventDefault();
     $(".ha-teams-dropdown").slideToggle("slow");
 })

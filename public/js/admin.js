@@ -21,72 +21,72 @@ $(document).ready(function()
     }).buttons().container().appendTo('#card-ens-doc .col-md-6:eq(0)');
 
 
-    $("#show-add-btn").on("click", function ()
+    $(document).on("click","#show-add-btn", function ()
     {
         $("#add-div").css("display","block");
     });
 
-    $(".show-add-teacher-btn").on("click", function ()
+    $(document).on("click",".show-add-teacher-btn", function ()
     {
         teamID = $(this).attr("data-Id");
         $("#modify-div").css("display","block");
     });
 
-    $(".close").on("click", function ()
+    $(document).on("click",".close", function ()
     {
         $("#add-div").css("display","none");
         $("#modify-div").css("display","none");
     });
 
-    $("#close-btn").on("click", function ()
+    $(document).on("click","#close-btn", function ()
     {
         $("#add-div").css("display","none");
         $("#modify-div").css("display","none");
     });
 
-    $("#add-team-btn").on("click", function (e){
+    $(document).on("click","#add-team-btn", function (e){
         e.preventDefault();
         addTeam();
     });
 
-    $(".delete-team-btn").on("click", function (e){
+    $(document).on("click",".delete-team-btn", function (e){
         e.preventDefault();
         deleteTeam();
     });
 
-    $("#add-teacher-to-team-btn").on("click", function (e){
+    $(document).on("click","#add-teacher-to-team-btn", function (e){
         e.preventDefault();
         addTeacherToTeam();
     });
 
-    $("#delete-teacher-frm-team-btn").on("click", function (e){
+    $(document).on("click","#delete-teacher-frm-team-btn", function (e){
         e.preventDefault();
         deleteTeacherFromTeam();
     });
 
     ///////////////////////////////////////////////////////////////////////////
 
-    $("#add-enseignant-doctorant-btn").on("click", function ()
+    $(document).on("click","#add-enseignant-doctorant-btn", function ()
     {
         $("#modal-add-enseignant-doctorant").css("display","block");
     });
 
-    $("#modal-add-enseignant-doctorant-close").on("click", function ()
+    $(document).on("click","#modal-add-enseignant-doctorant-close", function ()
     {
         $("#modal-add-enseignant-doctorant").css("display","none");
     });
 
-    $("#modal-add-enseignant-doctorant-close-btn").on("click", function ()
+    $(document).on("click","#modal-add-enseignant-doctorant-close-btn", function ()
     {
         $("#modal-add-enseignant-doctorant").css("display","none");
     });
 
-    $("#modal-add-enseignant-add-btn").on("click", function (e){
+    $(document).on("click","#modal-add-enseignant-add-btn", function (e){
         e.preventDefault();
         addDocEns('enseignant');
     });
 
-    $("#modal-add-doctorant-add-btn").on("click", function (e){
+    $(document).on("click","#modal-add-doctorant-add-btn", function (e){
         e.preventDefault();
         addDocEns('doctorant');
     });
@@ -94,8 +94,10 @@ $(document).ready(function()
     /**
      * modifier enseignant
      */
-    $(".btn-show-modify-form").on("click",function ()
+
+    $(document).on("click",".btn-show-modify-form",function (e)
     {
+        e.preventDefault();
         $("#modal-modify-enseignant-doctorant").css("display","block");
 
         $(".input-modify-prenom").attr("value", $(this).attr("data-prenom"));
@@ -105,22 +107,22 @@ $(document).ready(function()
 
     });
 
-    $("#modal-modify-enseignant-doctorant-close").on("click",function ()
+    $(document).on("click","#modal-modify-enseignant-doctorant-close",function ()
     {
         $("#modal-modify-enseignant-doctorant").css("display","none");
     });
 
-    $("#modal-modify-enseignant-doctorant-close-btn").on("click",function ()
+    $(document).on("click","#modal-modify-enseignant-doctorant-close-btn",function ()
     {
         $("#modal-modify-enseignant").css("display","none");
     });
 
-    $('#modal-modify-enseignant-modify-btn').on("click", function (e){
+    $(document).on("click",'#modal-modify-enseignant-modify-btn', function (e){
         e.preventDefault();
         modifyResDoc('enseignant');
     });
 
-    $('#modal-modify-doctorant-modify-btn').on("click", function (e){
+    $(document).on("click",'#modal-modify-doctorant-modify-btn', function (e){
         e.preventDefault();
         modifyResDoc('doctorant');
     });
@@ -129,12 +131,12 @@ $(document).ready(function()
      * delete enseignant
      */
 
-    $(".delete-enseignant-btn").on("click", function (e){
+    $(document).on("click",".delete-enseignant-btn", function (e){
         e.preventDefault();
         deleteEnsDoc('enseignant', $(this).attr("data-id"));
     });
 
-    $(".delete-doctorant-btn").on("click", function (e){
+    $(document).on("click",".delete-doctorant-btn", function (e){
         e.preventDefault();
         deleteEnsDoc('doctorant', $(this).attr("data-id"));
     });
@@ -455,4 +457,4 @@ $("#newsletter-table").DataTable({
             title: "SIA Laboratory"
         },
     ]
-}).buttons().container().appendTo('#card-ens-doc .col-md-6:eq(0)');;
+}).buttons().container().appendTo('#card-ens-doc .col-md-6:eq(0)');

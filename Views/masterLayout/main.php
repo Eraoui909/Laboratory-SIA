@@ -330,7 +330,6 @@ if($null != true)
 
     //scrolling to top
     setInterval(function (){
-        console.log(window.pageYOffset);
         if(window.pageYOffset < 500)
         {
             $(".to-top").hide();

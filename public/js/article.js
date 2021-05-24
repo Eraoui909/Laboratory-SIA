@@ -30,7 +30,7 @@ $('#article-table').DataTable({
  * Modifier article
  */
 
-$(".btn-article-modify-form").on('click',function (e){
+$(document).on('click',".btn-article-modify-form",function (e){
     e.preventDefault();
 
     let id      = $(this).attr("data-id");
@@ -46,18 +46,13 @@ $(".btn-article-modify-form").on('click',function (e){
 
 });
 
-$('.modify-article-btn').on("click",function (e)
+$(document).on("click",'.modify-article-btn',function (e)
     {
         e.preventDefault();
-
-        //let files = $('#modify-file')[0].files;
 
         let form = $("#modify-article-form")[0];
         let data  = new FormData(form);
 
-        //jQuery.each(files, function(i, file) {
-        //    data.append('file-'+i, file);
-        //});
 
         $.ajax({
             type        : "post",
@@ -99,7 +94,7 @@ $('.modify-article-btn').on("click",function (e)
         })
     });
 
-$('.delete-article-btn').on("click",function (e)
+$(document).on("click",'.delete-article-btn',function (e)
 {
     let data = "articleID=" + $(this).attr("data-id");
     Swal.fire({
@@ -147,38 +142,16 @@ $(document).on("click",".edit-article-img",function (){
     $(".articleIDHidden").val($(this).attr("data-id"));
 });
 
-/**
- * add article handler
-
-
-$(".add-article-button").on("click",function (e){
-    e.preventDefault();
-    let title = $(".add-article-title").val().split();
-    let desc    = $(".add-article-description").val().split();
-    let content = YourEditor.getData();
-    console.log(content);
-    //console.log(title === "" || desc === "");
-    if(title == "" || desc == "")
-    {
-        e.preventDefault();
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'All fields are required',
-        })
-    }
-});
- */
 
 $(document).on("click",".add-article-button",function (e){
 
     e.preventDefault();
 
-    let desc = MyEditor.getData();
+    //let desc = MyEditor.getData();
 
     let dataa  = new FormData($(".add-article-form")[0]);
 
-    dataa.set('content',desc);
+    //dataa.set('content',desc);
 
     //console.log(dataa);
 
@@ -187,45 +160,35 @@ $(document).on("click",".add-article-button",function (e){
             enctype:"multipart/form-data",
             url:globalDIR+"/teacher/addArticle",
             data:dataa,
-            contentType: false,
-            processData: false,
             datatype: "json",
+            contentType: false,
+            cache: false,
+            processData: false,
             success:function (data)
             {
-                if(data === "success"){
+                if(data === '"success"'){
 
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
                         title: 'Data Added with success',
                         showConfirmButton: false,
-                        timer: 1500
                     })
                     setTimeout(function (){
                         window.location.replace(globalDIR+"/teacher/profile");
                     },1000);
 
-                }else if(data === "failed")
-                {
+                }else {
 
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        html: "there is an undifined error",
-                    })
-                }
-                else{
-                    let elem = "";
-                    let obj = JSON.parse(data);
-                    for(const prop in obj)
-                    {
-                        elem+="<p style='color: red'>"+obj[prop]+"</p>";
-                    }
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        html: elem,
-                    })
+                        html: "there is an  error",
+                        showConfirmButton: false,
+                    });
+                    setTimeout(function (){
+                        window.location.replace(globalDIR+"/teacher/profile");
+                    },1000);
                 }
             },
             error:function (request,error)
@@ -246,6 +209,7 @@ $(document).on("click",".add-article-button",function (e){
 
 
 
+
    $(window).on("load",function (){
        setTimeout(function (){
            $("#"+localStorage.getItem("lastClick")).attr("class","nav-item storageTheClick active");
@@ -256,7 +220,7 @@ $(document).on("click",".add-article-button",function (e){
        },1);
    });
 
-    $(".storageTheClick").on("click",function (e){
+    $(document).on("click",".storageTheClick",function (e){
 
         $(this).parent().siblings().attr("class","nav-item ");
         $(this).parent().siblings().children().attr("class","nav-link ");
@@ -271,13 +235,8 @@ $(document).on("click",".add-article-button",function (e){
      *******************************************************************************************************************
      ********************************************************************************************************************/
 
-    $("#experience-table").dataTable({
-        "processing": true,
-        "responsive": true,
-        "lengthChange": false,
-    });
 
-    $(".supp-experience").on("click",function (e) {
+    $(document).on("click",".supp-experience",function (e) {
         e.preventDefault();
         let id = $(this).attr("data-id");
         Swal.fire({
@@ -310,7 +269,10 @@ $(document).on("click",".add-article-button",function (e){
                                 window.location.replace(globalDIR+"/teacher/profile");
                             },1000);
                         }else{
-                            alert("ERROR");
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...'
+                            })
                             setTimeout(function (){
                                 window.location.replace(globalDIR+"/teacher/profile");
                             },1000);
@@ -335,7 +297,7 @@ $(document).on("click",".add-article-button",function (e){
         "lengthChange": false,
     });
 
-    $(".supp-diplome").on("click",function (e) {
+    $(document).on("click",".supp-diplome",function (e) {
         e.preventDefault();
         let id = $(this).attr("data-id");
         Swal.fire({
@@ -368,7 +330,10 @@ $(document).on("click",".add-article-button",function (e){
                                 window.location.replace(globalDIR+"/teacher/profile");
                             },1000);
                         }else{
-                            alert("ERROR");
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...'
+                            })
                             setTimeout(function (){
                                 window.location.replace(globalDIR+"/teacher/profile");
                             },1000);
@@ -379,3 +344,97 @@ $(document).on("click",".add-article-button",function (e){
             }
         })
     });
+
+    // *********************************** *********************************** ***********************************
+    // ***********************************         Settings of profile         ***********************************
+    // *********************************** *********************************** ***********************************
+
+    $(document).on("click",".btn-modify-settings",function (e) {
+        e.preventDefault();
+        let dataa = new FormData($(".ha-settings-form")[0]);
+
+        $.ajax({
+            type:"post",
+            enctype:"multipart/form-data",
+            url:globalDIR+"/teacher/profile",
+            data:dataa,
+            dataType:"json",
+            contentType: false,
+            cache: false,
+            processData: false,
+            success:function (data){
+                console.log(typeof data);
+                if(data === "success"){
+                    Swal.fire(
+                        'Updated!',
+                        'Your account has been updated.',
+                        'success',
+                    )
+                    setTimeout(function (){
+                        window.location.replace(globalDIR+"/teacher/profile");
+                    },1000);
+                }else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...'
+                    })
+                    setTimeout(function (){
+                        window.location.replace(globalDIR+"/teacher/profile");
+                    },800);
+                }
+            }
+        });
+    });
+
+// *********************************** *********************************** ***********************************
+// ***********************************        Experience of profile        ***********************************
+// *********************************** *********************************** ***********************************
+
+$("#experience-table").dataTable({
+    "processing": true,
+    "responsive": true,
+    "lengthChange": false,
+});
+
+$(document).on("click",".experience-pro-button",function (e) {
+    e.preventDefault();
+
+    let dataa = new FormData($(".experience-pro-form")[0]);
+    let desc    = DescriptionExperienceEditor.getData();
+    dataa.set("description",desc);
+
+    $.ajax({
+        method:"post",
+        url: globalDIR+"/teacher/experiencePro",
+        data:dataa,
+        datatype: "json",
+        contentType: false,
+        cache: false,
+        processData: false,
+        success:function (data) {
+            if(data === '"success"')
+            {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Experience Added with success',
+                    showConfirmButton: false,
+                })
+                setTimeout(function (){
+                    window.location.replace(globalDIR+"/teacher/profile");
+                },1000);
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    showConfirmButton: false
+                })
+                setTimeout(function (){
+                    window.location.replace(globalDIR+"/teacher/profile");
+                },800);
+            }
+        },
+
+
+    });
+})

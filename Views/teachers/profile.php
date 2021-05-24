@@ -161,6 +161,7 @@
 
 <script>
 
+
     items = document.querySelectorAll( '.editor' );
     items.forEach(function(item){
         ClassicEditor
@@ -202,7 +203,6 @@
             console.error( error );
         });
     })
-
     iteme = document.querySelectorAll( '.description_experience_editor' );
     iteme.forEach(function(item){
         ClassicEditor

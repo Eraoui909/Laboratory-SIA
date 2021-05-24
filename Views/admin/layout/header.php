@@ -1,11 +1,13 @@
+<?php global $GLOBAL_DIR; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/Storage/Statics/images/logoLaboFst(35X35).png">
+    <link rel="shortcut icon" href="<?php echo $GLOBAL_DIR; ?>/Storage/Statics/images/logoLaboFst(35X35).png">
 
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>SIA | Dashboard</title>
 
     <?php
         include_once "links/headerLinks.php";
@@ -46,5 +48,5 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="/adminLTE/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+        <img class="animation__shake" src="<?php echo $GLOBAL_DIR; ?>/adminLTE/dist/img/AdminLTELogo.png" alt="SIALogo" height="60" width="60">
     </div>

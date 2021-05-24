@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="post" action="<?php echo $GLOBAL_DIR ?>/teacher/profile" enctype="multipart/form-data">
+<form class="form-horizontal ha-settings-form" method="post" action="<?php echo $GLOBAL_DIR ?>/teacher/profile" enctype="multipart/form-data">
 
     <div class="row">
         <div class="col-sm-2"></div>
@@ -7,7 +7,7 @@
     <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label"><?= $lang['firstName'] ?></label>
         <div class="col-sm-10">
-            <input type="text" value="<?= $prenom ?>" name="prenom" class="form-control" id="" placeholder="First Name">
+            <input type="text" value="<?= $prenom ?>" name="prenom" class="form-control" id="" placeholder="<?= $lang['firstName'] ?>">
         </div>
     </div>
 
@@ -18,7 +18,7 @@
     <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label"><?= $lang['lastName'] ?></label>
         <div class="col-sm-10">
-            <input type="text" name="nom" value="<?= $nom ?>" class="form-control" id="" placeholder="Last Name">
+            <input type="text" name="nom" value="<?= $nom ?>" class="form-control" id="" placeholder="<?= $lang['lastName'] ?>">
         </div>
     </div>
 
@@ -37,7 +37,7 @@
     <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label"><?= $lang['phone'] ?></label>
         <div class="col-sm-10">
-            <input type="text" name="tel" value="<?= $tel ?>" class="form-control" id="" placeholder="Tel">
+            <input type="text" name="tel" value="<?= $tel ?>" class="form-control" id="" placeholder="<?= $lang['phone'] ?>">
         </div>
     </div>
 
@@ -48,7 +48,7 @@
     <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label"><?= $lang['thematique'] ?></label>
         <div class="col-sm-10">
-            <input type="text" name="thematique" value="<?= $thematique ?>" class="form-control" id="" placeholder="Tel">
+            <input type="text" name="thematique" value="<?= $thematique ?>" class="form-control" id="" placeholder="<?= $lang['thematique'] ?>">
         </div>
     </div>
 
@@ -71,7 +71,7 @@
         <label for="profileImg" class="col-sm-2 col-form-label"><?= $lang['avatar'] ?></label>
         <div class="col-sm-10 ">
             <label for="profileImg" class="col-sm-2 col-form-label UploadLabel"><?= $lang['updatePic'] ?></label>
-            <input style="display: none" type="file" name="pictures[]" class="form-control hiddenInput" id="profileImg" placeholder="Avatar">
+            <input style="display: none" type="file" name="pictures[]" class="form-control hiddenInput" id="profileImg" placeholder="$lang['avatar']">
         </div>
     </div>
 
@@ -92,7 +92,7 @@
     <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label"><?= $lang['date_naiss'] ?></label>
         <div class="col-sm-10">
-            <input type="date" name="date_naissance" value="<?= $date_naissance ?>" class="form-control" id="" placeholder="Tel">
+            <input type="date" name="date_naissance" value="<?= $date_naissance ?>" class="form-control" id="" placeholder="<?= $lang['date_naiss'] ?>">
         </div>
     </div>
 
@@ -103,7 +103,7 @@
     <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label"><?= $lang['etat_civil'] ?></label>
         <div class="col-sm-10">
-            <input type="text" name="etat_civil" value="<?= $etat_civil ?>" class="form-control" id="" placeholder="Tel">
+            <input type="text" name="etat_civil" value="<?= $etat_civil ?>" class="form-control" id="" placeholder="<?= $lang['etat_civil']  ?>">
         </div>
     </div>
 
@@ -114,7 +114,7 @@
     <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label"><?= $lang['addresse'] ?></label>
         <div class="col-sm-10">
-            <input type="text" name="addresse" value="<?= $addresse ?>" class="form-control" id="" placeholder="Tel">
+            <input type="text" name="addresse" value="<?= $addresse ?>" class="form-control" id="" placeholder="<?= $lang['addresse'] ?>">
         </div>
     </div>
 
@@ -144,7 +144,7 @@
 
     <div class="form-group row">
         <div class="offset-sm-2 col-sm-10">
-            <button type="submit" class="btn btn-danger"><?= $lang['submit'] ?></button>
+            <button type="submit" class="btn btn-danger btn-modify-settings"><?= $lang['submit'] ?></button>
         </div>
     </div>
 </form>
