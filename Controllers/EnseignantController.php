@@ -177,10 +177,8 @@ class EnseignantController extends Controller
                 $teacherModel->setTel($tel);
                 $teacherModel->setAvatar($avatar);
                 $teacherModel->setThematique($data['thematique']);
+                $teacherModel->setGrade($data['grade']);
 
-                $teacherModel->setDateNaissance($data['date_naissance']);
-                $teacherModel->setEtatCivil($data['etat_civil']);
-                $teacherModel->setAddresse($data['addresse']);
                 $teacherModel->setSituationPresent($data['situation_present']);
                 $teacherModel->setNbrAnneeExperience($data['nbr_annee_experience']);
                 $teacherModel->setQualificationPrincipale($data['qualification_principale']);
@@ -194,10 +192,8 @@ class EnseignantController extends Controller
                     $_SESSION['token'][$session_actuel['specialite']]['tel']                        = $tel;
                     $_SESSION['token'][$session_actuel['specialite']]['avatar']                     = $avatar;
                     $_SESSION['token'][$session_actuel['specialite']]['thematique']                 = $data['thematique'];
+                    $_SESSION['token'][$session_actuel['specialite']]['grade']                      = $data['grade'];
 
-                    $_SESSION['token'][$session_actuel['specialite']]['date_naissance']             = $data['date_naissance'];
-                    $_SESSION['token'][$session_actuel['specialite']]['etat_civil']                 = $data['etat_civil'];
-                    $_SESSION['token'][$session_actuel['specialite']]['addresse']                   = $data['addresse'];
                     $_SESSION['token'][$session_actuel['specialite']]['situation_present']          = $data['situation_present'];
                     $_SESSION['token'][$session_actuel['specialite']]['nbr_annee_experience']       = $data['nbr_annee_experience'];
                     $_SESSION['token'][$session_actuel['specialite']]['qualification_principale']   = $data['qualification_principale'];

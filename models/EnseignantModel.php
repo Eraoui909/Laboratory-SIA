@@ -18,14 +18,11 @@ class EnseignantModel extends AbstractModel
     protected $tel;
     protected $avatar;
     protected $thematique;
-    protected $date_naissance;
-    protected $etat_civil;
-    protected $addresse;
     protected $situation_present;
     protected $nbr_annee_experience;
     protected $qualification_principale;
     protected $specialite;
-
+    protected $grade;
 
 
 
@@ -40,13 +37,11 @@ class EnseignantModel extends AbstractModel
         'thematique'                    => PDO::PARAM_STR,
         'tel'                           => PDO::PARAM_STR,
         'avatar'                        => PDO::PARAM_STR,
-        'date_naissance'                => PDO::PARAM_STR,
-        'etat_civil'                    => PDO::PARAM_STR,
-        'addresse'                      => PDO::PARAM_STR,
         'situation_present'             => PDO::PARAM_STR,
         'nbr_annee_experience'          => PDO::PARAM_INT,
         'qualification_principale'      => PDO::PARAM_STR,
         'specialite'                    => PDO::PARAM_STR,
+        'grade'                         => PDO::PARAM_STR,
     );
 
     /**
@@ -170,54 +165,6 @@ class EnseignantModel extends AbstractModel
     /**
      * @return mixed
      */
-    public function getDateNaissance()
-    {
-        return $this->date_naissance;
-    }
-
-    /**
-     * @param mixed $date_naissance
-     */
-    public function setDateNaissance($date_naissance): void
-    {
-        $this->date_naissance = $date_naissance;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEtatCivil()
-    {
-        return $this->etat_civil;
-    }
-
-    /**
-     * @param mixed $etat_civil
-     */
-    public function setEtatCivil($etat_civil): void
-    {
-        $this->etat_civil = $etat_civil;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAddresse()
-    {
-        return $this->addresse;
-    }
-
-    /**
-     * @param mixed $addresse
-     */
-    public function setAddresse($addresse): void
-    {
-        $this->addresse = $addresse;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getSituationPresent()
     {
         return $this->situation_present;
@@ -279,6 +226,22 @@ class EnseignantModel extends AbstractModel
         $this->specialite = $specialite;
     }
 
+
+    /**
+     * @param mixed $grade
+     */
+    public function setGrade($grade): void
+    {
+        $this->grade = $grade;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGrade()
+    {
+        return $this->grade;
+    }
 
 
 }

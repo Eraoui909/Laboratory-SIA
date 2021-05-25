@@ -51,7 +51,7 @@ $(document).ready(function()
 
     $(document).on("click",".delete-team-btn", function (e){
         e.preventDefault();
-        deleteTeam();
+        deleteTeam(this);
     });
 
     $(document).on("click","#add-teacher-to-team-btn", function (e){
@@ -283,10 +283,11 @@ function addTeam ()
         data    : data,
         success:function (data)
         {
-            data = JSON.parse(data);
-
-            if( data === "success")
-            {console.log(data)
+            //data = JSON.parse(data);
+            console.log(data);
+            if( data === '"success"')
+            {
+                console.log(data)
                 $("#add-team-btn").attr("disabled", "disabled");
                 Swal.fire({
                     position: 'top-end',
@@ -307,9 +308,9 @@ function addTeam ()
     });
 }
 
-function deleteTeam ()
+function deleteTeam (teamID)
 {
-
+    let data = "equipeID="+$(teamID).attr("data-id");
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -320,7 +321,6 @@ function deleteTeam ()
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            let data = "equipeID="+$('.delete-team-btn').attr("data-id");
             $.ajax(
     {
                 method : "post",

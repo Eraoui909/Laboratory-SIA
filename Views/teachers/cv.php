@@ -65,17 +65,15 @@ global $GLOBAL_DIR;
                             <td><?= $nom ?> </td>
                         </tr>
                         <tr>
-                            <td><strong><?= $lang['date_naiss'] ?>:</strong></td>
-                            <td><?= $date_naissance ?> </td>
+                            <td><strong>Grade</strong></td>
+                            <td><?= $grade ?> </td>
                         </tr>
                         <tr>
-                            <td><strong><?= $lang['etat_civil'] ?>:</strong></td>
-                            <td><?= $etat_civil ;?> </td>
+                            <td><strong>Thématique</strong></td>
+                            <td><?= $thematique ?> </td>
                         </tr>
-                        <tr>
-                            <td><strong><?= $lang['addresse'] ?>:</strong></td>
-                            <td><?= $addresse ?> </td>
-                        </tr>
+
+
                     </table>
 
                 </div>

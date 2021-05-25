@@ -48,7 +48,25 @@
     <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label"><?= $lang['thematique'] ?></label>
         <div class="col-sm-10">
-            <input type="text" name="thematique" value="<?= $thematique ?>" class="form-control" id="" placeholder="<?= $lang['thematique'] ?>">
+            <select class="form-control" name="thematique">
+                <option selected value=""><?= $thematique ?></option>
+                <option value="Intelligence Artificielle">Intelligence Artificielle</option>
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="Reconnaissance de formes">Reconnaissance de formes</option>
+                <option value="Traitement et Analyse d’images">Traitement et Analyse d’images</option>
+                <option value="Systèmes embarqués et Théorie de codes">Systèmes embarqués et Théorie de codes</option>
+                <option value="Big Data">Big Data</option>
+                <option value="Traitement Automatique de la parole et du locuteur">Traitement Automatique de la parole et du locuteur</option>
+                <option value="Traitement des langues naturelles">Traitement des langues naturelles</option>
+                <option value="Aide multicritère à la décision">Aide multicritère à la décision</option>
+                <option value="E-Learning"> E-Learning</option>
+                <option value="E-health">E-health</option>
+                <option value="Gestion des connaissances">Gestion des connaissances</option>
+                <option value="Data warehouse">Data warehouse</option>
+                <option value="Datamining et aide à la décision">Datamining et aide à la décision</option>
+                <option value="Réseaux ad hoc">Réseaux ad hoc</option>
+                <option value="Sécurité réseau">Sécurité réseau</option>
+            </select>
         </div>
     </div>
 
@@ -85,38 +103,18 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <p class="col-sm-10 error-message"><?= ($_SESSION['flash_messages']['errors']['value']['date_naissance'] ?? '') ?></p>
-    </div>
-    <div class="form-group row">
-        <label for="" class="col-sm-2 col-form-label"><?= $lang['date_naiss'] ?></label>
-        <div class="col-sm-10">
-            <input type="date" name="date_naissance" value="<?= $date_naissance ?>" class="form-control" id="" placeholder="<?= $lang['date_naiss'] ?>">
-        </div>
-    </div>
 
     <div class="row">
         <div class="col-sm-2"></div>
-        <p class="col-sm-10 error-message"><?= ($_SESSION['flash_messages']['errors']['value']['etat_civil'] ?? '') ?></p>
+        <p class="col-sm-10 error-message"><?= ($_SESSION['flash_messages']['errors']['value']['grade'] ?? '') ?></p>
     </div>
     <div class="form-group row">
-        <label for="" class="col-sm-2 col-form-label"><?= $lang['etat_civil'] ?></label>
+        <label for="" class="col-sm-2 col-form-label"> Grade </label>
         <div class="col-sm-10">
-            <input type="text" name="etat_civil" value="<?= $etat_civil ?>" class="form-control" id="" placeholder="<?= $lang['etat_civil']  ?>">
+            <input type="text" name="grade" value="<?= $grade ?>" class="form-control" id="" placeholder=" grade">
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <p class="col-sm-10 error-message"><?= ($_SESSION['flash_messages']['errors']['value']['addresse'] ?? '') ?></p>
-    </div>
-    <div class="form-group row">
-        <label for="" class="col-sm-2 col-form-label"><?= $lang['addresse'] ?></label>
-        <div class="col-sm-10">
-            <input type="text" name="addresse" value="<?= $addresse ?>" class="form-control" id="" placeholder="<?= $lang['addresse'] ?>">
-        </div>
-    </div>
 
     <div class="row">
         <div class="col-sm-2"></div>
@@ -128,6 +126,7 @@
             <textarea name="situation_present" style="width: 100%" rows="10"><?= $situation_present ?></textarea>
         </div>
     </div>
+
 
 
     <div class="row">
