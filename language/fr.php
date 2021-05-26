@@ -86,7 +86,8 @@
         "diplome_certificat"            => "Certificat",
         "newsletter"                    => "les newsletters",
 
-
+        "abstract"                      => "Abstrait",
+        "researchers"                   => "Chercheures"
 
 
     );

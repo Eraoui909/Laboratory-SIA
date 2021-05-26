@@ -85,4 +85,7 @@
         "diplome_certificat"            => "Certificate",
         "newsletter"                    => "NewsLetter",
 
+        "abstract"                      => "Abstract",
+        "researchers"                   => "Researchers",
+
     );

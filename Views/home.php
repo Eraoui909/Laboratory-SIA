@@ -39,9 +39,16 @@
         <ul class="marquee-content-items">
             <?php
             $count = 0;
-            foreach ($params['marquee'] as $param):?>
+            foreach ($params['articles'] as $param):?>
             <li>
-                <a href="#"><?= $param['title']; ++$count; ?></a>
+                <a href="#" data-toggle="modal" data-target="#exampleModal"
+                   data-title="<?= $param['title']; ?>"
+                   data-abstract="<?= $param['abstract']; ?>"
+                   data-journal="<?= $param['journal']; ?>"
+                   data-researchers="<?= $param['researchers']; ?>"
+                   data-date="<?= $param['date']; ?>"
+                   data-doi="<?= $param['doi']; ?>"
+                ><?= $param['title']; ++$count; ?></a>
             </li>
             <?php
             if($count === 3)

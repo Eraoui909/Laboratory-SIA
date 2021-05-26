@@ -8,19 +8,24 @@ class ArticleModel extends AbstractModel
 {
     protected $id;
     protected $title;
-    protected $description;
+    protected $abstract;
     protected $journal;
     protected $author;
     protected $date;
+    protected $doi;
+    protected $researchers;
+
 
     public static $tableName    ='article';
     public static $pk           ='articleID';
     public static $tableSchema  =array(
 
-        'title'       => \PDO::PARAM_STR,
-        'description' => \PDO::PARAM_STR,
-        'author'     => \PDO::PARAM_INT,
-        'journal'     => \PDO::PARAM_STR,
+        'title'         => \PDO::PARAM_STR,
+        'abstract'      => \PDO::PARAM_STR,
+        'author'        => \PDO::PARAM_INT,
+        'journal'       => \PDO::PARAM_STR,
+        'researchers'   => \PDO::PARAM_STR,
+        'doi'           => \PDO::PARAM_STR,
     );
 
     public static function getByPk($pk)
@@ -53,22 +58,6 @@ class ArticleModel extends AbstractModel
     public function setTitle($title): void
     {
         $this->title = $title;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * @param mixed $description
-     */
-    public function setDescription($description): void
-    {
-        $this->description = $description;
     }
 
     /**
@@ -135,5 +124,51 @@ class ArticleModel extends AbstractModel
         $this->journal = $journal;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getAbstract()
+    {
+        return $this->abstract;
+    }
 
+    /**
+     * @param mixed $abstract
+     */
+    public function setAbstract($abstract): void
+    {
+        $this->abstract = $abstract;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDoi()
+    {
+        return $this->doi;
+    }
+
+    /**
+     * @param mixed $doi
+     */
+    public function setDoi($doi): void
+    {
+        $this->doi = $doi;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getResearchers()
+    {
+        return $this->researchers;
+    }
+
+    /**
+     * @param mixed $researchers
+     */
+    public function setResearchers($researchers): void
+    {
+        $this->researchers = $researchers;
+    }
 }

@@ -33,15 +33,19 @@ $('#article-table').DataTable({
 $(document).on('click',".btn-article-modify-form",function (e){
     e.preventDefault();
 
-    let id      = $(this).attr("data-id");
-    let title   = $(this).attr("data-title");
-    let desc    = $(this).attr("data-description");
-    let journal = $(this).attr("data-journal");
+    let id          = $(this).attr("data-id");
+    let title       = $(this).attr("data-title");
+    let desc        = $(this).attr("data-abstract");
+    let journal     = $(this).attr("data-journal");
+    let researchers = $(this).attr("data-researchers");
+    let doi         = $(this).attr("data-doi");
 
     $(".article-id").val(id);
     $(".article-title").val(title);
     $(".article-journal").val(journal);
-    $(".article-description").text(desc);
+    $(".article-abstract").text(desc);
+    $(".article-researchers").text(researchers);
+    $(".article-doi").text(doi);
 
 
 });
@@ -166,6 +170,7 @@ $(document).on("click",".add-article-button",function (e){
             processData: false,
             success:function (data)
             {
+
                 if(data === '"success"'){
 
                     Swal.fire({
@@ -183,11 +188,11 @@ $(document).on("click",".add-article-button",function (e){
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        html: "there is an  error",
+                        html: "Some field are emty",
                         showConfirmButton: false,
                     });
                     setTimeout(function (){
-                        window.location.replace(globalDIR+"/teacher/profile");
+                        //window.location.replace(globalDIR+"/teacher/profile");
                     },1000);
                 }
             },

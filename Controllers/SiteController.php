@@ -26,7 +26,7 @@ class SiteController extends Controller
 
     public function homePage()
     {
-        $data['marquee'] = ArticleModel::getByQuery('SELECT articleID,title,DATE_FORMAT(date, "%W %M %e %Y") as "date" FROM article order by date');
+        $data['articles'] = ArticleModel::getByQuery('SELECT *,DATE_FORMAT(date, "%W %M %e %Y") as "date" FROM article order by date DESC limit 10');
         $data['teams']  =TeamModel::getALLEquipeAndTechers();
         $data['nbrOfTeam'] = TeamModel::getCountTable();
         $data['nbrOfTeacher'] = EnseignantModel::getCountTable('WHERE specialite="ens"');
