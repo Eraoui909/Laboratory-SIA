@@ -219,29 +219,35 @@ global $GLOBAL_DIR;
                 </section>
             <!-- Qualifications principales end -->
 
-            <!-- Section Testimonials
+             <!-- Section of Articles  -->
             <section id="testimonials" class="testimonials">
 
                 <div class="section-header">
-                    <h2>Testimonials</h2>
+                    <h2>Les articles</h2>
                 </div>
 
-                <!-- Carousel
                 <div class="testimonial-carousel">
 
                     <div class="item">
                         <div class="row">
 
-                            <div class="text col-md-10 col-sm-10 col-xs-12 ">
-                                <p>Pri diam soluta molestie at, id melius ponderum mel, nominavi adipisci partiendo per te. No usu doctus dolorem liberavisse, vim nusquam invidunt id.</p>
-                                <span class="author">- John Doe -</span>
-                            </div>
+
+                            <?php
+                            if(!empty($params['articles'])):
+                                foreach ($params['articles'] as $article): ?>
+                                    <div class="text col-md-10 col-sm-10 col-xs-12 ">
+                                        <p> &#9654 <?= $article['title'] ?></p>
+                                        <span class="author">- <?= $article['doi'] ?> -</span>
+                                    </div>
+                            <?php endforeach;
+                            endif;?>
+
                         </div>
                     </div>
 
 
 
-                </div>-->
+                </div>
                 <!-- Carousel end -->
 
             </section>

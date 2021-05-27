@@ -245,6 +245,7 @@ class EnseignantController extends Controller
         $arr = $_SESSION['token']['ens'] ??$_SESSION['token']['doc'];
 
         $arr['title'] = 'Download CV';
+        $arr['articles'] = ArticleModel::getAll("WHERE author=".$arr['id']);
 
         return $this->render('/teachers/cv', $arr);
     }
@@ -262,6 +263,8 @@ class EnseignantController extends Controller
             $arr['title'] = 'Download CV PDF';
             $arr['experiences'] = ExperienceProModel::getByQuery("SELECT * FROM experience_pro WHERE personne_id=".$_GET['cv']);
             $arr['diplomes']    = diplomesModel::getByQuery("SELECT * FROM diplomes WHERE personne_id=".$_GET['cv']);
+            $arr['articles']    = ArticleModel::getAll("WHERE author=".$_GET['cv']);
+
         }else{
             if (!isset($session_actuel))
                 $this->redirect($GLOBAL_DIR.'/login');
@@ -271,7 +274,6 @@ class EnseignantController extends Controller
             $arr['experiences'] = ExperienceProModel::getAll();
             $arr['diplomes']    = diplomesModel::getAll();
         }
-
 
 
         return $this->renderEmpty('/teachers/cvToPDF', $arr);

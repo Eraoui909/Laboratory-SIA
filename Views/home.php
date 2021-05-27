@@ -61,9 +61,7 @@
 <!-- Page content-->
 <?php include_once "acceuil.php";?>
 
-
 <?php include_once "lastArticles.php";?>
-
 
 <?php include_once "home_evenements.php";?>
 

@@ -10,7 +10,7 @@
                 <p class="ha-modal-researchers">
                 <hr>
                 <p class="ha-modal-abstract" style="text-indent: 50px;text-align: justify;color: black;"></p>
-                <strong class="ha-modal-doi" style="display: block"></strong>
+                <strong class="ha-modal-doi" style="display: block;margin: 10px"></strong>
                 <small class="ha-modal-date"></small>
             </div>
             <div class="modal-footer">
@@ -30,7 +30,7 @@
         <div class="ha-content">
             <?php foreach ($params['articles'] as $param):?>
             <div class="ha-article">
-                <a href="#" class="show-article-modal">
+                <a style="cursor: pointer" class="show-article-modal">
                     <p> <?= $param['title']; ?> <span  data-toggle="modal" data-target="#exampleModal"
                                                        data-title="<?= $param['title']; ?>"
                                                        data-abstract="<?= $param['abstract']; ?>"

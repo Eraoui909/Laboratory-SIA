@@ -86,7 +86,7 @@
 
                             <strong><i class="fas fa-map-marker-alt mr-1"></i> <?= $lang['addresse'] ?></strong>
 
-                            <p class="text-muted"><?= $addresse ?></p>
+                            <p class="text-muted">Faculté des science est technique</p>
 
                         </div>
                         <!-- /.card-body -->

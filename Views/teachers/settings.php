@@ -49,7 +49,7 @@
         <label for="" class="col-sm-2 col-form-label"><?= $lang['thematique'] ?></label>
         <div class="col-sm-10">
             <select class="form-control" name="thematique">
-                <option selected value=""><?= $thematique ?></option>
+                <option selected value="<?= $thematique ?>"><?= $thematique ?></option>
                 <option value="Intelligence Artificielle">Intelligence Artificielle</option>
                 <option value="Machine Learning">Machine Learning</option>
                 <option value="Reconnaissance de formes">Reconnaissance de formes</option>
