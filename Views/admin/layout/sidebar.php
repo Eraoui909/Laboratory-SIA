@@ -78,6 +78,15 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="/admin/events" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            <?= $lang['event']; ?>s
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="/admin/newsletter" class="nav-link">
                         <i class="nav-icon fas fa-newspaper"></i>
                         <p>

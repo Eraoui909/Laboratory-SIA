@@ -3,6 +3,7 @@
 use app\Controllers\AdminController;
 use app\Controllers\DoctorantController;
 use app\Controllers\EnseignantController;
+use app\Controllers\EventController;
 use app\Controllers\LangController;
 use app\Controllers\NewsLetterInscriController;
 use app\Controllers\SiteController;
@@ -121,6 +122,11 @@ $app->router->post('/admin/teams/add',[TeamController::class,'addTeam']);
 $app->router->post('/admin/teams/delete',[TeamController::class,'deleteTeam']);
 $app->router->post('/admin/teams/add-teacher',[TeamController::class,'addTeacherToTeam']);
 $app->router->post('/admin/teams/delete-teacher',[TeamController::class,'deleteTeacherFromTeam']);
+
+$app->router->get('/admin/events',[AdminController::class,'EventsPage']);
+$app->router->post('/admin/events/add',[EventController::class,'addEvent']);
+$app->router->post('/admin/events/delete',[EventController::class,'deleteEvent']);
+$app->router->post('/admin/events/modify',[EventController::class,'modifyEvent']);
 
 $app->router->get('/motDePresident',[SiteController::class, 'motDePresidentPage']);
 $app->router->get('/conditionSoutnance',[SiteController::class, 'conditionSoutnancePage']);

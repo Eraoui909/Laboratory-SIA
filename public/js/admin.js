@@ -44,6 +44,8 @@ $(document).ready(function()
         $("#modify-div").css("display","none");
     });
 
+    ///////////////////////////////////////////////////////////////////////////
+
     $(document).on("click","#add-team-btn", function (e){
         e.preventDefault();
         addTeam();
@@ -141,7 +143,40 @@ $(document).ready(function()
         deleteEnsDoc('doctorant', $(this).attr("data-id"));
     });
 
+    ///////////////////////////////////////////////////////////////////////
+
+    $(document).on("click",".show-modify-event-btn",function (e)
+    {
+        e.preventDefault();
+        $("#modify-div").css("display","block");
+
+        $(".input-modify-title").attr("value", $(this).attr("data-title"));
+        $(".input-modify-description").attr("value", $(this).attr("data-description"));
+        $(".input-modify-lieu").attr("value", $(this).attr("data-lieu"));
+        $(".input-modify-picture").attr("value", $(this).attr("data-picture"));
+        $(".input-modify-date").attr("value", $(this).attr("data-date"));
+        $(".input-modify-id").attr("value", $(this).attr("data-id"));
+
+    });
+
+    $(document).on("click","#add-event-btn", function (e){
+        e.preventDefault();
+        addEvent();
+    });
+
+    $(document).on("click",".delete-event-btn", function (e){
+        e.preventDefault();
+        deleteEvent(this);
+    });
+
+    $(document).on("click","#modify-event-btn", function (e){
+        e.preventDefault();
+        modifyEvent();
+    });
+
 });
+
+    //////////////////////////////////////////////////////////////////////
 
 
 function addDocEns (person)
@@ -458,3 +493,132 @@ $("#newsletter-table").DataTable({
         },
     ]
 }).buttons().container().appendTo('#card-ens-doc .col-md-6:eq(0)');
+
+
+function addEvent ()
+{
+    let data = $(".add-event-form").serialize();
+    console.log(data);
+    let errors ="";
+
+    $.ajax({
+        type    : "post",
+        url     : "/admin/events/add",
+        data    : data,
+        success:function (data)
+        {
+            //data = JSON.parse(data);
+            console.log(data);
+            if( data === '"success"')
+            {
+                console.log(data);
+                $("#add-event-btn").attr("disabled", "disabled");
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: "Event added with success",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                setTimeout(function (){
+                    window.location.replace("/admin/events");
+                },2000);
+
+            }else{
+                errors += "<div class='alert alert-danger'>" + data.error.thematic + "</div>";
+                $(".msg-add-enseignant-doctorant").html(errors);
+            }
+        }
+    });
+}
+
+function deleteEvent (event)
+{
+    let data = "eventID="+$(event).attr("data-id");
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax(
+                {
+                    method : "post",
+                    url    : "/admin/events/delete",
+                    data   : data,
+                    success: function (data)
+                    {
+                        data = JSON.parse(data);
+                        console.log(data);
+                        if(data === "deleted")
+                        {
+                            Swal.fire(
+                                'Deleted!',
+                                'The event has been deleted.',
+                                'success'
+                            )
+                            setTimeout(function (){
+                                window.location.replace("/admin/events");
+                            },1000);
+
+                        }else{
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'error',
+                                title: "Event is not deleted",
+                                showConfirmButton: false,
+                                timer: 2000
+                            })
+                        }
+                    }
+                });
+
+        }
+    });
+
+
+}
+
+function modifyEvent ()
+{
+    let data = $(".modify-event-form").serialize();
+    console.log(data);
+    let errors ="";
+
+    $.ajax({
+        type    : "post",
+        url     : "/admin/events/modify",
+        data    : data,
+        success:function (data)
+        {
+            data = JSON.parse(data);
+            // console.log(data);
+            if( data === 'success')
+            {
+                $("#modify-event-btn").attr("disabled", "disabled");
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: "Event updated with success",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                setTimeout(function (){
+                    window.location.replace("/admin/events");
+                },2000);
+
+            }else{
+                for (const key in data) {
+
+                    errors += "<div class='alert alert-danger'>" + `${data[key]}` + "</div>";
+                    $(".msg-add-enseignant-doctorant").html(errors);
+                }
+
+            }
+        }
+    });
+}

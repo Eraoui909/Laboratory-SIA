@@ -51,7 +51,7 @@
         <div class="modal-dialog modal-lg" id="">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title"><?= $lang['add'] . ' ' . $lang['team']?></h4>
+                    <h4 class="modal-title"><?= $lang['modify'] . ' ' . $lang['team']?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true" class="close">×</span>
                     </button>
