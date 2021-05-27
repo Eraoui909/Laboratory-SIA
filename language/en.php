@@ -83,6 +83,7 @@
         "diplome_diplome"               => "Diploma",
         "diplome_titre"                 => "Title",
         "diplome_certificat"            => "Certificate",
+        "event"                         => "Event",
         "newsletter"                    => "NewsLetter",
 
         "abstract"                      => "Abstract",

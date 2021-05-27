@@ -84,6 +84,7 @@
         "diplome_diplome"               => "Diplôme",
         "diplome_titre"                 => "Titre",
         "diplome_certificat"            => "Certificat",
+        "event"                         => "Evenement",
         "newsletter"                    => "les newsletters",
 
         "abstract"                      => "Abstrait",

@@ -10,6 +10,7 @@ use app\models\AdminsModel;
 use app\models\ArticleModel;
 use app\models\DoctorantModel;
 use app\models\EnseignantModel;
+use app\models\EventModel;
 use app\models\TeamModel;
 
 class AdminController extends Controller
@@ -113,6 +114,7 @@ class AdminController extends Controller
 
     public function loginHandler()
     {
+
         global $GLOBAL_DIR ;
 
         $validator = new Validator();
@@ -247,7 +249,7 @@ class AdminController extends Controller
             $teachers['teacher'] = trim($teachers['teacher'], ', ');
 
             $data[$index] = array_merge($data[$index], $teachers);
-            $teachers =['teacher' => ''];
+            $teachers = ['teacher' => ''];
         }
 
 
@@ -256,6 +258,18 @@ class AdminController extends Controller
 
 
         return $this->renderAdmin('team', $params);
+    }
+
+    public function EventsPage()
+    {
+        global $GLOBAL_DIR ;
+
+        if(!isset($_SESSION['token']['admin'])){
+            $this->redirect($GLOBAL_DIR.'/admin/login');
+        }
+
+        $params['events'] = EventModel::getAll();
+        return $this->renderAdmin('event', $params);
     }
 
 

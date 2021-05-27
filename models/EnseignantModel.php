@@ -9,8 +9,6 @@ use PDO;
 class EnseignantModel extends AbstractModel
 {
     protected $id;
-
-
     protected $nom;
     protected $prenom;
     protected $email;
