@@ -495,16 +495,26 @@ $("#newsletter-table").DataTable({
 }).buttons().container().appendTo('#card-ens-doc .col-md-6:eq(0)');
 
 
+// *********************************** *********************************** ***********************************
+// ***********************************             Events CRUD             ***********************************
+// *********************************** *********************************** ***********************************
+
 function addEvent ()
 {
-    let data = $(".add-event-form").serialize();
-    console.log(data);
+    let dataa = new FormData($(".add-event-form")[0]);
+
     let errors ="";
 
+
     $.ajax({
-        type    : "post",
-        url     : "/admin/events/add",
-        data    : data,
+        type        : "post",
+        enctype     : "multipart/form-data",
+        url         : "/admin/events/add",
+        data        : dataa,
+        datatype    : "json",
+        processData : false,
+        contentType : false,
+        cache       : false,
         success:function (data)
         {
             //data = JSON.parse(data);
@@ -525,16 +535,23 @@ function addEvent ()
                 },2000);
 
             }else{
-                errors += "<div class='alert alert-danger'>" + data.error.thematic + "</div>";
-                $(".msg-add-enseignant-doctorant").html(errors);
+                //errors += "<div class='alert alert-danger'>" + data.error.thematic + "</div>";
+                //$(".msg-add-enseignant-doctorant").html(errors);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: "All fields are required",
+                    timer: 2500
+                })
             }
         }
     });
+
 }
 
 function deleteEvent (event)
 {
-    let data = "eventID="+$(event).attr("data-id");
+    let data = "eventID="+$(event).attr("data-id")+"&eventPic="+$(event).attr("data-picture");
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -585,19 +602,24 @@ function deleteEvent (event)
 
 function modifyEvent ()
 {
-    let data = $(".modify-event-form").serialize();
-    console.log(data);
+    let data = new FormData($(".modify-event-form")[0]);
     let errors ="";
 
     $.ajax({
         type    : "post",
+        enctype     : "multipart/form-data",
         url     : "/admin/events/modify",
         data    : data,
+        datatype    : "json",
+        processData : false,
+        contentType : false,
+        cache       : false,
         success:function (data)
         {
-            data = JSON.parse(data);
+            console.log(data);
+            //data = JSON.parse(data);
             // console.log(data);
-            if( data === 'success')
+            if( data === '"success"')
             {
                 $("#modify-event-btn").attr("disabled", "disabled");
                 Swal.fire({
@@ -612,12 +634,12 @@ function modifyEvent ()
                 },2000);
 
             }else{
-                for (const key in data) {
-
-                    errors += "<div class='alert alert-danger'>" + `${data[key]}` + "</div>";
-                    $(".msg-add-enseignant-doctorant").html(errors);
-                }
-
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: "All filelds are required",
+                    timer: 2500
+                })
             }
         }
     });

@@ -5,12 +5,14 @@ namespace app\Controllers;
 
 
 use app\core\Controller;
+use app\core\Helper;
 use app\core\Session;
 use app\core\Validator;
 use app\models\EventModel;
 
 class EventController extends Controller
 {
+    use Helper;
     public function addEvent()
     {
         $errors     = array();
@@ -20,6 +22,9 @@ class EventController extends Controller
         $data                = $valdator->sanitize($_POST);
         $errors['error']     = $valdator->require($data);
 
+        $picture = $this->UploadFile('events',$data['title']);
+        $errors['uploads'] = $picture['errors'];
+
         if(empty($errors['error']))
         {
             $event  = new EventModel();
@@ -27,7 +32,7 @@ class EventController extends Controller
             $event->setTitle($data['title']);
             $event->setLieu($data['lieu']);
             $event->setDescription($data['description']);
-            $event->setPicture("default.png");
+            $event->setPicture($picture['uploaded'][0]);
 
             $event->register();
 
@@ -44,6 +49,12 @@ class EventController extends Controller
 
     public function deleteEvent()
     {
+        if(isset($_POST['eventID'])){
+            $lastPic = dirname(__DIR__) . "/public/Storage/uploads/events/".$_POST['eventPic'];
+            if($lastPic !== "default.png"){
+                unlink($lastPic);
+            }
+        }
         if(EventModel::delete($_POST['eventID']))
         {
             echo json_encode("deleted");
@@ -56,6 +67,8 @@ class EventController extends Controller
     {
         global $GLOBAL_DIR ;
 
+        $pic = null;
+
         $session = new Session();
         $validator = new validator();
 
@@ -64,13 +77,27 @@ class EventController extends Controller
 
         $eventModel = new EventModel();
 
+        if(!empty($_FILES['pictures']['name'][0])){
+
+            $lastPic = dirname(__DIR__) . "/public/Storage/uploads/events/".$_POST['picture'];
+            if($lastPic !== "default.png"){
+                unlink($lastPic);
+            }
+            $pic = $this->UploadFile('events',$data['title']);
+        }
+
+
         if(empty($errors)){
 
             $eventModel->setEventID($data['id']);
             $eventModel->setTitle($data['title']);
             $eventModel->setLieu($data['lieu']);
             $eventModel->setDate($data['date']);
-            $eventModel->setPicture($data['picture']);
+            if($pic === null){
+                $eventModel->setPicture($data['picture']);
+            }else{
+                $eventModel->setPicture($pic['uploaded'][0]);
+            }
             $eventModel->setDescription($data['description']);
 
             if($eventModel->update()){

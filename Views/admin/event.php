@@ -49,6 +49,17 @@
                             </div>
                         </div>
 
+                        <div class="input-group mb-3">
+                            <input type="file" name="pictures[]" accept="image/*" class="form-control">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                         <div class="row">
 
                             <!-- /.col -->
@@ -124,6 +135,10 @@
                             <input type="hidden" name="id" class="form-control input-modify-id" placeholder="<?='lieu'?>">
                         </div>
 
+                        <div class="input-group mb-3">
+                            <input type="file" name="pictures[]" accept="image/*" class="form-control">
+                        </div>
+
                         <div class="row">
 
                             <!-- /.col -->
@@ -185,7 +200,10 @@
                             <i class="fa fa-edit"></i>
                             <span> <?=$lang['modify'] . ' ' . $lang['event']?></span>
                             </button>
-                            <button class="btn-sm btn-danger btn-sm delete-event-btn" data-id="<?= $event['eventID'] ?>">
+                            <button class="btn-sm btn-danger btn-sm delete-event-btn"
+                                    data-id="<?= $event['eventID'] ?>"
+                                    data-picture="<?= $event['picture'] ?>"
+                                    >
                                 <i class="fa fa-trash"></i>
                                 <span> <?=$lang['delete']?></span>
                             </button>
