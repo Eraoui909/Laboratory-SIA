@@ -86,4 +86,7 @@
         "event"                         => "Event",
         "newsletter"                    => "NewsLetter",
 
+        "abstract"                      => "Abstract",
+        "researchers"                   => "Researchers",
+
     );

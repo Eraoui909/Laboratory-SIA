@@ -9,6 +9,7 @@ use app\core\Helper;
 use app\core\Session;
 use app\core\Validator;
 use app\models\DoctorantModel;
+use app\models\EnseignantModel;
 
 class DoctorantController extends Controller
 {
@@ -20,7 +21,7 @@ class DoctorantController extends Controller
         if(!isset($_SESSION['token']['admin'])){
             $this->redirect($GLOBAL_DIR.'/admin/login');
         }
-        $data = DoctorantModel::getByQuery("SELECT * FROM enseignant WHERE specialite='doc'");
+        $data = EnseignantModel::getByQuery("SELECT * FROM enseignant WHERE specialite='doc'");
         return $this->renderAdmin('doctorant', $data);
     }
 
@@ -35,7 +36,7 @@ class DoctorantController extends Controller
 
         if(empty($errors['error']))
         {
-            $doctorant  = new DoctorantModel();
+            $doctorant  = new EnseignantModel();
 
             $doctorant->setNom($data['nom']);
             $doctorant->setPrenom($data['prenom']);
@@ -76,7 +77,7 @@ class DoctorantController extends Controller
             echo  $errors;
         }else{
 
-            if(DoctorantModel::UpdateColumns($data['id'], $data))
+            if(EnseignantModel::UpdateColumns($data['id'], $data))
             {
                 echo json_encode("succes");
             }else{
@@ -89,7 +90,7 @@ class DoctorantController extends Controller
     public function deleteDoctorant()
     {
 //        var_dump($_POST);
-        if(DoctorantModel::delete($_POST['id']))
+        if(EnseignantModel::delete($_POST['id']))
         {
             echo json_encode("success");
         }else{

@@ -166,3 +166,31 @@ $(document).on("click",".ha-toggle-teams-table" , function (e) {
     e.preventDefault();
     $(".ha-teams-dropdown").slideToggle("slow");
 })
+
+
+/********************************************************************************************************************/
+/********************************************************************************************************************/
+/**********************************     show article pop up 25-05-2021     ******************************************/
+/********************************************************************************************************************/
+/********************************************************************************************************************/
+
+
+$('#exampleModal').on('show.bs.modal', function (event) {
+    let button = $(event.relatedTarget)
+    let title  = button.data('title');
+    let abstract  = button.data('abstract');
+    let journal  = button.data('journal');
+    let researchers  = button.data('researchers');
+    let date  = button.data('date');
+    let doi  = button.data('doi');
+
+
+     let modal = $(this)
+    console.log(title);
+    modal.find('.ha-modal-title').text(title);
+    modal.find('.ha-modal-journal').text(journal);
+    modal.find('.ha-modal-abstract').text(abstract);
+    modal.find('.ha-modal-researchers').text(researchers);
+    modal.find('.ha-modal-doi').text("doi : "+doi);
+    modal.find('.ha-modal-date').html("<span style='padding: 8px' class='badge badge-info'>"+date+"<span>");
+})

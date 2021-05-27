@@ -67,9 +67,9 @@
                             <div class="col-sm-2"></div>
                         </div>
                         <div class="form-group row descriptionEdit">
-                            <label for="" class="col-sm-2 col-form-label">description</label>
+                            <label for="" class="col-sm-2 col-form-label"><?= $lang['abstract'] ?></label>
                             <div class="col-sm-10">
-                                <textarea name="description" class="article-description" cols="70" rows="8" ></textarea>
+                                <textarea name="abstract" class="article-abstract" cols="70" rows="8" ></textarea>
                             </div>
                         </div>
 
@@ -82,6 +82,22 @@
                                 <input type="text" value="" name="journal" class="form-control article-journal" id="" placeholder="<?= $lang['journal'] ?>">
                             </div>
                         </div>
+
+                        <div class="form-group row contentEdit">
+                            <label for="" class="col-sm-2 col-form-label"><?= $lang['researchers'] ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" value="" name="researchers" class="form-control article-researchers" id="" placeholder="<?= $lang['researchers'] ?>">
+                            </div>
+                        </div>
+
+                        <div class="form-group row contentEdit">
+                            <label for="" class="col-sm-2 col-form-label">Doi</label>
+                            <div class="col-sm-10">
+                                <input type="text" value="" name="doi" class="form-control article-doi" id="" placeholder="Doi>">
+                            </div>
+                        </div>
+
+
                         <input type="hidden" name="articleID" class="article-id">
                         <div class="row">
                             <div class="col-sm-2"></div>
@@ -119,7 +135,10 @@
                 <thead>
                 <tr>
                     <th><?=$lang['title']?></th>
+                    <th><?=$lang['abstract']?></th>
                     <th><?=$lang['journal']?></th>
+                    <th><?=$lang['researchers']?></th>
+                    <th>Doi</th>
                     <th><?= 'date'?></th>
                     <th>Action</th>
                 </tr>
@@ -131,7 +150,10 @@
                     ?>
                         <tr>
                             <td><?= $article['title'] ?></td>
+                            <td><?= $article['abstract'] ?></td>
                             <td><?= $article['journal']?></td>
+                            <td><?= $article['researchers']?></td>
+                            <td><?= $article['doi']?></td>
                             <td><?= $article['date'] ?></td>
                             <td>
                                 <button class="btn-sm btn-success btn-article-modify-form"
@@ -139,8 +161,10 @@
                                         data-target=".bd-example-modal-lg"
                                         data-title="<?= $article['title'] ?>"
                                         data-id="    <?= $article['articleID'] ?>"
-                                        data-description="   <?= $article['description']    ?>"
+                                        data-abstract="   <?= $article['abstract']    ?>"
                                         data-journal="   <?= $article['journal']    ?>"
+                                        data-doi="   <?= $article['doi']    ?>"
+                                        data-researchers="   <?= $article['researchers']    ?>"
                                 >
                                     <i class="fa fa-edit"></i>
                                     <span> <?=$lang['modify']?></span>

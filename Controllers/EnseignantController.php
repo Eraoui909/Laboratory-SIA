@@ -285,6 +285,7 @@ class EnseignantController extends Controller
 
         $arr = $_SESSION['token']['ens'] ?? $_SESSION['token']['doc'];
         $session_actuel = $arr;
+
         if( isset($_POST['journal']) )
         {
             $session = new Session();
@@ -298,8 +299,10 @@ class EnseignantController extends Controller
                 $author     = $session_actuel['id'];
 
                 $article->setTitle($data['title']);
-                $article->setDescription($data['description']);
+                $article->setAbstract($data['abstract']);
                 $article->setJournal($data['journal']);
+                $article->setResearchers($data['researchers']);
+                $article->setDoi($data['doi']);
                 $article->setAuthor($author);
 
                 if($article->register()){
@@ -314,6 +317,7 @@ class EnseignantController extends Controller
             $session->setFlash("errors", $errors);
             //header('Location: ' . $_SERVER['HTTP_REFERER']);
             echo json_encode("error");
+            //echo json_encode($errors);
         }else{
             echo "failed";
         }

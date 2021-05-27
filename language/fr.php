@@ -87,7 +87,8 @@
         "event"                         => "Evenement",
         "newsletter"                    => "les newsletters",
 
-
+        "abstract"                      => "Abstrait",
+        "researchers"                   => "Chercheures"
 
 
     );
