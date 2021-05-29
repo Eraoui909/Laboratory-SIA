@@ -200,11 +200,11 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 $(document).on("click" , ".ha-search-for-article",function (e) {
     e.preventDefault()
     let searchVal = $(".ha-search-input").val().trim();
-    console.log(searchVal.length);
+    //console.log(searchVal.length);
     if(searchVal.length !== 0){
-        $(".ha-search-input").css("border","2px solid #8bc34a")
+        $(".ha-search-input").css("border","1px solid #8bc34a")
             .css("border-right","none")
-            .css("box-shadow","0px 0px 6px 1px #8bc34a");
+            .css("box-shadow","0px 0px 12px 1px #8bc34a");
 
         $.ajax({
             method: 'post',
@@ -214,12 +214,13 @@ $(document).on("click" , ".ha-search-for-article",function (e) {
             success: function (data) {
                 if(data === '"empty"')
                 {
-                    console.log(data);
+                    $(".ha-search-input").css("border","1px solid red")
+                        .css("border-right","none")
+                        .css("box-shadow","0px 0px 12px 1px red");
                 }else{
                     $('.ha-content-and-search').css("display","none");
                     $('.ha-content-and-search-result').css("display","block");
                     let results = JSON.parse(data);
-                    console.log(results[0]);
                     let content = '';
                     for (let i=0;i<results.length;i++){
                         content += `<div class="ha-article">
@@ -244,8 +245,10 @@ $(document).on("click" , ".ha-search-for-article",function (e) {
         })
 
     }else{
-        $(".ha-search-input").css("border","2px solid red")
+        $(".ha-search-input").css("border","1px solid red")
             .css("border-right","none")
-            .css("box-shadow","0px 0px 6px 1px red");
+            .css("box-shadow","0px 0px 12px 1px red");
+            $('.ha-content-and-search').css("display","block");
+            $('.ha-content-and-search-result').css("display","none");
     }
 })
