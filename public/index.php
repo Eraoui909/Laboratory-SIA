@@ -76,6 +76,8 @@ $app->router->post('/article', [SiteController::class, 'singleArticle']);
 
 $app->router->get('/evenements',[SiteController::class,'evenementsPage']);
 
+$app->router->post('/search',[SiteController::class,'searchResult']);
+
 /* **********************************************
 *                                               *
 *  this side it's for all admin panel ROUTES    *

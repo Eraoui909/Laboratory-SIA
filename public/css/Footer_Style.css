@@ -43,7 +43,8 @@ ul {
   position: relative;
   width: 100%;
   background-color: #1D2B36;
-  padding: 20px 50px; }
+  padding: 20px 50px;
+  overflow: hidden; }
   .ha-footer .ha-footer-head {
     position: relative;
     height: 75%;

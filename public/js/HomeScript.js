@@ -76,7 +76,7 @@ $(".marquee-1").trigger('mouseleave');
 let c = new CokiesHandler();
 
 //c.setCookie("newsletter_registered","false",30);
-console.log(c.getCookie("newsletter_registered"));
+//console.log(c.getCookie("newsletter_registered"));
 if(c.getCookie("newsletter_registered") == "false") {
     $(document).on("click",".ha-global-popup-newsletter", function () {
         $(this).addClass("ha-global-popup-newsletter-active");
@@ -169,9 +169,7 @@ $(document).on("click",".ha-toggle-teams-table" , function (e) {
 
 
 /********************************************************************************************************************/
-/********************************************************************************************************************/
 /**********************************     show article pop up 25-05-2021     ******************************************/
-/********************************************************************************************************************/
 /********************************************************************************************************************/
 
 
@@ -186,11 +184,68 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 
 
      let modal = $(this)
-    console.log(title);
+    //console.log(title);
     modal.find('.ha-modal-title').text(title);
     modal.find('.ha-modal-journal').text(journal);
     modal.find('.ha-modal-abstract').text(abstract);
     modal.find('.ha-modal-researchers').text(researchers);
     modal.find('.ha-modal-doi').text("doi : "+doi);
     modal.find('.ha-modal-date').html("<span style='padding: 8px' class='badge badge-info'>"+date+"<span>");
+})
+
+/********************************************************************************************************************/
+/**********************************     search box in home  25-05-2021     ******************************************/
+/********************************************************************************************************************/
+
+$(document).on("click" , ".ha-search-for-article",function (e) {
+    e.preventDefault()
+    let searchVal = $(".ha-search-input").val().trim();
+    console.log(searchVal.length);
+    if(searchVal.length !== 0){
+        $(".ha-search-input").css("border","2px solid #8bc34a")
+            .css("border-right","none")
+            .css("box-shadow","0px 0px 6px 1px #8bc34a");
+
+        $.ajax({
+            method: 'post',
+            url: '/search',
+            data: 'searchVal='+searchVal,
+            datatype: 'json',
+            success: function (data) {
+                if(data === '"empty"')
+                {
+                    console.log(data);
+                }else{
+                    $('.ha-content-and-search').css("display","none");
+                    $('.ha-content-and-search-result').css("display","block");
+                    let results = JSON.parse(data);
+                    console.log(results[0]);
+                    let content = '';
+                    for (let i=0;i<results.length;i++){
+                        content += `<div class="ha-article">
+                        <a style="cursor: pointer" class="show-article-modal">
+                            <p> `+ results[i]['title'] +` <span data-toggle="modal" data-target="#exampleModal"
+                                                              data-title="`+ results[i]['title'] +`"
+                                                              data-abstract="`+ results[i]['abstract'] +`"
+                                                              data-journal="`+ results[i]['journal'] +`"
+                                                              data-researchers="`+ results[i]['researchers'] +`"
+                                                              data-date="`+ results[i]['date'] +`"
+                                                              data-doi="`+ results[i]['doi'] +`"
+                            > ...Lire la suite → </span></p>
+                        </a>
+                        <small class="badge badge-info"
+                               style="width: fit-content;padding: 4px">`+ results[i]['date'] +`</small>
+                    </div>`;
+                    }
+
+                    $('.ha-content').html(content);
+                }
+            }
+        })
+
+    }else{
+        $(".ha-search-input").css("border","2px solid red")
+            .css("border-right","none")
+            .css("box-shadow","0px 0px 6px 1px red");
+    }
 })
