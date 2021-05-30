@@ -44,8 +44,8 @@ $(document).on('click',".btn-article-modify-form",function (e){
     $(".article-title").val(title);
     $(".article-journal").val(journal);
     $(".article-abstract").text(desc);
-    $(".article-researchers").text(researchers);
-    $(".article-doi").text(doi);
+    $(".article-researchers").val(researchers);
+    $(".article-doi").val(doi);
 
 
 });
@@ -381,10 +381,10 @@ $(document).on("click",".add-article-button",function (e){
                 }else{
                     Swal.fire({
                         icon: 'error',
-                        title: 'Oops...'
+                        title: 'All fields are required'
                     })
                     setTimeout(function (){
-                        window.location.replace(globalDIR+"/teacher/profile");
+                        //window.location.replace(globalDIR+"/teacher/profile");
                     },800);
                 }
             }
