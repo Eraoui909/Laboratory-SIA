@@ -443,3 +443,48 @@ $(document).on("click",".experience-pro-button",function (e) {
 
     });
 })
+
+// *********************************** *********************************** ***********************************
+// ***********************************          Modify password            ***********************************
+// *********************************** *********************************** ***********************************
+
+$(document).on("click",".ha-modify-pass",function (e) {
+    e.preventDefault();
+    let pass1 =$(".ha-pass1").val().trim();
+    let pass2 =$(".ha-pass2").val().trim();
+    if(pass2 === pass1 && pass1 !== '' && pass2 !== ''){
+        data = $('.ha-change-pass-form').serialize();
+        $.ajax({
+           method: 'post',
+           url: '/teacher/changePass',
+           data: data,
+           datatype: 'json',
+           success:function (data) {
+               console.log(data);
+               $(".ha-pass1").val("");
+               $(".ha-pass2").val("");
+               if(data === '"success"'){
+                   Swal.fire({
+                       position: 'top-end',
+                       icon: 'success',
+                       title: 'Your pasword has been changed',
+                       showConfirmButton: false,
+                       timer:1500
+                   })
+               }else{
+                   Swal.fire({
+                       icon: 'error',
+                       title: 'please try again',
+                       showConfirmButton: false
+                   })
+               }
+           }
+        });
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'les deux password ne sont pas identique',
+            showConfirmButton: false
+        })
+    }
+})

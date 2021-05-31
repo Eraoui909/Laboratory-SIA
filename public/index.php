@@ -164,6 +164,9 @@ $app->router->get('/teacher/cv',[EnseignantController::class, 'teacherCV']);
 $app->router->get('/teacher/cv/downoald',[EnseignantController::class, 'cvToPdf']);
 
 
+$app->router->post('/teacher/changePass',[EnseignantController::class, 'changePass']);
+
+
 /* ****************************************************
 *                                                     *
 *  this side it's for news letter inscription ROUTES  *
