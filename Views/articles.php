@@ -1,0 +1,210 @@
+
+
+<div class="container-fluid ha-article-container">
+
+    <div class="ha-article-container-header">
+        <div class="position-relative p-3 bg-gray ha-article-container-header-slider">
+            <div class="ribbon-wrapper  ribbon-xl">
+                <div class="ribbon bg-danger text-lg">
+                    Breaking News
+                </div>
+            </div>
+            <div class="ha-article-container-header-title">
+                The title of article Lorem ipsum dolor sit amet <br>
+                <small class="ribbon-description">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="ha-article-container-body">
+        <h1>Les articles disponible </h1>
+
+        <?php
+        if (isset($params['articles']) && !empty($params['articles']))
+            foreach ($params['articles'] as $param): ?>
+                <div class="ha-article-card">
+                    <div class="title hidden-title">
+                        <?= $param['title'] ?>
+                    </div>
+                    <small class="hidden-date"><?= $param['date'] ?></small>
+                    <div class="hidden-content">
+                        <div class="title hidden-title">
+                            <?= $param['title'] ?>
+                        </div>
+                        <div class="desc">
+                            <small class="description-par"><?= $param['description'] ?></small>
+                        </div>
+                        <button class="btn btn-outline-info article-read-more">Read more</button>
+                    </div>
+                    <div class="card-img">
+                        <img class="img-fluid" src="/Storage/uploads/articles/<?= $param['picture'] ?>" width="350px" style="height: 100% !important" alt="">
+                    </div>
+                    <div class="card-content">
+                        <div class="title">
+                            <?= $param['title'] ?>
+                        </div>
+                        <small class="time"><?= $param['date'] ?></small>
+                        <div class="desc">
+                            <small class="description-par"><?= $param['description'] ?></small>
+                        </div>
+                        <form action="/article" method="post">
+                            <input type="hidden" name="id" value="<?= $param['articleID'] ?>">
+                            <button class="btn btn-outline-info article-read-more">Read more</button>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+        <?php endforeach; ?>
+
+        <div class="ha-article-card">
+            <div class="title hidden-title">
+                The title of article
+            </div>
+            <small class="hidden-date">added 2021-04-29 17:14:32</small>
+            <div class="hidden-content">
+                <div class="title hidden-title">
+                    The title of article
+                </div>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
+            <div class="card-img">
+                <img class="img-fluid" src="/Storage/uploads/articles/91560995691b7781science_pic.jpg" width="350px" alt="">
+            </div>
+            <div class="card-content">
+                <div class="title">
+                    The title of article
+                </div>
+                <small class="time">2021-04-29 17:14:32</small>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, dolorem doloribus eum explicabo iure reiciendis! Eius ipsa quis quisquam repellendus!</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
+        </div>
+        <hr>
+        <div class="ha-article-card">
+
+            <div class="title hidden-title">
+                The title of article
+            </div>
+            <small class="hidden-date">added 2021-04-29 17:14:32</small>
+            <div class="hidden-content">
+                <div class="title hidden-title">
+                    The title of article
+                </div>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
+
+            <div class="card-img">
+                <img src="/Storage/uploads/users/science_pic.jpg" width="350px" alt="">
+            </div>
+            <div class="card-content">
+                <div class="title">
+                    The title of article
+                </div>
+                <small>2021-04-29 17:14:32</small>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
+        </div>
+        <hr>
+        <div class="ha-article-card">
+            <div class="title hidden-title">
+                The title of article
+            </div>
+            <small class="hidden-date">added 2021-04-29 17:14:32</small>
+            <div class="hidden-content">
+                <div class="title hidden-title">
+                    The title of article
+                </div>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
+            <div class="card-img">
+                <img src="/Storage/uploads/users/science_pic.jpg" width="350px" alt="">
+            </div>
+            <div class="card-content">
+                <div class="title">
+                    The title of article
+                </div>
+                <small>2021-04-29 17:14:32</small>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
+        </div>
+        <hr>
+        <div class="ha-article-card">
+            <div class="title hidden-title">
+                The title of article
+            </div>
+            <small class="hidden-date">added 2021-04-29 17:14:32</small>
+            <div class="hidden-content">
+                <div class="title hidden-title">
+                    The title of article
+                </div>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
+            <div class="card-img">
+                <img src="/Storage/uploads/users/science_pic.jpg" width="350px" alt="">
+            </div>
+            <div class="card-content">
+                <div class="title">
+                    The title of article
+                </div>
+                <small>2021-04-29 17:14:32</small>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
+        </div>
+        <hr>
+        <div class="ha-article-card">
+            <div class="title hidden-title">
+                The title of article
+            </div>
+            <small class="hidden-date">added 2021-04-29 17:14:32</small>
+            <div class="hidden-content">
+                <div class="title hidden-title">
+                    The title of article
+                </div>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
+            <div class="card-img">
+                <img src="/Storage/uploads/users/science_pic.jpg" width="350px" alt="">
+            </div>
+            <div class="card-content">
+                <div class="title">
+                    The title of article
+                </div>
+                <small>2021-04-29 17:14:32</small>
+                <div class="desc">
+                    <small class="description-par">Desc : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur cumque earum</small>
+                </div>
+                <button class="btn btn-outline-info article-read-more">Read more</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ha-article-container-footer">
+    </div>
+
+</div>

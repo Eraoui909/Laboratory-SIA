@@ -1,0 +1,124 @@
+#header{
+  position: relative;
+  height: calc(80vh - 100px);
+  overflow: hidden;
+
+  .slider{
+    background-position: center;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+
+  }
+
+  .slider1{
+    background-image: url("/Storage/Statics/images/header1.jpg");
+    //background-image: url("/public/Storage/Statics/images/header1.jpg");
+  }
+
+  .slider2{
+    background-image: url("/Storage/Statics/images/header2.jpg");
+    //background-image: url("/public/Storage/Statics/images/header2.jpg");
+  }
+
+  .slider3{
+    background-image: url("/Storage/Statics/images/header3.jpg");
+   // background-image: url("/public/Storage/Statics/images/header3.jpg");
+  }
+
+  .slider.active{
+    display: block;
+    animation: show-slider 2s;
+  }
+
+  .pagination{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    z-index: 10;
+    cursor: pointer;
+    -webkit-transform: translateX(-50%);
+
+    ul{
+      li{
+        width: 12px;
+        height: 12px;
+        border: 1px solid #fff;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 3px;
+
+        &:hover{
+          background-color: #fff;
+        }
+
+      }
+
+      li.active{
+        background-color: #fff;
+        transform: scale(1.5);
+      }
+
+    }
+  }
+
+  .pop-up-search-box{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    width: 50%;
+    height: 30%;
+    text-align: center;
+    
+    @media only screen and (max-width: 700px) {
+      width: 90%;
+    }
+
+    p{
+      color: white;
+      font-size: 5vh;
+      font-weight: bold;
+    }
+
+    .pop-up-search-box-input{
+      border-radius: 5px;
+      background-color: white;
+      display: flex;
+
+      .div-1{
+        background-color: yellow;
+        width: 80%;
+
+        input{
+          width: 100%;
+          border: none;
+          outline: none;
+          padding: 10px;
+        }
+      }
+
+      .div-2{
+        background-color: #A8D511;
+        width: 20%;
+        padding: 10px;
+        font-weight: bold;
+
+        @media only screen and (max-width: 1280px){
+          span{
+            display: none;
+          }
+        }
+      }
+
+    }
+
+  }
+}

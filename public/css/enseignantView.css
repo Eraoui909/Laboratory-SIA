@@ -1,0 +1,11 @@
+.datatableButton{
+    margin: 0px 10px;
+    background-color: #2196f3;
+    transition-duration: 1s;
+
+}
+
+.datatableButton:hover{
+    transition-duration: 1s;
+    transform: scale(1.2);
+}

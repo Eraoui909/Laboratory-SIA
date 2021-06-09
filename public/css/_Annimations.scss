@@ -1,0 +1,23 @@
+@mixin keyframes-animation($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@include keyframes-animation(show-slider) {
+  0% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    -moz-opacity: .5;
+    opacity: .5;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -moz-opacity: 1;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,55 @@
+.marquee-container {
+    width: 100%;
+    background: #4FC2E5;
+    float: left;
+    display: inline-block;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 45px;
+    position: relative;
+    cursor: pointer;
+}
+
+.marquee-sibling {
+    padding: 0;
+    background: #3BB0D6;
+    width: 20%;
+    height: 45px;
+    line-height: 42px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #ffffff;
+    text-align: center;
+    float: left;
+    left: 0;
+    z-index: 2000;
+}
+
+.marquee,
+*[class^="marquee"] {
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+}
+
+.marquee { margin-left: 25%; }
+
+.marquee-content-items {
+    display: inline-block;
+    padding: 5px;
+    margin: 0;
+    height: 45px;
+    position: relative;
+}
+
+.marquee-content-items li {
+    display: inline-block;
+    line-height: 35px;
+    color: #fff;
+}
+
+.marquee-content-items li:after {
+    content: "|";
+    margin: 0 1em;
+}
+
