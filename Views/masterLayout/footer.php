@@ -22,8 +22,14 @@
                 <li>
                     <a href="<?php echo $GLOBAL_DIR ?>/conditionSoutnance"><?= $lang['conditionDeSoutnance'] ?></a>
                 </li>
+            </ul>
+            <hr>
 
-
+            <h3><?=  $lang['adminSide']?? 'Admin side' ?></h3>
+            <ul>
+                <li>
+                    <a href="<?php echo $GLOBAL_DIR ?>/admin"><?= $lang['dashboard'] ?></a>
+                </li>
             </ul>
         </div>
         <div class="ha-footer-head-sec ha-footer-head-sec3">

@@ -1,24 +1,4 @@
 
-<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                    <h4 class="ha-modal-title" style="font-weight: bold"></h4>
-            </div>
-            <div class="modal-body">
-                <span class="ha-modal-journal" style="display: none"></span>
-                <p class="ha-modal-researchers">
-                <hr>
-                <p class="ha-modal-abstract" style="text-indent: 50px;text-align: justify;color: black;"></p>
-                <strong class="ha-modal-doi" style="display: block;margin: 10px"></strong>
-                <small class="ha-modal-date"></small>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">fermer</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="container-fluid ha-lastarticles-container">
 

@@ -111,7 +111,7 @@
     <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label"> Grade </label>
         <div class="col-sm-10">
-            <input type="text" name="grade" value="<?= $grade ?>" class="form-control" id="" placeholder=" grade">
+            <input type="text" name="grade" value="<?= $grade ?>" class="form-control"  placeholder=" grade">
         </div>
     </div>
 
@@ -123,7 +123,7 @@
     <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label"><?= $lang['situation_present'] ?></label>
         <div class="col-sm-10">
-            <textarea name="situation_present" style="width: 100%" rows="10"><?= $situation_present ?></textarea>
+            <input type="text" name="situation_present" class="form-control" placeholder="<?= $lang['situation_present'] ?>" style="width: 100%" value="<?= $situation_present ?>">
         </div>
     </div>
 
@@ -136,7 +136,8 @@
     <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label"><?= $lang['qualification_principale'] ?></label>
         <div class="col-sm-10">
-            <textarea name="qualification_principale" class="qualification_editor" style="width: 100%" rows="15"><?= $qualification_principale ?></textarea>
+            <textarea name="qualification_principale" rows="4"  style="width: 100%" rows="15"><?= $qualification_principale ?></textarea>
+            <?php //if u want to apply ckeedutor add this class class="qualification_editor" ?>
         </div>
     </div>
 

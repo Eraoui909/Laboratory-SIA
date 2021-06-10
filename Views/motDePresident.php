@@ -31,6 +31,14 @@
         margin-top: -118px;
     }
 
+    @media only screen and (max-width: 700px) {
+        .mot-title{
+            margin-top: 0px;
+            position: relative;
+            left: 20%;
+        }
+    }
+
     .mot-content{
         padding: 10px;
     }
@@ -71,14 +79,16 @@
 
     <div class="mot-content">
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam consequuntur cum, dignissimos dolor ducimus ea earum explicabo facere incidunt itaque nostrum ratione, rem sapiente vitae voluptas voluptate voluptatem voluptates.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda consequuntur distinctio eveniet ex, fugiat hic illo, ipsa molestias neque nobis quam quo rem sed sit sunt ullam veniam veritatis.
+            Le laboratoire LSIA (Laboratoire des Systèmes Intelligents & Applications) a été accrédité la première fois en 2011 au sein de la Faculté des Sciences et Techniques de Fès, CED Sciences et Techniques de l’Ingénieur, Université Sidi Mohammed Ben Abdellah.
+            Il est composé de 18 enseignants chercheurs permanents et 40 doctorants.
         </p>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut hic, iste? Aut corporis culpa distinctio dolores eius inventore ipsa ipsam itaque labore necessitatibus, optio qui reprehenderit, rerum, ut velit vitae?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eaque et excepturi expedita, explicabo fuga harum illum in libero maiores obcaecati officiis perspiciatis quae saepe sequi suscipit temporibus ullam unde?
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque excepturi id pariatur. Aperiam at, dolorum et facilis hic in inventore, ipsum, nam rem sit suscipit tenetur voluptate? Dignissimos, ducimus itaque.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur distinctio et nam, placeat provident repudiandae? Aliquid consectetur cumque dolor dolores doloribus dolorum, fugiat fugit iusto nemo nihil sequi, sit voluptatum!
+            Le laboratoire LSIA a pour ambition de faire des progrès scientifiques et techniques dans des domaines de prédilection tels que : l’intelligence artificielle,
+            machine learning, reconnaissance des formes, le Big Data, Cloud Computing, Data Mining, Cryptographie et sécurité informatique. Ensuite, appliquer ces
+            progrès pour résoudre des problèmes concrets. C’est dans cette optique que s’inscrit le projet SIS (Systèmes Intelligents au service de la Société), qui est le
+            projet fédérateur de notre laboratoire pour la nouvelle période d’accréditation (2020-2025). Ce projet SIS a pour finalité principale de promouvoir, de faciliter et
+            de coordonner les activités de recherche scientifique de ses membres pour mettre en place des solutions intelligentes dans les domaines de la valorisation du
+            patrimoine, de la santé (E-health), des systèmes de transport intelligents et des réseaux d’assainissement urbain
         </p>
     </div>
 

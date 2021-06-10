@@ -130,7 +130,7 @@ $(document).on("click",'.delete-article-btn',function (e)
                             window.location.replace(globalDIR+"/teacher/profile");
                         },1000);
                     }else{
-                        alert("ERROR");
+                        //alert("ERROR");
                         setTimeout(function (){
                             window.location.replace(globalDIR+"/teacher/profile");
                         },1000);
@@ -301,6 +301,50 @@ $(document).on("click",".add-article-button",function (e){
         "responsive": true,
         "lengthChange": false,
     });
+
+    $(document).on("click",'.add-diplome-button',function (e) {
+        e.preventDefault();
+        let dataa = new FormData($(".add-diplome-form")[0]);
+
+        $.ajax({
+            method:"post",
+            url: globalDIR+"/teacher/diplome",
+            data:dataa,
+            datatype: "json",
+            contentType: false,
+            cache: false,
+            processData: false,
+            success:function (data) {
+                console.log(data);
+                if(data === '"success"')
+                {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Experience Added with success',
+                        showConfirmButton: false,
+                    })
+                    setTimeout(function (){
+                        window.location.replace(globalDIR+"/teacher/profile");
+                    },1000);
+                }else{
+                    console.log(data);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'All fields are required',
+                        showConfirmButton: false
+                    })
+                    setTimeout(function (){
+                        //window.location.replace(globalDIR+"/teacher/profile");
+                    },800);
+                }
+            },
+            error:function (data) {
+                console.log(data);
+            }
+
+
+        });    })
 
     $(document).on("click",".supp-diplome",function (e) {
         e.preventDefault();

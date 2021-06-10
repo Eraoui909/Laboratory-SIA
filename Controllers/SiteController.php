@@ -165,4 +165,17 @@ class SiteController extends Controller
         return $this->render('evenements',$arr);
     }
 
+    public function searchResult()
+    {
+        global $article_after_search;
+        $searchVal = filter_var($_POST['searchVal'],FILTER_SANITIZE_STRING);
+        $result = ArticleModel::getAll('WHERE title like "%'.$searchVal.'%"');
+        if(empty($result)){
+            echo json_encode("empty");
+        }else{
+            unset($article_after_search);
+            $article_after_search = $result;
+            echo json_encode($result);
+        }
+    }
 }

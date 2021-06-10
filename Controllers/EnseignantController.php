@@ -132,12 +132,6 @@ class EnseignantController extends Controller
     {
         global $session_actuel;
 
-        /*
-        echo "<pre>";
-        print_r($_FILES);
-        echo "</pre>";
-
-        exit(); */
 
         $arr = $_SESSION['token']['ens'] ?? $_SESSION['token']['doc'];
         $session_actuel = $arr;
@@ -432,11 +426,13 @@ class EnseignantController extends Controller
 
             if ($diplome->register()) {
                 $session->setFlash('experience_error', []);
-                $this->redirect($GLOBAL_DIR."/teacher/profile");
+                //$this->redirect($GLOBAL_DIR."/teacher/profile");
+                echo json_encode("success");
             }
         } else {
             $session->setFlash('experience_error', $errors);
-            $this->redirect($GLOBAL_DIR."/teacher/profile");
+            //$this->redirect($GLOBAL_DIR."/teacher/profile");
+            echo json_encode("error");
         }
 
     }
@@ -446,6 +442,28 @@ class EnseignantController extends Controller
         if(diplomesModel::delete($_POST['id']))
         {
             echo json_encode("deleted");
+        }else{
+            echo json_encode("error");
+        }
+    }
+
+    public function changePass()
+    {
+        $validator = new Validator();
+        $data = $validator->sanitize($_POST);
+        $error = $validator->require($data);
+        if(empty($error)){
+        $session_actuel = $_SESSION['token']['ens'] ?? $_SESSION['token']['doc'];
+        if($data['pass1'] == $data['pass2']){
+            $pass = Helper::hash_undecrypted_data($data['pass1']);
+            if(EnseignantModel::UpdateColumns($session_actuel['id'],['password'=>$pass])){
+                echo json_encode("success");
+            }else{
+                echo json_encode("error");
+            }
+        }else{
+            echo json_encode("error");
+        }
         }else{
             echo json_encode("error");
         }

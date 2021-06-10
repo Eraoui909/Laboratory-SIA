@@ -99,6 +99,7 @@
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
                                 <li class="nav-item"><a id="c3" class="nav-link storageTheClick " data-toggle="tab" href="#settings" ><?= $lang['settings'] ?></a></li>
+                                <li class="nav-item"><a id="c7" class="nav-link storageTheClick " data-toggle="tab" href="#changePass" ><?= $lang['modify'] .' '. $lang['password'] ?></a></li>
                                 <li class="nav-item"><a id="c4" class="nav-link storageTheClick " data-toggle="tab" href="#addArticle" ><?= $lang['add'] . ' Acticle' ?></a></li>
                                 <li class="nav-item"><a id="c5" class="nav-link storageTheClick " data-toggle="tab" href="#allArticle" ><?= $lang['allArticles'] ?></a></li>
                                 <li class="nav-item"><a id="c2" class="nav-link storageTheClick " data-toggle="tab" href="#cv" ><?= $lang['cv'] ?></a></li>
@@ -113,6 +114,12 @@
                                 <div class="tab-pane " id="settings">
                                     <?php include_once "settings.php";?>
                                 </div>
+
+                                <!-- #modifyPass-->
+                                <div class="tab-pane " id="changePass">
+                                    <?php include_once "modifyPassword.php";?>
+                                </div>
+
 
                                 <!-- #addArticle-->
                                 <div class="tab-pane" id="addArticle">

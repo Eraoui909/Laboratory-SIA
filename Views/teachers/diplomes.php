@@ -2,8 +2,8 @@
 
 
 <div class="container">
-    <center style="padding: 10px"><h3>Ajouter experience</h3></center>
-    <form action="<?php echo $GLOBAL_DIR ?>/teacher/diplome" method="post">
+    <center style="padding: 10px"><h3>Ajouter diplome</h3></center>
+    <form action="<?php echo $GLOBAL_DIR ?>/teacher/diplome" class="add-diplome-form" method="post">
 
         <div class="form-group row">
             <label for="" class="col-sm-2 col-form-label"><?= $lang['diplome_institut'] ?></label>
@@ -63,7 +63,7 @@
 
         <div class="form-group row">
             <div class="offset-sm-2 col-sm-10">
-                <button type="submit" class="btn btn-success experience-pro-button"><?= $lang['add'] ?></button>
+                <button type="submit" class="btn btn-success add-diplome-button"><?= $lang['add'] ?></button>
             </div>
         </div>
 

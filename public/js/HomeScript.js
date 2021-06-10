@@ -77,6 +77,7 @@ let c = new CokiesHandler();
 
 //c.setCookie("newsletter_registered","false",30);
 //console.log(c.getCookie("newsletter_registered"));
+
 if(c.getCookie("newsletter_registered") == "false") {
     $(document).on("click",".ha-global-popup-newsletter", function () {
         $(this).addClass("ha-global-popup-newsletter-active");

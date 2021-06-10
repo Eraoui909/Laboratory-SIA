@@ -46,7 +46,7 @@
 
     ?>
     <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b>SIA</a>
+        <a href="#"><b>Admin</b>SIA</a>
     </div>
 
     <!-- /.login-logo -->
@@ -94,7 +94,7 @@
                 <a href="#">I forgot my password</a>
             </p>
             <p class="mb-0">
-                <a href="/admin/register" class="text-center">Register a new membership</a>
+                <a href="#" class="text-center">Register a new membership</a>
             </p>
         </div>
         <!-- /.login-card-body -->

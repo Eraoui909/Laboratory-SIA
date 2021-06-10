@@ -69,7 +69,7 @@
                         <div class="form-group row descriptionEdit">
                             <label for="" class="col-sm-2 col-form-label"><?= $lang['abstract'] ?></label>
                             <div class="col-sm-10">
-                                <textarea name="abstract" class="article-abstract" cols="70" rows="8" ></textarea>
+                                <textarea name="abstract" class="article-abstract form-control" cols="70" rows="8" ></textarea>
                             </div>
                         </div>
 

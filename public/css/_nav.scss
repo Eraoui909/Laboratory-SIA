@@ -9,7 +9,7 @@ nav.my-navbar{
   top: 0;
   z-index: 100;
   background-color: white;
-  padding: 12px 0;
+  padding: 6px 0;
 
   .links{
     ul{
@@ -146,9 +146,9 @@ nav.my-navbar{
     }
   }
 
-  @media only screen and (max-width: 1024px)
-  {
+  @media only screen and (max-width: 1024px) {
     justify-content: space-between;
+    padding: 0px;
   }
 
   .menu

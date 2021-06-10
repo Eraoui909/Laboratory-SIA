@@ -26,9 +26,6 @@ if(!isset($_SESSION['lang'])){
 }
 
 
-//unset($_SESSION['flash_messages']['error']['value'][0]);
-//exit;
-
 $langFile = $_SESSION['lang'] . ".php";
 include_once dirname(__DIR__) . "\language\\" . $langFile;
 
@@ -43,12 +40,6 @@ $app = new Application(dirname(__DIR__));
  * the db variable is an instance from Database class : connection to database
  */
 $db = new Database();
-
-/*
-echo "<pre>";
-    print_r($_SESSION['token']);
-echo "</pre>";
-*/
 
 
 $app->router->get('/lang/en', [LangController::class, 'changeLangToEn']);
@@ -70,9 +61,6 @@ $app->router->post('/contact',[SiteController::class, 'handleContact']);
 
 $app->router->get('/contact', [SiteController::class, 'contactPage']);
 
-$app->router->get('/articles', [SiteController::class, 'articlesPage']);
-
-$app->router->post('/article', [SiteController::class, 'singleArticle']);
 
 $app->router->get('/evenements',[SiteController::class,'evenementsPage']);
 
@@ -84,8 +72,8 @@ $app->router->post('/search',[SiteController::class,'searchResult']);
 *                                               *
 * ********************************************* */
 
-$app->router->get('/admin/register',[AdminController::class,'registerPage']);
-$app->router->post('/admin/register',[AdminController::class,'registerAdmin']);
+//$app->router->get('/admin/register',[AdminController::class,'registerPage']);
+//$app->router->post('/admin/register',[AdminController::class,'registerAdmin']);
 
 
 $app->router->get('/admin/dashboard',[AdminController::class,'dashboard']);
@@ -101,7 +89,6 @@ $app->router->get('/admin/profile',[AdminController::class,'profilePage']);
 $app->router->post('/admin/profile',[AdminController::class,'updateProfile']);
 $app->router->get('/admin/deletePic',[AdminController::class,'deletePicture']);
 
-
 $app->router->get('/admin/enseignant',[EnseignantController::class,'enseignantPage']);
 $app->router->post('/admin/enseignant/add',[EnseignantController::class,'ajouterEnseignant']);
 $app->router->post('/admin/enseignant/modify',[EnseignantController::class, 'modifierEnseignant']);
@@ -111,13 +98,6 @@ $app->router->get('/admin/doctorant',[DoctorantController::class,'doctorantPage'
 $app->router->post('/admin/doctorant/add',[EnseignantController::class,'ajouterEnseignant']);
 $app->router->post('/admin/doctorant/modify',[EnseignantController::class, 'modifierEnseignant']);
 $app->router->post('/admin/doctorant/delete',[EnseignantController::class, 'deleteEnseignant']);
-
-/*
-$app->router->get('/admin/doctorant',[DoctorantController::class,'doctorantPage']);
-$app->router->post('/admin/doctorant/add',[DoctorantController::class,'ajouterDoctorant']);
-$app->router->post('/admin/doctorant/modify',[DoctorantController::class,'modifierDoctorant']);
-$app->router->post('/admin/doctorant/delete',[DoctorantController::class,'deleteDoctorant']);
-*/
 
 $app->router->get('/admin/teams',[AdminController::class,'teamsPage']);
 $app->router->post('/admin/teams/add',[TeamController::class,'addTeam']);
@@ -177,11 +157,6 @@ $app->router->post('/newsletter/inscription',[NewsLetterInscriController::class,
 $app->router->get('/admin/newsletter',[NewsLetterInscriController::class,'newsletterPage']);
 $app->router->post('/admin/newsletter/delete',[NewsLetterInscriController::class,'newsletterDelete']);
 $app->router->get('/admin/sendEmails',[NewsLetterInscriController::class,'sendEmails']);
-
-
-
-
-
 
 
 

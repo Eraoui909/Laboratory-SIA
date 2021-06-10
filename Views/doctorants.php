@@ -32,12 +32,11 @@
 
                     </tr>
                 </table>
-                <a href="<?php echo $GLOBAL_DIR ?>/teacher/cv/downoald?cv=<?= $param['id'] ?>">
+                <a href="<?php echo $GLOBAL_DIR ?>/teacher/cv/downoald?cv=<?= $param['id'] ?>" target="_blank">
 					<span class="show-cv">
 						Show CV
 					</span>
                 </a>
-
             </div>
         </div>
     <?php } ?>

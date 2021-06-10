@@ -8,9 +8,9 @@
         <p>Consulter plus de <strong style="color: #A8D511">200</strong> articles</p>
         <div class="pop-up-search-box-input">
             <div class="div-1">
-                <input type="text" name="search-for-article" style="height: 100%" placeholder="le titre d'article..">
+                <input type="text" class="ha-search-input"  name="search-for-article" style="height: 100%" placeholder="le titre d'article..">
             </div>
-            <div class="div-2">
+            <div class="div-2 ha-search-for-article" style="cursor: pointer">
                 <span>Recherche  </span><i class="fa fa-search"></i>
             </div>
         </div>
@@ -58,13 +58,44 @@
         </ul>
     </div>
 </div>
+
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="ha-modal-title" style="font-weight: bold"></h4>
+            </div>
+            <div class="modal-body">
+                <span class="ha-modal-journal" style="display: none"></span>
+                <p class="ha-modal-researchers">
+                <hr>
+                <p class="ha-modal-abstract" style="text-indent: 50px;text-align: justify;color: black;"></p>
+                <strong class="ha-modal-doi" style="display: block;margin: 10px"></strong>
+                <small class="ha-modal-date"></small>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="ha-content-and-search">
 <!-- Page content-->
 <?php include_once "acceuil.php";?>
 
-<?php include_once "lastArticles.php";?>
+<?php include "lastArticles.php";?>
 
 <?php include_once "home_evenements.php";?>
 
+</div>
 
+<div class="ha-content-and-search-result" style=" padding:20px;display: none">
+
+    <?php include "searchResult.php";?>
+
+
+</div>
 
 

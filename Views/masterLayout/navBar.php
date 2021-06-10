@@ -19,11 +19,11 @@
         </ul>
     </div>
     <div class="logo">
-        <a class="navbar-brand" href="<?php echo $GLOBAL_DIR ?>/"><img width="140px" height="50px" src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/images/logo.jpg" alt=""></a>
+        <a class="navbar-brand" href="<?php echo $GLOBAL_DIR ?>/"><img width="140px" height="50px"  src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/images/logo.jpg" alt=""></a>
     </div>
     <div class="links flex">
         <ul>
-            <li><a href="#"><?= $lang['aboutUs']?></a></li>
+            <li><a href="/presentation"><?= $lang['aboutUs']?></a></li>
             <li><a href="<?php echo $GLOBAL_DIR ?>/contact"><?= $lang['contact'] ?></a></li>
             <li class="account-link keep lang">
                 <?php
