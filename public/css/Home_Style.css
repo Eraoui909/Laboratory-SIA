@@ -491,7 +491,7 @@ body {
 /************************************* évenements.php style 19-05-2021         ****************************************/
 /********************************************************************************************************************/
 /********************************************************************************************************************/
-.ha-events-container {
+.container {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -506,13 +506,23 @@ body {
     justify-content: center; }
     .ha-events-container .ha-events .ha-event-card {
       width: 400px;
-      overflow: hidden;
       border: 1px solid #bbb;
       border-radius: 10px;
       background-color: white;
       box-shadow: 0px 0px 6px 0px #bbb;
+      position: relative;
       height: fit-content;
       margin: 20px; }
+    .ha-events-container .ha-events .ha-event-card .ha-event-drop-down{
+      position: absolute;
+      background-color: white;
+      z-index: 2;
+      width: 95%;
+      border-radius: 0px 0px 5px 5px;
+      box-shadow: 0px 0px 6px 0px #bbb;
+      padding: 7px;
+      display: none;
+    }
       .ha-events-container .ha-events .ha-event-card .ha-header {
         position: relative; }
         .ha-events-container .ha-events .ha-event-card .ha-header .img {

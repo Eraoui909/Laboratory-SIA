@@ -22,8 +22,9 @@ class EventController extends Controller
         $data                = $valdator->sanitize($_POST);
         $errors['error']     = $valdator->require($data);
 
-        $picture = $this->UploadFile('events',$data['title']);
+        $picture = $this->UploadFile('events',md5($data['title']));
         $errors['uploads'] = $picture['errors'];
+        //print_r($picture['uploaded'][0]);exit();
 
         if(empty($errors['error']))
         {
@@ -51,8 +52,10 @@ class EventController extends Controller
     {
         if(isset($_POST['eventID'])){
             $lastPic = dirname(__DIR__) . "/public/Storage/uploads/events/".$_POST['eventPic'];
+            chmod(dirname(__DIR__) . "/public/Storage/uploads/events" ,777);
             if($lastPic !== "default.png"){
-                unlink($lastPic);
+                @chown($lastPic,465);
+                @unlink($lastPic);
             }
         }
         if(EventModel::delete($_POST['eventID']))
@@ -81,9 +84,10 @@ class EventController extends Controller
 
             $lastPic = dirname(__DIR__) . "/public/Storage/uploads/events/".$_POST['picture'];
             if($lastPic !== "default.png"){
-                unlink($lastPic);
+                @chown($lastPic,465);
+                @unlink($lastPic);
             }
-            $pic = $this->UploadFile('events',$data['title']);
+            $pic = $this->UploadFile('events',md5($data['title']));
         }
 
 

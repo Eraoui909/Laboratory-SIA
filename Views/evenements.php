@@ -1,4 +1,9 @@
-<?php global $GLOBAL_DIR ?>
+<?php global $GLOBAL_DIR ;
+//echo "<pre>";
+//print_r($params['events']);
+//echo "<pre>";
+
+?>
 <style>
     body{
         background-color: #ECEFF1;
@@ -9,69 +14,50 @@
 
     <div class="ha-events">
 
-        <section class="ha-event-card">
-            <div class="ha-header">
-                <div class="img">
-                    <img src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/images/enseignants.jpg" alt="">
+        <?php foreach ($params['events'] as $event): ?>
+            <section class="ha-event-card">
+                <div class="ha-header">
+                    <div class="img">
+                        <img src="<?php echo $GLOBAL_DIR ?>/Storage/uploads/events/<?= $event['picture'] ?>" alt="">
+                    </div>
+                    <div class="title">
+                        <a href="#">
+                            <h2> <?= $event['title'] ?>  </h2>
+                        </a>
+                    </div>
+                    <hr>
                 </div>
-                <div class="title">
-                    <a href="#">
-                        <h2>Le titre de l'évenement  </h2>
-                        <i class="fa fa-arrow-right"></i>
-                    </a>
+                <div class="ha-body">
+                    <p>
+                        la date de l'evenement : <?= $event['date'] ?>
+                    </p>
                 </div>
-                <hr>
-            </div>
-            <div class="ha-body">
-                <p>
-                    la date de l'evenement : 17-06-2021
-                </p>
-            </div>
-            <div class="ha-footerr">
-                <hr>
-                <span>voir l'évenement <i class="fa fa-chevron-down"></i></span>
+                <div class="ha-footerr">
+                    <hr>
+                    <span style="cursor: pointer" class="ha-drop-down">voir l'évenement <i class="fa fa-chevron-down"></i></span>
 
-            </div>
+                </div>
+                <div class="ha-event-drop-down">
+                    <strong>description de l'évenement : </strong>
+                    <center>
+                        <p>
+                            <?= $event['description'] ?>
+                        </p>
+                    </center>
+                    <strong>lieu de l'évenement : </strong>
+                    <center>
+                        <p>
+                            <?= $event['lieu'] ?>
+                        </p>
+                    </center>
+                </div>
         </section>
-
-        <section class="ha-event-card">
-            <div class="ha-header">
-                <div class="img">
-                    <img src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/images/enseignants.jpg" alt="">
-                </div>
-                <div class="title">
-                    <a href="#">
-                        <h2>Le titre de l'évenement  </h2>
-                        <i class="fa fa-arrow-right"></i>
-                    </a>
-                </div>
-                <hr>
-            </div>
-            <div class="ha-body">
-                <p>
-                    la date de l'evenement : 17-06-2021
-                </p>
-            </div>
-            <div class="ha-footerr">
-                <hr>
-                <span>voir l'évenement <i class="fa fa-chevron-down"></i></span>
-
-            </div>
-        </section>
-
-
-
-
-
-
+        <?php endforeach; ?>
     </div>
-
-
-
-
 
     <div class="ha-gift">
         <img src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/images/evenement-gift.gif" alt="evenement gift">
     </div>
 
 </div>
+

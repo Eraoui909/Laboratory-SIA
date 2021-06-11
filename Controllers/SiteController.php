@@ -10,6 +10,7 @@ use app\core\Session;
 use app\core\Validator;
 use app\models\ArticleModel;
 use app\models\EnseignantModel;
+use app\models\EventModel;
 use app\models\TeamModel;
 
 class SiteController extends Controller
@@ -162,6 +163,8 @@ class SiteController extends Controller
     {
         $arr['title'] = "évenements";
         $arr['style'] = ['Home_Style.css'];
+        $arr['script'] = ['evenements.js'];
+        $arr['events'] = EventModel::getAll("limit 10");
         return $this->render('evenements',$arr);
     }
 
