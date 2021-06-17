@@ -25,6 +25,7 @@ class DoctorantController extends Controller
         return $this->renderAdmin('doctorant', $data);
     }
 
+    /*
     public function ajouterDoctorant()
     {
         $errors     = array();
@@ -97,5 +98,6 @@ class DoctorantController extends Controller
             echo json_encode("error");
         }
     }
+    */
 
 }

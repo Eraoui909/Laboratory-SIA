@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; z-index: 1; position: relative; shape-rendering: auto;" width="1440" height="234" preserveAspectRatio="xMidYMid" viewBox="0 0 1440 234">
+<g transform=""><linearGradient id="lg-0.41769164274007875" x1="0" x2="1" y1="0" y2="0">
+  <stop stop-color="#ffffff" offset="0"></stop>
+  <stop stop-color="#ffffff" offset="1"></stop>
+</linearGradient><path d="M 0 0 M 0 208.047 Q 144 195.679 288 191.559 T 576 182.403 T 864 185.088 T 1152 161.237 T 1440 158.251 L 1440 85.0812 Q 1296 90.5467 1152 85.3945 T 864 61.563 T 576 44.9826 T 288 42.4616 T 0 40.2682 Z" fill="url(#lg-0.41769164274007875)" opacity="1.0">
+</path><path d="M 0 0 M 0 190.231 Q 144 195.01 288 186.712 T 576 165.095 T 864 172.616 T 1152 155.091 T 1440 153.141 L 1440 93.4294 Q 1296 75.5222 1152 67.3837 T 864 57.1426 T 576 54.4845 T 288 37.5246 T 0 21.3476 Z" fill="url(#lg-0.41769164274007875)" opacity="0.6">
+</path></g>
+</svg>

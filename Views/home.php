@@ -3,7 +3,26 @@
 <!--https://via.placeholder.com/750x300-->
 
 <div id="header">
-
+    <img src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/svgs/valley-white-static.svg" alt="wave-header"
+         style="
+                position: absolute;
+                z-index: 10;
+                left: 0px;
+                bottom: -140px;
+                width: 100%;
+               "
+    >
+    <div style="
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: black;
+        opacity: 0.5;
+    ">
+    </div>
     <div class="pop-up-search-box">
         <p>Consulter plus de <strong style="color: #A8D511">200</strong> articles</p>
         <div class="pop-up-search-box-input">

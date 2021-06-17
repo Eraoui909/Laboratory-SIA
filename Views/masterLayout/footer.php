@@ -1,7 +1,13 @@
 <?php global $GLOBAL_DIR ?>
-<div class="ha-footer">
+<div class="ha-footer" style="margin-top:100px;padding-top:200px;background-image: url('<?php echo $GLOBAL_DIR ?>/Storage/Statics/svgs/cloud-dark.svg')">
 
-    <div class="ha-footer-head">
+    <div class="ha-waves-left">
+        <img src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/svgs/valley-white.svg" style="width: 100%" alt="waves">
+    </div>
+
+
+
+    <div class="ha-footer-head" >
 
         <div class="ha-footer-head-sec ha-footer-head-sec1" style="width: 150%">
             <h3>SIA LAB</h3>

@@ -109,7 +109,8 @@ class NewsLetterInscriController extends Controller
     public function newsletterDelete(){
         if(isset($_POST['id']))
         {
-            NewsLetterInscriModel::executeQuery("DELETE FROM newsletter_inscription WHERE id = ".$_POST['id']);
+            //NewsLetterInscriModel::executeQuery("DELETE FROM newsletter_inscription WHERE id = ".$_POST['id']);
+            NewsLetterInscriModel::deleteByPk($_POST['id']);
             $session = new Session();
             $session->setFlash('msg_sent',"email deleted with success");
             Helper::redirect($_SERVER['HTTP_REFERER']);

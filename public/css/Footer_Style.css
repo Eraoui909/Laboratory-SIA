@@ -126,4 +126,35 @@ ul {
     -moz-opacity: 1;
     opacity: 1; } }
 
+.ha-waves-left{
+  position: absolute;
+  left: 0px;
+  top: calc(0% - 120px);
+  width: 100%;
+  height: fit-content;
+  background-repeat: no-repeat;
+}
+@media only screen and (max-width: 900px) {
+  .ha-footer{
+    padding-top: 100px !important;
+  }
+  .ha-waves-left{
+    top: calc(0% - 70px);
+  }
+}@media only screen and (max-width: 800px) {
+  .ha-waves-left{
+    top: calc(0% - 60px);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .ha-waves-left{
+    top: calc(0% - 50px);
+  }
+}
+@media only screen and (max-width: 400px) {
+  .ha-waves-left{
+    top: calc(0% - 30px);
+  }
+}
+
 /*# sourceMappingURL=Footer_Style.css.map */
