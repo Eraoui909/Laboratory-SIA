@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-lg">
     <center>
         <h2>Changement de password</h2>
     </center>

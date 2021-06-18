@@ -383,7 +383,7 @@ body {
       height: 150px;
       width: 80%;
       border-radius: 8px;
-      margin: 10px auto;
+      margin: 40px auto 10px auto;
       background-color: white;
       display: flex;
       justify-content: space-between;

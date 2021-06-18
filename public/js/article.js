@@ -12,6 +12,7 @@ $('#article-table').DataTable({
     "processing": true,
     "responsive": true,
     "lengthChange": false,
+
     buttons: [
         { extend: 'copy', className: 'datatableButton' },
         { extend: 'csv', className: 'datatableButton',title: "SIA Laboratory" },

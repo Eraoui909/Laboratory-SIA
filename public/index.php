@@ -117,7 +117,6 @@ $app->router->get('/teachers',[SiteController::class, 'techersPage']);
 $app->router->get('/doctorants',[SiteController::class, 'doctorantsPage']);
 
 
-
 /* **********************************************
 *                                               *
 *  this side it's for all teachers ROUTES       *

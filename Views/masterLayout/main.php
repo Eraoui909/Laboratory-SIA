@@ -235,7 +235,10 @@ exit();
         .swal2-container {
             z-index: 1000000000000000 !important;
         }
+
     </style>
+
+
 
 </head>
 <body >
@@ -296,6 +299,8 @@ if($null != true)
     include_once "footer.php";
 ?>
 
+
+
 <script src="<?php echo $GLOBAL_DIR ?>/js/jquery.comjquery-3.5.1.min.js"></script>
 <script src="<?php echo $GLOBAL_DIR ?>/js/bootstrap.min.js"></script>
 <script src="<?php echo $GLOBAL_DIR ?>/font-awesome-4.7.0/all.min.js"></script>
@@ -333,6 +338,7 @@ if($null != true)
 <?php }?>
 
 <script>
+
     $("#load").hide();
     document.onreadystatechange = function () {
         let state = document.readyState;

@@ -5,10 +5,9 @@
     /***********************/
 
     body{
-        background-image: url("<?php echo $GLOBAL_DIR ?>/Storage/statics/images/neural-background.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-        background-attachment: fixed;
+        background-image: linear-gradient(to bottom , #7ab7cb, #7eb9cb,white, white,white,white );
     }
 
     .mot-container{
@@ -17,6 +16,8 @@
         position: relative;
         background-image: linear-gradient(to right ,#0000000a,white );
         padding: 15px;
+        background-color: rgba(255, 255, 255, 0.73);
+
     }
 
     .mot-container h1 {

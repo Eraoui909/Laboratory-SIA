@@ -1,19 +1,19 @@
 <?php global $GLOBAL_DIR ?>
 <style>
     body{
-        background-image: url(<?php echo $GLOBAL_DIR ?>"/Storage/statics/images/neural-background.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-        background-attachment: fixed;
+        background-image: linear-gradient(to bottom , #7ab7cb, #7eb9cb,white, white,white,white );
+
     }
     .presentation-container{
-        background-image: linear-gradient(to right ,#0000000a,white );
+        background-color: rgba(255, 255, 255, 0.73);
         padding: 15px;
     }
 </style>
 
 
-<div class="container presentation-container">
+<div class="container-lg presentation-container">
 
     <div>
         <center>

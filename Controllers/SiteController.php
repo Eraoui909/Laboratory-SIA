@@ -27,15 +27,32 @@ class SiteController extends Controller
 
     public function homePage()
     {
-        $data['articles'] = ArticleModel::getByQuery('SELECT *,DATE_FORMAT(date, "%W %M %e %Y") as "date" FROM article order by date DESC limit 10');
-        $data['teams']  =TeamModel::getALLEquipeAndTechers();
+        (isset($_GET['n'])) ? $pag = (int)$_GET['n'] : $pag = 1;
+
+        if($pag == 0){
+            header("Location:/home");
+        }
+        $count  = ArticleModel::getCountTable();
+        $limit    = 10;
+        $nbrMax = ceil($count / $limit);
+        if($pag > $nbrMax || $pag < 0){
+            $pag = 1;
+        }
+        $offset = $limit*($pag-1);
+
+
+        $data['articles'] = ArticleModel::getByQuery('SELECT *,DATE_FORMAT(date, "%W %M %e %Y") as "date" FROM article order by date DESC limit '.$limit.' offset '.$offset);
+        $data['teams'] = TeamModel::getALLEquipeAndTechers();
         $data['nbrOfTeam'] = TeamModel::getCountTable();
         $data['nbrOfTeacher'] = EnseignantModel::getCountTable('WHERE specialite="ens"');
+        $data['nbrPage'] = $nbrMax;
         $data['title'] = "Home";
         $data['style'] = ['marquee.css', 'Home_Style.css'];
-        $data['script'] = ['CokiesHandler.js','marquee.js', 'HomeScript.js', 'navbar.js'];
+        $data['script'] = ['CokiesHandler.js', 'marquee.js', 'HomeScript.js', 'navbar.js'];
         return $this->render('home', $data);
+
     }
+
 
     public function loginPage()
     {
@@ -103,22 +120,6 @@ class SiteController extends Controller
 
     }
 
-    public function articlesPage()
-    {
-        $data = array();
-        $data['articles'] = ArticleModel::getAll();
-        $data['title'] = "Articles";
-        $data['style'] = ["article.css"];
-        return$this->render("articles",$data);
-    }
-
-    public function singleArticle()
-    {
-        $data = ArticleModel::getByPk($_POST['id']);
-        $data['title'] = $data[0]['title'];
-        $data['style'] = ["article.css"];
-        return$this->render("singleArticle",$data);
-    }
 
     public function motDePresidentPage()
     {
@@ -154,7 +155,7 @@ class SiteController extends Controller
 
     public function presentationPage()
     {
-        $arr['title'] = "PresentationP de labo";
+        $arr['title'] = "Presentation de labo";
         $arr['style'] = ['Home_Style.css'];
         return $this->render('presentation',$arr);
     }

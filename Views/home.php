@@ -3,15 +3,24 @@
 <!--https://via.placeholder.com/750x300-->
 
 <div id="header">
-    <img src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/svgs/valley-white-static.svg" alt="wave-header"
+    <!-- <img src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/svgs/valley-white-static.svg" alt="wave-header"
          style="
                 position: absolute;
                 z-index: 10;
                 left: 0px;
-                bottom: -140px;
+                bottom: -190px;
                 width: 100%;
                "
-    >
+    > -->
+    <img src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/svgs/news-wave.svg"
+         style="
+                    position: absolute;
+                    z-index: 10;
+                    bottom: 0px;
+                    width: 187px;
+                    height: 30px;
+                   "
+         alt="news-wave">
     <div style="
         position: absolute;
         left: 0px;
@@ -48,33 +57,45 @@
     </div>
 </div>
 
+<div style="position: relative">
+    <img src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/svgs/news-wave.svg"
+         style="
+                       position: absolute;
+                        z-index: 10;
+                        bottom: -70px;
+                        width: 100%;
+                        height: 30px;
+                        transform: scaleY(-1);
+                   "
+         alt="news-wave">
+    <div class="simple-marquee-container" style="position: relative;">
 
-<div class="simple-marquee-container">
-    <div class="marquee-sibling " style="font-size: 2vh;">
-        News
-    </div>
-    <div class="marquee">
+        <div class="marquee-sibling " style="position:relative; font-size: 2vh;background-color: #6BB5CC">
+            News
+        </div>
+        <div class="marquee">
 
-        <ul class="marquee-content-items">
-            <?php
-            $count = 0;
-            foreach ($params['articles'] as $param):?>
-            <li>
-                <a href="#" data-toggle="modal" data-target="#exampleModal"
-                   data-title="<?= $param['title']; ?>"
-                   data-abstract="<?= $param['abstract']; ?>"
-                   data-journal="<?= $param['journal']; ?>"
-                   data-researchers="<?= $param['researchers']; ?>"
-                   data-date="<?= $param['date']; ?>"
-                   data-doi="<?= $param['doi']; ?>"
-                ><?= $param['title']; ++$count; ?></a>
-            </li>
-            <?php
-            if($count === 3)
-                break;
-            endforeach; ?>
+            <ul class="marquee-content-items">
+                <?php
+                $count = 0;
+                foreach ($params['articles'] as $param):?>
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#exampleModal"
+                           data-title="<?= $param['title']; ?>"
+                           data-abstract="<?= $param['abstract']; ?>"
+                           data-journal="<?= $param['journal']; ?>"
+                           data-researchers="<?= $param['researchers']; ?>"
+                           data-date="<?= $param['date']; ?>"
+                           data-doi="<?= $param['doi']; ?>"
+                        ><?= $param['title']; ++$count; ?></a>
+                    </li>
+                    <?php
+                    if($count === 3)
+                        break;
+                endforeach; ?>
 
-        </ul>
+            </ul>
+        </div>
     </div>
 </div>
 

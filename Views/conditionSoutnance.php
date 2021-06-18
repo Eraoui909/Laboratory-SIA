@@ -1,20 +1,21 @@
 <?php global $GLOBAL_DIR ?>
 <style>
     body{
-        background-image: url("<?php echo $GLOBAL_DIR ?>/Storage/statics/images/neural-background.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-        background-attachment: fixed;
+        background-image: linear-gradient(to bottom , #7ab7cb, #7eb9cb,white, white,white,white );
     }
     .card{
         padding: 15px;
     }
     .ha-condition-container h1{
         margin: 20px auto;
+        background-color: rgba(255, 255, 255, 0.73);
+
     }
 </style>
 
-<div class="container ha-condition-container">
+<div class="container-lg ha-condition-container">
     <div style="text-align: center;">
         <h1>
             Nouvelles Conditions de soutenance / Formulaires soutenance
