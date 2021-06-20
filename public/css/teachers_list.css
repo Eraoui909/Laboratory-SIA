@@ -40,8 +40,7 @@ ul {
   justify-content: space-around; }
 
 body .cards-container {
-  background-color: #EEE;
-  /*margin: 200px 0;*/
+  background-image: linear-gradient(to bottom , #EEE,#EEE,#EEE,white,white);
   display: flex;
   align-items: center;
   justify-content: space-around;

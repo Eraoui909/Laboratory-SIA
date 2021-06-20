@@ -17,7 +17,7 @@
     }
 </style>
 
-<div class="content-wrapper" style="margin: 5px auto;">
+<div class="content-wrapper" style="margin: 5px auto; background-image: linear-gradient(to bottom,#f3f5fa,#F3F5F8,#F3F5F8,white);">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">

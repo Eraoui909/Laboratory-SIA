@@ -6,19 +6,19 @@
     'aliases' => 
     array (
     ),
-    'reference' => '0d0cda692015344f57f62b822f5114d9c913afb2',
+    'reference' => '6a8c07a33e8b7696ebd545a9b47fe2bb417b29b5',
     'name' => 'vendor/phpmvc-framework',
   ),
   'versions' => 
   array (
     'phpmailer/phpmailer' => 
     array (
-      'pretty_version' => 'v6.4.1',
-      'version' => '6.4.1.0',
+      'pretty_version' => 'v6.5.0',
+      'version' => '6.5.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '9256f12d8fb0cd0500f93b19e18c356906cbed3d',
+      'reference' => 'a5b5c43e50b7fba655f793ad27303cd74c57363c',
     ),
     'vendor/phpmvc-framework' => 
     array (
@@ -27,7 +27,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '0d0cda692015344f57f62b822f5114d9c913afb2',
+      'reference' => '6a8c07a33e8b7696ebd545a9b47fe2bb417b29b5',
     ),
   ),
 );

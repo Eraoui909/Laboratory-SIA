@@ -14,7 +14,6 @@ class Request
         $position   = strpos($realPath,'?');
         if($position)
         {
-
             $path = substr($realPath ,0,$position);
             if(strpos($GLOBAL_DIR, 'public') !== false){
                 $path = str_replace('/public','',$path);

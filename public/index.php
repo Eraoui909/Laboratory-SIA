@@ -24,8 +24,6 @@ session_start();
 if(!isset($_SESSION['lang'])){
     $_SESSION['lang'] = "fr";
 }
-
-
 $langFile = $_SESSION['lang'] . ".php";
 include_once dirname(__DIR__) . "\language\\" . $langFile;
 
@@ -33,8 +31,6 @@ include_once dirname(__DIR__) . "\language\\" . $langFile;
  * the app variable is an instance from Application class
  */
 $app = new Application(dirname(__DIR__));
-
-//header("Cache-Control: max-age=31536000");
 
 /*
  * the db variable is an instance from Database class : connection to database

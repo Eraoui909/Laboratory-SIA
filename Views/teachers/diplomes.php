@@ -1,7 +1,7 @@
 
 
 
-<div class="container">
+<div class="container-lg">
     <center style="padding: 10px"><h3>Ajouter diplome</h3></center>
     <form action="<?php echo $GLOBAL_DIR ?>/teacher/diplome" class="add-diplome-form" method="post">
 

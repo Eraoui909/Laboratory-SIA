@@ -1,6 +1,6 @@
 
 
-<div class="container">
+<div class="container-lg">
     <center style="padding: 10px"><h3>Ajouter experience</h3></center>
     <form class="experience-pro-form" action="<?php echo $GLOBAL_DIR ?>/teacher/experiencePro" method="post">
 
