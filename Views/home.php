@@ -19,6 +19,7 @@
                     bottom: 0px;
                     width: 187px;
                     height: 30px;
+                    left: 0px;
                    "
          alt="news-wave">
     <div style="
@@ -66,6 +67,7 @@
                         width: 100%;
                         height: 30px;
                         transform: scaleY(-1);
+                        left: 0px;
                    "
          alt="news-wave">
     <div class="simple-marquee-container" style="position: relative;">

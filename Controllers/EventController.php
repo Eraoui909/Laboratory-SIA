@@ -34,6 +34,8 @@ class EventController extends Controller
             $event->setLieu($data['lieu']);
             $event->setDescription($data['description']);
             $event->setPicture($picture['uploaded'][0]);
+            $event->setDate($data['date']);
+            $event->setTimeEvent($data['time']);
 
             $event->register();
 
@@ -83,6 +85,7 @@ class EventController extends Controller
         if(!empty($_FILES['pictures']['name'][0])){
 
             $lastPic = dirname(__DIR__) . "/public/Storage/uploads/events/".$_POST['picture'];
+            chmod(dirname(__DIR__) . "/public/Storage/uploads/events" ,777);
             if($lastPic !== "default.png"){
                 @chown($lastPic,465);
                 @unlink($lastPic);
@@ -96,7 +99,8 @@ class EventController extends Controller
             $eventModel->setEventID($data['id']);
             $eventModel->setTitle($data['title']);
             $eventModel->setLieu($data['lieu']);
-            $eventModel->setDate($data['date']);
+            $eventModel->setDateEvent($data['date']);
+            $eventModel->setTimeEvent($data['date']);
             if($pic === null){
                 $eventModel->setPicture($data['picture']);
             }else{

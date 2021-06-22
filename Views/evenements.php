@@ -6,15 +6,16 @@
 ?>
 <style>
     body{
-        background-color: #ECEFF1;
+        background-image: linear-gradient(to bottom,#ECEFF1,#ECEFF1,#ECEFF1,#ECEFF1,white);
     }
 </style>
 
 <div class="container-fluid ha-events-container"  style="margin: 0px auto; ">
 
     <div class="ha-events">
-
-        <?php foreach ($params['events'] as $event): ?>
+        <?php
+        if(isset($params['events']) && !empty($params['events'])):
+        foreach ($params['events'] as $event): ?>
             <section class="ha-event-card">
                 <div class="ha-header">
                     <div class="img">
@@ -29,15 +30,15 @@
                 </div>
                 <div class="ha-body">
                     <p>
-                        la date de l'evenement : <?= $event['date'] ?>
+                        la date de l'evenement : <?= $event['date_event']." ".$event['time_event'] ?>
                     </p>
                 </div>
                 <div class="ha-footerr">
                     <hr>
-                    <span style="cursor: pointer" class="ha-drop-down">voir l'évenement <i class="fa fa-chevron-down"></i></span>
+                    <span style="cursor: pointer;" class="ha-drop-down">voir l'évenement <i class="fa fa-chevron-down"></i></span>
 
                 </div>
-                <div class="ha-event-drop-down">
+                <div class="ha-event-drop-down" style="display: none">
                     <strong>description de l'évenement : </strong>
                     <center>
                         <p>
@@ -52,7 +53,7 @@
                     </center>
                 </div>
         </section>
-        <?php endforeach; ?>
+        <?php endforeach; endif; ?>
     </div>
 
     <div class="ha-gift">

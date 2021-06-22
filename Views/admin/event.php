@@ -50,6 +50,24 @@
                         </div>
 
                         <div class="input-group mb-3">
+                            <input type="date" name="date" class="form-control" placeholder="<?='la date'?>">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <input type="time" name="time" class="form-control" placeholder="<?='le temp'?>">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-3">
                             <input type="file" name="pictures[]" accept="image/*" class="form-control">
                             <div class="input-group-append">
                                 <div class="input-group-text">
@@ -124,6 +142,24 @@
                         </div>
 
                         <div class="input-group mb-3">
+                            <input type="date" name="date-event" class="form-control input-modify-date-event" placeholder="<?='la date'?>">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <input type="time" name="time" class="form-control input-modify-time" placeholder="<?='le temp'?>">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-user"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-3">
                             <input type="hidden" name="picture" class="form-control input-modify-picture" >
                         </div>
 
@@ -176,6 +212,8 @@
                     <th><?=$lang['description']?>s</th>
                     <th><?='lieu' ?></th>
                     <th><?='date' ?></th>
+                    <th><?='temps' ?></th>
+                    <th><?='date d\'ajout' ?></th>
                     <th><?=$lang['avatar'] ?></th>
                     <th style="min-width: 261px">Action</th>
                 </tr>
@@ -186,6 +224,8 @@
                         <td><?= $event['title']?></td>
                         <td><?= $event['description']?>s</td>
                         <td><?= $event['lieu'] ?></td>
+                        <td><?= $event['date_event'] ?></td>
+                        <td><?= $event['time_event'] ?></td>
                         <td><?= $event['date'] ?></td>
                         <td><img src="/Storage/uploads/events/<?= $event['picture'] ?>" height="50px" alt=""></td>
                         <td>
@@ -195,6 +235,8 @@
                                     data-description="<?= $event['description'] ?>"
                                     data-lieu="<?= $event['lieu'] ?>"
                                     data-date="<?= $event['date'] ?>"
+                                    data-date-event="<?= $event['date_event'] ?>"
+                                    data-time="<?= $event['time_event'] ?>"
                                     data-picture="<?= $event['picture'] ?>"
 
                             <i class="fa fa-edit"></i>

@@ -13,6 +13,8 @@ class EventModel extends AbstractModel
     protected $lieu;
     protected $picture;
 
+    protected $date_event;
+    protected $time_event;
 
 
     public static $tableName    ='event';
@@ -23,6 +25,8 @@ class EventModel extends AbstractModel
         'description'               => \PDO::PARAM_STR,
         'lieu'                      => \PDO::PARAM_STR,
         'picture'                   => \PDO::PARAM_STR,
+        'date_event'                => \PDO::PARAM_STR,
+        'time_event'                => \PDO::PARAM_STR,
     );
 
     /**
@@ -120,4 +124,21 @@ class EventModel extends AbstractModel
     {
         $this->eventID = $eventID;
     }
+
+    /**
+     * @param mixed $date_event
+     */
+    public function setDateEvent($date_event): void
+    {
+        $this->date_event = $date_event;
+    }
+
+    /**
+     * @param mixed $time_event
+     */
+    public function setTimeEvent($time_event): void
+    {
+        $this->time_event = $time_event;
+    }
+
 }

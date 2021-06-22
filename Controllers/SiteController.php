@@ -9,6 +9,7 @@ use app\core\Request;
 use app\core\Session;
 use app\core\Validator;
 use app\models\ArticleModel;
+use app\models\ContactModel;
 use app\models\EnseignantModel;
 use app\models\EventModel;
 use app\models\TeamModel;
@@ -41,10 +42,11 @@ class SiteController extends Controller
         $offset = $limit*($pag-1);
 
 
-        $data['articles'] = ArticleModel::getByQuery('SELECT *,DATE_FORMAT(date, "%W %M %e %Y") as "date" FROM article order by date DESC limit '.$limit.' offset '.$offset);
+        $data['articles'] = ArticleModel::getByQuery('SELECT *,DATE_FORMAT(date, "%d %M %Y") as "date" FROM article order by articleID DESC limit '.$limit.' offset '.$offset);
         $data['teams'] = TeamModel::getALLEquipeAndTechers();
         $data['nbrOfTeam'] = TeamModel::getCountTable();
         $data['nbrOfTeacher'] = EnseignantModel::getCountTable('WHERE specialite="ens"');
+        $data['lastEvents']     = EventModel::getAll("ORDER BY eventID DESC limit 5");
         $data['nbrPage'] = $nbrMax;
         $data['title'] = "Home";
         $data['style'] = ['marquee.css', 'Home_Style.css'];
@@ -109,10 +111,31 @@ class SiteController extends Controller
     public function contactPage()
     {
         $params = [
+            "style" => ["contact.css"],
+            "script" => ["contact.js"],
             "title" => "Contact page",
         ];
 
         return $this->render('contact', $params);
+    }
+
+    public function sendContact()
+    {
+        $validator  = new Validator();
+        $data       = $validator->sanitize($_POST);
+        $errors     = $validator->require($data);
+        if(empty($errors)){
+            $contact = new ContactModel();
+            $contact->setPrenom($data['prenom']);
+            $contact->setNom($data['nom']);
+            $contact->setEmail($data['email']);
+            $contact->setSubject($data['subject']);
+            $contact->setMessage($data['message']);
+            $contact->register();
+            echo json_encode("success");
+        }else{
+            echo json_encode("error");
+        }
     }
 
     public function handleContact(Request $request)

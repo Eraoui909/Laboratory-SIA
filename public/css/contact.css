@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital@1&family=Poppins:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #3c3c3c;
+  text-decoration: none;
+}
+
+td svg:not(.edit-article-img svg.svg-inline--fa.fa-edit.fa-w-18) path {
+  color: #fff;
+}
+
+th:last-of-type {
+  min-width: 230px;
+}
+
+label.UploadLabel {
+  padding: 6px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  display: table-cell;
+  cursor: pointer;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.flex {
+  display: flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ha-contact-container {
+  padding: 10px;
+}
+
+/*# sourceMappingURL=contact.css.map */

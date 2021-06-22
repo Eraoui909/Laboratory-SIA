@@ -57,6 +57,7 @@ $app->router->get('/contact', [SiteController::class, 'contactPage']);
 $app->router->post('/contact',[SiteController::class, 'handleContact']);
 
 $app->router->get('/contact', [SiteController::class, 'contactPage']);
+$app->router->post('/contact/send', [SiteController::class, 'sendContact']);
 
 
 $app->router->get('/evenements',[SiteController::class,'evenementsPage']);
@@ -107,12 +108,15 @@ $app->router->post('/admin/events/add',[EventController::class,'addEvent']);
 $app->router->post('/admin/events/delete',[EventController::class,'deleteEvent']);
 $app->router->post('/admin/events/modify',[EventController::class,'modifyEvent']);
 
+$app->router->get('/admin/inbox',[AdminController::class,'inboxPage']);
+$app->router->get('/admin/readMsg',[AdminController::class,'readMsgPage']);
+$app->router->post('/admin/msg/delete',[AdminController::class,'deleteMsg']);
+
 $app->router->get('/motDePresident',[SiteController::class, 'motDePresidentPage']);
 $app->router->get('/conditionSoutnance',[SiteController::class, 'conditionSoutnancePage']);
 $app->router->get('/presentation',[SiteController::class, 'presentationPage']);
 $app->router->get('/teachers',[SiteController::class, 'techersPage']);
 $app->router->get('/doctorants',[SiteController::class, 'doctorantsPage']);
-
 
 /* **********************************************
 *                                               *

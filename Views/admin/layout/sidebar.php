@@ -90,7 +90,16 @@
                     <a href="/admin/newsletter" class="nav-link">
                         <i class="nav-icon fas fa-newspaper"></i>
                         <p>
-                            <?= $lang['newsletter']; ?>s
+                            <?= $lang['newsletter']; ?>
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/admin/inbox" class="nav-link">
+                        <i class="nav-icon fas fa-newspaper"></i>
+                        <p>
+                            Inbox
                         </p>
                     </a>
                 </li>

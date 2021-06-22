@@ -8,6 +8,7 @@ use app\core\Session;
 use app\core\Validator;
 use app\models\AdminsModel;
 use app\models\ArticleModel;
+use app\models\ContactModel;
 use app\models\DoctorantModel;
 use app\models\EnseignantModel;
 use app\models\EventModel;
@@ -34,10 +35,12 @@ class AdminController extends Controller
         $nbrOfDoctorant     = EnseignantModel::getCountTable("WHERE specialite='doc'");
         $nbrOfEnseignant    = EnseignantModel::getCountTable("WHERE specialite='ens'");
         $nbrOfArticles      = ArticleModel::getCountTable();
+        $nbrMsgNotReadable  = ContactModel::getCountTable("WHERE readable=0");
         $params = [
             "nbrOfDoctorant"    => $nbrOfDoctorant,
             "nbrOfEnseignant"   => $nbrOfEnseignant,
             "nbrOfArticles"     => $nbrOfArticles,
+            "nbrMsgNotReadable" => $nbrMsgNotReadable,
         ];
         return $this->renderAdmin('layout/contentWraper', $params);
     }
@@ -272,5 +275,38 @@ class AdminController extends Controller
         return $this->renderAdmin('event', $params);
     }
 
+    public function inboxPage(){
+        global $GLOBAL_DIR ;
+
+        if(!isset($_SESSION['token']['admin'])){
+            $this->redirect($GLOBAL_DIR.'/admin/login');
+        }
+        $params['title'] = "inbox";
+        $params['msgs'] = ContactModel::getAll("ORDER BY contactID DESC");
+        return $this->renderAdmin('inbox', $params);
+    }
+
+    public function readMsgPage(){
+        global $GLOBAL_DIR ;
+
+        if(!isset($_SESSION['token']['admin'])){
+            $this->redirect($GLOBAL_DIR.'/admin/login');
+        }
+        $msgID = (int) $_GET['m'];
+        ContactModel::UpdateColumns($msgID,['readable' => 1]);
+        $params['msg'] = ContactModel::getAll("WHERE contactID=".$msgID);
+        $params['title'] = "message";
+        return$this->renderAdmin('readMsg',$params);
+    }
+
+    public function deleteMsg(){
+        $msgID = (int) $_POST['id'];
+        if(ContactModel::deleteByPk($msgID)){
+            echo json_encode("success");
+        }else{
+            echo json_encode("error");
+        }
+
+    }
 
 }

@@ -156,6 +156,9 @@ $(document).ready(function()
         $(".input-modify-picture").attr("value", $(this).attr("data-picture"));
         $(".input-modify-date").attr("value", $(this).attr("data-date"));
         $(".input-modify-id").attr("value", $(this).attr("data-id"));
+        $(".input-modify-date").attr("value", $(this).attr("data-date"));
+        $(".input-modify-date-event").attr("value", $(this).attr("data-date-event"));
+        $(".input-modify-time").attr("value", $(this).attr("data-time"));
 
     });
 
@@ -644,3 +647,52 @@ function modifyEvent ()
         }
     });
 }
+
+/* ****************************************************************************************************************** */
+/*                                               delete message                                                       */
+/* ****************************************************************************************************************** */
+
+$(document).on('click','.ha-delete-msg',function (e) {
+    e.preventDefault();
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                method: "post",
+                url: "/admin/msg/delete",
+                data: "id="+$(".ha-delete-msg").attr('data-id'),
+                datatype: "json",
+                success: function (data) {
+                    if(data === '"success"')
+                    {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Message has been deleted',
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
+                        setTimeout(function () {
+                            window.location.replace("/admin/inbox");
+                        },2001);
+                    }else{
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: 'Message not deleted',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                }
+            })
+        }
+    })
+})

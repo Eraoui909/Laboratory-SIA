@@ -28,7 +28,13 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3><?= $nbrOfEnseignant; ?></h3>
+                            <h3>
+                                <?php if(empty($nbrOfEnseignant)){
+                                    echo 0;
+                                }else{
+                                    echo $nbrOfEnseignant;
+                                } ?>
+                            </h3>
 
                             <p><?= $lang['nbrOfEnseignant']?></p>
                         </div>
@@ -43,7 +49,13 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3><?= $nbrOfDoctorant; ?></h3>
+                            <h3>
+                                <?php if(empty($nbrOfDoctorant)){
+                                    echo 0;
+                                }else{
+                                    echo $nbrOfDoctorant;
+                                } ?>
+                            </h3>
 
                             <p><?= $lang['nbrOfDoctorant']?></p>
                         </div>
@@ -58,7 +70,13 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3><?= $nbrOfArticles; ?></h3>
+                            <h3>
+                                <?php if(empty($nbrOfArticles)){
+                                    echo 0;
+                                }else{
+                                    echo $nbrOfArticles;
+                                } ?>
+                            </h3>
 
                             <p><?= $lang['nbrArticle'] ?> </p>
                         </div>
@@ -73,9 +91,15 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3>
+                                <?php if(empty($nbrMsgNotReadable)){
+                                echo 0;
+                                }else{
+                                echo $nbrMsgNotReadable;
+                                } ?>
+                            </h3>
 
-                            <p>Unique Visitors</p>
+                            <p>Message not readable</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
