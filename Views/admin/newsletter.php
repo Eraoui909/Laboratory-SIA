@@ -25,7 +25,7 @@
                     unset($_SESSION['flash_messages']['msg_sent']);
                 }
                 if(isset($_SESSION['flash_messages']['msg_not_sent'])){
-                    echo '<div class="container alert alert-danger"></center>'.$_SESSION['flash_messages']['msg_not_sent']['value'].'</center></div>';
+                    echo '<div class="container-lg alert alert-danger" style="margin-top: 10px">'.$_SESSION['flash_messages']['msg_not_sent']['value'].'</div>';
                     unset($_SESSION['flash_messages']['msg_not_sent']);
                 }
             ?>

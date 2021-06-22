@@ -9,6 +9,7 @@ use app\core\Controller;
 use app\core\Helper;
 use app\core\Session;
 use app\core\Validator;
+use app\models\ArticleModel;
 use app\models\NewsLetterInscriModel;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -61,13 +62,14 @@ class NewsLetterInscriController extends Controller
         $mail = new PHPMailer(true);
 
         try {
-            //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-            $mail->isSMTP();                                            // Send using SMTP
-            $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
-            $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-            $mail->Username   = '';                     // SMTP username
-            $mail->Password   = '';                               // SMTP password
-            //$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                        // Enable verbose debug output
+            $mail->isSMTP();                                                // Send using SMTP
+            $mail->CharSet = "UTF-8";
+            $mail->Host       = 'smtp.gmail.com';                           // Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                       // Enable SMTP authentication
+            $mail->Username   = 'your email';                // SMTP username
+            $mail->Password   = 'your pass';                           // SMTP password
+            //$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;           // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $mail->Port       = 587;
             //Recipients
             $mail->setFrom('siaNewsletter@lsia.com','labo sia');
@@ -90,7 +92,12 @@ class NewsLetterInscriController extends Controller
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = 'This msg from sia labo';
-            $mail->Body    = file_get_contents( "../Views/emailTemplate.php");
+
+            $article = ArticleModel::getAll("Order by date DESC limit 1");
+            $result =   $this->renderEmpty('emailTemplate',['title'=>'title','article' => $article]);
+            //file_get_contents( "../Views/emailTemplate.php",false,$stream)
+            $mail->Body    = $result;
+
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
@@ -99,17 +106,16 @@ class NewsLetterInscriController extends Controller
             Helper::redirect($_SERVER['HTTP_REFERER']);
         } catch (Exception $e) {
             $session = new Session();
-            $session->setFlash('msg_not_sent',"<br>Message could not be sent. check your internet");
+            $session->setFlash('msg_not_sent',"Message could not be sent. check your internet");
             Helper::redirect($_SERVER['HTTP_REFERER']);
             //echo "<br>Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     }
 
-
     public function newsletterDelete(){
         if(isset($_POST['id']))
         {
-            //NewsLetterInscriModel::executeQuery("DELETE FROM newsletter_inscription WHERE id = ".$_POST['id']);
+            NewsLetterInscriModel::executeQuery("DELETE FROM newsletter_inscription WHERE id = ".$_POST['id']);
             NewsLetterInscriModel::deleteByPk($_POST['id']);
             $session = new Session();
             $session->setFlash('msg_sent',"email deleted with success");
@@ -118,5 +124,6 @@ class NewsLetterInscriController extends Controller
             Helper::redirect($_SERVER['HTTP_REFERER']);
         }
     }
+
 
 }
