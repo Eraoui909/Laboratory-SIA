@@ -64,7 +64,7 @@ exit();
         if(isset($params['script']) && in_array('ckeditor.js',$params['script']))
         {
 
-            ?><script src="<?php echo $GLOBAL_DIR ?>/js/ckeditor.js"></script>';
+            ?><script src="<?php echo $GLOBAL_DIR ?>/js/ckeditor.js"></script>
     <?php
             unset($params['script']['ckeditor']);
 

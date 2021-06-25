@@ -142,7 +142,7 @@
                         </div>
 
                         <div class="input-group mb-3">
-                            <input type="date" name="date-event" class="form-control input-modify-date-event" placeholder="<?='la date'?>">
+                            <input type="date" name="date_event" class="form-control input-modify-date-event" placeholder="<?='la date'?>">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-user"></span>

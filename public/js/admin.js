@@ -609,19 +609,16 @@ function modifyEvent ()
     let errors ="";
 
     $.ajax({
-        type    : "post",
+        type        : "post",
         enctype     : "multipart/form-data",
-        url     : "/admin/events/modify",
-        data    : data,
+        url         : "/admin/events/modify",
+        data        : data,
         datatype    : "json",
         processData : false,
         contentType : false,
         cache       : false,
         success:function (data)
         {
-            console.log(data);
-            //data = JSON.parse(data);
-            // console.log(data);
             if( data === '"success"')
             {
                 $("#modify-event-btn").attr("disabled", "disabled");

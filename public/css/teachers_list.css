@@ -78,7 +78,7 @@ body .cards-container .card .header-card {
 body .cards-container .card .header-card .profile-img {
   width: fit-content;
   margin: 11px 19px;
-  background-image: linear-gradient(45deg, #519469, #79e2a3);
+  background-color: white;
   border-radius: 100px;
   z-index: 1;
 }
@@ -92,6 +92,7 @@ body .cards-container .card .header-card .header-content {
 }
 body .cards-container .card .header-card .header-content h3 {
   font-size: 1.5rem;
+  margin-top: 8px;
 }
 body .cards-container .card .header-card .header-content p {
   color: #777;

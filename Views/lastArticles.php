@@ -31,7 +31,7 @@
 
     <center style="margin: 10px auto">
         <nav aria-label="Page navigation example" style="width: fit-content" >
-            <ul class="pagination">
+            <ul class="pagination" style="width: max-content;">
                 <li class="page-item">
                     <a class="page-link"
                        href="<?php $p=1; (isset($_GET['n'])&&$_GET['n']!=1)?$p=($_GET['n']-1) :$p=1; echo "\?n=".$p; ?>"

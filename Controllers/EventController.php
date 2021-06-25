@@ -76,9 +76,9 @@ class EventController extends Controller
 
         $session = new Session();
         $validator = new validator();
-
         $data = $validator->sanitize($_POST);
         $errors = $validator->require($data);
+
 
         $eventModel = new EventModel();
 
