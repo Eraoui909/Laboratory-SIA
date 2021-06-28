@@ -36,7 +36,7 @@
             <h3><?=  $lang['adminSide']?? 'Admin side' ?></h3>
             <ul>
                 <li>
-                    <a href="<?php echo $GLOBAL_DIR ?>/admin"><?= $lang['dashboard'] ?></a>
+                    <a target="_blank" href="<?php echo $GLOBAL_DIR ?>/admin"><?= $lang['dashboard'] ?></a>
                 </li>
             </ul>
         </div>

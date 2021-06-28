@@ -37,18 +37,26 @@
                        href="<?php $p=1; (isset($_GET['n'])&&$_GET['n']!=1)?$p=($_GET['n']-1) :$p=1; echo "\?n=".$p; ?>"
                        aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
+                        <span class="sr-only"><?= $lang['previous'] ?></span>
                     </a>
                 </li>
                 <?php  for($i=1;$i<=$params['nbrPage'];$i++): ?>
+                    <?php if($i > 4):
+                        if($i == $params['nbrPage']-1){
+                            echo '<li class="page-item"><a class="page-link" href="#">...</a></li>';
+                            echo '<li class="page-item"><a class="page-link" href="/?n='. ($i+1) .'">'.  ($i+1) .'</a></li>';
+                        }
+                        continue;
+                    endif; ?>
                     <li class="page-item"><a class="page-link" href="/?n=<?php echo $i ?>"><?php echo $i ?></a></li>
+
                 <?php  endfor; ?>
                 <li class="page-item" >
                     <a class="page-link"
                        href="<?php $p=$params['nbrPage']; (isset($_GET['n'])&&$_GET['n']!=$params['nbrPage'])?$p=($_GET['n']+1) :$p=$params['nbrPage']; echo "\?n=".$p; ?>"
                        aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
+                        <span class="sr-only"><?= $lang['next'] ?></span>
                     </a>
                 </li>
             </ul>

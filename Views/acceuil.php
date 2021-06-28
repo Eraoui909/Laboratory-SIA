@@ -1,4 +1,6 @@
-<?php global $GLOBAL_DIR ?>
+<?php global $GLOBAL_DIR;
+        global $lang;
+    ?>
 <?php
 
 ?>
@@ -9,8 +11,8 @@
         <div class="ha-acceuil-statistics">
 
             <div class="section section-1">
-                <span> <i class="fa fa-search"></i> Resultat pour </span>
-                <center><p><strong>Laboratoir SIA - FST FES</strong></p></center>
+                <span> <i class="fa fa-search"></i> <?= $lang['resultOF'] ?> </span>
+                <center><p><strong>Labo SIA - FST FES</strong></p></center>
             </div>
 
             <div class="section section-2">
@@ -21,7 +23,7 @@
                         </div>
                         <div class="content">
                             <center>
-                                <strong><?= $params['nbrOfTeacher'] ?></strong><p><strong>Enseignant</strong></p>
+                                <strong><?= $params['nbrOfTeacher'] ?></strong><p><strong><?= $lang['enseignant'] ?></strong></p>
                             </center>
                         </div>
                     </div>
@@ -36,7 +38,7 @@
                         </div>
                         <div class="content">
                             <center>
-                                <strong><?= $params['nbrOfTeam'] ?></strong><p><strong>Groupes</strong></p>
+                                <strong><?= $params['nbrOfTeam'] ?></strong><p><strong><?= $lang['team'] ?>s</strong></p>
                             </center>
                         </div>
                     </div>
@@ -48,8 +50,8 @@
             <table class="table table-hover  table-responsive-lg">
                 <thead>
                     <tr>
-                        <th>Nom du group</th>
-                        <th>Membres du group </th>
+                        <th><?= $lang['nameOfTeam'] ?></th>
+                        <th><?= $lang['membersOfTeam'] ?></th>
                         <td></td>
                     </tr>
                 </thead>

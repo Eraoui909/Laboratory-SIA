@@ -5,6 +5,7 @@
         "lang"                          => "Language",
         "home"                          => "Home",
         "contact"                       => "Contact",
+        "us"                            => "Us",
         "en"                            => "english",
         "fr"                            => "french",
         "admin_registred_success"       => "admin registered with success",
@@ -32,6 +33,7 @@
         "updatePic"                     => "Update Picture",
         "deletePic"                     => "<span style='color: red'>Delete </span><span style='color: black'>my Picture  </span> <i class='fa fa-trash'></i>",
         "submit"                        => "Submit",
+        "send"                          => "Send",
         "file_size_error"               => "this file passed the maximum size allowed",
         "file_type_error"               => "this type of files is not allowed",
         "searchers"                     => "Searchers",
@@ -85,8 +87,17 @@
         "diplome_certificat"            => "Certificate",
         "event"                         => "Event",
         "newsletter"                    => "NewsLetter",
-
         "abstract"                      => "Abstract",
         "researchers"                   => "Researchers",
+
+        "searchBoxPlaceHolder"          => "titile or author of article..",
+        "resultOF"                      => "Results Of",
+        "nameOfTeam"                    => "Team Name",
+        "membersOfTeam"                 => "Team membres",
+        "previous"                      => "previous",
+        "next"                          => "next",
+        "exploreEvents"                 => "Explore events",
+
+
 
     );

@@ -424,9 +424,16 @@ $(document).on("click",".add-article-button",function (e){
                         window.location.replace(globalDIR+"/teacher/profile");
                     },1000);
                 }else{
+                    let errors = data;
+                    console.log(errors);
+                    let result = '';
+                    for (const key in errors)
+                    {
+                        result += errors[key]+"</br>";
+                    }
                     Swal.fire({
                         icon: 'error',
-                        title: 'All fields are required'
+                        html: result
                     })
                     setTimeout(function (){
                         //window.location.replace(globalDIR+"/teacher/profile");

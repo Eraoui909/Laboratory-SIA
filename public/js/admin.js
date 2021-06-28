@@ -194,15 +194,7 @@ function addDocEns (person)
         dataType: "json",
         success:function (data)
         {
-            if(typeof data == "object") {
-
-                for (const err in data.error) {
-                    errors += "<div class='alert alert-danger'>" + err + "</div>";
-                    $(".msg-add-enseignant-doctorant").html(errors);
-                }
-            }
-            if(typeof data == "string")
-            {
+            if(data === 'success'){
                 $("#modal-add-" + person + "-add-btn").attr("disabled", "disabled");
                 // $(".msg-add-enseignant-doctorant").html(data);
                 //$(".msg-add-enseignant-doctorant").html("<div class='alert alert-success'>" + person + " added with success</div>");
@@ -216,6 +208,14 @@ function addDocEns (person)
                 setTimeout(function (){
                     window.location.replace("/admin/" + person);
                 },2000);
+            }else{
+                let errors = data.error;
+                console.log(errors);
+                let result = "";
+                for (const key in errors) {
+                    result += "<div class='alert alert-danger'>" + errors[key] + "</div>";
+                }
+                $(".msg-add-enseignant-doctorant").html(result);
             }
         }
     });
@@ -520,8 +520,6 @@ function addEvent ()
         cache       : false,
         success:function (data)
         {
-            //data = JSON.parse(data);
-            console.log(data);
             if( data === '"success"')
             {
                 console.log(data);
@@ -540,11 +538,24 @@ function addEvent ()
             }else{
                 //errors += "<div class='alert alert-danger'>" + data.error.thematic + "</div>";
                 //$(".msg-add-enseignant-doctorant").html(errors);
+                let result = "";
+                let errors = JSON.parse(data).error;
+                let uploads = JSON.parse(data).uploads;
+                for (const key in errors)
+                {
+                    result += errors[key]+"</br>";
+                }
+                for (const key in uploads)
+                {
+                    if(typeof uploads[key] !== 'Object'){
+                        result += uploads[key]+"</br>";
+                    }
+                }
                 Swal.fire({
                     position: 'center',
                     icon: 'error',
-                    title: "All fields are required",
-                    timer: 2500
+                    html: result,
+                    timer: 4000
                 })
             }
         }
@@ -634,11 +645,17 @@ function modifyEvent ()
                 },2000);
 
             }else{
+                let errors = JSON.parse( data);
+                let result = "";
+                for( const  key in errors)
+                {
+                    result += errors[key]+"</br>";
+                }
                 Swal.fire({
                     position: 'center',
                     icon: 'error',
-                    title: "All filelds are required",
-                    timer: 2500
+                    html: result,
+                    timer: 3500
                 })
             }
         }
@@ -683,7 +700,7 @@ $(document).on('click','.ha-delete-msg',function (e) {
                         Swal.fire({
                             position: 'top-end',
                             icon: 'error',
-                            title: 'Message not deleted',
+                            html: 'Message not deleted',
                             showConfirmButton: false,
                             timer: 1500
                         });

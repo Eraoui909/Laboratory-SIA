@@ -53,12 +53,10 @@ class EnseignantController extends Controller
 
             $ensignant->register();
 
-            $success = json_encode("success");
-            echo $success;
+            echo json_encode("success");
 
         }else{
-            $errors = json_encode($errors);
-            echo  $errors;
+            echo  json_encode($errors);
         }
     }
 
@@ -204,7 +202,7 @@ class EnseignantController extends Controller
 
         $session->setFlash("errors", $errors);
         //header('Location: ' . $_SERVER['HTTP_REFERER']);
-        echo json_encode("error");
+        echo json_encode($errors);
 
     }
 

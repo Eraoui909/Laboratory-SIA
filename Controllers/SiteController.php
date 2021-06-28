@@ -34,7 +34,7 @@ class SiteController extends Controller
             header("Location:/home");
         }
         $count  = ArticleModel::getCountTable();
-        $limit    = 10;
+        $limit    = 12;
         $nbrMax = ceil($count / $limit);
         if($pag > $nbrMax || $pag < 0){
             $pag = 1;
@@ -196,7 +196,9 @@ class SiteController extends Controller
     {
         global $article_after_search;
         $searchVal = filter_var($_POST['searchVal'],FILTER_SANITIZE_STRING);
-        $result = ArticleModel::getAll('WHERE title like "%'.$searchVal.'%"');
+        $result = ArticleModel::getAll('WHERE title like "%'.$searchVal.'%" 
+                                OR author = (SELECT id from enseignant where nom  like "%'.$searchVal.'%"
+                                OR prenom  like "%'.$searchVal.'%")');
         if(empty($result)){
             echo json_encode("empty");
         }else{

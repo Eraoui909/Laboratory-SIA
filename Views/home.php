@@ -1,4 +1,5 @@
 <?php global $GLOBAL_DIR ?>
+<?php global $lang ?>
 <link rel="stylesheet" href="<?php echo $GLOBAL_DIR ?>/css/HomeScript.css">
 <!--https://via.placeholder.com/750x300-->
 
@@ -34,13 +35,13 @@
     ">
     </div>
     <div class="pop-up-search-box">
-        <p>Consulter plus de <strong style="color: #A8D511">200</strong> articles</p>
+        <p>Consulter plus de <strong style="color: #A8D511">60</strong> articles</p>
         <div class="pop-up-search-box-input">
             <div class="div-1">
-                <input type="text" class="ha-search-input"  name="search-for-article" style="height: 100%" placeholder="le titre d'article..">
+                <input type="text" class="ha-search-input"  name="search-for-article" style="height: 100%" placeholder="<?= $lang['searchBoxPlaceHolder'] ?>">
             </div>
             <div class="div-2 ha-search-for-article" style="cursor: pointer">
-                <span>Recherche  </span><i class="fa fa-search"></i>
+                <span><?= $lang['search'] ?>  </span><i class="fa fa-search"></i>
             </div>
         </div>
     </div>
@@ -116,7 +117,7 @@
                 <small class="ha-modal-date"></small>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">fermer</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><?= $lang['close'] ?></button>
             </div>
         </div>
     </div>

@@ -75,7 +75,7 @@ $(".marquee-1").trigger('mouseleave');
  **/
 let c = new CokiesHandler();
 
-c.setCookie("newsletter_registered","false",30);
+//c.setCookie("newsletter_registered","false",30);
 //console.log(c.getCookie("newsletter_registered"));
 
 if(c.getCookie("newsletter_registered") == "false") {

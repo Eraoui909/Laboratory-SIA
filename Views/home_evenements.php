@@ -1,11 +1,13 @@
-<?php global $GLOBAL_DIR ?>
+<?php global $GLOBAL_DIR;
+        global $lang;
+?>
 
 <div class="container-fluid ha-container-respons"  style="margin: 0px auto;
     width: 80%;">
     <div class="home__sector card card--1dp home__margin-block">
         <div class="title-flex-w-img title-flex-w-img__center">
             <img src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/images/pictograms-google-material-format-list-bulleted.svg" width="36" alt="" height="36">
-            <h2 class="h4-like">Explorez les évenements</h2>
+            <h2 class="h4-like"><?= $lang['exploreEvents'] ?></h2>
         </div>
         <ul class="sectors">
 
@@ -105,7 +107,7 @@
                 <a href="<?php echo $GLOBAL_DIR ?>/evenements"  class="btn btn--primary" >
                     <div>
                         <img src="<?php echo $GLOBAL_DIR ?>/Storage/Statics/images/pictograms-google-material-format-list-bulleted.svg" width="36" alt="" height="36">
-                        <span class="btn-label u-bold">Parcourir les évenements</span>
+                        <span class="btn-label u-bold"><?= $lang['exploreEvents'] ?></span>
                     </div>
                 </a>
             </li>
