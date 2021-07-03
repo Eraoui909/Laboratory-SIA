@@ -45,8 +45,9 @@ class SiteController extends Controller
         $data['articles'] = ArticleModel::getByQuery('SELECT *,DATE_FORMAT(date, "%d %M %Y") as "date" FROM article order by articleID DESC limit '.$limit.' offset '.$offset);
         $data['teams'] = TeamModel::getALLEquipeAndTechers();
         $data['nbrOfTeam'] = TeamModel::getCountTable();
+        $data['nbrOfArticles'] = ArticleModel::getCountTable();
         $data['nbrOfTeacher'] = EnseignantModel::getCountTable('WHERE specialite="ens"');
-        $data['lastEvents']     = EventModel::getAll("ORDER BY eventID DESC limit 5");
+        $data['lastEvents']     = EventModel::getAll("ORDER BY eventID DESC limit 6");
         $data['nbrPage'] = $nbrMax;
         $data['title'] = "Home";
         $data['style'] = ['marquee.css', 'Home_Style.css'];
@@ -188,7 +189,7 @@ class SiteController extends Controller
         $arr['title'] = "évenements";
         $arr['style'] = ['Home_Style.css'];
         $arr['script'] = ['evenements.js'];
-        $arr['events'] = EventModel::getAll("limit 10");
+        $arr['events'] = EventModel::getAll("ORDER BY eventID DESC limit 15");
         return $this->render('evenements',$arr);
     }
 

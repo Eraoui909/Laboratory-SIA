@@ -92,13 +92,14 @@
         "researchers"                   => "Chercheures",
 
 
-        "searchBoxPlaceHolder"          => "le titre ou l\'auteur de l\'article..",
+        "searchBoxPlaceHolder"          => "le titre ou l'auteur de l'article..",
         "resultOF"                      => "Resultats pour",
         "nameOfTeam"                    => "Nom du group",
         "membersOfTeam"                 => "Membres du group",
         "previous"                      => "Préc.",
         "next"                          => "suivant",
         "exploreEvents"                 => "Explorez les évenements",
+        "consulter_plus_de"             => "Consulter plus de",
 
 
     );

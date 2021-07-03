@@ -35,7 +35,7 @@
     ">
     </div>
     <div class="pop-up-search-box">
-        <p>Consulter plus de <strong style="color: #A8D511">60</strong> articles</p>
+        <p><?= $lang['consulter_plus_de'] ?> <strong style="color: #A8D511"><?= $params['nbrOfArticles'] ?></strong> articles</p>
         <div class="pop-up-search-box-input">
             <div class="div-1">
                 <input type="text" class="ha-search-input"  name="search-for-article" style="height: 100%" placeholder="<?= $lang['searchBoxPlaceHolder'] ?>">

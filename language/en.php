@@ -97,6 +97,7 @@
         "previous"                      => "previous",
         "next"                          => "next",
         "exploreEvents"                 => "Explore events",
+        "consulter_plus_de"             => "View more than",
 
 
 

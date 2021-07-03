@@ -2,9 +2,10 @@
 <style>
     .teachers-title{
         position: absolute;
-        top: 10px;
+        top: 20px;
         background-color: white;
         width: 350px;
+        border: 2px solid #6ca5a2;
     }
     }
     .ha-input{
