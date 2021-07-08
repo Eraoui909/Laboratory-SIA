@@ -7,7 +7,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Framework</title>
+    <title>SIA | Login</title>
 
     <?php
         include_once "layout/links/headerLinks.php";

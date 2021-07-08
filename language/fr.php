@@ -101,5 +101,7 @@
         "exploreEvents"                 => "Explorez les évenements",
         "consulter_plus_de"             => "Consulter plus de",
 
+        "Message_not_seen"              => "Message non vu",
+
 
     );

@@ -1,0 +1,172 @@
+.hiddenInput{
+    display: none;
+}
+
+label.UploadLabel {
+    padding: 6px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    display: table-cell;
+    cursor: pointer;
+}
+
+label.UploadLabel:hover{
+    box-shadow: 2px 2px 10px #b1afaf;
+}
+
+.error-message{
+    color: red;
+    font-size: .9em;
+    margin-bottom: 0;
+}
+
+.delete-path:hover{
+    color: #dc3545;
+}
+/**
+***********************************************************************************************************************
+***********************************************************************************************************************
+************************************** inscription in news letter *****************************************************
+***********************************************************************************************************************
+***********************************************************************************************************************
+**/
+
+
+.ha-global-popup-newsletter{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #0a0e14;
+    opacity: 0.8;
+    z-index: 100000;
+}
+.ha-global-popup-newsletter-active{
+    display: none;
+}
+
+.ha-newletter-container{
+    width: 50%;
+    background-color: white;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    height: 400px;
+    z-index: 100001;
+    padding: 40px;
+}
+.ha-newletter-container::before{
+    content: "x";
+    font-size: 30px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #0a001f;
+    position: absolute;
+    right: -18px;
+    top: -18px;
+    text-align: center;
+    line-height: 40px;
+}
+.ha-newletter-container .ha-newsletter-content {
+    border: 4px dashed black;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+}
+.ha-newletter-container .ha-newsletter-content h1{
+    font-weight: bold;
+    margin: 30px 0px;
+}
+.ha-newletter-container .ha-newsletter-content p{
+    margin: 30px 0px;
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+.ha-newletter-container .ha-newsletter-content input{
+    width: 60%;
+    border: 1px solid transparent;
+    border-bottom: 1px solid gray;
+    margin: 30px 10px;
+    line-height: 20px;
+    padding: 8px;
+    outline: 1px orange;
+}
+.ha-newletter-container .ha-newsletter-content button{
+    width: 23%;
+    background-color: coral;
+    margin:30px 10px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .ha-newletter-container{
+        padding: 10px;
+        width: 80%;
+    }
+    .ha-newletter-container h1{
+        font-size: 22px;
+        margin: 10px 0px;
+    }
+    .ha-newletter-container p{
+        font-size: 14px;
+        letter-spacing: normal;
+        margin: 10px 0px;
+    }
+    .ha-newletter-container input{
+        display: block;
+        border-top: 1px solid !important;
+        width: 100% !important;
+        padding: 5px !important;
+        margin: 0px auto !important;
+    }
+    .ha-newletter-container button{
+        width: 50% !important;
+        padding: 4px !important;
+        margin: 10px auto !important;
+    }
+
+}
+
+
+#load {
+    width: 100%;
+//background-image: linear-gradient(to left,white,white, #bdd7e5);
+    background-color: white;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    z-index: 100001;
+    padding: 40px;
+}
+#load img{
+    width: 15%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    height: 250px;
+    z-index: 100001;
+    padding: 40px;
+}
+.swal2-container {
+    z-index: 1000000000000000 !important;
+}
+
+.ha-close-head{
+    position: absolute;
+    right: 15px;
+    top: 2px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    opacity: 0.5;
+}
+.ha-close-head:hover{
+    opacity: 1;
+}

@@ -99,7 +99,7 @@
                                 } ?>
                             </h3>
 
-                            <p>Message not readable</p>
+                            <p><?= $lang['Message_not_seen'] ?></p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>

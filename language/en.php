@@ -98,6 +98,7 @@
         "next"                          => "next",
         "exploreEvents"                 => "Explore events",
         "consulter_plus_de"             => "View more than",
+        "Message_not_seen"              => "Message not seen",
 
 
 
