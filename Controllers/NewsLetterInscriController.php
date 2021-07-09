@@ -68,7 +68,7 @@ class NewsLetterInscriController extends Controller
             $mail->Host       = 'smtp.gmail.com';                           // Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                       // Enable SMTP authentication
             $mail->Username   = 'hamzaeraoui2000@gmail.com';                // SMTP username
-            $mail->Password   = 'fes(17-09)@eraoui';                           // SMTP password
+            $mail->Password   = '';                           // SMTP password
             //$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;           // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $mail->Port       = 587;
             //Recipients

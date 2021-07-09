@@ -89,7 +89,6 @@
         "newsletter"                    => "NewsLetter",
         "abstract"                      => "Abstract",
         "researchers"                   => "Researchers",
-
         "searchBoxPlaceHolder"          => "titile or author of article..",
         "resultOF"                      => "Results Of",
         "nameOfTeam"                    => "Team Name",
@@ -100,6 +99,7 @@
         "consulter_plus_de"             => "View more than",
         "Message_not_seen"              => "Message not seen",
 
-
+        "JoinOurNewsletter"             => "Join our newsletter",
+        "newsLetterMsg"                 => "Receive the latest articles from our teachers!",
 
     );

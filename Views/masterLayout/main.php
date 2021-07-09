@@ -54,8 +54,8 @@
 <div class="ha-newletter-container ha-global-popup-newsletter-active">
     <div class="ha-newsletter-content">
         <center>
-            <h1>Rejoignez notre news letter</h1>
-            <p>Recevez les derniers articles de nos professeurs!</p>
+            <h1><?= $lang['JoinOurNewsletter'] ?></h1>
+            <p><?= $lang['newsLetterMsg'] ?></p>
             <div>
                 <form action="/newsletter/inscription" method="post">
                     <input type="email" name="email" class="newsletter-email" placeholder="  Entrer votre addresse email">

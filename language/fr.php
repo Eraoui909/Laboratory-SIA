@@ -90,8 +90,6 @@
         "newsletter"                    => "les newsletters",
         "abstract"                      => "Abstrait",
         "researchers"                   => "Chercheures",
-
-
         "searchBoxPlaceHolder"          => "le titre ou l'auteur de l'article..",
         "resultOF"                      => "Resultats pour",
         "nameOfTeam"                    => "Nom du group",
@@ -100,8 +98,10 @@
         "next"                          => "suivant",
         "exploreEvents"                 => "Explorez les évenements",
         "consulter_plus_de"             => "Consulter plus de",
-
         "Message_not_seen"              => "Message non vu",
 
+
+        "JoinOurNewsletter"             => "Rejoignez notre news letter",
+        "newsLetterMsg"                 => "Recevez les derniers articles de nos professeurs!",
 
     );

@@ -33,7 +33,7 @@ class EventController extends Controller
             $event->setTitle($data['title']);
             $event->setLieu($data['lieu']);
             $event->setDescription($data['description']);
-            $event->setPicture($picture['uploaded'][0]);
+            @$event->setPicture($picture['uploaded'][0]??"avatar.PNG");
             $event->setDate($data['date']);
             $event->setTimeEvent($data['time']);
 
